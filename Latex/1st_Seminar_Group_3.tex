@@ -25,6 +25,7 @@
 \usepackage[nottoc]{tocbibind}
 \usepackage{enumerate}
 
+
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
@@ -220,52 +221,70 @@ This section will cover all the requirements for the webshop and define them.
 This table analyses the general requirements for the webshop.
 \newline
 
+\begin{table}[htbp]
+	\centering
+	\caption{My caption}
+	\label{my-label}
 	\begin{tabular}{|l|l|}
 		\hline
-		ID  & Requirement                                                                                                                              \\ \hline
-		1   & The webshop shall contain any number of products.                                                                                        \\ \hline
-		1.1 & All information about the products shall be stored in the database.                                                                      \\ \hline
-		1.2 & \begin{tabular}[c]{@{}l@{}}Each product will have:\\ -Product name\\ -Category\\ -Quantity\\ -Price\\ -Description\\ -Image\end{tabular} \\ \hline
-		1.3 & All products will be pre-defined to categories (Monitors,Computers, Etc.                                                                 \\ \hline
+		\textbf{ID}    & \textbf{Requirements}                                                                                                               \\ \hline
+		\textbf{1}     & The webshop must contain any number of products.                                                                                    \\ \hline
+		\textbf{1.1}   & All information about the products shall be stored in the database.                                                                 \\ \hline
+		\textbf{1.1.1} & \begin{tabular}[c]{@{}l@{}}product must have:\\ -Product name\\ -Category\\ -Quantity\\ -Price\\ -Description\\ -Image\end{tabular} \\ \hline
+		\textbf{1.1.2} & All products will be pre-defined to categories (Monitors,Computers, Etc.)                                                           \\ \hline
+		\textbf{1.2}   & When an order is placed it must be added to the database                                                                            \\ \hline
+		\textbf{1.2.1} & When an order is placed the quantity of the products must change                                                                    \\ \hline
 	\end{tabular}
+\end{table}
 \subsection{Customer requirements}
 This table will look into the customer requirements
 \newline
-
+\begin{table}[htbp]
+	\centering
+	\caption{My caption}
+	\label{my-label}
 	\begin{tabular}{|l|l|}
 		\hline
-		ID  & Requirement                                                                                                                                                                                      \\ \hline
-		2   & \begin{tabular}[c]{@{}l@{}}The customer shall be able to browse the products in the\\ following ways:\\ -Browse all products\\ -Search for a product\\ -Show products in a category\end{tabular} \\ \hline
-		2.1 & \begin{tabular}[c]{@{}l@{}}It shall be possible to click on a product to see more details\\ about it.\end{tabular}                                                                               \\ \hline
-		2.2 & \begin{tabular}[c]{@{}l@{}}The customer shall be able to put a product in a Shopping\\ Basket.\end{tabular}                                                                                      \\ \hline
-		2.3 & \begin{tabular}[c]{@{}l@{}}The customer shall be able to view the products in the\\ Shopping Basket.\end{tabular}                                                                                 \\ \hline
-		2.4 & \begin{tabular}[c]{@{}l@{}}It shall be possible to change the quantity of a product in the\\ Shopping Basket, or remove a product.\end{tabular}                                                   \\ \hline
-		2.5 & The customer shall be able to place an order   .                                                                                                                                                  \\ \hline
-		2.6 & \begin{tabular}[c]{@{}l@{}}When placing an order, a form shall be shown where the\\ customer enters his/her contact details (email, address, phone\\ number). \end{tabular}                        \\ \hline
-		2.7 & \begin{tabular}[c]{@{}l@{}}When an order is finalized the customer shall receive an auto-generated\\ order number. \end{tabular}                                                                    \\ \hline
-		2.8 & \begin{tabular}[c]{@{}l@{}}The customer shall be able to check the status of his/her order\\ from the order number.\end{tabular}                                                                  \\ \hline
+		\textbf{ID}    & \textbf{Requirement}                                                                                                                                                                          \\ \hline
+		\textbf{2}     & \begin{tabular}[c]{@{}l@{}}The customer must be able to browse the products in the following ways:\\ -Browse all products\\ -Search for a product\\ -Show products in a category\end{tabular} \\ \hline
+		\textbf{2.1}   & It must be possible to click on a product to see more details about it.                                                                                                                       \\ \hline
+		\textbf{2.2}   & The customer must be able to put a product in a cart.                                                                                                                                         \\ \hline
+		\textbf{2.2.1} & The customer must be able to view the products in the cart.                                                                                                                                   \\ \hline
+		\textbf{2.2.2} & The customer must be able to change the quantity of a product in the cart.                                                                                                                    \\ \hline
+		\textbf{2.2.3} & \begin{tabular}[c]{@{}l@{}}The customer must be able to remove a product from the cart with one click with any \\ quantity.\end{tabular}                                                      \\ \hline
+		\textbf{2.3}   & The customer must be able to place an order   .                                                                                                                                               \\ \hline
+		\textbf{2.3.1} & \begin{tabular}[c]{@{}l@{}}When placing an order, a form must be shown where the customer enters his/her \\ contact details (email, address, phone number).\end{tabular}                      \\ \hline
+		\textbf{2.3.2} & When an order is finalized the customer must receive an auto-generated order number.                                                                                                          \\ \hline
+		\textbf{2.3.3} & The customer must be able to check the status of his/her order from the order number.                                                                                                         \\ \hline
 	\end{tabular}
+\end{table}
 \subsection{Administrator requirements}
 Last section will look into the requirements for the administrator view mode and the functionalities it must have.
 \newline
 
+
+\begin{table}[htpb]
+	\centering
+	\caption{Administrator requirements table}
+	\label{my-label}
 	\begin{tabular}{|l|l|}
 		\hline
-		3    & \begin{tabular}[c]{@{}l@{}}The webshop shall have an Admin system where an\\ administrator can log in.\end{tabular}                                                                          \\ \hline
-		3.1  & User accounts and passwords shall be stored in the database.                                                                                                                                 \\ \hline
-		3.2  & \begin{tabular}[c]{@{}l@{}}When a customer places an order, the order shall be added tothe database and the quantity of the ordered products shall be\\ updated in the webshop.\end{tabular} \\ \hline
-		3.3  & It will be possible to add a new product.                                                                                                                                                    \\ \hline
-		3.4  & It will be possible to remove a product.                                                                                                                                                     \\ \hline
-		3.5  & It will be possible to change information about a product.                                                                                                                                   \\ \hline
-		3.6  & It will be possible to manage deliveries (i.e. update the quantity of items).                                                                                                                \\ \hline
-		3.7  & It will be possible to add a new administrator account.                                                                                                                                      \\ \hline
-		3.8  & It will be possible to to remove an administrator account.                                                                                                                                   \\ \hline
-		3.9  & It will be possible to add a new product category.                                                                                                                                           \\ \hline
-		3.10 & It will be possible to view all orders.                                                                                                                                                      \\ \hline
-		3.11 & It wil be possible to update an order.                                                                                                                                                       \\ \hline
-		3.12 & Each order shall have a status: New, Delayed or Shipped                                                                                                                                      \\ \hline
-		3.13 & An administrator will have to  update the order status manually.                                                                                                                             \\ \hline
+		\textbf{ID}    & \textbf{Requirement}                                                       \\ \hline
+		\textbf{3}     & The webshop shall have an Admin system where an administrator can log on   \\ \hline
+		\textbf{3.1}   & Administrator accounts and passwords shall be stored in the database.      \\ \hline
+		\textbf{3.2}   & An administrator must be able to add a new product                         \\ \hline
+		\textbf{3.2.1} & An administrator must be able to remove a product                          \\ \hline
+		\textbf{3.2.2} & An administrator must be able to change information about a product        \\ \hline
+		\textbf{3.2.3} & An administrator must be able to add a category                            \\ \hline
+		\textbf{3.2.4} & An administrator must be able to remove a category                         \\ \hline
+		\textbf{3.2.5} & An administrator must be able to change information about a category       \\ \hline
+		\textbf{3.3}   & An administrator must be able to add a new administrator account           \\ \hline
+		\textbf{3.3.1} & An administrator must be able to remove a administrator account            \\ \hline
+		\textbf{3.4}   & An administrator must be able to view all orders                           \\ \hline
+		\textbf{3.4.1} & An administrator must be able update the order status on every order       \\ \hline
+		\textbf{3.4.2} & The order status can only be New, Shipped, Delayed, Delivered and Returned \\ \hline
 	\end{tabular}
+\end{table}
 
 \subsection{UML Design}
 The preliminary UML design is in the picture below.
