@@ -2,4 +2,6 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {2}General requirements}{1}
-\contentsline {section}{\numberline {3}Customer requirements}{1}
+\contentsline {section}{\numberline {3}Customer requirements}{2}
+\contentsline {section}{\numberline {4}Administrator requirements}{3}
+\contentsline {section}{\numberline {5}Conclusion}{3}
