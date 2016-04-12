@@ -7,22 +7,38 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
     <h:form>
-    <h1>Add a new product</h1>
-    <br/>
-    <h:outputLabel value="Product name: "/><br/>
-    <h:inputText value="#{product.productName}"/>
-    <h:outputLabel value="Product price: "/><br/>
-    <h:inputText value="#{product.productPrice}"/>
-    <h:outputLabel value="Product quantity: "/><br/>
-    <h:inputText value="#{product.productQuantity}"/>
-    <h:outputLabel value="Product image source: "/><br/>
-    <h:inputText value="#{product.productImage}"/>
-    <h:outputLabel value="Product description: "/><br/>
-    <h:inputText value="#{product.productDescription}"/>
-    <h:outputLabel value="Product Category: "/><br/>
-    <h:inputText value="#{product.productCategory}"/>
-    <h:outputLabel value="Product subcategory :"/><br/>
-    <h:inputText value="#{product.productSubcategory}"/>
+        <h1>Add a new product</h1>
+        <br/>
+        <br/>
+        <h:outputLabel value="Product name: "/>
+        <br/>
+        <h:inputText id="Name" value="#{product.productName}"/>
+        <br/>
+        <h:outputLabel value="Product price: "/>
+        <br/>
+        <h:inputText id="Price" value="#{product.productPrice}"/>
+        <br/>
+        <h:outputLabel value="Product quantity: "/>
+        <br/>
+        <h:inputText id="Quantity" value="#{product.productQuantity}"/>
+        <br/>
+        <h:outputLabel value="Product image source: "/>
+        <br/>
+        <h:inputText id="Image" value="#{product.productImage}"/>
+        <br/>
+        <h:outputLabel value="Product description: "/>
+        <br/>
+        <h:inputText id="Description" value="#{product.productDescription}"/>
+        <br/>
+        <h:outputLabel value="Product Category: "/>
+        <br/>
+        <h:inputText id="Category" value="#{product.productCategory}"/>
+        <br/>
+        <h:outputLabel value="Product subcategory :"/>
+        <br/>
+        <h:inputText id="Subcategory" value="#{product.productSubcategory}"/>
+        <br/>
+        <h:commandButton value="Add product" action="#{product.addProduct}"/>
     </h:form>
 </h:body>
 </html>
