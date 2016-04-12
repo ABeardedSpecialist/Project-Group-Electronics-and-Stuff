@@ -34,26 +34,38 @@ public class admin implements Serializable {
     }
 
     public String createNewAdmin() {
+        String result = "invalid";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "root", "Po37j8xd");
-            try {
-                String quary = "INSERT INTO webshop.admins (AdminUsername, AdminPassword)" + " VALUES (?,?)";
-                PreparedStatement statement = conn.prepareStatement(quary);
-                statement.setString(1, Username);
-                statement.setString(2, Password);
+            String check = "SELECT * FROM webshop.admins WHERE AdminUsername ='" + this.Username + "'";
+            Statement bla = conn.createStatement();
+            ResultSet rs = bla.executeQuery(check);
 
-                statement.execute();
-            } finally {
-                conn.close();
+            if (!rs.next()) {
+                try {
+                    String quary = "INSERT INTO webshop.admins (AdminUsername, AdminPassword)" + " VALUES (?,?)";
+                    PreparedStatement statement = conn.prepareStatement(quary);
+                    statement.setString(1, this.Username);
+                    statement.setString(2, this.Password);
+
+                    statement.execute();
+
+                } finally {
+                    conn.close();
+                }
+                result = "correct";
             }
-
+            else{
+                result = "invalid";
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return "correct";
+        return result;
+
     }
 
     public String checkIfAdminExist() {
@@ -63,15 +75,15 @@ public class admin implements Serializable {
             try {
                 String quary = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
                 PreparedStatement statement = conn.prepareStatement(quary);
-                statement.setString(1, Username);
+                statement.setString(1, this.Username);
                 ResultSet Username = statement.executeQuery();
                 if (Username.next()) {
                     String passwordCheck = "SELECT * FROM webshop.admins WHERE AdminPassword = ?";
                     PreparedStatement statement1 = conn.prepareStatement(passwordCheck);
-                    statement1.setString(1, Password);
+                    statement1.setString(1, this.Password);
                     ResultSet Password = statement1.executeQuery();
                     if (Password.next()) {
-                        return "addNewAdmin";
+                        return "adminPage";
                     } else {
                         return "invalid";
                     }
@@ -87,9 +99,7 @@ public class admin implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    return "invalid";
+        return "invalid";
     }
-
-
 }
 

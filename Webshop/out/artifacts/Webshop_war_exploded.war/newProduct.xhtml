@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+    <h:form>
+    <h1>Add a new product</h1>
+    <br/>
+    <h:outputLabel value="Product name: "/><br/>
+    <h:inputText value="#{product.productName}"/>
+    <h:outputLabel value="Product price: "/><br/>
+    <h:inputText value="#{product.productPrice}"/>
+    <h:outputLabel value="Product quantity: "/><br/>
+    <h:inputText value="#{product.productQuantity}"/>
+    <h:outputLabel value="Product image source: "/><br/>
+    <h:inputText value="#{product.productImage}"/>
+    <h:outputLabel value="Product description: "/><br/>
+    <h:inputText value="#{product.productDescription}"/>
+    <h:outputLabel value="Product Category: "/><br/>
+    <h:inputText value="#{product.productCategory}"/>
+    <h:outputLabel value="Product subcategory :"/><br/>
+    <h:inputText value="#{product.productSubcategory}"/>
+    </h:form>
+</h:body>
+</html>
