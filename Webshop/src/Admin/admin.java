@@ -5,7 +5,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.*;
-import java.util.Properties;
 
 /**
  * Created by Michael Johansson(mj223gn) on 2016-04-11.
@@ -16,6 +15,15 @@ public class admin implements Serializable {
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private String Username;
     private String Password;
+    private String result = "";
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
 
     public void setUsername(String input) {
         this.Username = input;
@@ -34,10 +42,9 @@ public class admin implements Serializable {
     }
 
     public String createNewAdmin() {
-        String result = "invalid";
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Po37j8xd");
+            Connection conn = DriverManager.getConnection(sql_connection, "root", "Michael123");
             String check = "SELECT * FROM webshop.admins WHERE AdminUsername ='" + this.Username + "'";
             Statement bla = conn.createStatement();
             ResultSet rs = bla.executeQuery(check);
@@ -71,7 +78,7 @@ public class admin implements Serializable {
     public String checkIfAdminExist() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Po37j8xd");
+            Connection conn = DriverManager.getConnection(sql_connection, "root", "Michael123");
             try {
                 String quary = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
                 PreparedStatement statement = conn.prepareStatement(quary);
