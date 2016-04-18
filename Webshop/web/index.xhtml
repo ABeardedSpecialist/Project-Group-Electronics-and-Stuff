@@ -15,7 +15,7 @@
       <h:outputLabel value="Password: "/>
       <h:inputSecret id="Password" value="#{admin.password}"/>
       <br/>
-      <h:commandButton value="Log in" action="#{admin.checkIfAdminExist}"/>
+      <h:commandButton value="Log in" action="#{admin.checkIfAdminExist()}"/>
    </h:form>
 </h:body>
 </html>
