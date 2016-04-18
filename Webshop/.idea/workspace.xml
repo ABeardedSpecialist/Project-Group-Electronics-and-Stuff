@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3dd9c83-1774-40a4-9163-5edfc3a17db5" name="Default" comment="" />
+    <list default="true" id="d3dd9c83-1774-40a4-9163-5edfc3a17db5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/Index.xhtml" afterPath="$PROJECT_DIR$/Web/Index.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/adminPage.xhtml" afterPath="$PROJECT_DIR$/Web/adminPage.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Admin/admin.java" afterPath="$PROJECT_DIR$/src/Admin/admin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Products/product.java" afterPath="$PROJECT_DIR$/src/Products/product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Webshop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,30 +29,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Documents/Project-Group-Electronics-and-Stuff/WebShop/src/Admin/admin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin/admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1460983272661" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
-                <marker date="1460983272661" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
-                <marker date="1460983272661" expanded="true" signature="2352:2402" placeholder="SELECT * FRO... admins" />
-                <marker date="1460983272661" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
-                <marker date="1460983272661" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
+                <marker date="1461000354316" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
+                <marker date="1461000354316" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
+                <marker date="1461000354316" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
+                <marker date="1461000354316" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
               </folding>
             </state>
           </provider>
@@ -62,12 +54,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <file leaf-file-name="Index.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/Index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-              <folding />
+              <folding>
+                <marker date="1460999810062" expanded="true" signature="211:775" placeholder="..." />
+                <marker date="1460999810062" expanded="true" signature="363:767" placeholder="..." />
+                <marker date="1460999810062" expanded="true" signature="375:757" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,9 +71,13 @@
       <file leaf-file-name="adminPage.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/adminPage.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="357">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+                <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+                <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,9 +95,22 @@
       <file leaf-file-name="editProduct.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/editProduct.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="391">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <folding>
+                <marker date="1461000354266" expanded="true" signature="363:1914" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="418:1904" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="435:1890" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="595:1872" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="618:726" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="749:865" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="888:1006" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="1029:1153" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="1176:1328" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="1351:1481" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="1504:1628" placeholder="..." />
+                <marker date="1461000354266" expanded="true" signature="1651:1781" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,18 +125,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="product.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Products/product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1389">
-              <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+            <state relative-caret-position="529">
+              <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-                <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-                <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-                <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-                <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+                <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+                <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+                <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+                <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
               </folding>
             </state>
           </provider>
@@ -138,6 +149,9 @@
         <option value="jsf" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -155,10 +169,10 @@
         <option value="$PROJECT_DIR$/web/removeProduct.xhtml" />
         <option value="$PROJECT_DIR$/web/newProduct.xhtml" />
         <option value="$PROJECT_DIR$/src/Products/product.java" />
-        <option value="$PROJECT_DIR$/src/Admin/admin.java" />
         <option value="$PROJECT_DIR$/web/adminPage.xhtml" />
         <option value="$PROJECT_DIR$/web/editProduct.xhtml" />
         <option value="$USER_HOME$/Documents/Project-Group-Electronics-and-Stuff/WebShop/src/Admin/admin.java" />
+        <option value="$PROJECT_DIR$/src/Admin/admin.java" />
       </list>
     </option>
   </component>
@@ -168,10 +182,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1554" />
-    <option name="height" value="916" />
+    <option name="width" value="1873" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -204,68 +218,8 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
+              <option name="myItemId" value="WebShop" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Products" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -276,10 +230,12 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Project-Group-Electronics-and-Stuff/WebShop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../1DV508/Github/Project-Group-Electronics-and-Stuff/WebShop" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -783,15 +739,17 @@
       <workItem from="1460968112879" duration="6626000" />
       <workItem from="1460987262058" duration="836000" />
       <workItem from="1460988848439" duration="1941000" />
+      <workItem from="1461000495070" duration="59000" />
+      <workItem from="1461005349914" duration="83000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49057000" />
+    <option name="totallyTimeSpent" value="49199000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1873" height="1092" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -804,11 +762,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38709676" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38696536" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21586476" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21540119" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -851,7 +809,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
+          <folding>
+            <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -867,7 +829,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding />
+          <folding>
+            <marker date="1461000354266" expanded="true" signature="363:1914" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="418:1904" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="435:1890" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="595:1872" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="618:726" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="749:865" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="888:1006" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1029:1153" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1176:1328" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1351:1481" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1504:1628" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1651:1781" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -884,12 +859,10 @@
         <state relative-caret-position="986">
           <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-            <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-            <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+            <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+            <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
           </folding>
         </state>
       </provider>
@@ -899,12 +872,10 @@
         <state relative-caret-position="1071">
           <caret line="76" column="84" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460983272661" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
-            <marker date="1460983272661" expanded="true" signature="2352:2402" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
+            <marker date="1461000354316" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
           </folding>
         </state>
       </provider>
@@ -924,11 +895,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/Index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1460999810062" expanded="true" signature="211:775" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="363:767" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="375:757" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -936,7 +911,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
-          <folding />
+          <folding>
+            <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -952,7 +931,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1461000354266" expanded="true" signature="363:1914" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="418:1904" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="435:1890" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="595:1872" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="618:726" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="749:865" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="888:1006" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1029:1153" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1176:1328" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1351:1481" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1504:1628" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1651:1781" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -969,12 +961,10 @@
         <state relative-caret-position="1989">
           <caret line="153" column="51" selection-start-line="153" selection-start-column="51" selection-end-line="153" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-            <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-            <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+            <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+            <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
           </folding>
         </state>
       </provider>
@@ -984,12 +974,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460983272661" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
-            <marker date="1460983272661" expanded="true" signature="2352:2402" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
+            <marker date="1461000354316" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
           </folding>
         </state>
       </provider>
@@ -1009,11 +997,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/Index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1460999810062" expanded="true" signature="211:775" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="363:767" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="375:757" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1021,7 +1013,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1046,12 +1042,10 @@
         <state relative-caret-position="1445">
           <caret line="120" column="93" selection-start-line="120" selection-start-column="93" selection-end-line="120" selection-end-column="93" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-            <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-            <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+            <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+            <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
           </folding>
         </state>
       </provider>
@@ -1061,12 +1055,10 @@
         <state relative-caret-position="510">
           <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460983272661" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
-            <marker date="1460983272661" expanded="true" signature="2352:2402" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
+            <marker date="1461000354316" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
           </folding>
         </state>
       </provider>
@@ -1086,11 +1078,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/Index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1460999810062" expanded="true" signature="211:775" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="363:767" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="375:757" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,7 +1094,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1123,12 +1123,10 @@
         <state relative-caret-position="1530">
           <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-            <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-            <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+            <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+            <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
           </folding>
         </state>
       </provider>
@@ -1138,12 +1136,10 @@
         <state relative-caret-position="1275">
           <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460983272661" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
-            <marker date="1460983272661" expanded="true" signature="2352:2402" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
+            <marker date="1461000354316" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
           </folding>
         </state>
       </provider>
@@ -1163,11 +1159,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/Index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1460999810062" expanded="true" signature="211:775" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="363:767" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="375:757" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1175,7 +1175,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,25 +1196,23 @@
         <state relative-caret-position="119">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-            <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-            <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+            <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+            <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/test.xhtml" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources.properties" />
@@ -1226,11 +1228,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/Index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
+          <folding>
+            <marker date="1460999810062" expanded="true" signature="211:775" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="363:767" placeholder="..." />
+            <marker date="1460999810062" expanded="true" signature="375:757" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1252,23 +1258,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/adminPage.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Products/product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1389">
-          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+        <state relative-caret-position="357">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460982826519" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
-            <marker date="1460982826519" expanded="true" signature="3380:3426" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
-            <marker date="1460982826519" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
-            <marker date="1460982826519" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354327" expanded="true" signature="211:1069" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="363:1061" placeholder="..." />
+            <marker date="1461000354327" expanded="true" signature="442:1051" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1283,33 +1278,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/editProduct.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="391">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding>
+            <marker date="1461000354266" expanded="true" signature="363:1914" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="418:1904" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="435:1890" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="595:1872" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="618:726" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="749:865" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="888:1006" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1029:1153" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1176:1328" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1351:1481" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1504:1628" placeholder="..." />
+            <marker date="1461000354266" expanded="true" signature="1651:1781" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin/admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1460983272661" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
-            <marker date="1460983272661" expanded="true" signature="2352:2402" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
-            <marker date="1460983272661" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1126:1199" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="1395:1470" placeholder="INSERT INTO webshop.admins... " />
+            <marker date="1461000354316" expanded="true" signature="2352:2404" placeholder="SELECT * FRO... admins" />
+            <marker date="1461000354316" expanded="true" signature="2684:2736" placeholder="SELECT * FRO... admins" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/Project-Group-Electronics-and-Stuff/WebShop/src/Admin/admin.java">
+    <entry file="file://$USER_HOME$/Documents/Project-Group-Electronics-and-Stuff/WebShop/src/Admin/admin.java" />
+    <entry file="file://$PROJECT_DIR$/src/Products/product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="529">
+          <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1461000354326" expanded="true" signature="2238:2435" placeholder="INSERT INTO webshop.products... " />
+            <marker date="1461000354326" expanded="true" signature="3380:3428" placeholder="DELETE FROM " />
+            <marker date="1461000354326" expanded="true" signature="4004:4052" placeholder="SELECT * FRO... products" />
+            <marker date="1461000354326" expanded="true" signature="5088:5118" placeholder="SELECT * FRO... products" />
           </folding>
         </state>
       </provider>
