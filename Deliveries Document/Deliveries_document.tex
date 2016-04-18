@@ -125,38 +125,75 @@
 %	Here follows the actual text contents of the report.
 %
 %----------------------------------------------------------------------------------------
-\section{Revision History}
-
-\begin{table}[htbp]
-	\centering
-	\begin{tabular}{|L{4cm}|L{8cm}|L{4cm}|}
-		\hline
-		\textbf{Change} & \textbf{Description} & \textbf{Name and Date} \\ \hline
-		Created Revision history table	&       included a revision history table to the document           &     Michael Johansson, 18/4 -2016               \\ \hline
-		&                      &                        \\ \hline
-	\end{tabular}
-\end{table}
-\newpage
-
 \section{Introduction}
 In this document we will set the start and finishing date on our different requirements from the analysis document. We will choose which requirement that should be completed when and also in what order. 
 
+\section{General requirements}
 \begin{table}[htbp]
 	\centering
-	\caption{Deliveries}
+	\caption{General requirements table}
 	\label{my-label}
-	\begin{tabular}{|L{4cm}|L{8cm}|L{3cm}|}
+	\begin{tabular}{|l|L{8cm}|L{2.5cm}|L{2.5cm}|}
 		\hline
-		\textbf{Delivery and Date}& \textbf{Description and Ds}                                                                                                                                                                                                                                                                                   & \textbf{Status} \\ \hline
-		\textbf{Delivery 1  20/4 - 2016} & The admin page functionality should be almost done with add product etc. \newline The database should be up and running with all the tables done and all columns. \newline IDs to be done: 1, 1.1, 1.1.1, 3, 3.1, 3.2, 3.2.1, 3.2.2                                                                   &                 \\ \hline
-		\textbf{Delivery 2 27/4 - 2016} & The admin should be able to add, replace and remove categories. \newline All the categories should be defined. \newline IDs to be done: 1.1.2, 3.2.3, 3.2.4                                                                                                                                            &                 \\ \hline
-		\textbf{Delivery 3 4/5 - 2016}  & The Cart should be working so the User can add, remove and change products in the cart. \newline IDs to be done: 2.2, 2.2.1, 2.2.2, 2.2.3                                                                                                                                                      &                 \\ \hline
-		\textbf{Delivery 4 11/5 - 2016} & The User should be able to search, show all products in category and browse all products. \newline The User should be able to click on a product to get more info about it. \newline Admin should be able to add new and remove existing admin accounts. \newline IDs to be done: 2, 2.1, 3.3, 3.3.1          &                 \\ \hline
-		\textbf{Delivery 5 18/5 - 2016} & The User should be able to place orders.\newline An Admin should be able to change and update orders. \newline The User should get an orderID when placing an order. \newline The User should be able to check his order with the orderID. \newline IDs to be done: 1.2, 1.2.1, 2.3, 2.3.1, 2.3.2, 2.3.3, 3.4, 3.4.1 &                 \\ \hline
-		\textbf{Delivery 6 25/5 - 2016} & Finishing touches and CSS fine tune.                                                                                                                                                                                                                                                                                             &                 \\ \hline
+		\textbf{ID} & \textbf{Requirements}                                                                                                                & Deadline & Status \\ \hline
+		1           & The webshop must contain any number of products.                                                                                     &    Delivery 1      &        \\ \hline
+		1.1         & All information about the products shall be stored in the database.                                                                  &     Delivery 1     &        \\ \hline
+		1.1.1       & \begin{tabular}[c]{@{}l@{}}product must have: \\ -Product name\\ -Category\\ -Quantity\\ -Price\\ -Description\\ -Image\end{tabular} &    Delivery 1      &        \\ \hline
+		1.1.2       & All products will be pre-defined to categories (Monitors,Computers, Etc.)                                                            &     Delivery 2     &        \\ \hline
+		1.2         & When an order is placed it must be added to the database                                                                             &   Delivery 3       &        \\ \hline
+		1.2.1       & When an order is placed the quantity of the products must change                                                                     &    Delivery 3      &        \\ \hline
 	\end{tabular}
 \end{table}
+
 \newpage
+
+\section{Customer requirements}
+\begin{table}[htbp]
+	\centering
+	\caption{Customer requirements table}
+	\label{my-label}
+	\begin{tabular}{|l|L{8cm}|L{2.5cm}|L{2.5cm}|}
+		\hline
+		\textbf{ID}    & \textbf{Requirement}                                                                                                                                                                          & Deadline & Status \\ \hline
+		\textbf{2}     & The customer must be able to browse the products in the following ways:\newline -Browse all products\newline -Search for a product\newline -Show products in a category &  Delivery 4       &        \\ \hline
+		\textbf{2.1}   & It must be possible to click on a product to see more details about it.                                                                                                                       &    Delivery 4      &        \\ \hline
+		\textbf{2.2}   & The customer must be able to put a product in a cart.                                                                                                                                         &   Delivery 3       &        \\ \hline
+		\textbf{2.2.1} & The customer must be able to view the products in the cart.                                                                                                                                   &     Delivery 3    &        \\ \hline
+		\textbf{2.2.2} & The customer must be able to change the quantity of a product in the cart.                                                                                                              &   Delivery 3       &        \\ \hline
+		\textbf{2.2.3} & The customer must be able to remove a product from the cart with one click with any quantity.                                                     &     Delivery 3     &        \\ \hline
+		\textbf{2.3}   & The customer must be able to place an order   .                                                                                                                                               &     Delivery 5     &        \\ \hline
+		\textbf{2.3.1} & When placing an order, a form must be shown where the customer enters his/her contact details (email, address, phone number).                      &    Delivery 5      &        \\ \hline
+		\textbf{2.3.2} & When an order is finalized the customer must receive an auto-generated order number.                                                                                                          &  Delivery 5        &        \\ \hline
+		\textbf{2.3.3} & The customer must be able to check the status of his/her order from the order number.                                                                                                         &   Delivery 5       &        \\ \hline
+	\end{tabular}
+\end{table}
+
+\newpage
+
+\section{Administrator requirements}
+\begin{table}[htbp]
+	\centering
+	\caption{Administrator requirements table}
+	\label{my-label}
+	\begin{tabular}{|l|L{8cm}|L{2.5cm}|L{2.5cm}|}
+		\hline
+		\textbf{ID} & \textbf{Requirement}                                                       & Deadline & Status \\ \hline
+		3           & The webshop shall have an Admin system where an administrator can log on   &   Delivery 1       &        \\ \hline
+		3.1         & Administrator accounts and passwords shall be stored in the database.      &  Delivery 1        &        \\ \hline
+		3.2         & An administrator must be able to add a new product                         &  Delivery 1        &        \\ \hline
+		3.2.1       & An administrator must be able to remove a product                          &     Delivery 1     &        \\ \hline
+		3.2.2       & An administrator must be able to change information about a product        &   Delivery 1       &        \\ \hline
+		3.2.3       & An administrator must be able to add a category                            &     Delivery 2     &        \\ \hline
+		3.2.4       & An administrator must be able to remove a category                         &     Delivery 2     &        \\ \hline
+		3.2.5       & An administrator must be able to change information about a category       &   Delivery 2       &        \\ \hline
+		3.3         & An administrator must be able to add a new administrator account           &     Delivery 4     &        \\ \hline
+		3.3.1       & An administrator must be able to remove a administrator account            &    Delivery 4      &        \\ \hline
+		3.4         & An administrator must be able to view all orders                           &     Delivery 3     &        \\ \hline
+		3.4.1       & An administrator must be able update the order status on every order       &   Delivery 5       &        \\ \hline
+		3.4.2       & The order status can only be New, Shipped, Delayed, Delivered and Returned &     Delivery 5     &        \\ \hline
+		\end{tabular}
+		\end{table}
+		
 \section{Conclusion}
 We choose to start with the administrator pages and implementing the products. We also choose to have the sixth delivery to finishing touches and so that we have a seminar to fall back on if there is any problems along the way.
 
