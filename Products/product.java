@@ -92,9 +92,9 @@ public class product implements Serializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "root", "Po37j8xd");
 
-            String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
+            String query = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                     "ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, this.productName);
             statement.setInt(2, this.productPrice);
             statement.setInt(3, this.productQuantity);

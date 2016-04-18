@@ -21,7 +21,7 @@
 
  */
 
-package com.mysql.fabric.hibernate;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
