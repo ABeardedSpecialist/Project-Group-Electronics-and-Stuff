@@ -12,33 +12,33 @@
         <br/>
         <h:outputLabel value="Product name: "/>
         <br/>
-        <h:inputText id="Name" value="#{product.productName}"/>
+        <h:inputText id="Name" value="#{productData.pr.productName}"/>
         <br/>
         <h:outputLabel value="Product price: "/>
         <br/>
-        <h:inputText id="Price" value="#{product.productPrice}"/>
+        <h:inputText id="Price" value="#{productData.pr.productPrice}"/>
         <br/>
         <h:outputLabel value="Product quantity: "/>
         <br/>
-        <h:inputText id="Quantity" value="#{product.productQuantity}"/>
+        <h:inputText id="Quantity" value="#{productData.pr.productQuantity}"/>
         <br/>
         <h:outputLabel value="Product image source: "/>
         <br/>
-        <h:inputText id="Image" value="#{product.productImage}"/>
+        <h:inputText id="Image" value="#{productData.pr.productImage}"/>
         <br/>
         <h:outputLabel value="Product description: "/>
         <br/>
-        <h:inputText id="Description" value="#{product.productDescription}"/>
+        <h:inputText id="Description" value="#{productData.pr.productDescription}"/>
         <br/>
         <h:outputLabel value="Product Category: "/>
         <br/>
-        <h:inputText id="Category" value="#{product.productCategory}"/>
+        <h:inputText id="Category" value="#{productData.pr.productCategory}"/>
         <br/>
         <h:outputLabel value="Product subcategory :"/>
         <br/>
-        <h:inputText id="Subcategory" value="#{product.productSubcategory}"/>
+        <h:inputText id="Subcategory" value="#{productData.pr.productSubcategory}"/>
         <br/>
-        <h:commandButton value="Add product" action="#{product.addProduct}"/>
+        <h:commandButton value="Add product" action="#{productData.addProduct}"/>
     </h:form>
 </h:body>
 </html>
