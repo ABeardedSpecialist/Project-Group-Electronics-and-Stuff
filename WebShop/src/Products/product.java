@@ -90,7 +90,7 @@ public class product implements Serializable {
     public String addProduct() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Bebras.42");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBtest", "A.1337,Black.");
 
             String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                     "ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
@@ -118,7 +118,7 @@ public class product implements Serializable {
     public String removeProduct() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Bebras.42");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBtest", "A.1337,Black.");
 
             String quary = "DELETE FROM webshop.products WHERE productID = ?";
             PreparedStatement statement = conn.prepareStatement(quary);
@@ -135,5 +135,8 @@ public class product implements Serializable {
         }
         return "ldaw";
     }
-
+public String editProduct(){
+	String a="";
+	return a;
+}
 }

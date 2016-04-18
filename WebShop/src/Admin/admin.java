@@ -37,7 +37,7 @@ package Admin;
 	        String result = "invalid";
 	        try {
 	            Class.forName("com.mysql.jdbc.Driver");
-	            Connection conn = DriverManager.getConnection(sql_connection, "root", "Bebras.42");
+	            Connection conn = DriverManager.getConnection(sql_connection, "DBtest", "A.1337,Black.");
 	            String check = "SELECT * FROM webshop.admins WHERE AdminUsername ='" + this.Username + "'";
 	            Statement bla = conn.createStatement();
 	            ResultSet rs = bla.executeQuery(check);
@@ -71,7 +71,7 @@ package Admin;
 	    public String checkIfAdminExist() {
 	        try {
 	            Class.forName("com.mysql.jdbc.Driver");
-	            Connection conn = DriverManager.getConnection(sql_connection, "root", "Bebras.42");
+	            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 	            try {
 	                String quary = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
 	                PreparedStatement statement = conn.prepareStatement(quary);
