@@ -72,11 +72,11 @@
 					<h:commandButton value="Edit" action="#{productData.editAction(pr)}"
 						rendered="#{not pr.editable}" />
 					
-					<h:commandButton action="#{saveAction}" value="Save Changes"
+					<h:commandButton action="#{productData.editProducts(pr)}" value="Save Changes"
 						rendered="#{pr.editable}" />
 				</h:column>
 				<h:column>
-					<h:commandButton value="Delete" action="invalid" />
+					<h:commandButton value="Delete" action="#{productData.removeProduct(pr.productID)}" />
 				</h:column>
 			</h:dataTable>
 		</h:form>

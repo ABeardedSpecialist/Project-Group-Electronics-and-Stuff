@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+              
+<title>Index </title>
+              
+<meta name="name" content="content" />
+              <link href="main.css" rel="stylesheet" type="text/css" />
+              
+<script>
+              function validateForm() {
+              var x = document.forms["myForm"]["uname"].value;
+              var y = document.forms["myForm"]["pword"].value;
+                if (x == null || x == "" || y== null || y=="") {
+                            alert("Both fields must be filled out");
+                      return false;
+                    }
+               }
+</script></head>
+     
+<body background="background.png">
+             
+<p align="center"><img src="" alt="picture" height="10%" /></p>
+             
+<div id="cart">
+                 <button class="button">
+                 <img src="" alt="picture" width="50" height="40" /></button>
+            </div>
+          
+<div id="nav">
+             <nav id="horzNav">
+              
+<p>
+               <a href="shop.html" title="Shop">Categories</a>
+                <a href="shop.html" title="Shop">About</a>
+                <a href="shop.html" title="Shop">Contact</a>
+             </p>
+            </nav>
+          </div>
+          
+<div id="news">
+               
+<p class="secondary">
+                     <img class="smallPicture" src="" alt="picture" />
+                     <img class="smallPicture" src="" alt="picture" />
+                     <img class="smallPicture" src="" alt="picture" />
+                     <img class="smallPicture" src="" alt="picture" />
+                   </p>
+                </div>
+                  
+<div id="login">
+                    <form name="myForm" action="admin.html" onsubmit="return validateForm()" method="post">
+                   Name: <br /><input id="fields" type="text" name="uname" /><br />
+                   Passwrd: <br /><input id="fields" type="password" name="pword" /><br /><br />
+                   <input id="sub" type="submit" value="Login" />
+                 </form></div>
+                   
+</body></html>

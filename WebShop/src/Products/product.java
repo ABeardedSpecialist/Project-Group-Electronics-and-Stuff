@@ -2,7 +2,6 @@ package Products;
 
 
 
-
 /**
  * Created by Michael Johansson(mj223gn) on 2016-04-12.
  */
@@ -21,7 +20,7 @@ public class product  {
 	private String productCategory;
 	private String productSubcategory;
 	private boolean editable;
-
+	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	public String getProductName() {
 		return productName;
 	}
@@ -96,8 +95,5 @@ public class product  {
 		return null;
 	}
 
-
-
+	
 }
-
-

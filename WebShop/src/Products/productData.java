@@ -11,7 +11,8 @@ import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
-
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 @ManagedBean (name="productData")
 @Named
@@ -23,25 +24,25 @@ public class productData implements Serializable {
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<product> theData=new ArrayList<product>();
 	private product pr;
+
 	
-	
-	
-public productData(){
-	 pr=new product();
+
+	public productData(){
+		pr=new product();
 		loadData();
 	}
 	public List<product> getTheData() {
-		
+
 		return theData;
 	}
-	
+
 	public void setTheData(List<product> theData) {
 		this.theData = theData;
 	}
-	
-	private void loadData(){
-		try {
 
+	private List<product> loadData(){
+		try {
+            theData.removeAll(theData);
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
@@ -69,11 +70,12 @@ public productData(){
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			
 		}
-	}
+return theData;	}
 	public String addProduct() {
 		try {
-			
+
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
@@ -90,7 +92,6 @@ public productData(){
 			statement.execute();
 
 			conn.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -99,34 +100,16 @@ public productData(){
 		return "ldaw";
 	}
 
-	public void removeProduct() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "DELETE FROM webshop.products WHERE productID = ?";
-			PreparedStatement statement = conn.prepareStatement(quary);
-			
 
-			statement.execute();
-
-			conn.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
 	public void getProduct(int id){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-product theProd=new product();
 			String quary = "SELECT * FROM webshop.products WHERE productID ="+id;
 			PreparedStatement statement = conn.prepareStatement(quary);
-		
-		
+
+
 
 			conn.close();
 
@@ -137,18 +120,45 @@ product theProd=new product();
 		}
 	}
 
+	public void removeProduct(int in) {
+		try {
 
-
-	public String editProducts(int id){
-		try{
-			Class.forName("com.myseql.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-			String query = "UPDATE webshop.products SET (ProductName, ProductPrice, ProductQuantity," + 
-					"ProductImage, ProductDescription, ProductCategory, ProductSubcategory"+
-					"VALUES (?,?,?,?,?,?,?)"+
-					"WHERE productID = "+id;
+
+			String quary = "DELETE FROM webshop.products WHERE productID = "+in;
+			PreparedStatement statement = conn.prepareStatement(quary);
+			statement.executeUpdate();
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+
+
+	public String editProducts(product prod){
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+			String query = "UPDATE webshop.products SET ProductName=?,"
+					+ " ProductPrice=?,ProductQuantity=?,"
+					+ "ProductImage=?,ProductDescription=?,"
+					+ "ProductCategory=?,ProductSubcategory=?"+
+					"WHERE productID = "+prod.getProductID();
 			PreparedStatement statement=conn.prepareStatement(query);
-		
+			statement.setString(1,prod.getProductName() );
+			statement.setInt(2,prod.getProductPrice() );
+			statement.setInt(3,prod.getProductQuantity() );
+			statement.setString(4,prod.getProductImage() );
+			statement.setString(5,prod.getProductDescription() );
+			statement.setString(6,prod.getProductCategory() );
+			statement.setString(7,prod.getProductSubcategory() );
+			statement.execute();
 			conn.close();
 		}
 		catch (SQLException e) {
@@ -156,13 +166,14 @@ product theProd=new product();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
+		prod.setEditable(false);
+		loadData();
 		return "ldaw";}
-	
+
 	public void editAction(product pr) {
-	    
+
 		pr.setEditable(true);
-		
+
 	}
 	public product getPr() {
 		return pr;
@@ -170,8 +181,8 @@ product theProd=new product();
 	public void setPr(product pr) {
 		this.pr = pr;
 	}
-	
-	
 
-	}
+
+
+}
 
