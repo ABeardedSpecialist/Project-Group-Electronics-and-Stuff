@@ -20,7 +20,6 @@ public class product  {
 	private String productCategory;
 	private String productSubcategory;
 	private boolean editable;
-	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	public String getProductName() {
 		return productName;
 	}

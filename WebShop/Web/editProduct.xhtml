@@ -76,7 +76,8 @@
 						rendered="#{pr.editable}" />
 				</h:column>
 				<h:column>
-					<h:commandButton value="Delete" action="#{productData.removeProduct(pr.productID)}" />
+					<h:commandButton value="Delete" action="#{productData.removeProduct(pr.productID)}" update="@form" ajax="true" />
+					
 				</h:column>
 			</h:dataTable>
 		</h:form>

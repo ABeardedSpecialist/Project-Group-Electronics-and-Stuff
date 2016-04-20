@@ -11,25 +11,38 @@ import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Named;
-@ManagedBean (name="productData")
+@ManagedBean (name="productData",eager=true) 
 @Named
 @SessionScoped
+
 public class productData implements Serializable {
-
-
+	
 	private static final long serialVersionUID = 1L;
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<product> theData=new ArrayList<product>();
+	private List<product> searchRes=new ArrayList<product>();
 	private product pr;
+	private String searchVal;
 
-	
 
 	public productData(){
 		pr=new product();
 		loadData();
+	}
+	public List<product> getSearchRes() {
+		return searchRes;
+	}
+	public void setSearchRes(List<product> searchRes) {
+		this.searchRes = searchRes;
+
+	}
+	public String getSearchVal() {
+		return searchVal;
+	}
+	public void setSearchVal(String searchVal) {
+		this.searchVal = searchVal;
 	}
 	public List<product> getTheData() {
 
@@ -40,7 +53,7 @@ public class productData implements Serializable {
 		this.theData = theData;
 	}
 
-	private List<product> loadData(){
+private List<product> loadData(){
 		try {
             theData.removeAll(theData);
 			Class.forName("com.mysql.jdbc.Driver");
@@ -130,7 +143,7 @@ return theData;	}
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.executeUpdate();
 			conn.close();
-			
+			loadData();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -138,7 +151,45 @@ return theData;	}
 		}
 
 	}
+public String search(String in){
+	searchRes.removeAll(searchRes);
+	searchVal=in;
+	try {
 
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+		String quary = "SELECT FROM webshop.products WHERE ProductName LIKE "+"%"+"test"+"%";
+		PreparedStatement statement = conn.prepareStatement(quary);
+		statement.execute();
+		ResultSet rs = statement.getResultSet();
+
+		while (rs.next()) {
+			product pr = new product();
+			pr.setProductID(rs.getInt(1));
+			pr.setProductName(rs.getString(2));
+			pr.setProductPrice(rs.getInt(3));
+			pr.setProductQuantity(rs.getInt(4));
+			pr.setProductImage(rs.getString(5));
+			pr.setProductDescription(rs.getString(6));
+			pr.setProductCategory(rs.getString(7));
+			pr.setProductSubcategory(rs.getString(8));
+			searchRes.add(pr);
+		}
+		conn.close();
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	}
+	searchVal="";
+	return "SearchResults";
+}
+	
+public void searchMember(AjaxBehaviorEvent event){
+	search(searchVal);
+	 }
 
 
 	public String editProducts(product prod){
@@ -182,7 +233,10 @@ return theData;	}
 		this.pr = pr;
 	}
 
-
+	public String edit(){
+		loadData();
+		return "editProduct";
+	}
 
 }
 
