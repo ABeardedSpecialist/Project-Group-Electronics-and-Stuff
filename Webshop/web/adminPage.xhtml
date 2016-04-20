@@ -16,13 +16,11 @@
         <h:inputSecret id="Password" value="#{admin.password}"/>
         <br/>
         <br/>
-        <h:commandButton id="addNew" value="Add" action="#{admin.createNewAdmin()}"/>
-
+        <h:commandButton value="Add" action="#{admin.createNewAdmin()}"/>
     <br/>
     <h2>Handle products:</h2>
     <h:commandButton value="Add new product" action="newProduct"/>
         <h:commandButton value="Remove Product" action="removeProduct"/>
-        <h:commandButton value="Edit Product" action="editProduct"/>
     </h:form>
 </h:body>
 </html>

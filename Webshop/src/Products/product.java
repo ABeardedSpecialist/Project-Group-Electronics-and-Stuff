@@ -5,7 +5,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.*;
-import java.util.*;
 
 /**
  * Created by Michael Johansson(mj223gn) on 2016-04-12.
@@ -91,7 +90,7 @@ public class product implements Serializable {
     public String addProduct() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Michael123");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBtest", "A.1337,Black.");
 
             String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                     "ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
@@ -116,10 +115,10 @@ public class product implements Serializable {
         return "ldaw";
     }
 
-    public void removeProduct() {
+    public String removeProduct() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Michael123");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBtest", "A.1337,Black.");
 
             String quary = "DELETE FROM webshop.products WHERE productID = ?";
             PreparedStatement statement = conn.prepareStatement(quary);
@@ -134,68 +133,10 @@ public class product implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return "ldaw";
     }
-    public void getProduct(int id){
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Michael123");
-
-            String quary = "SELECT * FROM webshop.products WHERE productID ="+id;
-            PreparedStatement statement = conn.prepareStatement(quary);
-            statement.setInt(1, this.productID);
-            statement.setString(1, this.productName);
-            statement.setInt(2, this.productPrice);
-            statement.setInt(3, this.productQuantity);
-            statement.setString(4, this.productImage);
-            statement.setString(5, this.productDescription);
-            statement.setString(6, this.productCategory);
-            statement.setString(7, this.productSubcategory);
-
-            statement.execute();
-
-            conn.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public List<product> getProductsList() {
-        List<product> output = new ArrayList<>();
-        try {
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "root", "Michael123");
-
-            String quary = "SELECT * FROM webshop.products";
-            PreparedStatement statement = conn.prepareStatement(quary);
-            statement.execute();
-            ResultSet rs = statement.getResultSet();
-
-            while (rs.next()) {
-                product pr = new product();
-                pr.setProductID(rs.getInt(1));
-                pr.setProductName(rs.getString(2));
-                pr.setProductPrice(rs.getInt(3));
-                pr.setProductQuantity(rs.getInt(4));
-                pr.setProductImage(rs.getString(5));
-                pr.setProductDescription(rs.getString(6));
-                pr.setProductCategory(rs.getString(7));
-                pr.setProductSubcategory(rs.getString(8));
-                output.add(pr);
-            }
-
-            conn.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return output;
-    }
+public String editProduct(){
+	String a="";
+	return a;
 }
-
-
+}
