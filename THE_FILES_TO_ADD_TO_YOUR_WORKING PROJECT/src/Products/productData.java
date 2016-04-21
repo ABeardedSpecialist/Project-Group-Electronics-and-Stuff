@@ -11,26 +11,26 @@ import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
-@ManagedBean (name="productData")
+@ManagedBean 
 @Named
 @SessionScoped
-public class productData implements Serializable {
 
+public class productData implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<product> theData=new ArrayList<product>();
-	private product pr;
-
 	
+	private product pr;
+	
+
 
 	public productData(){
 		pr=new product();
 		loadData();
 	}
+	
 	public List<product> getTheData() {
 
 		return theData;
@@ -42,11 +42,11 @@ public class productData implements Serializable {
 
 	private List<product> loadData(){
 		try {
-            theData.removeAll(theData);
+			theData.removeAll(theData);
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "SELECT * FROM webshop.products";
+			String quary = "SELECT * FROM productview";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
@@ -70,9 +70,9 @@ public class productData implements Serializable {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			
+
 		}
-return theData;	}
+		return theData;	}
 	public String addProduct() {
 		try {
 
@@ -130,7 +130,7 @@ return theData;	}
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.executeUpdate();
 			conn.close();
-			
+			loadData();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -138,6 +138,9 @@ return theData;	}
 		}
 
 	}
+	
+
+	
 
 
 
@@ -182,7 +185,10 @@ return theData;	}
 		this.pr = pr;
 	}
 
-
+	public String edit(){
+		loadData();
+		return "editProduct";
+	}
 
 }
 
