@@ -12,9 +12,10 @@
 		<h:form>
 			<br />
 			<h:outputLabel value="Your search results:" />
+
 			<br />
 			<h:dataTable value="#{productData.searchRes}" var="rs">
-			
+
 				<h:column>
 					<f:facet name="header">Name</f:facet>
 					<h:outputText value="#{rs.productName}" size="20"/>

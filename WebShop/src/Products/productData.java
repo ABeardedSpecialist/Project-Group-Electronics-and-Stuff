@@ -11,9 +11,8 @@ import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.event.AjaxBehaviorEvent;
 import javax.inject.Named;
-@ManagedBean (name="productData",eager=true) 
+@ManagedBean 
 @Named
 @SessionScoped
 
@@ -151,17 +150,16 @@ return theData;	}
 		}
 
 	}
-public String search(String in){
-	searchRes.removeAll(searchRes);
-	searchVal=in;
+public String searchResults(){
+	
 	try {
-
+		searchRes.removeAll(searchRes);
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-		String quary = "SELECT FROM webshop.products WHERE ProductName LIKE "+"%"+"test"+"%";
+		String quary = "SELECT * FROM webshop.products WHERE ProductName LIKE '%"+this.searchVal+"%'";
 		PreparedStatement statement = conn.prepareStatement(quary);
-		statement.execute();
+		statement.executeQuery();
 		ResultSet rs = statement.getResultSet();
 
 		while (rs.next()) {
@@ -183,13 +181,10 @@ public String search(String in){
 	} catch (ClassNotFoundException e) {
 		e.printStackTrace();
 	}
-	searchVal="";
 	return "SearchResults";
 }
 	
-public void searchMember(AjaxBehaviorEvent event){
-	search(searchVal);
-	 }
+
 
 
 	public String editProducts(product prod){
