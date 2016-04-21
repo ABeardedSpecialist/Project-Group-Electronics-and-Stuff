@@ -15,6 +15,7 @@ body {
 	border-radius: 4px;;
 	margin: 0 auto;
 	margin-top: 150px;
+	
 }
 
 .container img {
@@ -23,7 +24,7 @@ body {
 	margin-top: -60px;
 	margin-bottom: 30px;
 }
-/* [type= "Password"],input[type="Username"] */
+
 input {
 	height: 45px;
 	width: 300px;
@@ -31,10 +32,10 @@ input {
 	margin-bottom: 20px;
 	background-color: #f6f2f9;
 	padding-left: 35px;
-	color:#9e0aff; 
+	color: #9e0aff;
 }
 
-.form-input::before {
+.form-U::before {
 	content: "\f007";
 	position: absolute;
 	font-family: 'FontAwesome';
@@ -43,13 +44,13 @@ input {
 	font-size: 30px;
 	color: #4e2561;
 }
-.form-input:last-child::before{
-	content: "\f023";
-}
 
-buttom {
-	
-	
-	
-	
+.form-P::before {
+	content: "\f023";
+	position: absolute;
+	font-family: 'FontAwesome';
+	padding-left: 80px;
+	padding-top: 7px;
+	font-size: 30px;
+	color: #4e2561;
 }

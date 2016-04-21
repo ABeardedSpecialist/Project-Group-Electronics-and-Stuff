@@ -17,30 +17,33 @@
 </h:head>
 
 
+
 <h:body>
+	<div id="holdPage">
 
+		<div class="container">
+			<img src="images/user-img.png" />
+			<h:form>
 
-	<div class="container">
-		<img src="images/user-img.png" />
-		<h:form>
+				<h:outputText value="Hello! log in plz!" />
+				<br />
+				<div class="form-U">
+					<h:outputLabel value="Username: " />
+					<h:inputText id="Username" value="#{admin.username}" />
+				</div>
+				<br />
 
-			<h:outputText value="Hello! log in plz!" />
-			<br />
-			<div class="form-input">
-				<h:outputLabel value="Username: " />
-				<h:inputText  id="Username" value="#{admin.username}" />
-			</div>
-			<br />
-
-			<div class="form-input">
-				<h:outputLabel value="Password: " />
-				<h:inputSecret id="Password" value="#{admin.password}" />
-			</div>
-			<br />
-			<div class="buttom">
-			<h:commandButton value="Log in" action="#{admin.checkIfAdminExist()}"/>
+				<div class="form-P">
+					<h:outputLabel value="Password: " />
+					<h:inputSecret id="Password" value="#{admin.password}" />
+				</div>
+				<br />
+				<p id="buttom" class="movingLeftForAdd">
+					<h:commandButton value="Log in"
+						action="#{admin.checkIfAdminExist()}" />
+				</p>
+			</h:form>
 		</div>
-		</h:form>
 	</div>
 </h:body>
 </html>

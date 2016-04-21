@@ -18,9 +18,10 @@
 
 <h:body>
     <h:form>
-        <h1>Add a new product</h1>
+        <h6>Add a new product</h6>
         <br/>
         <br/>
+        <div class="container">
         <h:outputLabel value="Product name: "/>
         <br/>
         <h:inputText id="Name" value="#{product.productName}"/>
@@ -50,6 +51,7 @@
         <h:inputText id="Subcategory" value="#{product.productSubcategory}"/>
         <br/>
         <h:commandButton value="Add product" action="#{product.addProduct}"/>
+        </div>
     </h:form>
 </h:body>
 </html>

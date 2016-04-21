@@ -6,6 +6,11 @@
 
 @import url("font-awesome.min.css");
 
+@import url("adminPage.css");
+
+
+
+
 .picone {
 	width: 400px;
 	height: 70px;
@@ -21,6 +26,13 @@
 	
 }
 
-/* .outputText { */
-/* 	font-style: italic; */
-/* } */
+h6{
+	text-align: right;
+	font-family: cursive;
+	font-size: 100px;
+	font-style: italic;
+	margin: auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+
+}

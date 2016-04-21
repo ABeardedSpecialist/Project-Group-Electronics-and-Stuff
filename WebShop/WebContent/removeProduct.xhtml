@@ -2,10 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-       <h:head>
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
 
 	<title>Remove a product</title>
 	<link href="CSS/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -15,14 +15,18 @@
 
 </h:head>
 <f:view>
-    <h:body>
-        <h:form>
-            <h1>Remove a product</h1>
-            <br/>
-            <br/>
-            <h:inputText value="#{product.productID}"/>
-            <h:commandButton value="Remove product" action="#{product.removeProduct}"/>
-        </h:form>
-    </h:body>
+	<h:body>
+	<div id="holdPage2">
+		<h:form>
+			<div>
+				<h6>Remove a product</h6>
+			</div>
+			<br />
+			<br /><div class="container " id="first">
+			 <h:inputText value="#{product.productID}" /> <h:commandButton
+				value="Remove product" action="#{product.removeProduct}" /> </div>
+		</h:form>
+		</div>
+	</h:body>
 </f:view>
 </html>
