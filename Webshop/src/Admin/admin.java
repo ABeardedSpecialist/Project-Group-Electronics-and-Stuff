@@ -13,7 +13,11 @@ package Admin;
 	@Named
 	@SessionScoped
 	public class admin implements Serializable {
-	    private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
+	    /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	    private String Username;
 	    private String Password;
 
@@ -37,7 +41,7 @@ package Admin;
 	        String result = "invalid";
 	        try {
 	            Class.forName("com.mysql.jdbc.Driver");
-	            Connection conn = DriverManager.getConnection(sql_connection, "DBtest", "A.1337,Black.");
+	            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 	            String check = "SELECT * FROM webshop.admins WHERE AdminUsername ='" + this.Username + "'";
 	            Statement bla = conn.createStatement();
 	            ResultSet rs = bla.executeQuery(check);
