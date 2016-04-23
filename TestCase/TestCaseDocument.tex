@@ -1,0 +1,233 @@
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[swedish,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{dtklogos}
+\usepackage{wallpaper}
+\usepackage[absolute]{textpos}
+\usepackage[top=2cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+\usepackage{appendix}
+\usepackage[nottoc]{tocbibind}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{15}\selectfont}
+\subsectionfont{\fontsize{12}{15}\selectfont}
+\subsubsectionfont{\fontsize{12}{15}\selectfont}
+
+\usepackage{csquotes} % Used to handle citations
+
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}  
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+ 
+
+%----------------------------------------------------------------------------------------
+%	
+%----------------------------------------------------------------------------------------
+\newsavebox{\mybox}
+\newlength{\mydepth}
+\newlength{\myheight}
+
+\newenvironment{sidebar}%
+{\begin{lrbox}{\mybox}\begin{minipage}{\textwidth}}%
+{\end{minipage}\end{lrbox}%
+ \settodepth{\mydepth}{\usebox{\mybox}}%
+ \settoheight{\myheight}{\usebox{\mybox}}%
+ \addtolength{\myheight}{\mydepth}%
+ \noindent\makebox[0pt]{\hspace{-20pt}\rule[-\mydepth]{1pt}{\myheight}}%
+ \usebox{\mybox}}
+
+%----------------------------------------------------------------------------------------
+%	Title section
+%----------------------------------------------------------------------------------------
+\newcommand\BackgroundPic{
+    \put(-2,-3){
+    \includegraphics[keepaspectratio,scale=0.3]{img/lnu_etch.png} % Background picture
+    }
+}
+\newcommand\BackgroundPicLogo{
+    \put(30,740){
+    \includegraphics[keepaspectratio,scale=0.10]{img/logo.png} % Logo in upper left corner
+    }
+}
+
+\title{	
+\vspace{-8cm}
+\begin{sidebar}
+    \vspace{10cm}
+    \normalfont \normalsize
+    \Huge Report \\
+    \vspace{-1.3cm}
+\end{sidebar}
+\vspace{3cm}
+\begin{flushleft}
+    \huge Project Course in Computer Science\\ 
+    \it \LARGE - Test Case document
+\end{flushleft}
+\null
+\vfill
+\begin{textblock}{6}(10,13)
+\begin{flushright}
+\begin{minipage}{\textwidth}
+\begin{flushleft} \large
+\emph{Author:} Quasim Aljbarah, Michael Johansson, Tadas Lisauskas, Zeyuan Li, Robin Reijo and Robin Stempa\\ 
+\emph{Supervistor:} Ola Petersson\\ 
+%\emph{Examiner:} Dr.~Mark \textsc{Brown}\\ % Examiner (course manager)
+\emph{Semester:} VT 2016\\ % 
+\emph{Subject:} 1DV508\\ % Subject area
+\end{flushleft}
+\end{minipage}
+\end{flushright}
+\end{textblock}
+}
+
+\date{} 
+
+\begin{document}
+\pagenumbering{gobble}
+\newgeometry{left=5cm}
+\AddToShipoutPicture*{\BackgroundPic}
+\AddToShipoutPicture*{\BackgroundPicLogo}
+\maketitle
+\restoregeometry
+\clearpage
+%----------------------------------------------------------------------------------------
+%	Abstract
+%----------------------------------------------------------------------------------------
+\selectlanguage{swedish}
+
+
+\newpage
+
+
+
+
+
+\newpage
+\pagenumbering{gobble}
+\tableofcontents 
+\newpage
+\pagenumbering{arabic}
+\section{Revision History}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|L{3cm}|L{6cm}|L{4cm}|}
+		\hline
+		\textbf{Change} & \textbf{Description} & \textbf{Name and Date} \\ \hline
+	Created the test case document  & Created the document and wrote down all the tests & Robin Reijo 22/4 - 2016\\ \hline
+		Created Revision history table	&       included a revision history table to the document           &     Michael Johansson, 22/4 - 2016               \\ \hline
+			&              &                      \\ \hline
+		&		&	  \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+
+\section{Introduction}
+The purpose of this test case document is to showcase what they system shall be tested upon. For this purpose we use tables organize the work. Where you can look up what tests there is and requirements we put up for the intended test, and also how to test it and what we should come to expect of each of the tests.
+
+\section{Test Cases - general}
+\begin{tabular}{ |p{1cm}||p{4cm}|p{4cm}|p{4cm}|  }
+	\hline
+	\multicolumn{4}{|c|}{Test Cases} \\
+	\hline
+	Test& Requirements &How to test&Expected result\\
+	\hline
+	1.  & There should atleast be one product in the webshop.    & Click on a product at sidebar or search for it& Should show the specified product page.\\
+	\hline
+	1.1  & All information regarding the product is stored in a database.   & Add a product on the site and see if it is added in database.& The added product should be shown in the database.\\
+	\hline
+	1.2  & A product shall contain product name, category, quantity, price, description and an image.    &Go to the desired product page.& The product should contain all of the requirements.\\
+	\hline
+	1.3&  A placed order will be placed in the database  & place an order   &Should be stored in the database\\
+	\hline
+	1.3.1 & Quantity changes made will be updated in database&Change quantity of the order & New quantity should be updated in database.\\
+	\hline
+
+	
+	
+	
+\end{tabular}
+	\newpage
+	\section{Test Cases - Customer}
+\begin{tabular}{ |p{1cm}||p{4cm}|p{4cm}|p{4cm}|  }
+	\hline
+	\multicolumn{4}{|c|}{Test Cases} \\
+	\hline
+	Test& Requirements &How to test&Expected result\\
+	\hline
+
+	2.    &A customer shall be able to browse product  & Click links on side bar & Should be possible to browse\\
+	\hline
+	2.1&  A customer shall be able to search for a product  & Search for the desired product&Should show the searched product\\
+	\hline
+	2.1.1& A customer shall be able to add show products by category  & Click on it from sidebar.   & Should show product by category \\
+	\hline
+	2.1 & Customer shall be able to view a products details  &Click or search for a product on search bar or click on sidebar links &Should give a new page where product details: product name, category, quantity,price, description and an image are shown. \\
+	\hline
+	2.2 & A customer shall be able to put a product in the shoping cart & Add a product and go to shoping cart page & Should show newly added product. \\
+	\hline
+	2.2.1 & A customer shall be able to change quantity while in the shoping cart. & Change quantity on a product by pressing on the quantity button and change to desired number. & Should be possible. \\
+	\hline
+	2.2.2 & A customer shall be able to remove a product with one click& Press the remove button at the desired product. & Product should be removed from the shoping cart. \\
+	\hline
+	2.3 & A customer shall be able to make an order & Go to shoping cart page, fill in the form with personal information and press send. & Customer should be able to see the placed order when going to customers individual page.\\
+	\hline
+	2.3.1 & A customer shall be given an auto generated order number & Press send on the form. & Should give the customer the number. \\
+	
+	\hline
+	2.3.2 & A customer shall be able to view the status on his or her order. & Use the auto generated number to get to the page. & Should show the status of the order. \\
+	\hline
+
+	
+	
+	
+\end{tabular}
+
+
+	\newpage
+	\section{Test Cases - Administrator}
+	
+		\begin{tabular}{ |p{1cm}||p{4cm}|p{4cm}|p{4cm}|  }
+			\hline
+			\multicolumn{4}{|c|}{Test Cases} \\
+			\hline
+			Test& Requirements &How to test&Expected result\\
+			\hline
+			
+			3.2.2 & Admin shall be able to change information about a product & Go to admin page and press change information on a product & should show newly added information of the product when it is viewed. \\
+			\hline
+			3.2.3 & Admin shall be able to add a category & in admin add category page, add a category & new category should be visible when adding a new product \\
+			\hline
+			3.2.3 & Admin shall be able to remove a category & in admin remove category page, remove a category & new category should be visible when adding a new product \\
+			\hline
+			3.2.3 & Admin shall be able to change information about a category & in admin category page, change a category's information & new category information should be visible when adding a new product \\
+			\hline
+			3.3 & Admin shall be able to add new admin accounts & Add a new admin account on the add new admin page & The new admin account should be visible in the database and an admin should be able to login using the new details.\\
+			\hline
+			3.4 & Admin shall be able to remove an admin account & remove a admin account on the remove admin page & The admin account should not be visible in the database and admin cant login. \\
+			\hline
+			3.5 & Admin shall be able to view all order of all customers. & Login into admin system, all order appear on admin logged in page. & Should display all the orders made by customers \\
+			\hline
+			3.5.1
+			& Admin shall be able to update status on every order & Login as admin, go to the targeted customers random generated number ordered page and change status to new shipped, delayed and delivered and returned & Should show newly updated status on show all order page and individual order page. \\ 
+			\hline
+			
+			
+		\end{tabular}
+		
+			
+		
+
+	
+
+\end{document}
