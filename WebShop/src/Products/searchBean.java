@@ -15,7 +15,7 @@ import javax.faces.bean.SessionScoped;
 
 
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class searchBean implements Serializable {
 	/**
 	 * 
@@ -24,6 +24,7 @@ public class searchBean implements Serializable {
 	private String searchVal;
 	private List<product> searchRes=new ArrayList<product>();
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
+	
 	
 	
 	
@@ -46,7 +47,7 @@ public class searchBean implements Serializable {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "SELECT * FROM webshop.products WHERE ProductName LIKE '%" + this.searchVal + "%'";
+			String quary = "SELECT * FROM webshop.productview WHERE ProductName LIKE '%" + this.searchVal + "%'";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.executeQuery();
 			ResultSet rs = statement.getResultSet();
