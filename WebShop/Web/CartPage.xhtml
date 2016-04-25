@@ -10,34 +10,34 @@
     <br/>
     <br/>
     <h:form>
-    <h:dataTable value="#{cart.cartList}" var="pr">
+    <h:dataTable value="#{cart.ID}" var="ci">
         <h:column>
             <f:facet name="header">Image</f:facet>
-            <h:graphicImage value="#{pr.productImage}"/>
+            <h:graphicImage value="#{ci.item.productImage}"/>
         </h:column>
         <h:column>
             <f:facet name="header">Name</f:facet>
-            #{pr.productName}
+            #{ci.item.productName}
         </h:column>
         <h:column>
             <f:facet name="header">Price</f:facet>
-            #{pr.productPrice}
+            #{ci.item.productPrice}
         </h:column>
         <h:column>
             <f:facet name="header">Category</f:facet>
-            #{pr.productCategory}
+            #{ci.item.productCategory}
         </h:column>
         <h:column>
             <f:facet name="header">Subcategory</f:facet>
-            #{pr.productSubcategory}
+            #{ci.item.productSubcategory}
         </h:column>
         <h:column>
-            <h:selectOneMenu value="#{cart.numberOfProducts}">
-                <f:selectItems value="#{cart.getQuantity(pr.productQuantity)}"/>
+            <h:selectOneMenu value="#{ci.quantity}" onchange="submit()">
+                <f:selectItems id="quantity" value="#{cart.getQuantity(ci.item.productQuantity)}" update="@form" ajax="true"/>
             </h:selectOneMenu>
         </h:column>
         <h:column>
-            <h:commandButton value="Remove from cart" action="#{cart.removeProductFromCart(pr.productID)}" update="@form" ajax="true"/>
+            <h:commandButton value="Remove from cart" action="#{cart.removeProductFromCart(ci)}" update="@form" ajax="true"/>
         </h:column>
     </h:dataTable>
     <h:outputLabel value="Number of products: #{cart.numberOfProducts}"/>
