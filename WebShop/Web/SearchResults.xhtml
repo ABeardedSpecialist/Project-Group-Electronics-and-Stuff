@@ -48,11 +48,11 @@
 					<h:outputText value="#{rs.productSubcategory}" size="20"/>
 				</h:column>
 				<h:column>
-					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
+					<h:commandButton value="Add to Cart" action="invalid"/>
 				</h:column>
 			</h:dataTable>
-		<h:commandButton value="Go to cart" action="CartPage" update="@form" ajax="true"/>
 		</h:form>
+
 	</h:body>
 </f:view>
 </html>

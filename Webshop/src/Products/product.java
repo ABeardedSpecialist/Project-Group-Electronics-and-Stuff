@@ -20,15 +20,6 @@ public class product  {
 	private String productCategory;
 	private String productSubcategory;
 	private boolean editable;
-	private int userQuantity = 1;
-
-	public int getUserQuantity() {
-		return userQuantity;
-	}
-
-	public void setUserQuantity(int userQuantity) {
-		this.userQuantity = userQuantity;
-	}
 
 	public String getProductName() {
 		return productName;
