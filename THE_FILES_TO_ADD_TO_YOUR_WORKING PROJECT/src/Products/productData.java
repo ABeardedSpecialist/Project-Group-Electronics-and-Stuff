@@ -46,7 +46,7 @@ public class productData implements Serializable {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "SELECT * FROM productview";
+			String quary = "SELECT * FROM webshop.productview";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
@@ -79,7 +79,7 @@ public class productData implements Serializable {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
+			String quary = "INSERT INTO webshop.productview (ProductName, ProductPrice, ProductQuantity, " +
 					"ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.setString(1,pr.getProductName() );
@@ -102,23 +102,7 @@ public class productData implements Serializable {
 
 
 
-	public void getProduct(int id){
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-			String quary = "SELECT * FROM webshop.products WHERE productID ="+id;
-			PreparedStatement statement = conn.prepareStatement(quary);
-
-
-
-			conn.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+	
 
 	public void removeProduct(int in) {
 		try {
@@ -126,7 +110,7 @@ public class productData implements Serializable {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "DELETE FROM webshop.products WHERE productID = "+in;
+			String quary = "DELETE FROM webshop.productview WHERE productID = "+in;
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.executeUpdate();
 			conn.close();
