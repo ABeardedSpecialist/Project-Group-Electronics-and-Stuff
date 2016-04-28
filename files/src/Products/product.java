@@ -90,7 +90,7 @@ public class product  {
 		return editable;
 	}
 
-	public  String setEditable(boolean makeIt) {
+	public String setEditable(boolean makeIt) {
 		editable = makeIt;
 		return null;
 	}

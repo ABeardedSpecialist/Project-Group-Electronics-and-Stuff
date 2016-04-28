@@ -23,8 +23,6 @@ public class productData implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<product> theData = new ArrayList<product>();
-
-	
 	private product pr;
 
 	public productData(){
@@ -74,6 +72,7 @@ public class productData implements Serializable {
 
 		}
 		return theData;	}
+
 	public String addProduct() {
 		try {
 
@@ -102,15 +101,12 @@ public class productData implements Serializable {
 	}
 
 
-
 	public void getProduct(int id){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 			String quary = "SELECT * FROM webshop.products WHERE productID ="+id;
 			PreparedStatement statement = conn.prepareStatement(quary);
-
-
 
 			conn.close();
 
@@ -139,11 +135,6 @@ public class productData implements Serializable {
 		}
 
 	}
-	
-
-	
-
-
 
 	public String editProducts(product prod){
 		try{

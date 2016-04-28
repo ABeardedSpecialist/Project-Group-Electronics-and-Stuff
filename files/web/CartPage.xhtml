@@ -32,12 +32,12 @@
             #{ci.item.productSubcategory}
         </h:column>
         <h:column>
-            <h:selectOneMenu value="#{cart.numberOfProducts}">
+            <h:selectOneMenu value="#{ci.quantity}" onchange="submit()" update="@form" ajax="true">
                 <f:selectItems value="#{cart.getQuantity(ci.item.productQuantity)}"/>
             </h:selectOneMenu>
         </h:column>
         <h:column>
-            <h:commandButton value="Remove from cart" action="#{cart.removeProductFromCart(ci.item.productID)}" update="@form" ajax="true"/>
+            <h:commandButton value="Remove from cart" action="#{cart.removeProductFromCart(ci)}" update="@form" ajax="true"/>
         </h:column>
     </h:dataTable>
     <h:outputLabel value="Number of products: #{cart.numberOfProducts}"/>

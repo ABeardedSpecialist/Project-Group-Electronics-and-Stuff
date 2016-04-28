@@ -50,7 +50,6 @@ public class Cart implements Serializable {
     }
 
 
-
     public List<Integer> getQuantity(int quantity){
         List<Integer> Quantity = new ArrayList<>();
         for (int i = 1; i <= quantity; i++){
@@ -61,8 +60,13 @@ public class Cart implements Serializable {
     public void addProductToCart(product prod){
         for (cartItem ci: ID) {
             if(ci.getItem().getProductID() == prod.getProductID()){
-                ci.setQuantity(+1);
-                return;
+                if (ci.getQuantity()+1 > ci.getItem().getProductQuantity()){
+                    return;
+                }
+                else{
+                    ci.setQuantity(ci.getQuantity()+1);
+                    return;
+                }
             }
         }
         cartItem ci = new cartItem();

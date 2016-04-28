@@ -44,14 +44,14 @@
 					<f:facet name="header">Image</f:facet>
 					<h:inputText value="#{pr.productImage}" size="20"
 						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productImage}"
+					<h:outputText value="#{pr.productImage}" size="20"
 						rendered="#{not pr.editable}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Description</f:facet>
 					<h:inputText value="#{pr.productDescription}" size="20"
 						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productDescription}"
+					<h:outputText value="#{pr.productDescription}" size="20"
 						rendered="#{not pr.editable}" />
 				</h:column>
 				<h:column>
@@ -77,11 +77,9 @@
 				</h:column>
 				<h:column>
 					<h:commandButton value="Delete" action="#{productData.removeProduct(pr.productID)}" update="@form" ajax="true" />
-					
 				</h:column>
 			</h:dataTable>
 		</h:form>
-
 	</h:body>
 </f:view>
 </html>
