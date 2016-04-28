@@ -32,7 +32,9 @@
 			<a>Categories</a>
 			<h:form>
 			<h:dataTable value="#{categoryData.theList}" var="c">
-    <h:column><h:commandLink action="#{categoryData.getProductwithCat(c.categoryName)}" value="#{c.categoryName}" /></h:column>
+    <h:column><h:commandLink action="#{categoryData.getProductwithCat()}" value="#{c.categoryName}"> 
+       <f:param name="test" value="#{c.categoryName}" /></h:commandLink>
+  </h:column>
 </h:dataTable>
 		
 		</h:form>		
@@ -55,13 +57,13 @@
 	<div>
 		<h:form>
 			<h:outputLabel value="Username: " />
-			<h:inputText id="Username" value="#{admin.username}" />
+			<h:inputText id="Username" value="#{adminData.user}" />
 			<br />
 			<h:outputLabel value="Password:  " />
-			<h:inputSecret id="Password" value="#{admin.password}" />
+			<h:inputSecret id="Password" value="#{adminData.pass}" />
 			<br />
 			<br />
-			<h:commandButton value="Log In" action="#{admin.checkIfAdminExist()}" />
+			<h:commandButton value="Log In" action="#{adminData.checkIfAdminExist}" />
 			<br />
 		</h:form>
 	</div>

@@ -8,11 +8,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
-
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import Products.product;
@@ -21,9 +23,10 @@ import Products.product;
 
 @ManagedBean
 @Named
-@ViewScoped
-public class categoryData implements Serializable {
+@RequestScoped
 
+public class categoryData implements Serializable {
+	@ManagedProperty("#{param.test}")
 	/**
 	 * 
 	 */
@@ -31,10 +34,17 @@ public class categoryData implements Serializable {
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<category> theList=new ArrayList<category>();
 	private List<product> catList=new ArrayList<product>();
+	
+
 
 	public categoryData(){
 		ListPlease();
 	}
+
+
+
+
+
 
 
 
@@ -70,15 +80,17 @@ public class categoryData implements Serializable {
 		return theList;
 	}
 
-	public List<product> getProductwithCat(String in){
+	public String getProductwithCat(){
 		try {
+		String	checks =(FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("test"));
 			catList.removeAll(catList);
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-			String quary = "SELECT * FROM webshop.productview WHERE CategoryName ='"+in+"';";
+			String quary = "SELECT * FROM webshop.productview WHERE CategoryName ='"+checks+"';";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
+			while(rs.next()){
 			product pr = new product();
 			pr.setProductID(rs.getInt(1));
 			pr.setProductName(rs.getString(2));
@@ -88,7 +100,7 @@ public class categoryData implements Serializable {
 			pr.setProductDescription(rs.getString(6));
 			pr.setProductCategory(rs.getString(7));
 			pr.setProductSubcategory(rs.getString(8));
-			catList.add(pr);
+			catList.add(pr);}
 
 			conn.close();
 
@@ -97,7 +109,7 @@ public class categoryData implements Serializable {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return catList;
+		return "catPage";
 	}
 
 
@@ -113,6 +125,20 @@ public class categoryData implements Serializable {
 	public void setTheList(List<category> theList) {
 		this.theList = theList;
 	}
+	
+	public List<product> getCatList() {
+		return catList;
+	}
+
+
+
+
+
+	public void setCatList(List<product> catList) {
+		this.catList = catList;
+	}
+
+	
 }
 
 
