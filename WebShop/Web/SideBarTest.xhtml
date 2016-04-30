@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+
+	<h:outputStylesheet library = "css" name = "main.css" />
+    <meta name="name" content="content" />
+	<link href="main.css" rel="stylesheet" type="text/css" />
+
+</h:head>
+ 
+<h:body> 
+
+	<div class = "searchBars">
+	
+	First name: <input class = "inputText" type="text" name="fname">
+	
+	
+	
+	</input>
+	</div>
+	
+	<div id="nav">
+		<nav id="horzNav">
+
+		<p>
+			<a>Categories</a>
+			<h:form>
+			<h:dataTable value="#{categoryData.theList}" var="c">
+    <h:column><h:commandLink action="#{categoryData.getProductwithCat()}" value="#{c.categoryName}"> 
+       <f:param name="test" value="#{c.categoryName}" /></h:commandLink>
+  </h:column>
+</h:dataTable>
+		
+		</h:form>		
+			<a>About</a> 
+			
+			<a href="shop.html" title="Shop">Contact</a>
+		</p>
+		</nav>
+	</div>
+	
+		
+</h:body> 
+</html>
