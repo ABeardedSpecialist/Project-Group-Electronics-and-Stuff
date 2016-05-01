@@ -35,35 +35,36 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">Quantity</f:facet>
-					<h:inputText value="#{pr.productQuantity}" size="20"
+					<h:inputText value="#{pr.productQuantity}" size="5"
 						rendered="#{pr.editable}" />
 					<h:outputText value="#{pr.productQuantity}"
 						rendered="#{not pr.editable}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Image</f:facet>
-					<h:inputText value="#{pr.productImage}" size="20"
+					<h:inputText value="#{pr.productImage}" size="10"
 						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productImage}" size="20"
+					<h:outputText value="#{pr.productImage}"
 						rendered="#{not pr.editable}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Description</f:facet>
 					<h:inputText value="#{pr.productDescription}" size="20"
 						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productDescription}" size="20"
+					<h:outputText value="#{pr.productDescription}"
 						rendered="#{not pr.editable}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Category</f:facet>
-					<h:inputText value="#{pr.productCategory}" size="20"
-						rendered="#{pr.editable}" />
+					<h:selectOneMenu value="#{pr.subcategoryID}" onchange=""  rendered="#{pr.editable}" >
+						<f:selectItems value="#{productData.categoryIDList}"/>
+					</h:selectOneMenu>
 					<h:outputText value="#{pr.productCategory}"
 						rendered="#{not pr.editable}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Subcategory</f:facet>
-					<h:inputText value="#{pr.productSubcategory}" size="20"
+					<h:inputText value="#{pr.subcategoryID}" size="20"
 						rendered="#{pr.editable}" />
 					<h:outputText value="#{pr.productSubcategory}"
 						rendered="#{not pr.editable}" />

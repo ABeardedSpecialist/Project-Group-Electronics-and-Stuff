@@ -19,9 +19,11 @@ public class product  {
 	private String productDescription;
 	private String productCategory;
 	private String productSubcategory;
+	private int categoryID;
+	private int subcategoryID;
 	private boolean editable;
-	
-	
+
+
 	public String getProductName() {
 		return productName;
 	}
@@ -86,6 +88,21 @@ public class product  {
 		this.productID = productID;
 	}
 
+	public int getCategoryID() {
+		return categoryID;
+	}
+
+	public void setCategoryID(int categoryID) {
+		this.categoryID = categoryID;
+	}
+
+	public int getSubcategoryID() {
+		return subcategoryID;
+	}
+
+	public void setSubcategoryID(int subcategoryID) {
+		this.subcategoryID = subcategoryID;
+	}
 
 	public boolean isEditable(){
 		return editable;
