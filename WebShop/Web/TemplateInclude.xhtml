@@ -10,12 +10,13 @@
         </title>        
     </h:head>
 
-    <ui:include src="Template.xhtml" />
+    <ui:include src="TheHeader.xhtml" />
 
     <h:body>
-    	
+    	<ui:include src="SideBarTest.xhtml" />
+    	<ui:include src="RightSideBar.xhtml" />
         <ui:insert name="content" />
     </h:body>
-
+		<ui:include src="Footer.xhtml" />
     
 </html>

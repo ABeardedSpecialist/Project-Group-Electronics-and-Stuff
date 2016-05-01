@@ -7,19 +7,18 @@
 }
 
 body{
-  background: rgba(252,234,187,1);
-background: -moz-linear-gradient(left, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(252,234,187,1)), color-stop(50%, rgba(252,205,77,1)), color-stop(51%, rgba(248,181,0,1)), color-stop(100%, rgba(251,223,147,1)));
-background: -webkit-linear-gradient(left, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-background: -o-linear-gradient(left, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-background: -ms-linear-gradient(left, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-background: linear-gradient(to right, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93', GradientType=1 );
+  
+background: rgb(226,226,226); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+
 Copy text
-  color: white;
+  color: black;
   margin: 0px;
   border: 0px;
-  
+  height: 1200px;
 }
 p{
   background-color: black;
@@ -95,12 +94,12 @@ box-shadow: 5px 5px 5px 2px gray;
 }
 #sidebar{
   width: 280px;
-  height: 100%;
+  height: 500px;
   position: absolute;
   top: 150px;
   left: 0;
   bottom: 0;
-  background: black;
+  
   float: left;
 }
 #item{
@@ -177,7 +176,21 @@ form{
 	float: bottom;
 	margin-top: 700px;
 	border: solid 2px;
+	width: 90px;
 	
+}
+.Footer {
+	
+	margin: 0 auto;
+	border: 2px solid;
+	width: 100%;
+	
+	
+}
+
+#test2:hover {
+	
+	background-color: green;
 	
 }
 

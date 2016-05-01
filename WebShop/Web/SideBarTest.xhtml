@@ -14,14 +14,7 @@
  
 <h:body> 
 
-	<div class = "searchBars">
 	
-	First name: <input class = "inputText" type="text" name="fname">
-	
-	
-	
-	</input>
-	</div>
 	
 	<div id="nav">
 		<nav id="horzNav">
@@ -33,6 +26,7 @@
     <h:column><h:commandLink action="#{categoryData.getProductwithCat()}" value="#{c.categoryName}"> 
        <f:param name="test" value="#{c.categoryName}" /></h:commandLink>
   </h:column>
+  
 </h:dataTable>
 		
 		</h:form>		
@@ -40,6 +34,20 @@
 			
 			<a href="shop.html" title="Shop">Contact</a>
 		</p>
+		<p>
+		
+			<h:outputLabel value="Username: " />
+			<h:inputText id="Username" value="#{adminData.user}" />
+			<br />
+			<h:outputLabel value="Password:  " />
+			<h:inputSecret id="Password" value="#{adminData.pass}" />
+			<br />
+			<br />
+			<h:commandButton value="Log In" action="#{adminData.checkIfAdminExist}" />
+			<br />
+			</p>
+		
+	
 		</nav>
 	</div>
 	
