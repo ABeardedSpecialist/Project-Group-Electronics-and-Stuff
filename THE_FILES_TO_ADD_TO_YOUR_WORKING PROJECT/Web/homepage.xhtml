@@ -32,8 +32,7 @@
 			<a>Categories</a>
 			<h:form>
 			<h:dataTable value="#{categoryData.theList}" var="c">
-    <h:column><h:commandLink action="#{categoryData.getProductwithCat(c)}" value="#{c.categoryName}"> </h:commandLink>
-  </h:column>
+    <h:column><h:commandLink action="#{categoryData.getProductwithCat(c.categoryName)}" value="#{c.categoryName}" /></h:column>
 </h:dataTable>
 		
 		</h:form>		
