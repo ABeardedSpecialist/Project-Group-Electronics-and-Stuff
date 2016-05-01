@@ -80,13 +80,12 @@ public class categoryData implements Serializable {
 		return theList;
 	}
 
-	public String getProductwithCat(){
+	public String getProductwithCat(category in){
 		try {
-		String	checks =(FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("test"));
 			catList.removeAll(catList);
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-			String quary = "SELECT * FROM webshop.productview WHERE CategoryName ='"+checks+"';";
+			String quary = "SELECT * FROM webshop.productview WHERE CategoryName ='"+in.getCategoryName()+"'";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
