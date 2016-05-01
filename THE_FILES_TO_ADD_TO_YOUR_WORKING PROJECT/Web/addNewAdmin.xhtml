@@ -8,13 +8,13 @@
 <h:body>
     <h:form>
         <h:outputLabel value="Username: "/>
-        <h:inputText id="Username" value="#{admin.username}"/>
+        <h:inputText id="Username" value="#{adminData.ad.username}"/>
         <br/>
         <h:outputLabel value="Password:  "/>
-        <h:inputSecret id="Password" value="#{admin.password}"/>
+        <h:inputSecret id="Password" value="#{adminData.ad.password}"/>
         <br/>
         <br/>
-        <h:commandButton value="Add" action="#{admin.createNewAdmin()}"/>
+        <h:commandButton value="Add" action="#{adminData.createNewAdmin()}"/>
     </h:form>
 </h:body>
 </html>

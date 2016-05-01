@@ -20,6 +20,8 @@ public class product  {
 	private String productCategory;
 	private String productSubcategory;
 	private boolean editable;
+	
+	
 	public String getProductName() {
 		return productName;
 	}

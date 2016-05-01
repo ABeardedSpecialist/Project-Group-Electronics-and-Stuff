@@ -10,13 +10,13 @@
     <h2>Create new Admin:</h2><br/>
     <h:form>
         <h:outputLabel value="Username: "/>
-        <h:inputText id="Username" value="#{admin.username}"/>
+        <h:inputText id="Username" value="#{adminData.user}"/>
         <br/>
         <h:outputLabel value="Password:  "/>
-        <h:inputSecret id="Password" value="#{admin.password}"/>
+        <h:inputSecret id="Password" value="#{adminData.pass}"/>
         <br/>
         <br/>
-        <h:commandButton value="Add" action="#{admin.createNewAdmin()}"/>
+        <h:commandButton value="Add" action="#{adminData.createNewAdmin()}"/>
     <br/>
     <h2>Handle products:</h2>
     <h:commandButton value="Add new product" action="newProduct"/>
