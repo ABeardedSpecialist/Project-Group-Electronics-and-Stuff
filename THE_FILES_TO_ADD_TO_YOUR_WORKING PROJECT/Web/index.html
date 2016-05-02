@@ -1,68 +1,75 @@
-<!DOCTYPE html>
-<html>
-         <head>
-                 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-                 <meta name="viewport" content="width=device-width,  maximum-scale=1.0,  minimum-scale=1.0, initial-scale=1.0" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width,  maximum-scale=1.0,  minimum-scale=1.0, initial-scale=1.0"/>
 
-                 <title>Latest</title>
-                 <link rel="stylesheet" type="text/css" href="css/styles.css" />
-                 <link rel="stylesheet" type="text/css" href="css/layout_large.css" />
-                 <link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:500px)"
-                          href="css/layout_small.css" />
-                 <link rel="stylesheet" type="text/css" media="only screen and (min-width:501px) and (max-width:800px)"
-                          href="css/layout_medium.css" />
-                          <!--[if lt IE 9]>
-                              <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-                          <![endif]-->
-         </head>
-         <body>
-                   <div class="page">
+  <title>Latest</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
 
-                    <header class="header1">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
 
-                                 <nav>
-                                         <ul>
-                                               <li><a href="#">Categories</a><ul>
-                                               <li><a href="#" >Category1</a> </li>
-                                               <li><a href="#" >Category2</a> </li>
-                                               <li><a href="#" >Category3</a> </li>
-                                           </ul></li><li>
-                                                <a href="#">Home</a></li><li>
-                                                <a href="#">About</a></li><li>
-                                                <a href="#">Contact</a></li>
-                                        </ul>
-                                 </nav>
-                    </header>
+  <div id="page">
 
-                    <main>
+    <div id="nav">
 
-                              <div class="main">
+      <div id ="button">
+        <button type="button">Cart</button>
+      </div>
 
-                                      <h1>Here will be the slider</h1>
 
-                              <div class="main_text">
+      <ul>
+        <li><a href="#">Categories</a>
+          <ul>
+            <li><a href="#">Laptops</a></li>
+            <li><a href="#">Stationary</a></li>
+            <li><a href="#">Headphones</a></li>
+            <li><a href="#">Screens</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Home</a></li><li>
+          <a href="#">About</a></li><li>
+            <a href="#">Contact</a></li>
+          </ul>
 
-                                     <h1>Here will be the main text</h1>
-                              </div><!--main_text-->
-                              </div><!--main-->
+        </div><!--nav-->
 
-                              <aside class="news_sidebar">
-                                         <h2>News</h2>
-                                         <p>Check out our new stuff!</p>
-                                         <!--Here there will be a image slider fading images of new stuff-->
-                              </aside>
+        <div id="main">
 
-                              <aside class="sale_sidebar">
-                                         <h2>Sale</h2>
-                                         <p>Cheap stuff on sale!</p>
-                                         <!--Here there will be a image slider fading images of  stuff on sale-->
-                              </aside>
+          <div class="main">
 
-                              <footer>
-                                    &   copy; Project electronics
-                              </footer>
+            <h1 id="news">NEW </h1>
+            <div class="slider">
+              <div class="slide1"><img src="screen.jpg" alt="screen"/></div>
+              <div class="slide2"><img src="computer.jpg" alt="computer"/></div>
+              <div class="slide3"><img src="head.jpg" alt="head"/></div>
+            </div><!--slider-->
+          </div><!--main-->
 
-                    </main>
-                  </div><!--page-->
-       </body>
-</html>
+
+
+          <div class="sale">
+            <p id="undertext">Check out the latest and greatest!</p>
+          </div>
+
+          <div id="form">
+            Username <input type="text" name=""/>
+            Password <input type="password" name=""/>
+            <input type="button" name="name" value="Submit"/>
+          </div>
+
+
+
+          <div id="footer">
+            &amp;   copy; Project electronics
+          </div>
+
+        </div><!--main-->
+      </div><!--page-->
+    </body>
+    </html>
