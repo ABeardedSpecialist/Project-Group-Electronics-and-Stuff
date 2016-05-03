@@ -1,7 +1,7 @@
 
 .border {
 	
-	height: 800px;
+	height: 450px;
 	margin: 0 auto;
 	border: 2px solid;
 	width: 500px;
@@ -11,7 +11,7 @@ background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,
 background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-
+background-color: silver;
 	border-radius: 30px;
 	margin-top: 50px;
 	
@@ -42,5 +42,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .test2:hover {
     background-color: #008CBA;
     color: white;
+}
+.h1 {
+	
+	font-family: 'Indie Flower', cursive;
+	
 }
 

@@ -21,7 +21,7 @@ Copy text
   height: 1200px;
 }
 p{
-  background-color: black;
+  /*background-color: black;*/
   color: black;
   padding: 10px;
 }
@@ -191,6 +191,12 @@ form{
 #test2:hover {
 	
 	background-color: green;
+	
+}
+.ForTheSearchBar {
+	
+	float: left;
+	top-margin: 300px;
 	
 }
 
