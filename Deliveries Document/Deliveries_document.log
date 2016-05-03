@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  26 APR 2016 09:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  3 MAY 2016 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,15 +687,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 132.
 
-Overfull \hbox (66.0527pt too wide) in paragraph at lines 132--140
+Overfull \hbox (66.0527pt too wide) in paragraph at lines 132--141
  [][] 
  []
 
 [1]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 148.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 149.
 
-Overfull \hbox (37.59995pt too wide) in paragraph at lines 150--160
+Overfull \hbox (37.59995pt too wide) in paragraph at lines 151--161
  [][] 
  []
 
@@ -712,7 +712,7 @@ Here is how much of TeX's memory you used:
 se/8r.enc}<c:/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texl
 ive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2015/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Deliveries_document.pdf (4 pages, 622957 bytes).
+Output written on Deliveries_document.pdf (4 pages, 622792 bytes).
 PDF statistics:
  35 PDF objects out of 1000 (max. 8388607)
  21 compressed objects within 1 object stream
