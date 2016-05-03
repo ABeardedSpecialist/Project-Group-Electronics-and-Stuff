@@ -5,54 +5,96 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-	
+<style>
+.styleClazz {
+	font-size: 1em;
+	color: black;
+	border-style: solid;
+	border-color: #d4d4d4;
+	border-width: 1px;
+	height: 40px;
+}
+
+.headerClazz {
+	background-color: black;
+	font-size: 1.2em;
+	color: white; text-align : center;
+	border-style: solid;
+	border-color: #d4d4d4;
+	border-width: 1px;
+	text-align: center;
+}
+
+.column {
+	text-align: center;
+	border-style: solid;
+	border-color: #d4d4d4;
+	border-width: 1px;
+}
+
+.result {
+	background-color: yellow;
+	font-size: 1.2em;
+	color: #919191;
+	align: center;
+	border-style: solid; border-color : #d4d4d4; border-width : 1px;
+	text-align: center;
+}
+.result2 {
+	font-size: 1.8em;
+	align: center;
+	text-align: center;
+}
+</style>
 <f:view>
-	<h:outputLabel value="Search Results" />
+	<h:panelGrid  style="text-align:center;width:100%;">
+		<h:outputLabel styleClass="result2" value="Search Results" />
+	</h:panelGrid>
+
 	<h:body>
 		<h:form>
 			<br />
-			<h:outputLabel value="Your search results:" />
-
+			<h:outputLabel styleClass="result"  value="Your search results:" />
 			<br />
-			<h:dataTable value="#{searchBean.searchRes}" var="rs">
+			<br />
+			<h:dataTable cellspacing="0" cellpadding="0"  value="#{searchBean.searchRes}" var="rs"
+				styleClass="styleClazz" headerClass="headerClazz"
+				columnClasses="column,column,column,column,column,column,column,column">
 
 				<h:column>
 					<f:facet name="header">Name</f:facet>
-					<h:outputText value="#{rs.productName}" size="20"/>
-
+					<h:outputText value="#{rs.productName}" size="20" />
 
 				</h:column>
 				<h:column>
 					<f:facet name="header">Price</f:facet>
-					<h:outputText value="#{rs.productPrice}" size="20"/>
-				
+					<h:outputText style="color:red" value="#{rs.productPrice}" size="20" />
+
 				</h:column>
 				<h:column>
 					<f:facet name="header">Quantity</f:facet>
-					<h:outputText value="#{rs.productQuantity}" size="20"/>
+					<h:outputText value="#{rs.productQuantity}" size="20" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Image</f:facet>
-					<h:graphicImage value="#{rs.productImage}" size="150"/>
+					<h:graphicImage value="#{rs.productImage}" size="150" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Description</f:facet>
-					<h:outputText value="#{rs.productDescription}" size="20"/>
+					<h:outputText value="#{rs.productDescription}" size="20" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Category</f:facet>
-					<h:outputText value="#{rs.productCategory}" size="20"/>
+					<h:outputText value="#{rs.productCategory}" size="20" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Subcategory</f:facet>
-					<h:outputText value="#{rs.productSubcategory}" size="20"/>
+					<h:outputText value="#{rs.productSubcategory}" size="20" />
 				</h:column>
 				<h:column>
-					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
+					<h:commandButton value="Add to Cart" action="invalid" />
 				</h:column>
 			</h:dataTable>
-			<br/>
-			<h:commandButton value="Go to Cart" action="CartPage"/>
 		</h:form>
 
 	</h:body>
