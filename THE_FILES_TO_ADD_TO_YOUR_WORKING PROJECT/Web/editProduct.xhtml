@@ -56,8 +56,8 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">Category</f:facet>
-					<h:selectOneMenu value="#{pr.categoryID}" onchange="submit()"  rendered="#{pr.editable}" >
-						<f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}" itemLabel="#{cd.categoryName}"/>
+					<h:selectOneMenu value="#{pr.subcategoryID}" onchange=""  rendered="#{pr.editable}" >
+						<f:selectItems value="#{productData.categoryIDList}"/>
 					</h:selectOneMenu>
 					<h:outputText value="#{pr.productCategory}"
 						rendered="#{not pr.editable}" />

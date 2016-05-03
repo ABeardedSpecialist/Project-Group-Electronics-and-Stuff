@@ -5,7 +5,9 @@ import Products.product;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,6 +17,7 @@ import java.util.List;
 @SessionScoped
 public class Cart implements Serializable {
 
+    private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";;
     private List<cartItem> ID = new ArrayList<>();
     private int totalPrice;
     private int numberOfProducts;

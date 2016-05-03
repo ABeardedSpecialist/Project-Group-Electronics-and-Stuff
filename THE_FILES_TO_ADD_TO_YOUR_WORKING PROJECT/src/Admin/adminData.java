@@ -34,9 +34,11 @@ public class adminData implements Serializable {
         return aList;
     }
 
+
     public void setaList(List<admin> aList) {
         this.aList = aList;
     }
+
 
     public String createNewAdmin() {
         String result = "invalid";
@@ -71,6 +73,7 @@ public class adminData implements Serializable {
         return result;
 
     }
+
     public String checkIfAdminExist() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -104,7 +107,9 @@ public class adminData implements Serializable {
         }
         return "invalid";
     }
+
     private List<admin> adminList() {
+
         try {
             aList.removeAll(aList);
             Class.forName("com.mysql.jdbc.Driver");
@@ -175,6 +180,7 @@ public class adminData implements Serializable {
         }
         adminList();
     }
+
     public String editAdmin(admin ad) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -193,6 +199,7 @@ public class adminData implements Serializable {
         ad.setEdit(false);
         adminList();
         return "isdaw";
+
 
     }
 }

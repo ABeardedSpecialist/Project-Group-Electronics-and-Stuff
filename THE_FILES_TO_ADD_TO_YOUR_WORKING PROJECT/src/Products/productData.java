@@ -1,7 +1,5 @@
 package Products;
 
-import Category.category;
-
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
@@ -19,6 +17,7 @@ public class productData implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private List<product> theData = new ArrayList<product>();
+
     private product pr;
 
 
@@ -165,24 +164,23 @@ public class productData implements Serializable {
         return "editProduct";
     }
 
-    public List<category> getCategoryIDList() {
-        List<category> IDlist = new ArrayList<>();
+    public List<Integer> getCategoryIDList() {
+        List<Integer> IDlist = new ArrayList<>();
         try {
+
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String total = "SELECT * FROM webshop.category";
+            String total = "SELECT COUNT(*) AS total FROM webshop.category";
             PreparedStatement statement = conn.prepareStatement(total);
-            ResultSet rs = statement.getResultSet();
-            if(!rs.next()){
-                System.out.println("bajs");
+            ResultSet rs = statement.executeQuery();
+            if(rs.next()) {
+                int number = rs.getInt("total");
+                System.out.println(number);
+                for (int i = 1; i <= number; i++) {
+                    IDlist.add(i);
+                }
             }
-         /*   *//*while(rs.next()){
-                category cd = new category();
-                cd.setCatID(rs.getInt(1));
-                cd.setCategoryName(rs.getString(2));
-                IDlist.add(cd);
-                System.out.println(cd.getCatID() + cd.getCategoryName());*//*
-            }*/
+
 
         } catch (SQLException e) {
             e.printStackTrace();
