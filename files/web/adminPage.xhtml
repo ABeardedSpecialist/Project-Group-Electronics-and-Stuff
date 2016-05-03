@@ -6,14 +6,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:body>
-    <h1>Admin page!</h1><br/>
-    <h2>Create new Admin:</h2><br/>
     <h:form>
-        <h:outputLabel value="Username: "/>
-        <h:inputText id="Username" value="#{admin.username}"/>
-        <br/>
-        <h:outputLabel value="Password:  "/>
-        <h:inputSecret id="Password" value="#{admin.password}"/>
+    <h1>Admin page!</h1><br/>
         <br/>
         <br/>
         <h:commandButton value="Add Admin" action="addNewAdmin"/>

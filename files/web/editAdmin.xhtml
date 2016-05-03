@@ -8,7 +8,7 @@
 <f:view>
     <h:outputLabel value="Edit or remove Admin"/>
     <h:form>
-        <h:dataTable value="#{admin.aList}" var="ad">
+        <h:dataTable value="#{adminData.aList}" var="ad">
             <h:column>
                 <f:facet name="Username">Username</f:facet>
                 #{ad.username}
@@ -21,14 +21,14 @@
                               rendered="#{not ad.edit}" />
             </h:column>
             <h:column>
-                <h:commandButton value="Edit" action="#{admin.trueEdit(ad)}"
+                <h:commandButton value="Edit" action="#{adminData.trueEdit(ad)}"
                                  rendered="#{not ad.edit}" />
 
-                <h:commandButton action="#{admin.editAdmin(ad)}" value="Save Changes"
+                <h:commandButton action="#{adminData.editAdmin(ad)}" value="Save Changes"
                                  rendered="#{ad.edit}" />
             </h:column>
             <h:column>
-                <h:commandButton value="Remove" action="#{admin.removeAdmin(ad.username)}" update="@form" ajax="true" />
+                <h:commandButton value="Remove" action="#{adminData.removeAdmin(ad)}" update="@form" ajax="true" />
             </h:column>
         </h:dataTable>
     </h:form>

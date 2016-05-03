@@ -27,6 +27,7 @@ public class searchBean implements Serializable {
 	
 	
 	
+	
 	public String getSearchVal() {
 		return searchVal;
 	}
@@ -46,7 +47,7 @@ public class searchBean implements Serializable {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-			String quary = "SELECT * FROM productview WHERE ProductName LIKE '%" + this.searchVal + "%'";
+			String quary = "SELECT * FROM webshop.productview WHERE ProductName LIKE '%" + this.searchVal + "%'";
 			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.executeQuery();
 			ResultSet rs = statement.getResultSet();
