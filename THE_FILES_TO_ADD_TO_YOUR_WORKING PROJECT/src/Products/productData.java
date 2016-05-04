@@ -73,13 +73,13 @@ public class productData implements Serializable {
         return theData;
     }
 
-    public String addProduct() {
+    public void addProduct() {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-            String quary = "INSERT INTO webshop.productview (ProductName, ProductPrice, ProductQuantity, " +
+            String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                     "ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.setString(1, pr.getProductName());
@@ -97,12 +97,10 @@ public class productData implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return "ldaw";
     }
 
     public void removeProduct(int in) {
         try {
-
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
@@ -174,7 +172,7 @@ public class productData implements Serializable {
             PreparedStatement statement = conn.prepareStatement(total);
             ResultSet rs = statement.getResultSet();
             if(!rs.next()){
-                System.out.println("bajs");
+
             }
          /*   *//*while(rs.next()){
                 category cd = new category();

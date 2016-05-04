@@ -28,9 +28,10 @@
                                  rendered="#{ad.edit}" />
             </h:column>
             <h:column>
-                <h:commandButton value="Remove" action="#{adminData.removeAdmin(ad.username)}" update="@form" ajax="true" />
+                <h:commandButton value="Remove" action="#{adminData.removeAdmin(ad)}" update="@form" ajax="true" />
             </h:column>
         </h:dataTable>
+        <h:commandButton value="Go back" action="adminPage"/>
     </h:form>
 </f:view>
 </html>

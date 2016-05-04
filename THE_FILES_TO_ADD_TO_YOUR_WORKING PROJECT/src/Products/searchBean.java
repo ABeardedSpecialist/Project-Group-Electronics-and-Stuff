@@ -15,7 +15,7 @@ import javax.faces.bean.SessionScoped;
 
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class searchBean implements Serializable {
 	/**
 	 * 
