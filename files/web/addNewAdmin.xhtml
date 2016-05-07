@@ -5,8 +5,52 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+    <h:head>
+     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+     	<meta name="name" content="content" />
+		<link href="AdminPageStyle.css" rel="stylesheet" type="text/css" />
+     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+     </h:head>
+     
+ 
 <h:body>
-    <h:form>
+
+
+	
+			 <div id="page">
+
+    <div id="nav">
+
+      <div id ="button">
+        <button type="button">Cart</button>
+      </div>
+
+
+      <ul>
+        <li><a href="#">Categories</a>
+          <ul>
+            <li><a href="#">Laptops</a></li>
+            <li><a href="#">Stationary</a></li>
+            <li><a href="#">Headphones</a></li>
+            <li><a href="#">Screens</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Home</a></li><li>
+          <a href="#">About</a></li><li>
+            <a href="#">Contact</a></li>
+          </ul>
+
+        </div>
+
+       <div class = "border">
+		
+    
+     <h:form>
+     	<h1 class ="h1">Add an administrator</h1>
         <h:outputLabel value="Username: "/>
         <h:inputText id="Username" value="#{adminData.user}"/>
         <br/>
@@ -15,6 +59,26 @@
         <br/>
         <br/>
         <h:commandButton value="Add" action="#{adminData.createNewAdmin()}"/>
+         <br/>
+         <h:commandButton value="Go back" action="adminPage"/>
     </h:form>
+   	
+    </div>
+
+          <div id="footer">
+            &amp;   copy; Project electronics
+          </div>
+
+        </div>
+      
+			
+
+
+
+
+	
+	
+    
+    
 </h:body>
 </html>

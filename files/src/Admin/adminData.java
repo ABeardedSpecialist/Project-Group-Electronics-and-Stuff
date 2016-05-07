@@ -26,6 +26,10 @@ public class adminData implements Serializable {
 
     }
 
+    public String goToEditAdmin(){
+        adminList();
+        return "editAdmin";
+    }
     public void trueEdit(admin ad) {
         ad.setEdit(true);
     }
@@ -38,8 +42,7 @@ public class adminData implements Serializable {
         this.aList = aList;
     }
 
-    public String createNewAdmin() {
-        String result = "invalid";
+    public void createNewAdmin() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
@@ -59,16 +62,15 @@ public class adminData implements Serializable {
                 } finally {
                     conn.close();
                 }
-                result = "correct";
+
             } else {
-                result = "invalid";
+                System.out.println("error");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return result;
 
     }
     public String checkIfAdminExist() {

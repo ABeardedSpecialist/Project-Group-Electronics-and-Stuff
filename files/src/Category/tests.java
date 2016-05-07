@@ -41,7 +41,6 @@ public class tests {
 		pr.setProductImage(rs.getString(5));
 		pr.setProductDescription(rs.getString(6));
 		pr.setProductCategory(rs.getString(7));
-		pr.setProductSubcategory(rs.getString(8));
 		catList.add(pr);}
 
 		conn.close();

@@ -5,82 +5,103 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+	<title>EditProduct</title>
+
+	<link href="CSS/editProduct.css" rel="stylesheet" type="text/css" />
+
+
+
+</h:head>
+
 <f:view>
-	<h:outputLabel value="Edit Product" />
+<div id="holdPage">
+	<div id="Title">
+		<h:outputLabel value="Edit Product" />
+	</div>
 	<h:body>
 		<h:form>
 			<br />
-			<h:outputLabel value="What Product do you want to change?" />
+			
+			<div id="Qustion">
+				<h:outputLabel value="What Product do you want to change?" />
+			</div>
 			<br />
-			<h:dataTable value="#{productData.theData}" var="pr">
-				<h:column>
-					<f:facet name="header">ID</f:facet>
+			<div id="DataBaseTable">
+				
+				<h:dataTable value="#{productData.theData}" var="pr">
+					<h:column>
+						<f:facet name="header">ID</f:facet>
                 #{pr.productID}
             </h:column>
-				<h:column>
-					<f:facet name="header">Name</f:facet>
-					<h:inputText value="#{pr.productName}" size="20"
-						rendered="#{pr.editable}" />
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+						<h:inputText value="#{pr.productName}" size="20"
+							rendered="#{pr.editable}" />
 
-					<h:outputText value="#{pr.productName}"
-						rendered="#{not pr.editable}" />
+						<h:outputText value="#{pr.productName}"
+							rendered="#{not pr.editable}" />
 
-				</h:column>
-				<h:column>
-					<f:facet name="header">Price</f:facet>
-					<h:inputText value="#{pr.productPrice}" size="20"
-						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productPrice}"
-						rendered="#{not pr.editable}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">Quantity</f:facet>
-					<h:inputText value="#{pr.productQuantity}" size="5"
-						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productQuantity}"
-						rendered="#{not pr.editable}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">Image</f:facet>
-					<h:inputText value="#{pr.productImage}" size="10"
-						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productImage}"
-						rendered="#{not pr.editable}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">Description</f:facet>
-					<h:inputText value="#{pr.productDescription}" size="20"
-						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productDescription}"
-						rendered="#{not pr.editable}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">Category</f:facet>
-					<h:selectOneMenu value="#{pr.categoryID}" onchange="submit()"  rendered="#{pr.editable}" >
-						<f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}" itemLabel="#{cd.categoryName}"/>
-					</h:selectOneMenu>
-					<h:outputText value="#{pr.productCategory}"
-						rendered="#{not pr.editable}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">Subcategory</f:facet>
-					<h:inputText value="#{pr.subcategoryID}" size="20"
-						rendered="#{pr.editable}" />
-					<h:outputText value="#{pr.productSubcategory}"
-						rendered="#{not pr.editable}" />
-				</h:column>
-				<h:column>
-					<h:commandButton value="Edit" action="#{productData.editAction(pr)}"
-						rendered="#{not pr.editable}" />
-					
-					<h:commandButton action="#{productData.editProducts(pr)}" value="Save Changes"
-						rendered="#{pr.editable}" />
-				</h:column>
-				<h:column>
-					<h:commandButton value="Delete" action="#{productData.removeProduct(pr.productID)}" update="@form" ajax="true" />
-				</h:column>
-			</h:dataTable>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Price</f:facet>
+						<h:inputText value="#{pr.productPrice}" size="20"
+							rendered="#{pr.editable}" />
+						<h:outputText value="#{pr.productPrice}"
+							rendered="#{not pr.editable}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Quantity</f:facet>
+						<h:inputText value="#{pr.productQuantity}" size="20"
+							rendered="#{pr.editable}" />
+						<h:outputText value="#{pr.productQuantity}"
+							rendered="#{not pr.editable}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Image</f:facet>
+						<h:inputText value="#{pr.productImage}" size="20"
+							rendered="#{pr.editable}" />
+						<h:outputText value="#{pr.productImage}"
+							rendered="#{not pr.editable}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Description</f:facet>
+						<h:inputText value="#{pr.productDescription}" size="20"
+							rendered="#{pr.editable}" />
+						<h:outputText value="#{pr.productDescription}"
+							rendered="#{not pr.editable}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Category</f:facet>
+						<h:selectOneMenu value="#{pr.categoryID}" onchange="submit()"  rendered="#{pr.editable}" >
+							<f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}" itemLabel="#{cd.categoryName}"/>
+						</h:selectOneMenu>
+						<h:outputText value="#{pr.productCategory}"
+									  rendered="#{not pr.editable}" />
+					</h:column>
+					<div class="form-input">
+						<h:column>
+							<h:commandButton value="Edit"
+								action="#{productData.editAction(pr)}"
+								rendered="#{not pr.editable}" />
+
+							<h:commandButton action="#{productData.editProducts(pr)}"
+								value="Save Changes" rendered="#{pr.editable}" />
+						</h:column>
+					</div>
+					<h:column>
+						<h:commandButton value="Delete"
+							action="#{productData.removeProduct(pr.productID)}"
+							update="@form" ajax="true" />
+
+					</h:column>
+				</h:dataTable>
+			</div>
 		</h:form>
+
 	</h:body>
+	</div>
 </f:view>
 </html>
