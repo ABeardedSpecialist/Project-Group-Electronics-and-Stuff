@@ -159,6 +159,21 @@ body{
   margin-bottom: 3em;
   float: left;
 }
+#header{
+  width: 100%;
+  height: 100px;
+  background-color: #a6430a;
+}
+#picture{
+margin: 150px 50px 50px 300px;
+position: relative;
+}
+#info{
+  margin: 50px 50px 5px 50px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
 .slider {
   margin-top: 5%;
   width: 70%;
