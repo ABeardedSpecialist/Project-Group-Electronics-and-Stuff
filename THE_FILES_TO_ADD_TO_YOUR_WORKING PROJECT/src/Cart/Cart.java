@@ -3,6 +3,7 @@ package Cart;
 import Products.product;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,7 +14,12 @@ import java.util.List;
  */
 @Named
 @SessionScoped
+@ManagedBean (name = "Cart")
 public class Cart implements Serializable {
+
+    public void setID(List<cartItem> ID) {
+        this.ID = ID;
+    }
 
     private List<cartItem> ID = new ArrayList<>();
     private int totalPrice;

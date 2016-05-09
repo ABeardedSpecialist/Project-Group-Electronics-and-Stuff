@@ -42,10 +42,6 @@
 					<h:outputText value="#{rs.productCategory}" size="20"/>
 				</h:column>
 				<h:column>
-					<f:facet name="header">Subcategory</f:facet>
-					<h:outputText value="#{rs.productSubcategory}" size="20"/>
-				</h:column>
-				<h:column>
 					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
 				</h:column>
 			</h:dataTable>

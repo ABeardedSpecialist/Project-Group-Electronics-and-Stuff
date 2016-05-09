@@ -28,10 +28,6 @@
             #{ci.item.productCategory}
         </h:column>
         <h:column>
-            <f:facet name="header">Subcategory</f:facet>
-            #{ci.item.productSubcategory}
-        </h:column>
-        <h:column>
             <h:selectOneMenu value="#{ci.quantity}" onchange="submit()" update="@form" ajax="true">
                 <f:selectItems value="#{cart.getQuantity(ci.item.productQuantity)}"/>
             </h:selectOneMenu>
@@ -45,6 +41,7 @@
     <h:outputLabel value="Total price: #{cart.totalPrice}"/>
         <br/>
         <h:commandButton value="Go back" action="CurrentTemplate"/>
+        <h:commandButton value="Go to checkout" action="OrderPage"/>
     </h:form>
 </f:view>
 </html>

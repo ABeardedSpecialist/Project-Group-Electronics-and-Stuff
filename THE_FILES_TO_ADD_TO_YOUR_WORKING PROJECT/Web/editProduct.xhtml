@@ -75,17 +75,11 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">Category</f:facet>
-						<h:inputText value="#{pr.productCategory}" size="20"
-							rendered="#{pr.editable}" />
+						<h:selectOneMenu value="#{pr.categoryID}" onchange="submit()"  rendered="#{pr.editable}" >
+							<f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}" itemLabel="#{cd.categoryName}"/>
+						</h:selectOneMenu>
 						<h:outputText value="#{pr.productCategory}"
-							rendered="#{not pr.editable}" />
-					</h:column>
-					<h:column>
-						<f:facet name="header">Subcategory</f:facet>
-						<h:inputText value="#{pr.productSubcategory}" size="20"
-							rendered="#{pr.editable}" />
-						<h:outputText value="#{pr.productSubcategory}"
-							rendered="#{not pr.editable}" />
+									  rendered="#{not pr.editable}" />
 					</h:column>
 					<div class="form-input">
 						<h:column>

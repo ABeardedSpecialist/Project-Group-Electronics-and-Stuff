@@ -56,9 +56,7 @@ public class productData implements Serializable {
                 pr.setProductImage(rs.getString(5));
                 pr.setProductDescription(rs.getString(6));
                 pr.setProductCategory(rs.getString(7));
-                pr.setProductSubcategory(rs.getString(8));
-                pr.setCategoryID(rs.getInt(9));
-                pr.setSubcategoryID(rs.getInt(10));
+                pr.setCategoryID(rs.getInt(8));
                 theData.add(pr);
             }
 
@@ -80,7 +78,7 @@ public class productData implements Serializable {
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
             String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
-                    "ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
+                    "ProductImage, ProductDescription, ProductCategory)" + " VALUES (?,?,?,?,?,?)";
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.setString(1, pr.getProductName());
             statement.setInt(2, pr.getProductPrice());
@@ -88,7 +86,6 @@ public class productData implements Serializable {
             statement.setString(4, pr.getProductImage());
             statement.setString(5, pr.getProductDescription());
             statement.setString(6, pr.getProductCategory());
-            statement.setString(7, pr.getProductSubcategory());
             statement.execute();
 
             conn.close();
@@ -122,7 +119,7 @@ public class productData implements Serializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
             String query = "UPDATE webshop.products SET ProductName=?, ProductPrice=?,ProductQuantity=?," +
-                    "ProductImage=?,ProductDescription=?,ProductCategory=?,ProductSubcategory=? WHERE productID = ?";
+                    "ProductImage=?,ProductDescription=?,ProductCategory=? WHERE productID = ?";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, prod.getProductName());
             statement.setInt(2, prod.getProductPrice());
@@ -130,8 +127,7 @@ public class productData implements Serializable {
             statement.setString(4, prod.getProductImage());
             statement.setString(5, prod.getProductDescription());
             statement.setInt(6, prod.getCategoryID());
-            statement.setInt(7, prod.getSubcategoryID());
-            statement.setInt(8, prod.getProductID());
+            statement.setInt(7, prod.getProductID());
             statement.executeUpdate();
             conn.close();
         } catch (SQLException e) {
@@ -163,6 +159,10 @@ public class productData implements Serializable {
         return "editProduct";
     }
 
+    /**
+     * NOT READY YET
+     * @return
+     */
     public List<category> getCategoryIDList() {
         List<category> IDlist = new ArrayList<>();
         try {

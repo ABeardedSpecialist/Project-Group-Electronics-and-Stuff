@@ -34,21 +34,10 @@ public class categoryData implements Serializable {
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<category> theList=new ArrayList<category>();
 	private List<product> catList=new ArrayList<product>();
-	
-
 
 	public categoryData(){
 		ListPlease();
 	}
-
-
-
-
-
-
-
-
-
 
 	private List<category> ListPlease(){
 
@@ -98,7 +87,6 @@ public class categoryData implements Serializable {
 			pr.setProductImage(rs.getString(5));
 			pr.setProductDescription(rs.getString(6));
 			pr.setProductCategory(rs.getString(7));
-			pr.setProductSubcategory(rs.getString(8));
 			catList.add(pr);}
 
 			conn.close();
@@ -111,15 +99,9 @@ public class categoryData implements Serializable {
 		return "catPage";
 	}
 
-
-
-
 	public List<category> getTheList() {
 		return theList;
 	}
-
-
-
 
 	public void setTheList(List<category> theList) {
 		this.theList = theList;
@@ -128,10 +110,6 @@ public class categoryData implements Serializable {
 	public List<product> getCatList() {
 		return catList;
 	}
-
-
-
-
 
 	public void setCatList(List<product> catList) {
 		this.catList = catList;

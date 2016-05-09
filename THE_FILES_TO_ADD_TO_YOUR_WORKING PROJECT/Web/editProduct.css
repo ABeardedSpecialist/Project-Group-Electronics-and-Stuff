@@ -27,7 +27,7 @@ table {
 #DataBaseTable, th, td {
 	border: 0px medium black;
 		background-image: url("img/backGroundNew.jpg");
-	width: 100px;
+	width: 95%;
 }
 
 th {

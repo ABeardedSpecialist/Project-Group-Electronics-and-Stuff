@@ -18,9 +18,7 @@ public class product  {
 	private String productImage;
 	private String productDescription;
 	private String productCategory;
-	private String productSubcategory;
 	private int categoryID;
-	private int subcategoryID;
 	private boolean editable;
 
 
@@ -72,14 +70,6 @@ public class product  {
 		this.productCategory = input;
 	}
 
-	public String getProductSubcategory() {
-		return productSubcategory;
-	}
-
-	public void setProductSubcategory(String input) {
-		this.productSubcategory = input;
-	}
-
 	public int getProductID() {
 		return productID;
 	}
@@ -94,14 +84,6 @@ public class product  {
 
 	public void setCategoryID(int categoryID) {
 		this.categoryID = categoryID;
-	}
-
-	public int getSubcategoryID() {
-		return subcategoryID;
-	}
-
-	public void setSubcategoryID(int subcategoryID) {
-		this.subcategoryID = subcategoryID;
 	}
 
 	public boolean isEditable(){
