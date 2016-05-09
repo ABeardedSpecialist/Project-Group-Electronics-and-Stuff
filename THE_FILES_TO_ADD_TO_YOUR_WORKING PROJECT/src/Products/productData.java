@@ -1,5 +1,7 @@
 package Products;
 
+import Category.category;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
@@ -17,7 +19,6 @@ public class productData implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private List<product> theData = new ArrayList<product>();
-
     private product pr;
 
 
@@ -72,13 +73,13 @@ public class productData implements Serializable {
         return theData;
     }
 
-    public String addProduct() {
+    public void addProduct() {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-            String quary = "INSERT INTO webshop.productview (ProductName, ProductPrice, ProductQuantity, " +
+            String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                     "ProductImage, ProductDescription, ProductCategory, ProductSubcategory)" + " VALUES (?,?,?,?,?,?,?)";
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.setString(1, pr.getProductName());
@@ -96,12 +97,10 @@ public class productData implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return "ldaw";
     }
 
     public void removeProduct(int in) {
         try {
-
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
@@ -164,23 +163,24 @@ public class productData implements Serializable {
         return "editProduct";
     }
 
-    public List<Integer> getCategoryIDList() {
-        List<Integer> IDlist = new ArrayList<>();
+    public List<category> getCategoryIDList() {
+        List<category> IDlist = new ArrayList<>();
         try {
-
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String total = "SELECT COUNT(*) AS total FROM webshop.category";
+            String total = "SELECT * FROM webshop.category";
             PreparedStatement statement = conn.prepareStatement(total);
-            ResultSet rs = statement.executeQuery();
-            if(rs.next()) {
-                int number = rs.getInt("total");
-                System.out.println(number);
-                for (int i = 1; i <= number; i++) {
-                    IDlist.add(i);
-                }
-            }
+            ResultSet rs = statement.getResultSet();
+            if(!rs.next()){
 
+            }
+         /*   *//*while(rs.next()){
+                category cd = new category();
+                cd.setCatID(rs.getInt(1));
+                cd.setCategoryName(rs.getString(2));
+                IDlist.add(cd);
+                System.out.println(cd.getCatID() + cd.getCategoryName());*//*
+            }*/
 
         } catch (SQLException e) {
             e.printStackTrace();

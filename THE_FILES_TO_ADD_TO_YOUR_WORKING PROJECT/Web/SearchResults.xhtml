@@ -6,13 +6,22 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
+	<h:head>
+	<title>Search Results Page</title>
+	<link href="search.css" rel="stylesheet" type="text/css" />
+</h:head>
+	
 <f:view>
+<div id="holdPage">
+	<div id="Title">
 	<h:outputLabel value="Search Results" />
+	</div>
 	<h:body>
 		<h:form>
 			<br />
+			<div id="Qustion">
 			<h:outputLabel value="Your search results:" />
-
+			</div>
 			<br />
 			<h:dataTable value="#{searchBean.searchRes}" var="rs">
 
@@ -48,13 +57,16 @@
 					<h:outputText value="#{rs.productSubcategory}" size="20"/>
 				</h:column>
 				<h:column>
-					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
+					<h:commandButton class="Buttons Buttonss" value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
 				</h:column>
 			</h:dataTable>
 			<br/>
-			<h:commandButton value="Go to Cart" action="CartPage"/>
+			 <br/>
+			<h:commandButton class="Button" value="Go to Cart" action="CartPage"/>
+			
 		</h:form>
 
 	</h:body>
+	</div>
 </f:view>
 </html>

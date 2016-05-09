@@ -1,0 +1,187 @@
+@CHARSET "UTF-8";
+
+body {
+	color: #000000;
+	margin: -243px 37% 36px -11%;
+	padding-left: 204px;
+}
+
+#holdPage {
+	margin: 370px auto 700px;
+	width: 900px;
+}
+
+#Title {
+	color: black;
+	font-family: serif;
+	font-size: 54px;
+	font-style: oblique;
+	text-align: right;
+	padding-right: 54px;
+}
+
+
+#Order {
+	color: black;
+	font-size: large;
+	font-family: fantasy;
+	text-align: center;
+	padding-left: 67%;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 1100px;
+ 	margin-left:174px;
+	font-style: 15pt;
+	
+}
+
+#DataBaseTable, th, td {
+	border: 0px medium black;
+	background-image: url("img/backGroundNew.jpg");
+	/* 	width: 100px; */
+	/* 	margin-right: auto; */
+}
+
+th {
+	height: 50px;
+	background-color: #0d280b;
+	color: white;
+	border-collapse: separate;
+}
+
+td {
+	height: 25px;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: #f2f0f3
+}
+
+tr:nth-child(even) {
+	background-color: #b9b6bc
+}
+
+#form-input {
+	width: 12px;
+	background-color: blue;
+}
+
+
+/* #button { */
+/*     border: 3px solid #ffffff; */
+/*     border-radius: 36px; */
+/*     box-shadow: 2px 12px 19px -3px #15110b; */
+/*     color: #ffffff; */
+/*     cursor: pointer; */
+/*     display: inline-block; */
+/*     font-family: Arial; */
+/*     font-size: 14px; */
+/*     font-weight: bold; */
+/*     padding: 8px 17px; */
+/*     text-decoration: none; */
+/*     text-shadow: -1px 2px 0 #180606; */
+/*     margin-left: 699px; */
+
+
+/* } */
+
+
+/* #button:hover { */
+/* 	background-color:#000000; */
+	
+/* } */
+/* #button:active { */
+/* 	position:relative; */
+/* 	top:1px; */
+/* } */
+
+.Button {
+  background: #24282e;
+  
+  border-radius: 6px;
+  
+  cursor: pointer;
+  height: 48px;
+  line-height: 20px;
+  text-align: center;
+  transition-property: background, border-radius;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 122px;
+  font-family: serif;
+  color: white;
+  margin: -25px 0% 0% 77%;
+  font-family: inherit;
+  font-size: 150% ;
+  font-style: italic;
+  
+}
+.Button:hover {
+  background: #d5d5d5;
+  border-radius: 50%;
+  font-size: xx-large;
+  color: black;
+} 
+.Buttons {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 135px;
+}
+
+.Buttons {
+    background-color: white; 
+    color: black; 
+    border: 2px dotted black;
+}
+
+.Buttonss:hover {
+    background-color: black;
+    color: white;
+    
+}
+.Multibul{
+	background-color: Black; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 63px;
+	
+}
+.Multibuls{
+	background-color: white; 
+    color: black; 
+/*     border: 2px dotted black; */
+}
+.Multibulss{
+	 background-color: black;
+    color: white;
+}
+
+

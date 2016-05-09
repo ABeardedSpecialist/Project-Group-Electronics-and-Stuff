@@ -3,47 +3,122 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<title>Admin</title>
-	<link href="CSS/main.css" rel="stylesheet" type="text/css" />
-</h:head>
+  <h:head>
+     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+     	<meta name="name" content="content" />
+		<link href="AdminPageStyle.css" rel="stylesheet" type="text/css" />
+     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+     </h:head>
+     
+ 
+<h:body>
+	
+	
 
-<body>
+	
+			 <div id="page">
+			 
+			 
+			
+			 
+			 
 
-	<div id="header">
-		<a href="newProduct.xhtml"></a>
-		<center>
-			<img src="images/images.jpg" alt="picture" height="80px" id="bild" /><br />Admin
-		</center>
+    <div id="nav">
+
+      <div id ="button">
+        <button type="button">Cart</button>
+      </div>
+
+
+      <ul>
+        <li><a href="#">Categories</a>
+          <ul>
+            <li><a href="#">Laptops</a></li>
+            <li><a href="#">Stationary</a></li>
+            <li><a href="#">Headphones</a></li>
+            <li><a href="#">Screens</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Home</a></li><li>
+          <a href="#">About</a></li><li>
+            <a href="#">Contact</a></li>
+          </ul>
+
+        </div>
+        
+        
+         <div class = "ForTheSearchBar">
+				<p>Search bar</p>
+				<h:inputText id="searchVal" placeholder = "Search..."
+						value="#{searchBean.searchVal}" />
+						<br /> 
+						<h:commandButton class = "test test2"
+						action="#{searchBean.searchResults}" value="Search" />
+	
+	
 	</div>
+        
 
-	<div id="sidebar">
-		<ul>
-			<h:form>
-				<li><h:commandLink action="newProduct" value="Add item"></h:commandLink>
-				</li>
-
-				<li><h:commandLink action="#{productData.edit()}"
-						value="Edit/Delete items"></h:commandLink></li>
-						
-				<li><h:inputText id="searchVal"
+       <div class = "border">
+		
+    
+    <h:form>
+    			<h1 class = "h1">Admin Panel</h1>
+				<h:commandLink action="newProduct" value="Add item"></h:commandLink>
+				
+				
+				<h:commandLink action="#{productData.edit()}"
+						value="Edit/Delete items"></h:commandLink>
+				<br />
+				<h:inputText id="searchVal"
 						value="#{searchBean.searchVal}" /> 
-						<h:commandButton
-						action="#{searchBean.searchResults}" value="Search" /></li>
+						<h:commandButton class = "test test2"
+						action="#{searchBean.searchResults}" value="Search" />
 
 
-
-				<li><a>View sold</a></li>
-
-				<li><a>Log off</a></li>
+				<br />
+				<a>View sold</a>
+				<br />
+				<a>Log off</a>
 			</h:form>
-		</ul>
-	</div>
+   	
+    </div>
 
-	<div id="item">
-		<center>
-			<img class="smallPicture" src="laptop.jpg" alt="picture" />
-		</center>
-	</div>
-</body>
+          <div id="form">
+            
+		<h:form>
+			<h:outputLabel value="Username: " />
+			<h:inputText id="Username" value="#{adminData.user}" />
+			<br />
+			<h:outputLabel value="Password:  " />
+			<h:inputSecret id="Password" value="#{adminData.pass}" />
+			<br />
+			<br />
+			<h:commandButton class = "test test2" value="log In" action="#{adminData.checkIfAdminExist}" />
+			<br />
+		</h:form>
+	
+          </div>
+
+
+
+          <div id="footer">
+            &amp;   copy; Project electronics
+          </div>
+
+        </div>
+      
+			
+
+
+
+
+	
+	
+    
+    
+</h:body>
 </html>
