@@ -35,7 +35,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES ('kalle','wda'),('majmånade','polo'),('Michael','Password123'),('penis','kalle'),('prolles','test'),('Rasmus','ulrich'),('Tadas','ArklioSmots'),('test','test');
+INSERT INTO `admins` VALUES ('Michael','Password123'),('micke','hej'),('polle','test'),('test','test');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-02 15:59:15
+-- Dump completed on 2016-05-10  9:44:36

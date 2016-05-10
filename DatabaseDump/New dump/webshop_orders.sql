@@ -23,15 +23,13 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
-  `OrderID` int(255) NOT NULL AUTO_INCREMENT,
+  `OrderID` int(6) NOT NULL,
   `OrderDate` datetime NOT NULL,
-  `OrderEmail` varchar(45) NOT NULL,
-  `OrderAdress` varchar(45) NOT NULL,
-  `OrderPhone` int(255) DEFAULT NULL,
-  `OrderTotalPrice` int(255) NOT NULL,
-  `OrderStatus` varchar(45) NOT NULL,
+  `OrderProduct` int(255) NOT NULL,
   PRIMARY KEY (`OrderID`),
-  UNIQUE KEY `OrderID_UNIQUE` (`OrderID`)
+  KEY `product_idx` (`OrderProduct`),
+  CONSTRAINT `id` FOREIGN KEY (`OrderID`) REFERENCES `orderid` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `product` FOREIGN KEY (`OrderProduct`) REFERENCES `products` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-02 15:59:15
+-- Dump completed on 2016-05-10  9:44:36

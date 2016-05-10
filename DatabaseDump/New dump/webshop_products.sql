@@ -30,13 +30,11 @@ CREATE TABLE `products` (
   `ProductImage` varchar(150) NOT NULL DEFAULT '',
   `ProductDescription` varchar(300) NOT NULL DEFAULT '',
   `ProductCategory` int(10) DEFAULT NULL,
-  `ProductSubcategory` int(10) DEFAULT NULL,
   PRIMARY KEY (`ProductID`),
+  UNIQUE KEY `ProductID_UNIQUE` (`ProductID`),
   KEY `categories_idx` (`ProductCategory`),
-  KEY `subcategories_idx` (`ProductSubcategory`),
-  CONSTRAINT `categories` FOREIGN KEY (`ProductCategory`) REFERENCES `category` (`CategoryID`) ON UPDATE CASCADE,
-  CONSTRAINT `subcategories` FOREIGN KEY (`ProductSubcategory`) REFERENCES `subcategory` (`SubCategoryID`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  CONSTRAINT `categories` FOREIGN KEY (`ProductCategory`) REFERENCES `category` (`CategoryID`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +43,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'Acer Preditor XH2345',8000,3,'/images/hej.jpg','hej',2,2),(3,'MSI 980 ti',5000,5,' ','bla bla',3,3),(5,'Samsung ATIV Book 9',15000,1,'http://www.samsung.com/us/system/consumer/product/np/93/0x/np930x2kk01us/NewBook9_01.jpg','The Samsung ATIV Book 9 connects you to your work and entertainment on the go with a hyper-real display and studio-quality audio, all packed into an impressively thin, lightweight design.',2,NULL),(6,'Thinkpad T430s',7000,4,'images/t430s.jpg','',2,NULL);
+INSERT INTO `products` VALUES (2,'Acer Preditor XH2345',8000,3,'/images/hej.jpg','hej',1),(3,'MSI 980 ti',5000,5,' ','bla bla',3),(5,'Samsung ATIV Book 9',15000,1,'http://www.samsung.com/us/system/consumer/product/np/93/0x/np930x2kk01us/NewBook9_01.jpg','The Samsung ATIV Book 9 connects you to your work and entertainment on the go with a hyper-real display and studio-quality audio, all packed into an impressively thin, lightweight design.',2),(6,'Thinkpad T430s',7000,4,'images/t430s.jpg','',2),(7,'hej',0,0,'','',1),(8,'test',0,0,'','',2),(9,'po',0,0,'','1',1),(10,'Halle',0,0,'','',1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-02 15:59:15
+-- Dump completed on 2016-05-10  9:44:36
