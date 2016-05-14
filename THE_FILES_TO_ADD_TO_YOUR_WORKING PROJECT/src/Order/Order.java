@@ -9,6 +9,7 @@ public class Order {
     private String OrderEmail;
     private int OrderPhone;
     private String OrderAddress;
+    private String status;
 
     public String getOrderName() {
         return OrderName;
@@ -42,4 +43,11 @@ public class Order {
         OrderAddress = input;
     }
 
+    public String getStatus(){
+        return this.status;
+    }
+
+    public void setStatus(String st){
+        this.status = st;
+    }
 }

@@ -10,10 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -21,26 +18,30 @@ import Products.product;
 
 
 
-@ManagedBean
+@ManagedBean (name = "category")
 @Named
-@RequestScoped
+@SessionScoped
 
 public class categoryData implements Serializable {
-	@ManagedProperty("#{param.test}")
+
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<category> theList=new ArrayList<category>();
 	private List<product> catList=new ArrayList<product>();
 
+	public static String getSql_connection() {
+		return sql_connection;
+	}
+
 	public categoryData(){
+
 		ListPlease();
 	}
 
 	private List<category> ListPlease(){
-
 		try {
 			theList.removeAll(theList);
 			Class.forName("com.mysql.jdbc.Driver");

@@ -23,10 +23,7 @@ public class searchBean implements Serializable {
 	private String searchVal;
 	private List<product> searchRes=new ArrayList<product>();
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
-	
-	
-	
-	
+
 	public String getSearchVal() {
 		return searchVal;
 	}

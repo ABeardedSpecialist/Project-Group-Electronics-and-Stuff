@@ -17,9 +17,6 @@ import java.util.List;
 @ManagedBean (name = "Cart")
 public class Cart implements Serializable {
 
-    public void setID(List<cartItem> ID) {
-        this.ID = ID;
-    }
 
     private List<cartItem> ID = new ArrayList<>();
     private int totalPrice;
@@ -80,4 +77,15 @@ public class Cart implements Serializable {
     public List<cartItem> getID() {
         return ID;
     }
+    public void setID(List<cartItem> ID) {
+        this.ID = ID;
+    }
+
+    public String zeroCart(){
+        ID.removeAll(ID);
+        totalPrice = 0;
+        numberOfProducts = 0;
+        return "CurrentTemplate";
+    }
+
 }
