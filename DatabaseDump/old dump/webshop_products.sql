@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.11, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: webshop
+-- Host: localhost    Database: webshop
 -- ------------------------------------------------------
--- Server version	5.7.12-log
+-- Server version	5.7.11-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,10 +29,12 @@ CREATE TABLE `products` (
   `ProductQuantity` int(11) NOT NULL DEFAULT '0',
   `ProductImage` varchar(150) NOT NULL DEFAULT '',
   `ProductDescription` varchar(300) NOT NULL DEFAULT '',
-  `ProductCategory` varchar(45) NOT NULL,
-  `ProductSubcategory` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`ProductID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `ProductCategory` int(10) DEFAULT NULL,
+  PRIMARY KEY (`ProductID`),
+  UNIQUE KEY `ProductID_UNIQUE` (`ProductID`),
+  KEY `categories_idx` (`ProductCategory`),
+  CONSTRAINT `categories` FOREIGN KEY (`ProductCategory`) REFERENCES `category` (`CategoryID`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +43,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'Acer Preditor XH2345',8000,3,'/images/hej.jpg','hej','Monitor','Acer'),(3,'MSI 980 ti',5000,5,' ','bla bla','graphic card','MSI'),(4,'Peter',100,9,' ','bla','kuk','penis'),(5,'Samsung ATIV Book 9',15000,1,'http://www.samsung.com/us/system/consumer/product/np/93/0x/np930x2kk01us/NewBook9_01.jpg','The Samsung ATIV Book 9 connects you to your work and entertainment on the go with a hyper-real display and studio-quality audio, all packed into an impressively thin, lightweight design.','Laptops','12\"');
+INSERT INTO `products` VALUES (2,'Acer Preditor XH2345',8000,3,'/images/hej.jpg','hej',1),(3,'MSI 980 ti',5000,5,' ','bla bla',3),(5,'Samsung ATIV Book 9',15000,1,'http://www.samsung.com/us/system/consumer/product/np/93/0x/np930x2kk01us/NewBook9_01.jpg','The Samsung ATIV Book 9 connects you to your work and entertainment on the go with a hyper-real display and studio-quality audio, all packed into an impressively thin, lightweight design.',2),(6,'Thinkpad T430s',7000,4,'images/t430s.jpg','',2),(7,'hej',0,0,'','',1),(8,'test',0,0,'','',2),(9,'po',0,0,'','1',1),(10,'Halle',0,0,'','',1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-18 15:18:50
+-- Dump completed on 2016-05-10  9:44:36

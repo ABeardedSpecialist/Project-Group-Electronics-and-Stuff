@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admins`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `admins`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admins` (
-  `AdminUsername` varchar(50) NOT NULL,
-  `AdminPassword` varchar(50) NOT NULL,
-  PRIMARY KEY (`AdminUsername`)
+CREATE TABLE `orders` (
+  `OrderID` int(6) NOT NULL,
+  `OrderDate` datetime NOT NULL,
+  `OrderProduct` int(255) NOT NULL,
+  PRIMARY KEY (`OrderID`),
+  KEY `product_idx` (`OrderProduct`),
+  CONSTRAINT `id` FOREIGN KEY (`OrderID`) REFERENCES `orderid` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `product` FOREIGN KEY (`OrderProduct`) REFERENCES `products` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `admins`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `admins` WRITE;
-/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES ('kalle','Pop'),('kuken','hej'),('Michael','Password123'),('Rasmus','ulrich'),('Tadas','ArklioSmots'),('test','test');
-/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-21 15:23:45
+-- Dump completed on 2016-05-15 22:47:25

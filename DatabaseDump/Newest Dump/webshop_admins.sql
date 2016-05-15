@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `subcategory`
+-- Table structure for table `admins`
 --
 
-DROP TABLE IF EXISTS `subcategory`;
+DROP TABLE IF EXISTS `admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `subcategory` (
-  `SubCategoryID` int(10) NOT NULL AUTO_INCREMENT,
-  `SubCategoryName` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`SubCategoryID`),
-  UNIQUE KEY `SubCategoryID_UNIQUE` (`SubCategoryID`),
-  UNIQUE KEY `SubCategoryName_UNIQUE` (`SubCategoryName`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `admins` (
+  `AdminUsername` varchar(50) NOT NULL,
+  `AdminPassword` varchar(50) NOT NULL,
+  PRIMARY KEY (`AdminUsername`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `subcategory`
+-- Dumping data for table `admins`
 --
 
-LOCK TABLES `subcategory` WRITE;
-/*!40000 ALTER TABLE `subcategory` DISABLE KEYS */;
-INSERT INTO `subcategory` VALUES (2,'ACER'),(1,'MSI');
-/*!40000 ALTER TABLE `subcategory` ENABLE KEYS */;
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES ('Michael','Password123'),('Qasim','123456789'),('stempa','stempa'),('Tadas','ArklioSmots');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-01 18:32:11
+-- Dump completed on 2016-05-15 22:47:25
