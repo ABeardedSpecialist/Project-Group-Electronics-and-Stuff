@@ -11,6 +11,7 @@
 	<title>EditProduct</title>
 
 	<link href="CSS/editProduct.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/SearchResults.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -89,21 +90,25 @@
 					</h:column>
 					<div class="form-input">
 						<h:column>
-							<h:commandButton value="Edit"
+							<h:commandButton class ="Buttons Buttonss"  value="Edit"
 								action="#{productData.editAction(pr)}"
 								rendered="#{not pr.editable}" />
 
-							<h:commandButton action="#{productData.editProducts(pr)}"
-								value="Save Changes" rendered="#{pr.editable}" />
+							<h:commandButton class ="Buttons Buttonss" action="#{productData.editProducts(pr)}"
+								  value="Save Changes" rendered="#{pr.editable}" />
 						</h:column>
 					</div>
 					<h:column>
-						<h:commandButton value="Delete"
+						<h:commandButton class ="Buttons Buttonss" value="Delete"
 							action="#{productData.removeProduct(pr.productID)}"
 							update="@form" ajax="true" />
 
 					</h:column>
 				</h:dataTable>
+					<br/>
+		<br/>
+		
+		<h:commandButton class="Button1" value="Go back" action="adminPage" />
 			</div>
 		</h:form>
 

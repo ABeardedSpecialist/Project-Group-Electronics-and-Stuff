@@ -9,11 +9,13 @@
      <h:head>
      	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
      	<meta name="name" content="content" />
-		<link href="AdminPageStyle.css" rel="stylesheet" type="text/css" />
+		<link href="CSS/AdminLogIn.css" rel="stylesheet" type="text/css" />
      	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
      	<h:outputStylesheet library = "css" name = "styles.css" />
      	<meta name="name" content="content" />
-		<link href="styles.css" rel="stylesheet" type="text/css" />
+		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" />
+		<link href="CSS/AdminPage.css" rel="stylesheet" type="text/css" />
      </h:head>
      
  
@@ -24,11 +26,22 @@
 			 <div id="page">
 
     <div id="nav">
+<div class="ForTheSearchBar">
+				<p>Search bar</p>
+				<div>
+					<h:form>
+						<div class="form-Search">
+							<h:inputText class="searchBar" value="#{searchBean.searchVal}" />
+							<h:commandButton class="searchBtn "
+								action="#{searchBean.searchResults}" value="Go!" />
+						</div>
 
-      <div id ="button">
-        <button type="button">Cart</button>
-      </div>
 
+					</h:form>
+				</div>
+			</div>
+
+     
 
       <ul>
         <li><a href="#">Categories</a>
@@ -42,6 +55,8 @@
         <li><a href="#">Home</a></li><li>
           <a href="#">About</a></li><li>
             <a href="#">Contact</a></li>
+            
+            <li><a href="#">Cart</a></li>
           </ul>
 
         </div>
@@ -53,23 +68,27 @@
        <h1 class = "h1">Admin page!</h1><br/>
         <br/>
         <br/>
-        <h:commandButton class = "test test2" value="Add Admin" action="addNewAdmin"/>
-        <h:commandButton class = "test test2" value="Edit Admin" action="#{adminData.goToEditAdmin}"/>
+        <h:commandButton class = "Buttons Buttonss" value="Add Admin" action="addNewAdmin"/>
+        <h:commandButton class = "Buttons Buttonss" value="Edit Admin" action="#{adminData.goToEditAdmin}"/>
     <br/>
     <br/>
+    <br/>
+    <br/>
+    <br/>
+    
     <h2 class = "h1">Handle products:</h2>
-    <h:commandButton class = "test test2"  value="Add new product" action="newProduct"/>
-         <h:commandButton class = "test test2"  value="Edit Product" action="editProduct"/>
+    <h:commandButton class = "Buttons Buttonss" value="Add new product" action="newProduct"/>
+         <h:commandButton class = "Buttons Buttonss"  value="Edit Product" action="editProduct"/>
         
     </h:form>
    	
     </div>
-
-          <div id="footer">
+   </div>
+          <div id="footera">
             &amp;   copy; Project electronics
           </div>
 
-        </div>
+     
 
     
 </h:body>

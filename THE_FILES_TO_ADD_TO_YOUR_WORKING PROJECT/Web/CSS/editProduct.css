@@ -75,3 +75,57 @@ tr:nth-child(even) {
 	width: 12px;
 	background-color: blue;
 }
+
+
+
+.Buttons {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 135px;
+}
+
+.Buttons {
+    background-color: white; 
+    color: black; 
+    border: 2px dotted black;
+}
+
+.Buttonss:hover {
+    background-color: black;
+    color: white;
+    
+}
+
+.Button1 {
+    background: #24282e none repeat scroll 0 0;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 150%;
+    font-style: italic;
+    height: 48px;
+    line-height: 20px;
+    margin: -28px 0 0 79%;
+    text-align: center;
+    transition-duration: 1s;
+    transition-property: background, border-radius;
+    transition-timing-function: linear;
+    width: 122px;
+}
+.Button1:hover {
+    background: #d5d5d5 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: black;
+    font-size: x-large;
+}

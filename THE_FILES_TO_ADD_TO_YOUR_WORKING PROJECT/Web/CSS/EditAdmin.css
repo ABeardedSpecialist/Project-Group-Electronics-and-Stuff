@@ -1,48 +1,53 @@
 @CHARSET "UTF-8";
 
 body {
-	color: #000000;
-	margin: -243px 37% 36px -11%;
-	padding-left: 204px;
+    color: #000000;
+    margin: -242px 8% 36px -11%;
+    padding-left: 257px;
+    
 }
 
 #holdPage {
-	margin: 370px auto 700px;
-	width: 900px;
+    margin: 370px auto 700px;
+    width: 900px;
 }
 
 #Title {
-	color: black;
-	font-family: serif;
-	font-size: 54px;
-	font-style: oblique;
-	text-align: right;
-	padding-right: 54px;
+/*     background-color: #564c6c; */
+/*     color: white; */
+/*     font-family: roboto; */
+ font-family: 'Roboto', sans-serif;
+    font-size: 54px;
+    font-style: oblique;
+    margin: 0 -163px -9px 5px;
+    padding-right: 9px;
+    text-align: center;
 }
 
-
-#Order {
-	color: black;
-	font-size: large;
-	font-family: fantasy;
-	text-align: center;
-	padding-left: 67%;
+#Qustion {
+    color: black;
+    font-size: 25px;
+    text-align: right;
+      padding-right: 108px;
 }
 
 table {
-	border-collapse: collapse;
-	border: 1px solid black;
-	width: 1100px;
- 	margin-left:174px;
-	font-style: 15pt;
-	
+    border: 42px groove black;
+    border-collapse: unset;
+    width: 1072px;
+    font-family: Comic Sans MS;
+    font-size: 112%;
+    
 }
+
+
 
 #DataBaseTable, th, td {
 	border: 0px medium black;
 	background-image: url("img/backGroundNew.jpg");
-	/* 	width: 100px; */
-	/* 	margin-right: auto; */
+/* 	width: 100px; */
+/* 	margin-right: auto; */
+
 }
 
 th {
@@ -50,16 +55,19 @@ th {
 	background-color: #0d280b;
 	color: white;
 	border-collapse: separate;
+	 
 }
 
 td {
 	height: 25px;
+	
 }
 
 th, td {
 	padding: 10px;
 	text-align: left;
 	border-bottom: 1px solid #ddd;
+	text-align: center;
 }
 
 tr:hover {
@@ -70,11 +78,12 @@ tr:nth-child(even) {
 	background-color: #b9b6bc
 }
 
+
+
 #form-input {
 	width: 12px;
 	background-color: blue;
 }
-
 
 /* #button { */
 /*     border: 3px solid #ffffff; */
@@ -89,7 +98,7 @@ tr:nth-child(even) {
 /*     padding: 8px 17px; */
 /*     text-decoration: none; */
 /*     text-shadow: -1px 2px 0 #180606; */
-/*     margin-left: 699px; */
+/*     margin-left: 484px; */
 
 
 /* } */
@@ -102,6 +111,39 @@ tr:nth-child(even) {
 /* #button:active { */
 /* 	position:relative; */
 /* 	top:1px; */
+/* } */
+/* .button1{ */
+	
+/* 	 border: 3px solid #ffffff; */
+/* 	width: 100px; */
+	
+	
+/* } */
+
+/* .test { */
+/*     background-color: #4CAF50; Green */
+/*     border: none; */
+/*     color: white; */
+/*     padding: 5px 10px; */
+/*     text-align: center; */
+/*     text-decoration: none; */
+/*     display: inline-block; */
+/*     font-size: 14px; */
+/*     margin: 4px 2px; */
+/*     -webkit-transition-duration: 0.4s; Safari */
+/*     transition-duration: 0.4s; */
+/*     cursor: pointer; */
+/* } */
+
+/* .test2 { */
+/*     background-color: white;  */
+/*     color: black;  */
+/*     border: 2px solid #008CBA; */
+/* } */
+
+/* .test2:hover { */
+/*     background-color: #008CBA; */
+/*     color: white; */
 /* } */
 
 .Button {
@@ -119,7 +161,7 @@ tr:nth-child(even) {
   width: 122px;
   font-family: serif;
   color: white;
-  margin: -25px 0% 0% 77%;
+  margin: -25px 0% 0% 54%;
   font-family: inherit;
   font-size: 150% ;
   font-style: italic;
@@ -130,9 +172,11 @@ tr:nth-child(even) {
   border-radius: 50%;
   font-size: xx-large;
   color: black;
-} 
+}
+
+
 .Buttons {
-    background-color: #4CAF50; /* Green */
+    background-color: #859bf0; /* Green */
     border: none;
     color: white;
     padding: 5px 10px;
@@ -144,7 +188,7 @@ tr:nth-child(even) {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-    width: 135px;
+    width: 114px;
 }
 
 .Buttons {
@@ -158,30 +202,8 @@ tr:nth-child(even) {
     color: white;
     
 }
-.Multibul{
-	background-color: Black; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-table;
-    font-size: 14px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    width: 63px;
+.textStyle{
+	 font-size: 14px;
+	 font-family: 
 	
 }
-.Multibuls{
-	background-color: white; 
-    color: black; 
-/*     border: 2px dotted black; */
-}
-.Multibulss{
-	 background-color: black;
-    color: white;
-}
-
-

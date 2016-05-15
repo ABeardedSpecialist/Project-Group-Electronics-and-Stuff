@@ -1,32 +1,32 @@
-@CHARSET "UTF-8";
+/* @CHARSET "UTF-8"; */
 
-input {
-	height: 30px;
-	width: 180px;
-	font-size: 18px;
-	margin-bottom: 20px;
-	background-color: #f6f2f9;
-	padding-left: 25px;
-	color: #2000ff;
+/* input { */
+/* 	height: 30px; */
+/* 	width: 180px; */
+/* 	font-size: 18px; */
+/* 	margin-bottom: 20px; */
+/* 	background-color: #f6f2f9; */
+/* 	padding-left: 25px; */
+/* 	color: #2000ff; */
 	
-}
-.form-U::before {
-	content: "\f007";
-	size:3px;
-	position: absolute;
-	font-family: 'FontAwesome';
-	padding-left: 75px;
-	padding-top: 4px;
-	font-size: 30px;
-	color: #953bc3;
-}
-.form-P::before {
-	CONTENT: "\F023";
-	size:3px;
-	position: absolute;
-	font-family: 'FontAwesome';
-	padding-left: 75px;
-	padding-top: 4px;
-	font-size: 30px;
-	color: #953bc3;
-}
+/* } */
+/* .form-U::before { */
+/* 	content: "\f007"; */
+/* 	size:3px; */
+/* 	position: absolute; */
+/* 	font-family: 'FontAwesome'; */
+/* 	padding-left: 75px; */
+/* 	padding-top: 4px; */
+/* 	font-size: 30px; */
+/* 	color: #953bc3; */
+/* } */
+/* .form-P::before { */
+/* 	CONTENT: "\F023"; */
+/* 	size:3px; */
+/* 	position: absolute; */
+/* 	font-family: 'FontAwesome'; */
+/* 	padding-left: 75px; */
+/* 	padding-top: 4px; */
+/* 	font-size: 30px; */
+/* 	color: #953bc3; */
+/* } */

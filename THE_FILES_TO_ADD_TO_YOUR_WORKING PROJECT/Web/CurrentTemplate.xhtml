@@ -1,108 +1,206 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 
 
-		<h:outputStylesheet library = "css" name = "styles.css" />
-     	<meta name="name" content="content" />
-		<link href="styles.css" rel="stylesheet" type="text/css" />
+	<h:outputStylesheet library="css" name="styles.css" />
+	<meta name="name" content="content" />
+	<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/SearchingForProducts.css" rel="stylesheet"
+		type="text/css" />
+		<link href="CSS/Slider.css" rel="stylesheet"
+		type="text/css" />
 
+ <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="JQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="JQuery/jquery.cycle.all.js"></script>
+      <script type="text/javascript">
+
+      $(function(){
+
+        $('#play').click(function(){$('#slider').cycle('resume'); return false;});
+        $('#pause').click(function(){$('#slider').cycle('pause'); return false;});
+
+         $('#slider').cycle({
+
+          fx:             'scrollHorz',
+          next:             '#next',
+          prev:             '#prev',
+          pager:            '#pager',
+          timeout:         3000,
+          speed:            900
+
+         });
+       });
+      </script>
+      
 </h:head>
 <h:body>
 
-			
-			 <div id="page">
+	<div id="page">
 
-    <div id="nav">
+		<div id="nav">
 
-      <div id ="button">
-        <button type="button">Cart</button>
-      </div>
-
-
-      <ul>
-      
-        <li><a href="#">Categories</a>
-          <ul>
-          <h:form>
-			<h:dataTable value="#{categoryData.theList}" var="c">
-    		<h:column><h:commandLink action="#{categoryData.getProductwithCat()}" value="#{c.categoryName}"> 
-       		<f:param name="test" value="#{c.categoryName}" /></h:commandLink>
-  </h:column>
-</h:dataTable>
-		
-		</h:form>
-          </ul>
-        </li>
-        <li><a href="#">Home</a></li><li>
-          <a href="#">About</a></li><li>
-            <a href="#">Contact</a></li>
-          </ul>
-<div class = "border"></div>
-        </div>
-
-                 <div class = "ForTheSearchBar">
-                     <p>Search bar</p>
-                     <h:form>
-                         <h:inputText id="searchVal" placeholder = "Search..."
-                                      value="#{searchBean.searchVal}" />
-                         <br />
-                         <h:commandButton class = "test test2"
-                                          action="#{searchBean.searchResults}" value="Search" />
-                     </h:form>
-
-                 </div>
-
-        <div id="main">
-
-          <div class="main">
+			<div class="ForTheSearchBar">
+				<p>Search bar</p>
+				<div>
+					<h:form>
+						<div class="form-Search">
+							<h:inputText class="searchBar" value="#{searchBean.searchVal}" />
+							<h:commandButton class="searchBtn "
+								action="#{searchBean.searchResults}" value="Go!" />
+						</div>
 
 
-            <h1 id="news">NEW </h1>
-            <div class="slider">
-              <div class="slide1"><img src="screen.jpg" alt="screen"/></div>
-              <div class="slide2"><img src="computer.jpg" alt="computer"/></div>
-              <div class="slide3"><img src="head.jpg" alt="head"/></div>
-            </div><!--slider-->
-          </div><!--main-->
+					</h:form>
+				</div>
+			</div>
 
 
+			<ul>
+				<li><a class="form-Home" href="#">Home</a>
+					<ul>
+						<li><a href="#">Samsong</a>
+							<ul>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+							</ul></li>
+					</ul></li>
 
-          <div class="sale">
-            <p id="undertext">Check out the latest and greatest!</p>
-          </div>
 
-          <div id="form">
-            
-		<h:form>
-			<h:outputLabel value="Username: " />
-			<h:inputText id="Username" value="#{adminData.user}" />
-			<br />
-			<h:outputLabel value="Password:  " />
-			<h:inputSecret id="Password" value="#{adminData.pass}" />
-			<br />
-			<br />
-			<h:commandButton  value="LogIn" action="#{adminData.checkIfAdminExist}" />
-			<br />
-		</h:form>
+				<li><a class="form-List" href="#">Categories</a>
+					<ul>
+						<h:form>
+							<h:dataTable value="#{categoryData.theList}" var="c">
+								<h:column>
+									<li><h:commandLink
+											action="#{categoryData.getProductwithCat()}"
+											value="#{c.categoryName}">
+											<f:param name="test" value="#{c.categoryName}" />
+										</h:commandLink></li>
+								</h:column>
+							</h:dataTable>
+
+						</h:form>
+					</ul></li>
+				<li><a class="form-Info" href="#">About</a>
+					<ul>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+					</ul></li>
+				<li><a class="form-Phone" href="#">Contact</a>
+					<ul>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+					</ul></li>
+				<li><a class="form-Cart" href="#">Cart</a>
+					<ul>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+					</ul></li>
+			</ul>
+			<div class="border"></div>
+		</div>		
 	
-          </div>
+<div id="hero">
+
+  <div id="pager"></div>
+  <div id="pause">&asymp;</div>
+  <div id="play">&Delta;</div>
+  <div id="prev">&lang;</div>
+  <div id="next">&rang;</div>
+
+  <div id="slider">
+
+    <div class="items">
+      <img src="img/slide.jpg" height="500" width="920"/>
+         <div class="info">
+           <h2>Headphones</h2>
+           <p>These are the best headphones in the world <a href="http://www.gogle.com">See more</a></p>
+         </div><!--info-->
+    </div><!--item-->
+
+    <div class="items">
+      <img src="img/slide.jpg" height="500" width="920"/>
+         <div class="info">
+           <h2>Headphones</h2>
+           <p>These are the best headphones in the world <a href="http://www.gogle.com">See more</a></p>
+         </div><!--info-->
+    </div><!--item-->
+
+    <div class="items">
+      <img src="img/slide.jpg" height="500" width="920"/>
+         <div class="info">
+           <h2>Headphones</h2>
+           <p>These are the best headphones in the world <a href="http://www.gogle.com">See more</a></p>
+         </div><!--info-->
+    </div><!--item-->
+
+    <div class="items">
+      <img src="img/slide.jpg" height="500" width="920"/>
+         <div class="info">
+           <h2>Headphones</h2>
+           <p>These are the best headphones in the world <a href="http://www.gogle.com">See more</a></p>
+         </div><!--info-->
+    </div><!--item-->
+
+    <div class="items">
+      <img src="img/slide.jpg" height="500" width="920"/>
+         <div class="info">
+           <h2>Headphones</h2>
+           <p>These are the best headphones in the world <a href="http://www.gogle.com">See more</a></p>
+         </div><!--info-->
+    </div><!--item-->
+
+  </div><!--slider-->
+
+</div><!--hero-->
+
+		<div id="form">
+			<fieldset>
+				<div id="Admin">
+
+					<center>
+						<em>@Login for:</em> <a href="AdminLogIn.xhtml">Log in</a>
+					</center>
+				</div>
+			</fieldset>
+		</div>
+	</div>
 
 
 
-          <div id="footer">
-            &amp;   copy; Project electronics
-          </div>
 
-        </div>
-      </div>
-			
+	<div id="footer">&amp; copy; Project electronics</div>
+
+
+
+
 
 </h:body>
 
 
-	
+
 </html>
