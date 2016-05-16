@@ -1,16 +1,16 @@
 @CHARSET "UTF-8";
 body {
     color: #000000;
-    margin: -243px 37% 36px -11%;
-    padding-left: 204px;
+    /*margin: -243px 37% 36px -11%;*/
+    /*padding-left: 204px;*/
+	height: auto;
+	width: auto;
 }
 
 #holdPage {
     margin: 370px auto 700px;
     width: 900px;
 }
-
-
 
 #Title {
     color: black;

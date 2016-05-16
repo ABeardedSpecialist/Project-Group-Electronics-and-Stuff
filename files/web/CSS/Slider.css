@@ -1,0 +1,127 @@
+@CHARSET "UTF-8";
+
+  #hero{
+  width: 920px;
+  height: 500px;
+  display:block;
+  position:sticky;
+  margin: auto;
+  margin: 5% 28%;
+  }
+  #slider{
+  width: 920px;
+  height: 500px;
+  display:block;
+  position:absolute;
+  overflow: hidden;
+  }
+  .info{
+  width: 920px;
+  height: 80px;
+  display:block;
+  position:relative;
+  bottom: 100px;
+ background-color: rgba(102, 204, 204, 0.2);
+ z-index: 99;
+  }
+  .info h2{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: fff#;
+    padding: 15px 0 0 20px;
+  }
+  .info p{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    color: fff#;
+    padding: 0 0 0 20px;
+    line-height: 1px;
+  }
+  #play{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 44px;
+    background-color:  rgba(102, 204, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
+  #pause{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 88px;
+    background-color:  rgba(102, 204, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
+  #next{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color:  rgba(102, 204, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+  }
+  #prev{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 133px;
+    background-color:  rgba(102, 204, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+  }
+  #pager{
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+  }
+  #pager a{
+    font-size: .0em;
+    color: transparent;
+    width: 10px;
+    height: 10px;
+    display: inline;
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background: transparent;
+    margin: 10px;
+
+  }
+  #pager a.activeSlide{
+    background: #fff;
+
+  }
+

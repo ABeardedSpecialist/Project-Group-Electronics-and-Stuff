@@ -1,7 +1,5 @@
 package Order;
 
-import java.util.List;
-
 /**
  * Created by Michael Johansson(mj223gn) on 2016-05-05.
  */
@@ -11,69 +9,45 @@ public class Order {
     private String OrderEmail;
     private int OrderPhone;
     private String OrderAddress;
-    private int OrderTotalPrice;
-    private int OrderNumberOfProducts;
-    private Status OrderStatus;
+    private String status;
 
     public String getOrderName() {
         return OrderName;
     }
 
-    public void setOrderName(String orderName) {
-        OrderName = orderName;
+    public void setOrderName(String input) {
+        OrderName = input;
     }
 
     public String getOrderEmail() {
         return OrderEmail;
     }
 
-    public void setOrderEmail(String orderEmail) {
-        OrderEmail = orderEmail;
+    public void setOrderEmail(String input) {
+        OrderEmail = input;
     }
 
     public int getOrderPhone() {
         return OrderPhone;
     }
 
-    public void setOrderPhone(int orderPhone) {
-        OrderPhone = orderPhone;
+    public void setOrderPhone(int input) {
+        OrderPhone = input;
     }
 
     public String getOrderAddress() {
         return OrderAddress;
     }
 
-    public void setOrderAddress(String orderAddress) {
-        OrderAddress = orderAddress;
+    public void setOrderAddress(String input) {
+        OrderAddress = input;
     }
 
-    public int getOrderTotalPrice() {
-        return OrderTotalPrice;
+    public String getStatus(){
+        return this.status;
     }
 
-    public void setOrderTotalPrice(int orderTotalPrice) {
-        OrderTotalPrice = orderTotalPrice;
+    public void setStatus(String st){
+        this.status = st;
     }
-
-    public int getOrderNumberOfProducts() {
-        return OrderNumberOfProducts;
-    }
-
-    public void setOrderNumberOfProducts(int orderNumberOfProducts) {
-        OrderNumberOfProducts = orderNumberOfProducts;
-    }
-
-    public Status getOrderStatus() {
-        return OrderStatus;
-    }
-
-    public void setOrderStatus(Status orderStatus) {
-        OrderStatus = orderStatus;
-    }
-
-
-    public enum Status{
-        New, Shipped, Delivered, Delayed, Returned
-    }
-
 }

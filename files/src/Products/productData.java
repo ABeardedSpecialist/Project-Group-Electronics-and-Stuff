@@ -1,16 +1,30 @@
 package Products;
 
 import Category.category;
+import com.sun.prism.Image;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.FacesValidator;
+import javax.faces.validator.Validator;
+import javax.faces.validator.ValidatorException;
+import javax.servlet.http.*;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean
+@ManagedBean (name = "productData")
 @Named
 @SessionScoped
 
@@ -20,7 +34,7 @@ public class productData implements Serializable {
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private List<product> theData = new ArrayList<product>();
     private product pr;
-
+    private Part ImageFile;
 
     public productData() {
         pr = new product();
@@ -34,6 +48,14 @@ public class productData implements Serializable {
 
     public void setTheData(List<product> theData) {
         this.theData = theData;
+    }
+
+    public Part getImageFile() {
+        return ImageFile;
+    }
+
+    public void setImageFile(Part input) {
+        ImageFile = input;
     }
 
     private List<product> loadData() {
@@ -101,7 +123,7 @@ public class productData implements Serializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-            String quary = "DELETE FROM webshop.productview WHERE productID = " + in;
+            String quary = "DELETE FROM webshop.products WHERE productID = " + in;
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.executeUpdate();
             conn.close();
@@ -139,6 +161,33 @@ public class productData implements Serializable {
         loadData();
         return "ldaw";
     }
+    public String getProductPage(product prod){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+            String query = "SELECT * FROM webshop.products WHERE ProductID = '"+prod.getProductID()+"'";
+            System.out.println(prod.getProductID());
+            PreparedStatement statement = conn.prepareStatement(query);
+
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            if(rs.next()) {
+                pr.setProductID(rs.getInt(1));
+                pr.setProductName(rs.getString(2));
+                pr.setProductPrice(rs.getInt(3));
+                pr.setProductQuantity(rs.getInt(4));
+                pr.setProductImage(rs.getString(5));
+                pr.setProductDescription(rs.getString(6));
+                pr.setProductCategory(rs.getString(7));
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "productpage.xhtml";
+    }
 
     public void editAction(product pr) {
 
@@ -160,34 +209,14 @@ public class productData implements Serializable {
     }
 
     /**
-     * NOT READY YET
-     * @return
+     * Uploads a Image to the server, replace file if it already exist
+     * @param pr Product we want to change image on
+     * @throws IOException
      */
-    public List<category> getCategoryIDList() {
-        List<category> IDlist = new ArrayList<>();
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String total = "SELECT * FROM webshop.category";
-            PreparedStatement statement = conn.prepareStatement(total);
-            ResultSet rs = statement.getResultSet();
-            if(!rs.next()){
-
-            }
-         /*   *//*while(rs.next()){
-                category cd = new category();
-                cd.setCatID(rs.getInt(1));
-                cd.setCategoryName(rs.getString(2));
-                IDlist.add(cd);
-                System.out.println(cd.getCatID() + cd.getCategoryName());*//*
-            }*/
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return IDlist;
+    public void fileUpload(product pr) throws IOException {
+        InputStream input = ImageFile.getInputStream();
+        Files.copy(input, new File("C:\\Users\\Michael\\IdeaProjects\\Webshop\\web\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        pr.setProductImage("C:\\Users\\Michael\\IdeaProjects\\Webshop\\web\\images\\" + ImageFile.getSubmittedFileName());
     }
 
 }

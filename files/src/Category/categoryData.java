@@ -8,39 +8,41 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.*;
 import javax.inject.Named;
-
 import Products.product;
 
 
 
-@ManagedBean
+@ManagedBean (name = "category")
 @Named
 @RequestScoped
-
 public class categoryData implements Serializable {
-	@ManagedProperty("#{param.test}")
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<category> theList=new ArrayList<category>();
 	private List<product> catList=new ArrayList<product>();
+	private category cate;
+
+	public static String getSql_connection() {
+		return sql_connection;
+	}
 
 	public categoryData(){
+		cate = new category();
 		ListPlease();
+	}
+	public category getCate() {
+		return cate;
+	}
+
+	public void setCate(category cate) {
+		this.cate = cate;
 	}
 
 	private List<category> ListPlease(){
-
 		try {
 			theList.removeAll(theList);
 			Class.forName("com.mysql.jdbc.Driver");
@@ -68,6 +70,56 @@ public class categoryData implements Serializable {
 
 		return theList;
 	}
+	public void addNewCategory(){
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+			String quary = "INSERT INTO webshop.category (CategoryName)"+" VALUES (?)";
+			PreparedStatement statement = conn.prepareStatement(quary);
+			statement.setString(1, cate.getCategoryName());
+			statement.execute();
+
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		ListPlease();
+	}
+	public void editCategory(category cat){
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+			String query = "UPDATE webshop.category SET CategoryName=? WHERE productID = ?";
+			PreparedStatement statement = conn.prepareStatement(query);
+			statement.setString(1, cat.getCategoryName());
+			statement.executeUpdate();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	public void removeCategory(category cat){
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+			String quary = "DELETE FROM webshop.category WHERE categoryID = " + cat.getCatID();
+			PreparedStatement statement = conn.prepareStatement(quary);
+			statement.executeUpdate();
+
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public String getProductwithCat(category in){
 		try {
@@ -79,15 +131,16 @@ public class categoryData implements Serializable {
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
 			while(rs.next()){
-			product pr = new product();
-			pr.setProductID(rs.getInt(1));
-			pr.setProductName(rs.getString(2));
-			pr.setProductPrice(rs.getInt(3));
-			pr.setProductQuantity(rs.getInt(4));
-			pr.setProductImage(rs.getString(5));
-			pr.setProductDescription(rs.getString(6));
-			pr.setProductCategory(rs.getString(7));
-			catList.add(pr);}
+				product pr = new product();
+				pr.setProductID(rs.getInt(1));
+				pr.setProductName(rs.getString(2));
+				pr.setProductPrice(rs.getInt(3));
+				pr.setProductQuantity(rs.getInt(4));
+				pr.setProductImage(rs.getString(5));
+				pr.setProductDescription(rs.getString(6));
+				pr.setProductCategory(rs.getString(7));
+				catList.add(pr);
+			}
 
 			conn.close();
 
