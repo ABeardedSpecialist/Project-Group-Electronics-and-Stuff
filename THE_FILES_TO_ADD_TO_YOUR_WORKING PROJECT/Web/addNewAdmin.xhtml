@@ -7,15 +7,12 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
       
     <h:head>
-     	<h:outputStylesheet library = "css" name = "CSS/AdminPage.css" />
-     	<meta name="name" content="content" />
+
 		<link href="CSS/AdminPage.css" rel="stylesheet" type="text/css" />
      	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
      	<h:outputStylesheet library = "css" name = "styles.css" />
      	<meta name="name" content="content" />
-    	<link href="CSS/SearchingForProducts.css" rel="stylesheet"
-		type="text/css" />
-<!-- 		<link href="CSS/SearchResults.css" rel="stylesheet" type="text/css" /> -->
+
 		
 				<link href="CSS/addNewAdmin.css" rel="stylesheet" type="text/css" />
 		
@@ -24,9 +21,9 @@
 		<meta name="name" content="content" />
 	<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
 	
-	<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/SearchingForProducts.css" rel="stylesheet"
-		type="text/css" />
+<!-- 	<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" /> -->
+<!-- 	<link href="CSS/SearchingForProducts.css" rel="stylesheet" -->
+<!-- 		type="text/css" /> -->
 		
      </h:head>
      
@@ -116,15 +113,16 @@
      	<h1 class ="h1">Add an administrator</h1>
      	<br/>
      	<br/>
-     	
-        <h:outputLabel value="Username: "/>
+     	<br/>
+     	<br/>
+        <h:outputLabel class="UserName" value="Username: "/>
         <h:inputText id="Username" value="#{adminData.user}"/>
         <br/>
-        <h:outputLabel value="Password:  "/>
+        <h:outputLabel class= "Password" value="Password:  "/>
         <h:inputSecret id="Password" value="#{adminData.pass}"/>
         <br/>
         <br/>
-        <h:commandButton  class = "Buttons Buttonss" value="Add" action="#{adminData.createNewAdmin()}"/>
+        <h:commandButton  class = "Buttons Buttonss movingLogin" value="Add" action="#{adminData.createNewAdmin()}"/>
          <br/>
          <h:commandButton class ="Button1" value="Go back" action="adminPage"/>
     </h:form>

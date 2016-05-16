@@ -76,34 +76,6 @@ tr:nth-child(even) {
 }
 
 
-/* #button { */
-/*     border: 3px solid #ffffff; */
-/*     border-radius: 36px; */
-/*     box-shadow: 2px 12px 19px -3px #15110b; */
-/*     color: #ffffff; */
-/*     cursor: pointer; */
-/*     display: inline-block; */
-/*     font-family: Arial; */
-/*     font-size: 14px; */
-/*     font-weight: bold; */
-/*     padding: 8px 17px; */
-/*     text-decoration: none; */
-/*     text-shadow: -1px 2px 0 #180606; */
-/*     margin-left: 699px; */
-
-
-/* } */
-
-
-/* #button:hover { */
-/* 	background-color:#000000; */
-	
-/* } */
-/* #button:active { */
-/* 	position:relative; */
-/* 	top:1px; */
-/* } */
-
 .Button {
   background: #24282e;
   

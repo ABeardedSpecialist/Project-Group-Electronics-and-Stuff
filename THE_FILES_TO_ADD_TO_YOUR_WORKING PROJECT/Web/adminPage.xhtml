@@ -7,15 +7,16 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     
      <h:head>
-     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
-     	<meta name="name" content="content" />
-		<link href="CSS/AdminLogIn.css" rel="stylesheet" type="text/css" />
+<!--      	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" /> -->
+<!--      	<meta name="name" content="content" /> -->
+<!-- 		<link href="CSS/AdminLogIn.css" rel="stylesheet" type="text/css" /> -->
      	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
      	<h:outputStylesheet library = "css" name = "styles.css" />
      	<meta name="name" content="content" />
 		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
-		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" />
+<!-- 		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" /> -->
 		<link href="CSS/AdminPage.css" rel="stylesheet" type="text/css" />
+		
      </h:head>
      
  
@@ -43,22 +44,65 @@
 
      
 
-      <ul>
-        <li><a href="#">Categories</a>
-          <ul>
-            <li><a href="#">Laptops</a></li>
-            <li><a href="#">Stationary</a></li>
-            <li><a href="#">Headphones</a></li>
-            <li><a href="#">Screens</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Home</a></li><li>
-          <a href="#">About</a></li><li>
-            <a href="#">Contact</a></li>
-            
-            <li><a href="#">Cart</a></li>
-          </ul>
 
+			<ul>
+				<li><a class="form-Home" href="#">Home</a>
+					<ul>
+						<li><a href="#">Samsong</a>
+							<ul>
+								<li><a href="#">Qasim--------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+								<li><a href="#">---------</a></li>
+							</ul></li>
+					</ul></li>
+
+
+				<li><a class="form-List" href="#">Categories</a>
+					<ul>
+						<h:form>
+							<h:dataTable value="#{categoryData.theList}" var="c">
+								<h:column>
+									<li><h:commandLink
+											action="#{categoryData.getProductwithCat()}"
+											value="#{c.categoryName}">
+											<f:param name="test" value="#{c.categoryName}" />
+										</h:commandLink></li>
+								</h:column>
+							</h:dataTable>
+
+						</h:form>
+					</ul></li>
+				<li><a class="form-Info" href="#">About</a>
+					<ul>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+					</ul></li>
+				<li><a class="form-Phone" href="#">Contact</a>
+					<ul>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+					</ul></li>
+				<li><a class="form-Cart" href="#">Cart</a>
+					<ul>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+						<li><a href="#">---------</a></li>
+					</ul></li>
+			</ul>
         </div>
 
        <div class = "border">
@@ -77,6 +121,8 @@
     <br/>
     
     <h2 class = "h1">Handle products:</h2>
+    <br/>
+    <br/>
     <h:commandButton class = "Buttons Buttonss" value="Add new product" action="newProduct"/>
          <h:commandButton class = "Buttons Buttonss"  value="Edit Product" action="editProduct"/>
         
