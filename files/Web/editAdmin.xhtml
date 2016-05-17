@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Edit Admin Page </title>
+	<link href="CSS/EditAdmin.css" rel="stylesheet" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Roboto:
+	400,300,300italic,100italic,100,400italic,500,500italic,900italic,900,700italic,700'
+	 rel='stylesheet' type='text/css'/>
+</h:head>
+
+<f:view>
+<div id="holdPage">
+	<div id="Title">
+	<h:outputLabel value="Edit or remove Admin" />
+	</div>
+	<br />
+	<h:form>
+		<h:dataTable value="#{adminData.aList}" var="ad">
+			<h:column>
+				<f:facet name="Username">Username</f:facet>
+                #{ad.username}
+            </h:column>
+			<h:column>
+				<f:facet name="Password">Password</f:facet>
+				<h:inputText class="textStyle" value="#{ad.password}" size="20" rendered="#{ad.edit}" />
+				<h:outputText value="#{ad.password}" rendered="#{not ad.edit}" />
+			</h:column>
+			
+			<h:column>
+			
+				<h:commandButton class ="Buttons Buttonss" value="Edit" action="#{adminData.trueEdit(ad)}"
+					rendered="#{not ad.edit}" />
+
+				<h:commandButton action="#{adminData.editAdmin(ad)}"
+				 class ="Buttons Buttonss" 	value="Save Changes" rendered="#{ad.edit}" />
+			</h:column>
+			
+			<h:column>
+			
+				<h:commandButton  class ="Buttons Buttonss" value="Remove"
+					action="#{adminData.removeAdmin(ad)}" update="@form" ajax="true" />
+
+			</h:column>
+		</h:dataTable>
+		<br/>
+		<br/>
+		
+		<h:commandButton class="Button" value="Go back" action="adminPage" />
+	
+	</h:form>
+	</div>
+</f:view>
+</html>
