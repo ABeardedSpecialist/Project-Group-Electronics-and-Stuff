@@ -126,7 +126,9 @@
 	Created the test case document  & Created the document and wrote down all the tests & Robin Reijo 22/4 - 2016\\ \hline
 		Created Revision history table	&       included a revision history table to the document           &     Michael Johansson, 22/4 - 2016               \\ \hline
 		Updated document 	& updated the document with the stuff we got on the seminar              &   Michael Johansson 8/5 - 2016                   \\ \hline
-		&		&	  \\ \hline
+	Updated the tabular	&	Updated the tabular with more tabs and post/pre condition	&	Michael Johansson 16/5 - 2016  \\ \hline
+	Updated Test case & Updated some cases and included post/pre conditions on all test cases	& Michael Johansson 17/5 - 2016 \\ \hline
+	&	& \\ \hline
 	\end{tabular}
 \end{table}
 \newpage
@@ -142,17 +144,17 @@ The purpose of this test case document is to showcase what they system shall be 
 	\hline
 	\multicolumn{7}{|c|}{Test Cases} \\
 	\hline
-	Test& ID &Pre condition & Requirements &How to test & Post condition &Expected result\\
+	Test& R.ID & Requirements &Pre condition &How to test& Post condition &Expected result\\
 	\hline
-	1 & 1. & &The webshop must contain any number of products    & Search for an empty string in the search bar to get all products in the database & &Should show products on the result page.\\
+	1 & 1. &The webshop must contain any number of products & Have the mySQL database running & Search for an empty string in the search bar to get all products in the database & &Should show all products on the result page.\\
 	\hline
-	2  & 1.1 & &All information regarding the product is stored in the database.   & Log in as admin and go to add new product, add information in the field and press add button & &The added product should be shown in the database.\\
+	2  & 1.1 & All information regarding the product is stored in the database. & Be logged in as admin & Go to add new product, add information in the field and press add button & The added product should be shown in the database. & See a success text appear\\
 	\hline
-	3 & 1.2 & &A product shall contain product name, category, quantity, price, description and an image.    &Search for an empty string in the search bar to get all products in the database and check so no fields are missing & &The product should contain all of the requirements.\\
+	3 & 1.2  &A product shall contain product name, category, quantity, price, description and an image.& Have the mySQL database running   &Search for an empty string in the search bar to get all products in the database and check so no fields are missing & &The product should contain all of the requirements.\\
 	\hline
-	4 & 1.3 & &A placed order will be placed in the database  & Add products to your cart, from there click the checkout button and from that page click purchase&  & Order should be able to be checked with the Ordernumber from Orderstatus page \\
+	4 & 1.3 &A placed order will be placed in the database& Have the mySQL database running & Add products to your cart, from there click the checkout button and from that page click purchase& Order should be placed in the database & Should se a conformation of the placed order.  \\
 	\hline
-	5 & 1.3.1& &Quantity changes made will be updated in database& Do as in test 4 to place an order with one quantity of the product & &Quantity should updated with minus 1 in the database\\
+	5 & 1.3.1 &Quantity changes made will be updated in database& Have the mySQL database runnning, look in the database for the quantity of the product tested & Do as in test 4 to place an order with one quantity of the product & Quantity should update with minus 1 in the database & Should se a conformation of the placed order.\\
 	\hline
 \end{tabular}
 
@@ -162,25 +164,25 @@ The purpose of this test case document is to showcase what they system shall be 
 	\hline
 	\multicolumn{7}{|c|}{Test Cases} \\
 	\hline
-	Test& ID &Pre condition & Requirements &How to test & Post condition &Expected result \\
+	Test& R.ID & Requirements &Pre condition &How to test& Post condition &Expected result\\
 	\hline
-	6    & 2. &&A customer shall be able to browse product  & Search for a product and then click the product to come to its page & &Should come to the specific products page\\
+	6    & 2. &A customer shall be able to browse product& The product must be in the database & Search for a product and then click the product to come to its page & &Should come to the specific products page\\
 	\hline
-	7    & 2. &&A customer shall be able to browse product  & Go into a category and press a product && Should come to the specific products page\\ \hline
-	8    & 2. &&A customer shall be able to browse product  & Press a product in the new section of the frontpage  && Should come to the specific products page\\
+	7    & 2. &A customer shall be able to browse product& The product should be connected to the category & Go into a category and press a product && Should come to the specific products page\\ \hline
+	8    & 2. &A customer shall be able to browse product& The product must be in the new section & Press a product in the new section of the frontpage  && Should come to the specific products page\\
 	\hline
-	9 &2.1.1& &A customer shall be able to show products by category  & Click a category to show category specific products   && Should show product by category \\
+	9 &2.1.1& A customer shall be able to show products by category& The category must have products connected to it & Click a category to show category specific products   && Should show product by category \\
 	\hline
-	10 & 2.2 &&A customer shall be able to put a product in the shopping cart & Search for a product, add it to the cart and press go to cart & &Should show newly added product. \\
+	10 & 2.2 &A customer shall be able to put a product in the shopping cart & Have a blank cart & Search for a product, add it to the cart and press go to cart & have just this product in the cart with 1 as quantity & Should show newly added product. \\
 	\hline
-	11 &2.2.1&& A customer shall be able to change quantity while in the shoping cart. & Add a product to the cart then change quantity on the product by quantity in the slider. & &Should update products in cart and change the quantity of the product \\
+	11 &2.2.1& A customer shall be able to change quantity while in the shoping cart.& Have a product in the cart & go to cart then change quantity on the product in the drop down menu. & should have the new quantity in the drop down box &Should update the quantity of the product and add the new total price and number of products\\
 	\hline
-	12 &	2.2.2 &&A customer shall be able to remove a product with one click& Press the remove button at the desired product. && Product should be removed from the shopping cart. \\
+	12 &	2.2.2 &A customer shall be able to remove a product with one click& Have one product in the cart &Press the remove button. & Product should be removed from the shopping cart. & Cart should be empty \\
 	\hline
-	13 &2.3 &&A customer shall be able to make an order & Go to shoping cart page, fill in the form with personal information and press purchase. & &Customer should be able to see the placed order when going to customers individual page with its ordernumber.\\
+	13 &2.3 &A customer shall be able to make an order& Have some products in a cart & Go to shoping cart page, press go to checkout, fill in the form with personal information and press purchase. & Order should be in the database &  Should se a order confirmation with the order number \\
 	\hline
-	14 &2.3.1 & &A customer shall be given an auto generated order number & Press purchase on the order form. & &Should give the customer the number. \\	\hline
-	15 &2.3.2 &&A customer shall be able to view the status on his or her order. & Use the auto generated number to get to the page. & & Should show the status of the order. \\ \hline	
+	14 &2.3.1 &A customer shall be given an auto generated order number& Check the last order number in the database, add product to cart and insert information in the order form & Press purchase on the order form. & order number should be a old order number plus one  & Should se a order confirmation with the order number \\	\hline
+	15 &2.3.2 &A customer shall be able to view the status on his or her order.& Take a order number from the database & Write in a order number in the check order box & & Should show the status of the order confirmation page. \\ \hline	
 \end{tabular}
 }
 	\newpage
@@ -190,29 +192,27 @@ The purpose of this test case document is to showcase what they system shall be 
 			\hline
 			\multicolumn{7}{|c|}{Test Cases} \\
 			\hline
-			Test& ID && Requirements &How to test&&Expected result\\
+			Test& R.ID & Requirements &Pre condition &How to test& Post condition &Expected result\\
 			\hline
-			
-			 16 & 3.2.2 &&Admin shall be able to change information about a product & Log in to admin page and press edit product, change a field and press edit & &Should show newly added information of the product when it is viewed. \\
+			 16 & 3.2.2 &Admin shall be able to change information about a product & Log in as admin& Press edit product, change a field and press edit & Product information should be changed in the database & Should show newly added information of the product when it is viewed. \\
 			\hline
-			 17 &3.2.3 & &Admin shall be able to add a category & Log in to admin page and press add category, then add a category & &New category should be visible when adding a new product or at the category list \\
+			 17 &3.2.3 & Admin shall be able to add a category& Log in as admin & Press add category, then add a category & Category should be added in the database & New category should be visible in the drop down menu \\
 			\hline
-			18 & 3.2.3 &&Admin shall be able to remove a category & Log in to admin page and press edit category, remove a category & &Removed category must be removed from category list \\
+			18 & 3.2.3 &Admin shall be able to remove a category& Log in as admin & Press edit category, remove a category & Category should be removed from the datebase & Removed category must be removed from the drop down menu\\
 			\hline
-			19 &3.2.3 & &Admin shall be able to edit a category & Log in to admin page and press edit category, change a category & &New category information should be visible when adding a new product or at the category list \\
+			19 &3.2.3 & Admin shall be able to edit a category& Log in as admin & Press edit category, change a category & Category name should be changed and all category fields in products should be changed & New category information should be visible in the drop down menu \\
 			\hline
-			 20 & 3.3 & &Admin shall be able to add new admin accounts & Add a new admin account on the add new admin page & &The new admin account should be visible in the database and an admin should be able to login using the new details.\\
+			 20 & 3.3 & Admin shall be able to add new admin accounts& Log in as admin & Add a new admin account on the add new admin page & The new admin account should be visible in the database and an admin should be able to login using the new details. & Should se a success text \\
 			\hline
-			 21& 3.4 &&Admin shall be able to remove an admin account & remove a admin account on the edit admin page & &The admin account should not be visible in the database and admin cant login. \\
+			 21& 3.4 &Admin shall be able to remove an admin account& Log in as admin & remove a admin account on the edit admin page & The admin account should not be visible in the database and admin cant login. & Should se a success text \\
 			\hline
-			 22& 3.4 &&Admin shall be able to edit an admin accounts password & edit a admin account password on the edit admin page & &The admin should only be able to log in with the new password \\
+			 22& 3.4 & Admin shall be able to edit an admin accounts password& Log in as admin & edit a admin account password on the edit admin page & The admin should only be able to log in with the new password & The password should change on the page \\
 			 \hline
-			 23 &3.5 &&Admin shall be able to view all order of all customers. & Login into admin system, all order appear on admin edit orders page. && Should display all the orders made by customers \\
+			 23 &3.5 & Admin shall be able to view all order. & Log in as admin & Press Edit Orders & & Should display all the orders made by customers \\
 			\hline
 			
-			24 & 3.5.1 && Admin shall be able to update status on every order & Login as admin, go to the targeted customers random generated number ordered page and change status to new shipped, delayed and delivered and returned & &Should show newly updated status on show all order page and individual order page. \\ 
+			24 & 3.5.1 & Admin shall be able to update status on every order & Log in as admin & Press edit Orders, press edit on a order and change the status & Status on order in the database should change & Should show newly updated status on edit order page \\ 
 			\hline
-			
 			
 		\end{tabular}
 	}

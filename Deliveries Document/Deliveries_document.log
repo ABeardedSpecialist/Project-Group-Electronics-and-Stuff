@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  10 MAY 2016 10:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  17 MAY 2016 11:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -699,7 +699,7 @@ Overfull \hbox (37.59995pt too wide) in paragraph at lines 153--163
  [][] 
  []
 
-[2] (./Deliveries_document.aux) ) 
+[2] [3] (./Deliveries_document.aux) ) 
 Here is how much of TeX's memory you used:
  5983 strings out of 493054
  85519 string characters out of 6138327
@@ -708,14 +708,14 @@ Here is how much of TeX's memory you used:
  37934 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,14n,39p,810b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2015/texmf-dist/fonts/enc/dvips/ba
-se/8r.enc}<c:/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texl
-ive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2015/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Deliveries_document.pdf (4 pages, 623079 bytes).
+{c:/texlive/2015/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}<c:/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/
+texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2015/texmf
+-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Deliveries_document.pdf (5 pages, 623406 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
