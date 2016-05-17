@@ -24,11 +24,10 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `OrderID` int(6) NOT NULL,
-  `OrderDate` datetime NOT NULL,
   `OrderProduct` int(255) NOT NULL,
-  PRIMARY KEY (`OrderID`),
+  `OrderProductPrice` int(10) DEFAULT NULL,
+  `OrderQuantity` int(10) DEFAULT NULL,
   KEY `product_idx` (`OrderProduct`),
-  CONSTRAINT `id` FOREIGN KEY (`OrderID`) REFERENCES `orderid` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `product` FOREIGN KEY (`OrderProduct`) REFERENCES `products` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,6 +38,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (2,2,8000,1),(3,2,8000,2),(3,3,5000,2),(3,5,15000,1),(3,6,7000,2),(3,12,2300,2),(4,2,8000,1),(4,3,5000,1),(4,5,15000,1),(4,6,7000,2),(4,12,2300,2);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-15 22:47:25
+-- Dump completed on 2016-05-17  8:54:19
