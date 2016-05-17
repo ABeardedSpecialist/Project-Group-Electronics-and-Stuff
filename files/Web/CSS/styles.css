@@ -37,7 +37,7 @@ a:hover {
     background-color: #24282e;
     border: 10px none;
     border-radius: 121px 0;
-    height: 173px;
+    height: 15%;
     padding-top: 1px;
     width: 100%;
 }
@@ -147,9 +147,9 @@ width:70%;
     background-color: #575c7a;
     color: #fff;
     font-size: 0.85em;
-    margin: 14px 0 0 41px;
-    padding: 11px 845px 8px 4px;
-    width: 1001px;
+ position:relative;
+    width: 100%;
+    top:30%;
 }
 log {
     background-color: #4caf50;
@@ -173,16 +173,14 @@ log {
     background-color: #008cba;
     color: white;
 }
-fieldset {
-    width: 96%;
-}
+
 
 .searchBar {
     border: 1px dashed #000000;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     font-size: 13px;
-    height: 34px;
+    height: 3%;
     margin: 2% 0 0 0%;
     outline: medium none;
     padding: 0 0 0 46px;
