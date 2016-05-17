@@ -5,6 +5,7 @@ import Cart.cartItem;
 import Products.product;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @ManagedBean(name = "order")
 @Named
-@SessionScoped
+@RequestScoped
 public class OrderData implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,6 +52,14 @@ public class OrderData implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<cartItem> getCartItemsList() {
+        return cartItemsList;
+    }
+
+    public void setCartItemsList(List<cartItem> cartItemsList) {
+        this.cartItemsList = cartItemsList;
     }
 
     public String createOrder() {
@@ -105,12 +114,18 @@ public class OrderData implements Serializable {
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.execute();
             ResultSet rs = statement.getResultSet();
+
+            if(!rs.next()){
+                return "InvalidOrderNumber";
+            }
+
             while (rs.next()) {
                 int proID = rs.getInt(1);
                 String getProduct = "SELECT productID, productName, productImage, productDescription FROM webshop.products WHERE productID = '" + proID + "'";
                 PreparedStatement preparedStatement = conn.prepareStatement(getProduct);
                 preparedStatement.execute();
                 ResultSet proRs = preparedStatement.getResultSet();
+
                 while (proRs.next()) {
                     product pr = new product();
                     pr.setProductID(proRs.getInt(1));

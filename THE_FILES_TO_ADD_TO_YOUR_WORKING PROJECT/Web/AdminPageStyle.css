@@ -4,8 +4,10 @@
 	height: 450px;
 	margin: 0 auto;
 	border: 2px solid;
-	width: 500px;
+	width: 600px;
 	text-align: center;
+	
+	
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
 background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -45,7 +47,7 @@ background-color: silver;
 }
 .h1 {
 	
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Roboto', cursive;
 	
 }
 

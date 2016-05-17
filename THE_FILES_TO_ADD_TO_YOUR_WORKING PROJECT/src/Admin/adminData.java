@@ -26,10 +26,6 @@ public class adminData implements Serializable {
 
     }
 
-    public String goToEditAdmin(){
-        adminList();
-        return "editAdmin";
-    }
     public void trueEdit(admin ad) {
         ad.setEdit(true);
     }
@@ -71,7 +67,8 @@ public class adminData implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
+        this.user = "";
+        this.pass = "";
     }
     public String checkIfAdminExist() {
         try {

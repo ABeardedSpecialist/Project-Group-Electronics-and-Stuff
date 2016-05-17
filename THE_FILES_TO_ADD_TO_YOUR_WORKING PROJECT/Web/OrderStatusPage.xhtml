@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:body>
+        <h:form>
+            <h1> #{order.id} </h1>
+            <br/>
+            <br/>
+            <h:dataTable value="#{order.cartItemsList}" var="ci">
+                <h:column>
+                    <f:facet name="header">Image</f:facet>
+                    <h:graphicImage value="#{ci.item.productImage}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{ci.item.productName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{ci.item.productPrice}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Category</f:facet>
+                    #{ci.item.productCategory}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Quantity</f:facet>
+                    #{ci.quantity}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <h:form>
+            <h:outputLabel value="Number of products: #{cart.numberOfProducts}"/>
+            <br/>
+            <h:outputLabel value="Total price: #{cart.totalPrice}"/>
+            <br/>
+            <h:outputLabel value="#{order.ord.status}"/>
+            <br/>
+            <h:commandButton value="Go back" action="#{cart.zeroCart}"/>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

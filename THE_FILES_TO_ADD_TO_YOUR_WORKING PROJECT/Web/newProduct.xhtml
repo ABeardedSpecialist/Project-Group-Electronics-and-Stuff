@@ -5,7 +5,18 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+     	<meta name="name" content="content" />
+		<link href="AdminPageStyle.css" rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+     </h:head>
+      
 <h:body>
+<div class = "border">
+	
     <h:form>
         <h1>Add a new product</h1>
         <br/>
@@ -35,8 +46,7 @@
         <h:inputText id="Category" value="#{productData.pr.productCategory}"/>
         <br/>
         <h:commandButton value="Add product" action="#{productData.addProduct}"/>
-        <br/>
-        <h:commandButton value="Go back" action="adminPage"/>
     </h:form>
+ </div>
 </h:body>
 </html>

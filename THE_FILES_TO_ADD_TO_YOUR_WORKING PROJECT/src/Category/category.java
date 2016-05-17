@@ -1,10 +1,10 @@
 package Category;
 
 public class category {
-	
-	
+
 	private String categoryName;
 	private int catID;
+	private boolean editable;
 	
 	public String getCategoryName() {
 		return categoryName;
@@ -19,6 +19,13 @@ public class category {
 		this.catID = catID;
 	}
 
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
 	
 	
 

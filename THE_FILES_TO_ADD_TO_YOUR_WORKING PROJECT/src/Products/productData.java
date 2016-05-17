@@ -3,6 +3,12 @@ package Products;
 import Category.category;
 import com.sun.prism.Image;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.FacesValidator;
+import javax.faces.validator.Validator;
+import javax.faces.validator.ValidatorException;
 import javax.servlet.http.*;
 
 import javax.enterprise.context.SessionScoped;
@@ -13,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +35,6 @@ public class productData implements Serializable {
     private List<product> theData = new ArrayList<product>();
     private product pr;
     private Part ImageFile;
-
 
     public productData() {
         pr = new product();
@@ -155,23 +161,23 @@ public class productData implements Serializable {
         loadData();
         return "ldaw";
     }
-    public void getProductPage(product pr){
+    public String getProductPage(product prod){
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String query = "SELECT * FROM webshop.products WHERE ProductID = '"+pr.getProductID()+"'";
+            String query = "SELECT * FROM webshop.products WHERE ProductID = '"+prod.getProductID()+"'";
             PreparedStatement statement = conn.prepareStatement(query);
+
             statement.execute();
             ResultSet rs = statement.getResultSet();
             if(rs.next()) {
-                product product = new product();
-                product.setProductID(rs.getInt(1));
-                product.setProductName(rs.getString(2));
-                product.setProductPrice(rs.getInt(3));
-                product.setProductQuantity(rs.getInt(4));
-                product.setProductImage(rs.getString(5));
-                product.setProductDescription(rs.getString(6));
-                product.setProductCategory(rs.getString(7));
+                pr.setProductID(rs.getInt(1));
+                pr.setProductName(rs.getString(2));
+                pr.setProductPrice(rs.getInt(3));
+                pr.setProductQuantity(rs.getInt(4));
+                pr.setProductImage(rs.getString(5));
+                pr.setProductDescription(rs.getString(6));
+                pr.setProductCategory(rs.getString(7));
             }
             conn.close();
         } catch (SQLException e) {
@@ -179,6 +185,7 @@ public class productData implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return "productpage.xhtml";
     }
 
     public void editAction(product pr) {
@@ -200,10 +207,15 @@ public class productData implements Serializable {
         return "editProduct";
     }
 
+    /**
+     * Uploads a Image to the server, replace file if it already exist
+     * @param pr Product we want to change image on
+     * @throws IOException
+     */
     public void fileUpload(product pr) throws IOException {
         InputStream input = ImageFile.getInputStream();
-        Files.copy(input, new File("C:\\Users\\Michael\\IdeaProjects\\Webshop\\web\\images", ImageFile.getSubmittedFileName()).toPath());
-        pr.setProductImage("C:\\Users\\Michael\\IdeaProjects\\Webshop\\web\\images\\" + ImageFile.getSubmittedFileName());
+        Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        pr.setProductImage("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images\\" + ImageFile.getSubmittedFileName());
     }
 
 }

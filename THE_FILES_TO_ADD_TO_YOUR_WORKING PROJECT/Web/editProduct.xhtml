@@ -22,7 +22,7 @@
 		<h:outputLabel value="Edit Product" />
 	</div>
 	<h:body>
-		<h:form>
+		<h:form enctype="multipart/form-data">
 			<br />
 			
 			<div id="Qustion">
@@ -61,15 +61,16 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">Image</f:facet>
-						<h:inputText value="#{pr.productImage}" size="20"
-							rendered="#{pr.editable}" />
+							<h:form enctype="multipart/form-data">
+								<h:inputFile value="#{productData.imageFile}" rendered="#{pr.editable}" />
+								<h:commandButton value="Upload" action="#{productData.fileUpload(pr)}" rendered="#{pr.editable}" />
+							</h:form>
 						<h:outputText value="#{pr.productImage}"
 							rendered="#{not pr.editable}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Description</f:facet>
-						<h:inputText value="#{pr.productDescription}" size="20"
-							rendered="#{pr.editable}" />
+						<h:inputText value="#{pr.productDescription}" size="20" rendered="#{pr.editable}" />
 						<h:outputText value="#{pr.productDescription}"
 							rendered="#{not pr.editable}" />
 					</h:column>
