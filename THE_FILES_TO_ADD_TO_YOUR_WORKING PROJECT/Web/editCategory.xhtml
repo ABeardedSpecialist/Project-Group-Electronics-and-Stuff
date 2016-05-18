@@ -6,6 +6,10 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+<ui:composition template="theTemplate.xhtml">
+
+	<ui:define name="content">
+	       <div class = "border">
     <h:form>
         <h:dataTable value="#{category.theList}" var="cat">
             <h:column>
@@ -27,5 +31,7 @@
             </h:column>
         </h:dataTable>
     </h:form>
+    </div>
+    </ui:define></ui:composition>
 </f:view>
 </html>

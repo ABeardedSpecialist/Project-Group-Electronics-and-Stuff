@@ -16,8 +16,12 @@ import Products.product;
 
 @ManagedBean (name = "category")
 @Named
-@RequestScoped
+@SessionScoped
 public class categoryData implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * 
 	 */

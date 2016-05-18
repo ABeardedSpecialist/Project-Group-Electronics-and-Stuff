@@ -11,18 +11,26 @@
 	<title>EditProduct</title>
 
 	<link href="CSS/editProduct.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/SearchResults.css" rel="stylesheet" type="text/css" />
+		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
 
 
 
 </h:head>
 
 <f:view>
-<div id="holdPage">
+
+			<ui:composition template="theTemplate.xhtml">
+
+    	
+    	
+    	<ui:define name="content">
+			       <div class = "border">
 	<div id="Title">
 		<h:outputLabel value="Edit Product" />
 	</div>
 	<h:body>
-		<h:form enctype="multipart/form-data">
+		<h:form>
 			<br />
 			
 			<div id="Qustion">
@@ -61,48 +69,50 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">Image</f:facet>
-							<h:form enctype="multipart/form-data">
-								<h:inputFile value="#{productData.imageFile}" rendered="#{pr.editable}" />
-								<h:commandButton value="Upload" action="#{productData.fileUpload(pr)}" rendered="#{pr.editable}" />
-							</h:form>
+						<h:inputText value="#{pr.productImage}" size="20"
+							rendered="#{pr.editable}" />
 						<h:outputText value="#{pr.productImage}"
 							rendered="#{not pr.editable}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Description</f:facet>
-						<h:inputText value="#{pr.productDescription}" size="20" rendered="#{pr.editable}" />
+						<h:inputText value="#{pr.productDescription}" size="20"
+							rendered="#{pr.editable}" />
 						<h:outputText value="#{pr.productDescription}"
 							rendered="#{not pr.editable}" />
 					</h:column>
 					<h:column>
 						<f:facet name="header">Category</f:facet>
-						<h:selectOneMenu value="#{pr.categoryID}" onchange="submit()"  rendered="#{pr.editable}" >
-							<f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}" itemLabel="#{cd.categoryName}"/>
-						</h:selectOneMenu>
+						<h:inputText value="#{pr.productCategory}" size="20"
+							rendered="#{pr.editable}" />
 						<h:outputText value="#{pr.productCategory}"
-									  rendered="#{not pr.editable}" />
+							rendered="#{not pr.editable}" />
 					</h:column>
 					<div class="form-input">
 						<h:column>
-							<h:commandButton value="Edit"
+							<h:commandButton class ="Buttons Buttonss"  value="Edit"
 								action="#{productData.editAction(pr)}"
 								rendered="#{not pr.editable}" />
 
-							<h:commandButton action="#{productData.editProducts(pr)}"
-								value="Save Changes" rendered="#{pr.editable}" />
+							<h:commandButton class ="Buttons Buttonss" action="#{productData.editProducts(pr)}"
+								  value="Save Changes" rendered="#{pr.editable}" />
 						</h:column>
 					</div>
 					<h:column>
-						<h:commandButton value="Delete"
+						<h:commandButton class ="Buttons Buttonss" value="Delete"
 							action="#{productData.removeProduct(pr.productID)}"
 							update="@form" ajax="true" />
 
 					</h:column>
 				</h:dataTable>
+					<br/>
+		<br/>
+		
+		<h:commandButton class="Button1" value="Go back" action="adminPage" />
 			</div>
 		</h:form>
 
-	</h:body>
-	</div>
+	</h:body></div>
+</ui:define></ui:composition>
 </f:view>
 </html>

@@ -6,24 +6,43 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
+	<h:head>
+	<title>Search Results Page</title>
+	<link href="CSS/SearchResults.css" rel="stylesheet" type="text/css" />
+      	<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+      
+ 
+</h:head>
+	
 <f:view>
+
+		<ui:composition template="theTemplate.xhtml">
+
+	<ui:define name="content">
+       <div class = "border">
+			
+	<div id="Title">
 	<h:outputLabel value="Search Results" />
+	</div>
 	<h:body>
 		<h:form>
-			<h:commandButton value="Go to Cart" action="CartPage"/>
-			<h:commandButton value="Go Back" action="CurrentTemplate"/>
 			<br />
+			<div id="Qustion">
 			<h:outputLabel value="Your search results:" />
-
+			</div>
 			<br />
 			<h:dataTable value="#{searchBean.searchRes}" var="rs">
+
 				<h:column>
 					<f:facet name="header">Name</f:facet>
-						<h:commandLink value="#{rs.productName}" action="#{productData.getProductPage(rs)}" size="20"/>
+					<h:outputText value="#{rs.productName}" size="20"/>
+
+
 				</h:column>
 				<h:column>
 					<f:facet name="header">Price</f:facet>
 					<h:outputText value="#{rs.productPrice}" size="20"/>
+				
 				</h:column>
 				<h:column>
 					<f:facet name="header">Quantity</f:facet>
@@ -31,10 +50,8 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">Image</f:facet>
-					<h:commandLink action="#{productData.getProductPage(rs)}">
-						<h:graphicImage value="#{rs.productImage}" size="150"/>
-					</h:commandLink>
-					</h:column>
+					<h:graphicImage value="#{rs.productImage}" size="150"/>
+				</h:column>
 				<h:column>
 					<f:facet name="header">Description</f:facet>
 					<h:outputText value="#{rs.productDescription}" size="20"/>
@@ -43,12 +60,17 @@
 					<f:facet name="header">Category</f:facet>
 					<h:outputText value="#{rs.productCategory}" size="20"/>
 				</h:column>
+		
 				<h:column>
-					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
+					<h:commandButton class="Buttons Buttonss" value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
 				</h:column>
 			</h:dataTable>
+			<br/>
+			 <br/>
+			
 		</h:form>
 
 	</h:body>
+</div></ui:define></ui:composition>	
 </f:view>
 </html>

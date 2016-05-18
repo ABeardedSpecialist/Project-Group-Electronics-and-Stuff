@@ -9,20 +9,12 @@
 <h:head>
 	     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
 	     	<meta name="name" content="content" />
-			<link href="CSS/AdminPage.css" rel="stylesheet" type="text/css" />
 	     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
 	     	<h:outputStylesheet library = "css" name = "styles.css" />
-	     	<meta name="name" content="content" />
-			<link href="CSS/editAdmin.css" rel="stylesheet" type="text/css" />
-	   	  	<link href="CSS/P-U.css" rel="stylesheet" type="text/css" />
-<link href="CSS/addNewPruduct.css" rel="stylesheet" type="text/css" />
-
+	     	<meta name="name" content="content" />	
 <h:outputStylesheet library="css" name="styles.css" />
 	<meta name="name" content="content" />
 	<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/SearchingForProducts.css" rel="stylesheet"
-		type="text/css" />
 		
 		
 </h:head>
@@ -31,106 +23,33 @@
 
 
 
-	<div id="page">
 
-		<div id="nav">
-
-			<div class="ForTheSearchBar">
-				<p>Search bar</p>
-				<div>
-					<h:form>
-						<div class="form-Search">
-							<h:inputText class="searchBar" value="#{searchBean.searchVal}" />
-							<h:commandButton class="searchBtn "
-								action="#{searchBean.searchResults}" value="Go!" />
-						</div>
-
-
-					</h:form>
-				</div>
-			</div>
-
-
-			<ul>
-				<li><a class="form-Home" href="#">Home</a>
-					<ul>
-						<li><a href="#">Samsong</a>
-							<ul>
-								<li><a href="#">---------</a></li>
-								<li><a href="#">---------</a></li>
-								<li><a href="#">---------</a></li>
-								<li><a href="#">---------</a></li>
-								<li><a href="#">---------</a></li>
-								<li><a href="#">---------</a></li>
-							</ul></li>
-					</ul></li>
-
-
-				<li><a class="form-List" href="#">Categories</a>
-					<ul>
-						<h:form>
-							<h:dataTable value="#{categoryData.theList}" var="c">
-								<h:column>
-									<li><h:commandLink
-											action="#{categoryData.getProductwithCat()}"
-											value="#{c.categoryName}">
-											<f:param name="test" value="#{c.categoryName}" />
-										</h:commandLink></li>
-								</h:column>
-							</h:dataTable>
-
-						</h:form>
-					</ul></li>
-				<li><a class="form-Info" href="#">About</a>
-					<ul>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-					</ul></li>
-				<li><a class="form-Phone" href="#">Contact</a>
-					<ul>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-					</ul></li>
-				<li><a class="form-Cart" href="#">Cart</a>
-					<ul>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-						<li><a href="#">---------</a></li>
-					</ul></li>
-			</ul>
+			
 			<div class="border">
+			
 				<h:form>
-					<h:outputLabel value="Username: " />
-					<h:inputText class="input" value="#{adminData.user}" />
+				 <h1 class = "h1">Admin Login page!</h1><br/>
+        <br/>
+        <br/>
+        <br/>
+					<h:outputLabel class="UserName" value="Username: " />
+					<h:inputText  value="#{adminData.user}" />
 
 					<br />
 
-					<h:outputLabel value="Password:  " />
+					<h:outputLabel class="Password" value="Password:  " />
 					<h:inputSecret value="#{adminData.pass}" />
 
 					<br />
 					<br />
 					<div>
-						<h:commandButton class="Buttons Buttonss" value="LogIn"
+						<h:commandButton class="Buttons Buttonss movingLogin" value="LogIn"
 							action="#{adminData.checkIfAdminExist}" />
 					</div>
 					<br />
 				</h:form>
 			</div>
-		</div>
-	</div>
-
+	
 
 
 

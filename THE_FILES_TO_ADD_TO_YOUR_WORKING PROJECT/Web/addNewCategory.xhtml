@@ -6,7 +6,13 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+	<ui:composition template="theTemplate.xhtml">
+
+	<ui:define name="content">
+       <div class = "border">
+		
     <h:body>
+    
         <h:form>
             <h:outputLabel value="Add new Category"/>
             <br/>
@@ -15,5 +21,6 @@
             <h:commandButton value="Add Category" action="#{category.addNewCategory()}"/>
         </h:form>
     </h:body>
+    </div></ui:define></ui:composition>
 </f:view>
 </html>

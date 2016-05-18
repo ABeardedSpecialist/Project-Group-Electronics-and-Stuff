@@ -1,84 +1,148 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 
 
-		<h:outputStylesheet library = "css" name = "styles.css" />
-     	<meta name="name" content="content" />
-		<link href="styles.css" rel="stylesheet" type="text/css" />
+	<h:outputStylesheet library="css" name="styles.css" />
+	<meta name="name" content="content" />
+	<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/Slider.css" rel="stylesheet" type="text/css" />
+
+	<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+	<script type="text/javascript" src="JQuery/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="JQuery/jquery.cycle.all.js"></script>
+	<script type="text/javascript">
+
+      $(function(){
+
+        $('#play').click(function(){$('#slider').cycle('resume'); return false;});
+        $('#pause').click(function(){$('#slider').cycle('pause'); return false;});
+
+         $('#slider').cycle({
+
+          fx:             'scrollHorz',
+          next:             '#next',
+          prev:             '#prev',
+          pager:            '#pager',
+          timeout:         3000,
+          speed:            900
+
+         });
+       });
+      </script>
 
 </h:head>
 <h:body>
+	<!-- <ui:include src="Calander.xhtml"></ui:include> -->
 
-			
-			 <div id="page">
-
-    <div id="nav">
-
-
-      <ul>
-      
-        <li><a href="#">Categories</a>
-          <ul>
-          <h:form>
-			<h:dataTable value="#{category.theList}" var="c">
-    		<h:column><h:commandLink action="#{category.getProductwithCat(c)}" value="#{c.categoryName}"/>
-  </h:column>
-</h:dataTable>
-		</h:form>
-            
-          </ul>
-        </li>
-        <li><a href="CurrentTemplate.xhtml">Home</a></li><li>
-          <a href="CartPage.xhtml">Cart</a>
-          <a href="#">
-          <h:form>
-              <h:inputText id="searchValmenu" placeholder = "Search..."
-                           value="#{searchBean.searchVal}" />
-
-              <h:commandButton class = "test test2"
-                               action="#{searchBean.searchResults}" value="Search" />
-          </h:form>
-          </a>
-          <a href="#">About</a></li><li>
-          <a href="#">Contact</a></li>
-          <h:form>
-              <h:inputText id="order" placeholder = "Search..."
-                           value="#{order.id}" />
-
-              <h:commandButton class = "test test2"
-                               action="#{order.checkOrder}" value="Search" />
-          </h:form>
-          </ul>
-
-        </div>
-       
-			<div class = "iframewrapper">
-            <iframe src = "adminPage.xhtml" style = "width: 920px; height: 525px;">
-            
-            
-            
-            
-            
-            </iframe>
-      		</div>
-     
-
-        
-
-
-          <div id="footer">
-            &amp;   copy; Project electronics
-          </div>
 	
-	
-     </div>
-	
+		
+
+
+
+	<div id="hero">
+
+		<div id="pager"></div>
+		<div id="pause">&asymp;</div>
+		<div id="play">&Delta;</div>
+		<div id="prev">&lang;</div>
+		<div id="next">&rang;</div>
+
+		<div id="slider">
+
+			<div class="items">
+				<img src="img/slide.jpg" alt="image" height="100%" width="100%" />
+				<div class="info">
+					<h2>Headphones</h2>
+					<p>
+						These are the best headphones in the world <a
+							href="http://www.gogle.com">See more</a>
+					</p>
+				</div>
+				<!--info-->
+			</div>
+			<!--item-->
+
+			<div class="items">
+				<img src="img/slide.jpg" alt="image" height="100%" width="100%" />
+				<div class="info">
+					<h2>Headphones</h2>
+					<p>
+						These are the best headphones in the world <a
+							href="http://www.gogle.com">See more</a>
+					</p>
+				</div>
+				<!--info-->
+			</div>
+			<!--item-->
+
+			<div class="items">
+				<img src="img/slide.jpg" alt="image" height="100%" width="100%" />
+				<div class="info">
+					<h2>Headphones</h2>
+					<p>
+						These are the best headphones in the world <a
+							href="http://www.gogle.com">See more</a>
+					</p>
+				</div>
+				<!--info-->
+			</div>
+			<!--item-->
+
+			<div class="items">
+				<img src="img/slide.jpg" alt="image" height="100%" width="100%" />
+				<div class="info">
+					<h2>Headphones</h2>
+					<p>
+						These are the best headphones in the world <a
+							href="http://www.gogle.com">See more</a>
+					</p>
+				</div>
+				<!--info-->
+			</div>
+			<!--item-->
+
+			<div class="items">
+				<img src="img/slide.jpg" alt="image" height="100%" width="100%" />
+				<div class="info">
+					<h2>Headphones</h2>
+					<p>
+						These are the best headphones in the world <a
+							href="http://www.gogle.com">See more</a>
+					</p>
+				</div>
+				<!--info-->
+			</div>
+			<!--item-->
+
+		</div>
+		<!--slider-->
+
+	</div>
+	<!--hero-->
+
+
+
+	<div class="logInB">
+		<a class="logIn" href="AdminLogIn.xhtml">Log in</a>
+	</div>
+
+
+
+
+
+
+
+
+
+
 </h:body>
 
 
-	
+
 </html>

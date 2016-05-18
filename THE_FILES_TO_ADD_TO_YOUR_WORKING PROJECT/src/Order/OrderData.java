@@ -6,7 +6,6 @@ import Products.product;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -27,6 +26,7 @@ public class OrderData implements Serializable {
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private Order ord;
     private List<cartItem> cartItemsList;
+    private List<Order> orderList; 
     private int id;
 
     @Inject
@@ -36,6 +36,7 @@ public class OrderData implements Serializable {
         ord = new Order();
         ord.setStatus("NEW");
         id = 0;
+ 
     }
 
     public Order getOrd() {
@@ -171,5 +172,36 @@ public class OrderData implements Serializable {
 
     return"OrderStatusPage";
 }
+    private List<Order> loadOrders() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
+            String quary = "SELECT * FROM webshop.orderid";
+            PreparedStatement statement = conn.prepareStatement(quary);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+
+            while (rs.next()) {
+                Order o=new Order();
+               orderList.add(o);
+            }
+
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+
+        }
+        return orderList;}
+
+	public List<Order> getOrderList() {
+		return orderList;
+	}
+
+	public void setOrderList(List<Order> orderList) {
+		this.orderList = orderList;
+	}
 }
