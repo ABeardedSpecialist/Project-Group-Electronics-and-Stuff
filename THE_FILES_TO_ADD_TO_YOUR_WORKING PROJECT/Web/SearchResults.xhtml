@@ -10,7 +10,7 @@
 	<title>Search Results Page</title>
 	<link href="CSS/SearchResults.css" rel="stylesheet" type="text/css" />
       	<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
-      
+      	<h:outputStylesheet library = "css" name = "styles.css" />
  
 </h:head>
 	
@@ -31,11 +31,11 @@
 			<h:outputLabel value="Your search results:" />
 			</div>
 			<br />
-			<h:dataTable value="#{searchBean.searchRes}" var="rs">
+			<h:dataTable   value="#{searchBean.searchRes}" var="rs">
 
-				<h:column>
+				<h:column >
 					<f:facet name="header">Name</f:facet>
-					<h:outputText value="#{rs.productName}" size="20"/>
+					<h:outputText   value="#{rs.productName}" size="20"/>
 
 
 				</h:column>
