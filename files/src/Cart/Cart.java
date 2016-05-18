@@ -18,7 +18,11 @@ import java.util.List;
 public class Cart implements Serializable {
 
 
-    private List<cartItem> ID = new ArrayList<>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<cartItem> ID = new ArrayList<>();
     private int totalPrice;
     private int numberOfProducts;
 
@@ -85,7 +89,7 @@ public class Cart implements Serializable {
         ID.removeAll(ID);
         totalPrice = 0;
         numberOfProducts = 0;
-        return "CurrentTemplate";
+        return "index";
     }
 
 }

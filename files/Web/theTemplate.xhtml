@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+
+
+
+   <h:head>
+	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+     	<meta name="name" content="content" />
+		<link href="CSS/AdminPage.css" rel="stylesheet" type="text/css" />
+     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    
+    <h:body>
+
+
+		
+	    <div id="navBar">
+		<ui:insert name="navBar" >
+		  <ui:include src="navBar.xhtml" />
+		</ui:insert>
+	    </div>
+	    
+	    <div id="content">
+	  	<ui:insert name="content" >
+	
+	   	</ui:insert>
+	    </div>
+		     <div id="cart">
+	    	<ui:insert name="theCart" >
+		  <ui:include src="theCart.xhtml" />
+	    	</ui:insert>
+    	    </div>
+	    <div id="footer">
+	    	<ui:insert name="footer" >
+		  <ui:include src="theFooter.xhtml" />
+	    	</ui:insert>
+    	    </div>
+
+
+
+    </h:body>
+</html>

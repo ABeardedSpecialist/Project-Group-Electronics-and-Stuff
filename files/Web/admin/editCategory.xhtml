@@ -6,19 +6,23 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+<ui:composition template="../theTemplate.xhtml">
+
+	<ui:define name="content">
+	       <div class = "border">
     <h:form>
         <h:dataTable value="#{category.theList}" var="cat">
             <h:column>
                 <f:facet name="header">Name</f:facet>
                 <h:inputText value="#{cat.categoryName}" size="20" rendered="#{cat.editable}" />
-                <h:outputText value="#{cat.editable}" rendered="#{not cat.editable}" />
+                <h:outputText value="#{cat.categoryName}" rendered="#{not cat.editable}" />
             </h:column>
             <h:column>
                 <h:commandButton class ="Buttons Buttonss"  value="Edit Category"
-                                 action="#{cat.}"
+                                 action="#{cat.setEditable(true)}"
                                  rendered="#{not cat.editable}" />
                 <h:commandButton class ="Buttons Buttonss" action="#{category.editCategory(cat)}"
-                                 value="Save Changes" rendered="#{pr.editable}" />
+                                 value="Save Changes" rendered="#{cat.editable}" />
             </h:column>
             <h:column>
                 <h:commandButton class="Buttons Buttonss" value="Remove Category"
@@ -27,5 +31,7 @@
             </h:column>
         </h:dataTable>
     </h:form>
+    </div>
+    </ui:define></ui:composition>
 </f:view>
 </html>

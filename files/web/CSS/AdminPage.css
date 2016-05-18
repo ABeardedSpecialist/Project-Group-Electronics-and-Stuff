@@ -1,34 +1,13 @@
 .border {
-    background: silver linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+    background: black;
     border: 2px solid;
     border-radius: 30px;
-    height: 450px;
-    margin: 10% 7px 4px 36%;
-    padding: 5% 1% 0 0;
+    padding-top:1%;
+    height: 60%;
+  left:28%;
     text-align: center;
-    width: 500px;
-}
-.test {
-    background-color: #4caf50;
-    border: medium none;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    transition-duration: 0.4s;
-}
-.test2 {
-    background-color: white;
-    border: 2px solid #008cba;
-    color: black;
-}
-.test2:hover {
-    background-color: #008cba;
-    color: white;
+    width: 40%;
+    position:relative;
 }
 .h1 {
     font-family: "Indie Flower",cursive;
@@ -36,12 +15,15 @@
     font-size: 308%;
 }
 #footera {
-    background-color: #575c7a;
+  background-color: #575c7a;
     color: #fff;
     font-size: 0.85em;
-    margin: 19px 42px 0 1px;
-    padding: 6px 871px 8px 36px;
-    width: 1001px;
+        position:fixed;
+    width: 100%;
+     bottom:0px;
+    left:0px;
+    right:0px;
+ 
 }
 .Buttons {
     background-color: #4CAF50; /* Green */
@@ -56,7 +38,7 @@
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-   width:  138px;
+   width:  150px;;
 }
 
 .Buttons {
@@ -69,4 +51,28 @@
     background-color: black;
     color: white;
     
+}
+
+.UserName{
+	font-size : 25px;
+	font-family:Tahoma;
+}
+
+.Password{
+	font-size : 25px;
+	font-family: Tahoma;
+	padding-left: 1%;
+}
+
+input {
+	height: 30px;
+/* 	width: 180px; */
+	font-size: 18px;
+	margin-bottom: 20px;
+	background-color: white;
+/* 	padding-left: 25px; */
+	color: black;
+}
+.movingLogin{
+	margin:4% 2% 5% 9%;
 }

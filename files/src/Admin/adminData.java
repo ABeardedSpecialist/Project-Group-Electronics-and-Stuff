@@ -3,13 +3,14 @@ package Admin;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean
+//@ManagedBean (name = "admin")
 @Named
 @SessionScoped
 public class adminData implements Serializable {
@@ -20,11 +21,11 @@ public class adminData implements Serializable {
     private String user;
     private String pass;
 
-    public adminData() {
+    /*public adminData() {
         ad = new admin();
         adminList();
 
-    }
+    }*/
 
     public void trueEdit(admin ad) {
         ad.setEdit(true);
@@ -71,22 +72,28 @@ public class adminData implements Serializable {
         this.pass = "";
     }
     public String checkIfAdminExist() {
+        System.out.println("start");
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
             try {
+                System.out.println("neh");
                 String quary = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
                 PreparedStatement statement = conn.prepareStatement(quary);
                 statement.setString(1, this.user);
                 ResultSet Username = statement.executeQuery();
+                System.out.println("bajs");
                 if (Username.next()) {
                     String passwordCheck = "SELECT * FROM webshop.admins WHERE AdminPassword = ?";
                     PreparedStatement statement1 = conn.prepareStatement(passwordCheck);
                     statement1.setString(1, this.pass);
                     ResultSet Password = statement1.executeQuery();
+                    System.out.println("kalle");
                     if (Password.next()) {
+                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", this.user);
                         return "adminPage";
                     } else {
+                        System.out.println("kuken");
                         return "invalid";
                     }
                 } else {
@@ -192,5 +199,9 @@ public class adminData implements Serializable {
         ad.setEdit(false);
         adminList();
 
+    }
+    public String logOut(){
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "AdminLogIn.xhtml";
     }
 }

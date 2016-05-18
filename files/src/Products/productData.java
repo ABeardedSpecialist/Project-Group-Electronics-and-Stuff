@@ -1,14 +1,7 @@
 package Products;
 
-import Category.category;
-import com.sun.prism.Image;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.validator.FacesValidator;
-import javax.faces.validator.Validator;
-import javax.faces.validator.ValidatorException;
+
 import javax.servlet.http.*;
 
 import javax.enterprise.context.SessionScoped;
@@ -166,7 +159,6 @@ public class productData implements Serializable {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
             String query = "SELECT * FROM webshop.products WHERE ProductID = '"+prod.getProductID()+"'";
-            System.out.println(prod.getProductID());
             PreparedStatement statement = conn.prepareStatement(query);
 
             statement.execute();
@@ -215,8 +207,8 @@ public class productData implements Serializable {
      */
     public void fileUpload(product pr) throws IOException {
         InputStream input = ImageFile.getInputStream();
-        Files.copy(input, new File("C:\\Users\\Michael\\IdeaProjects\\Webshop\\web\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
-        pr.setProductImage("C:\\Users\\Michael\\IdeaProjects\\Webshop\\web\\images\\" + ImageFile.getSubmittedFileName());
+        Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        pr.setProductImage("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images\\" + ImageFile.getSubmittedFileName());
     }
 
 }

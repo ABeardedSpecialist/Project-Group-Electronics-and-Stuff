@@ -16,8 +16,12 @@ import Products.product;
 
 @ManagedBean (name = "category")
 @Named
-@RequestScoped
+@SessionScoped
 public class categoryData implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * 
 	 */
@@ -41,6 +45,25 @@ public class categoryData implements Serializable {
 	public void setCate(category cate) {
 		this.cate = cate;
 	}
+
+
+	public List<category> getTheList() {
+		return theList;
+	}
+
+	public void setTheList(List<category> theList) {
+		this.theList = theList;
+	}
+
+	public List<product> getCatList() {
+		return catList;
+	}
+
+	public void setCatList(List<product> catList) {
+		this.catList = catList;
+	}
+
+
 
 	private List<category> ListPlease(){
 		try {
@@ -96,6 +119,7 @@ public class categoryData implements Serializable {
 			String query = "UPDATE webshop.category SET CategoryName=? WHERE productID = ?";
 			PreparedStatement statement = conn.prepareStatement(query);
 			statement.setString(1, cat.getCategoryName());
+			statement.setInt(2, cat.getCatID());
 			statement.executeUpdate();
 			conn.close();
 		} catch (SQLException e) {
@@ -151,24 +175,6 @@ public class categoryData implements Serializable {
 		}
 		return "catPage";
 	}
-
-	public List<category> getTheList() {
-		return theList;
-	}
-
-	public void setTheList(List<category> theList) {
-		this.theList = theList;
-	}
-	
-	public List<product> getCatList() {
-		return catList;
-	}
-
-	public void setCatList(List<product> catList) {
-		this.catList = catList;
-	}
-
-	
 }
 
 

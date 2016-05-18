@@ -3,10 +3,10 @@ package Order;
 import Cart.Cart;
 import Cart.cartItem;
 import Products.product;
+import jdk.nashorn.internal.ir.WhileNode;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -27,6 +27,7 @@ public class OrderData implements Serializable {
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private Order ord;
     private List<cartItem> cartItemsList;
+    private List<Order> orderList;
     private int id;
 
     @Inject
@@ -36,6 +37,7 @@ public class OrderData implements Serializable {
         ord = new Order();
         ord.setStatus("NEW");
         id = 0;
+
     }
 
     public Order getOrd() {
@@ -52,6 +54,14 @@ public class OrderData implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<cartItem> getCartItemsList() {
+        return cartItemsList;
+    }
+
+    public void setCartItemsList(List<cartItem> cartItemsList) {
+        this.cartItemsList = cartItemsList;
     }
 
     public String createOrder() {
@@ -81,7 +91,7 @@ public class OrderData implements Serializable {
                 String query = "INSERT INTO webshop.orders (OrderID, OrderProduct, OrderQuantity, OrderProductPrice)" + " VALUES(?,?,?,?)";
                 PreparedStatement itemQuery = conn.prepareStatement(query);
                 itemQuery.setInt(1, id);
-                itemQuery.setInt(2, item.getItem().getProductID());
+                itemQuery.setString(2, item.getItem().getProductName());
                 itemQuery.setInt(3, item.getQuantity());
                 itemQuery.setInt(4, item.getItem().getProductPrice());
                 itemQuery.execute();
@@ -96,66 +106,126 @@ public class OrderData implements Serializable {
     }
 
     public String checkOrder() {
-        cartItemsList = new ArrayList<>();
         try {
-            cartItemsList = cart.getID();
+            cartItemsList = new ArrayList<>();
+            System.out.println("kalle");
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-            String quary = "SELECT OrderProduct FROM webshop.orders WHERE OrderID = " + id;
+            String quary = "SELECT OrderProduct, OrderProductPrice, OrderQuantity FROM webshop.orders WHERE OrderID = " + id;
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.execute();
             ResultSet rs = statement.getResultSet();
+
+            if (!rs.next()) {
+                return "InvalidOrderNumber";
+            }
             while (rs.next()) {
-                int proID = rs.getInt(1);
-                String getProduct = "SELECT productID, productName, productImage, productDescription FROM webshop.products WHERE productID = '" + proID + "'";
-                PreparedStatement preparedStatement = conn.prepareStatement(getProduct);
-                preparedStatement.execute();
-                ResultSet proRs = preparedStatement.getResultSet();
-                while (proRs.next()) {
-                    product pr = new product();
-                    pr.setProductID(proRs.getInt(1));
-                    pr.setProductName(proRs.getString(2));
-                    pr.setProductImage(proRs.getString(3));
-                    pr.setProductDescription(proRs.getString(4));
+                cartItem ci = new cartItem();
+                product pr = new product();
+                pr.setProductName(rs.getString(1));
+                pr.setProductPrice(rs.getInt(2));
+                ci.setItem(pr);
+                ci.setQuantity(rs.getInt(3));
+                cartItemsList.add(ci);
+            }
+            conn.close();
+        } catch (
+                SQLException e
+                )
 
-                    String getPriceAndQuantity = "SELECT OrderProductPrice, OrderQuantity FROM webshop.orders WHERE OrderID = "+ id +" AND OrderProduct = " + proID;
-                    PreparedStatement pAndQ = conn.prepareStatement(getPriceAndQuantity);
-                    pAndQ.execute();
-                    ResultSet PQ = pAndQ.getResultSet();
+        {
+            e.printStackTrace();
+        } catch (
+                ClassNotFoundException e
+                )
 
-                    if(PQ.next()) {
-                        pr.setProductPrice(PQ.getInt(1));
+        {
+            e.printStackTrace();
+        }
 
-                        cartItem item = new cartItem();
-                        item.setQuantity(PQ.getInt(2));
-                        item.setItem(pr);
-                        cartItemsList.add(item);
+        return "OrderStatusPage";
+    }
 
-                    }
-                }
+    public int getNumberOfProducts() {
+        int quantity = 0;
+        for (cartItem cartitem : cartItemsList) {
+
+            quantity += cartitem.getQuantity();
+
+        }
+        return quantity;
+    }
+
+    public int getTotalPrice() {
+        int total = 0;
+        for (cartItem cartitem : cartItemsList) {
+
+            total += cartitem.getItem().getProductPrice();
+
+        }
+        return total;
+    }
+
+    public List<Order> getOrderList() {
+        orderList = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+            String quary = "SELECT * FROM webshop.orderid";
+            PreparedStatement statement = conn.prepareStatement(quary);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+
+            while (rs.next()) {
+                Order o = new Order();
+                o.setOrderID(rs.getInt(1));
+                o.setOrderName(rs.getString(2));
+                o.setOrderAddress(rs.getString(3));
+                o.setOrderPhone(rs.getInt(4));
+                o.setOrderEmail(rs.getString(5));
+                o.setStatus(rs.getString(8));
+                orderList.add(o);
             }
 
-        conn.close();
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+
+        }
+        return orderList;
+    }
+    public List<String> getOrderProducts(){
+        List<String> products = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+            String quary = "SELECT OrderProduct FROM webshop.order WHERE ";
+            PreparedStatement statement = conn.prepareStatement(quary);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+
+            while (rs.next()) {
+                products.add("dad");
+            }
+
+            conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+
+        }
+        return null;
     }
 
-    catch(
-    SQLException e
-    )
-
-    {
-        e.printStackTrace();
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
     }
-
-    catch(
-    ClassNotFoundException e
-    )
-
-    {
-        e.printStackTrace();
-    }
-
-    return"OrderStatusPage";
-}
-
 }
