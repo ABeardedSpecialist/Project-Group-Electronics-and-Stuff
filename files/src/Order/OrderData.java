@@ -199,19 +199,19 @@ public class OrderData implements Serializable {
         }
         return orderList;
     }
-    public List<String> getOrderProducts(){
+    public List<String> getOrderProducts(Order ord){
         List<String> products = new ArrayList<>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-            String quary = "SELECT OrderProduct FROM webshop.order WHERE ";
+            String quary = "SELECT OrderProduct FROM webshop.orders WHERE OrderID ='"+ord.getOrderID()+"'";
             PreparedStatement statement = conn.prepareStatement(quary);
             statement.execute();
             ResultSet rs = statement.getResultSet();
 
             while (rs.next()) {
-                products.add("dad");
+                products.add(rs.getString(1));
             }
 
             conn.close();
@@ -222,10 +222,27 @@ public class OrderData implements Serializable {
             e.printStackTrace();
 
         }
-        return null;
+        return products;
     }
 
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
+    }
+
+    public void editOrder(Order ord){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+            String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, ord.getStatus());
+            statement.setInt(2, ord.getOrderID());
+            statement.executeUpdate();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

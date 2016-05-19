@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
     <link href="../CSS/AdminPage.css" rel="stylesheet" type="text/css"/>
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
@@ -20,41 +21,43 @@
         <ui:define name="content">
             <div class="border">
                 <h:form>
-                    <h:dataTable value="#{order.orderList}" var="ord">
-                        <h:column>
-                            <f:facet name="header">Order ID</f:facet>
-                            <h:outputText value="#{ord.orderID}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Name</f:facet>
+                    <p:dataScroller id="data" value="#{order.orderList}" var="ord" chunkSize="10" mode="inline"
+                                    scrollHeight="500">
+                        <f:facet name="header">
+                            Scroll Down to Load More Orders
+                        </f:facet>
+                        <h:panelGrid id="kuken" columns="2" cellpadding="5px">
+                            <p:outputPanel>
+                                <h:panelGrid columns="7" row="2" cellpadding="5px">
+                                    <h:outputText value="Order ID:"/>
+                                    <h:outputText value="Customer name: "/>
+                                    <h:outputText value="Customer Address: "/>
+                                    <h:outputText value="Customer Phone: "/>
+                                    <h:outputText value="Customer Email: "/>
+                                    <h:outputText value="Products in order: "/>
+                                    <h:outputText value="Order status: "/>
 
-                            <h:outputText value="#{ord.orderName}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Address</f:facet>
+                                    <h:outputText value="#{ord.orderID}" style="font-weight: bold"/>
+                                    <h:outputText value="#{ord.orderName}" style="font-weight: bold"/>
+                                    <h:outputText value="#{ord.orderAddress}" style="font-weight: bold"/>
+                                    <h:outputText value="#{ord.orderPhone}" style="font-weight: bold"/>
+                                    <h:outputText value="#{ord.orderEmail}" style="font-weight: bold"/>
+                                    <h:selectOneMenu value="#">
+                                        <f:selectItem itemLabel="Products in Order"/>
+                                        <f:selectItems value="#{order.getOrderProducts(ord)}"/>
+                                    </h:selectOneMenu>
 
-                            <h:outputText value="#{ord.orderAddress}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">E-mail</f:facet>
+                                    <p:inplace id="ajaxInplace" editor="true">
+                                        <p:ajax event="save" listener="#{orderData.editOrder(ord)}" update="kuken" />
+                                        <p:inputText value="#{ord.status}" required="true"     label="text"/>
+                                    </p:inplace>
 
-                            <h:outputText value="#{ord.orderEmail}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Phone</f:facet>
-
-                            <h:outputText value="#{ord.orderPhone}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Status</f:facet>
-
-                            <h:outputText value="#{ord.status}"/>
-                        </h:column>
-
-                    </h:dataTable>
-
-
-                </h:form></div>
+                                </h:panelGrid>
+                            </p:outputPanel>
+                        </h:panelGrid>
+                    </p:dataScroller>
+                </h:form>
+            </div>
         </ui:define></ui:composition></f:view>
 
 

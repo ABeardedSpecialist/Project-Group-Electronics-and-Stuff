@@ -122,6 +122,7 @@ public class categoryData implements Serializable {
 			statement.setInt(2, cat.getCatID());
 			statement.executeUpdate();
 			conn.close();
+			cat.setEditable(false);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
