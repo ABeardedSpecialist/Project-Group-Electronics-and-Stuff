@@ -23,13 +23,15 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `OrderID` int(6) NOT NULL,
-  `OrderProduct` int(255) NOT NULL,
+  `OrderProduct` varchar(100) NOT NULL DEFAULT '""',
   `OrderProductPrice` int(10) DEFAULT NULL,
   `OrderQuantity` int(10) DEFAULT NULL,
-  KEY `product_idx` (`OrderProduct`),
-  CONSTRAINT `product` FOREIGN KEY (`OrderProduct`) REFERENCES `products` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ID_UNIQUE` (`ID`),
+  KEY `product_idx` (`OrderProduct`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +40,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (2,2,8000,1),(3,2,8000,2),(3,3,5000,2),(3,5,15000,1),(3,6,7000,2),(3,12,2300,2),(4,2,8000,1),(4,3,5000,1),(4,5,15000,1),(4,6,7000,2),(4,12,2300,2);
+INSERT INTO `orders` VALUES (6,10004,'Acer Preditor XH2345',8000,1),(7,10004,'MSI 980 ti',5000,2),(8,10004,'Samsung ATIV Book 9',15000,1),(9,10005,'Acer Preditor XH2345',8000,1),(10,10005,'MSI 980 ti',5000,1),(11,10005,'Samsung ATIV Book 9',15000,1);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-17  8:54:19
+-- Dump completed on 2016-05-19 19:47:29
