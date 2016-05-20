@@ -20,7 +20,7 @@
             <h:dataTable value="#{cart.ID}" var="ci">
                 <h:column>
                     <f:facet name="header">Image</f:facet>
-                    <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
+                    <h:graphicImage value="#{ci.item.productImage}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Name</f:facet>
@@ -50,21 +50,21 @@
             <br/>
             <h:outputLabel value="Name"/>
             <br/>
-            <h:inputText value="#{orderBean.order.orderName}"/>
+            <h:inputText value="#{order.ord.orderName}"/>
             <br/>
             <h:outputLabel value="Address"/>
             <br/>
-            <h:inputText value="#{orderBean.order.orderAddress}"/>
+            <h:inputText value="#{order.ord.orderAddress}"/>
             <br/>
             <h:outputLabel value="Phone number"/>
             <br/>
-            <h:inputText value="#{orderBean.order.orderPhone}"/>
+            <h:inputText value="#{order.ord.orderPhone}"/>
             <br/>
             <h:outputLabel value="E-mail"/>
             <br/>
-            <h:inputText value="#{orderBean.order.orderEmail}"/>
+            <h:inputText value="#{order.ord.orderEmail}"/>
             <br/>
-            <h:commandButton value="Purchase" action="#{orderBean.createOrder}"/>
+            <h:commandButton value="Purchase" action="#{order.createOrder}"/>
         </h:form>
     </h:body>
     </div></ui:define></ui:composition>

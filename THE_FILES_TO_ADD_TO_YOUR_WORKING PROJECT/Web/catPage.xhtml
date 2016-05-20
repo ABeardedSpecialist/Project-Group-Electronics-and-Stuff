@@ -26,11 +26,11 @@
 <h:dataTable styleClass="products" value="#{category.catList}" var="rs">
 	<h:column >
 	<f:facet name="header">Image</f:facet>
-					<h:graphicImage styleClass="col" library="images" name="#{rs.productImage}" width="150" height="100"/>
+					<h:graphicImage styleClass="col" value="#{rs.productImage}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Name</f:facet>
-					<h:commandLink value="#{rs.productName}" action="#{productData.getProductPage(rs)}" size="20"/>
+					<h:outputText value="#{rs.productName}" size="20"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header">Price</f:facet>

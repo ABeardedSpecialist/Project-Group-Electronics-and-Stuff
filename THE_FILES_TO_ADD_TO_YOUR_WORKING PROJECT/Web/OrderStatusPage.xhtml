@@ -18,13 +18,13 @@
 			
     <h:body>
         <h:form>
-            <h1> #{orderBean.id} </h1>
+            <h1> #{order.id} </h1>
             <br/>
             <br/>
-            <h:dataTable value="#{orderBean.cartItemsList}" var="ci">
+            <h:dataTable value="#{order.cartItemsList}" var="ci">
                 <h:column>
                     <f:facet name="header">Image</f:facet>
-                    <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
+                    <h:graphicImage value="#{ci.item.productImage}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Name</f:facet>
@@ -50,7 +50,7 @@
             <br/>
             <h:outputLabel value="Total price: #{cart.totalPrice}"/>
             <br/>
-            <h:outputLabel value="#{orderBean.order.status}"/>
+            <h:outputLabel value="#{order.ord.status}"/>
             <br/>
             <h:commandButton value="Go back" action="#{cart.zeroCart}"/>
         </h:form>
