@@ -19,34 +19,25 @@
 
 
 			<ul class="menu" >
-				<li><a class="menuB" href="index.xhtml">Home</a></li>
+				<li><a class="menuB" href="adminPage.xhtml">Home</a></li>
 					
 
 
 				<li><a class="menuB" href="#">Categories</a>
-					<ul class="sub">
+				<ul class="sub"><li><a class="menuB" href="editCategory.xhtml">Edit Categories</a></li>
+				<li><a class="menuB" href="addNewCategory.xhtml">Add/Remove Categories</a></li>
 				
-							<h:dataTable value="#{categoryData.theList}" var="c">
-							
-									<li><h:column><h:commandLink action="#{category.getProductwithCat(c)}" value="#{c.categoryName}" class="subB"/></h:column></li>
-							
-							</h:dataTable>
-
+				
+				</ul>
+				</li>
+		<li><a class="menuB" href="#">Products</a></li>	
 					
-					</ul></li>
-		<li><a class="menuB" href="#">Placeholder</a></li>	
 					
-				<li><a class="menuB" href="check.xhtml">Order Status</a></li>
-					
-				<li><a class="menuB" href="CartPage.xhtml">Cart</a>
+				<li><a class="menuB" href="CartPage.xhtml">Orders</a>
 					
 				</li>
 		</ul>
-		<div class="searchC">
-			<h:inputText id="searchVal" class="searchBar"
-						value="#{searchBean.searchVal}" /> 
-						<h:commandButton class="searchBtn"
-						action="#{searchBean.searchResults}" value="Search" /></div>
+		
 				</h:form>	</div>
 		
 				</ui:composition>

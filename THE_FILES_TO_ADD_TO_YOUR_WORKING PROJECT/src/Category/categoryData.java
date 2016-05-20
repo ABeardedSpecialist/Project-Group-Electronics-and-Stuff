@@ -116,12 +116,13 @@ public class categoryData implements Serializable {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-			String query = "UPDATE webshop.category SET CategoryName=? WHERE productID = ?";
+			String query = "UPDATE webshop.category SET CategoryName=? WHERE CategoryID = ?";
 			PreparedStatement statement = conn.prepareStatement(query);
 			statement.setString(1, cat.getCategoryName());
 			statement.setInt(2, cat.getCatID());
 			statement.executeUpdate();
 			conn.close();
+			cat.setEditable(false);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
