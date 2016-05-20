@@ -206,9 +206,11 @@ public class productData implements Serializable {
      * @throws IOException
      */
     public void fileUpload(product pr) throws IOException {
+        System.out.println("kalle");
         InputStream input = ImageFile.getInputStream();
-        Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
-        pr.setProductImage("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images\\" + ImageFile.getSubmittedFileName());
+        Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\1DV508\\project\\WebShop\\Web\\resources\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        pr.setProductImage(ImageFile.getSubmittedFileName());
+        System.out.println(ImageFile.getSubmittedFileName());
     }
 
 }
