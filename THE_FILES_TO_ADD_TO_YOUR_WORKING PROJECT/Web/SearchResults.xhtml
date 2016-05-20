@@ -35,7 +35,7 @@
 
 				<h:column >
 					<f:facet name="header">Name</f:facet>
-					<h:outputText   value="#{rs.productName}" size="20"/>
+					<h:commandLink value="#{rs.productName}" action="#{productData.getProductPage(rs)}" size="20"/>
 
 
 				</h:column>
@@ -50,7 +50,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">Image</f:facet>
-					<h:graphicImage value="#{rs.productImage}" size="150"/>
+					<h:graphicImage library="images" name="#{rs.productImage}" width="150" height="70"/>
 				</h:column>
 				<h:column>
 					<f:facet name="header">Description</f:facet>
