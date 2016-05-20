@@ -5,23 +5,42 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
- <h:head>
-     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+
+
+
+
+
+   <h:head>
      	<meta name="name" content="content" />
-		<link href="CSS/thePage.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/thePage.css" rel="stylesheet" type="text/css" />
      	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
      	<h:outputStylesheet library = "css" name = "styles.css" />
      	<meta name="name" content="content" />
-		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/styles.css" rel="stylesheet" type="text/css" />
+    </h:head>
     
-     </h:head>
-     <ui:composition>
-     
-           <div id="footera">
-            &amp;   copy; Project electronics <a href="admin/AdminLogIn.xhtml">Log In</a>
-          </div>
-     </ui:composition>
-     
-     
-     
+    <h:body>
+
+
+		
+	    <div id="navBar">
+		<ui:insert name="navBar" >
+		  <ui:include src="navBarAdm.xhtml" />
+		</ui:insert>
+	    </div>
+	    
+	    <div id="content">
+	  	<ui:insert name="content" >
+	
+	   	</ui:insert>
+	    </div>
+	    <div id="footer">
+	    	<ui:insert name="footer" >
+		  <ui:include src="FooterAdm.xhtml" />
+	    	</ui:insert>
+    	    </div>
+
+
+
+    </h:body>
 </html>

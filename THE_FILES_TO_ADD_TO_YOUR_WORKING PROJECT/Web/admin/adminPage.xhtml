@@ -13,16 +13,16 @@
      	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
      	<h:outputStylesheet library = "css" name = "styles.css" />
      	<meta name="name" content="content" />
-		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/styles.css" rel="stylesheet" type="text/css" />
 <!-- 		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" /> -->
-		<link href="CSS/thePage.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/thePage.css" rel="stylesheet" type="text/css" />
 		
      </h:head>
      
  
 <h:body>
 
-	<ui:composition template="theTemplate.xhtml">
+	<ui:composition template="theTemplateADM.xhtml">
 
 	<ui:define name="content">
        <div class = "border">
@@ -46,7 +46,9 @@
             <h:commandButton class = "Buttons Buttonss" value="Edit category" action="editCategory"/>
             
             <h2 class="h1"> Handle Orders:</h2>
-            <h:commandButton class="Buttons Buttonss" value="Update Orders(Does not work yet)" action="editOrder"></h:commandButton>
+            <h:commandButton class="Buttons Buttonss" value="Edit orders" action="editOrder"/>
+         <br/>
+         <h:commandButton value="Log ut" action="#{adminData.logOut}"/>
             
     </h:form>
    	
