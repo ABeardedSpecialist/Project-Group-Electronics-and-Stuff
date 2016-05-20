@@ -63,12 +63,13 @@ public class Order {
         this.status = st;
     }
 
-    public boolean isEditable() {
-        return editable;
-    }
-
     public void setEditable(boolean editable) {
         System.out.println(editable);
         this.editable = editable;
+    }
+
+    public boolean getEditable()
+    {
+        return this.editable;
     }
 }

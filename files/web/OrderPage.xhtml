@@ -50,21 +50,21 @@
             <br/>
             <h:outputLabel value="Name"/>
             <br/>
-            <h:inputText value="#{order.ord.orderName}"/>
+            <h:inputText value="#{orderBean.order.orderName}"/>
             <br/>
             <h:outputLabel value="Address"/>
             <br/>
-            <h:inputText value="#{order.ord.orderAddress}"/>
+            <h:inputText value="#{orderBean.order.orderAddress}"/>
             <br/>
             <h:outputLabel value="Phone number"/>
             <br/>
-            <h:inputText value="#{order.ord.orderPhone}"/>
+            <h:inputText value="#{orderBean.order.orderPhone}"/>
             <br/>
             <h:outputLabel value="E-mail"/>
             <br/>
-            <h:inputText value="#{order.ord.orderEmail}"/>
+            <h:inputText value="#{orderBean.order.orderEmail}"/>
             <br/>
-            <h:commandButton value="Purchase" action="#{order.createOrder}"/>
+            <h:commandButton value="Purchase" action="#{orderBean.createOrder}"/>
         </h:form>
     </h:body>
     </div></ui:define></ui:composition>

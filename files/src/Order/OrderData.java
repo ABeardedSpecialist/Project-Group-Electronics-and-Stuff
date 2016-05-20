@@ -3,10 +3,10 @@ package Order;
 import Cart.Cart;
 import Cart.cartItem;
 import Products.product;
-import jdk.nashorn.internal.ir.WhileNode;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -18,14 +18,24 @@ import java.util.List;
 /**
  * Created by Michael Johansson(mj223gn) on 2016-05-08.
  */
-@ManagedBean(name = "order")
+@ManagedBean(name = "orderBean")
 @Named
-@RequestScoped
+@SessionScoped
 public class OrderData implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
-    private Order ord;
+    private Order order;
+
+    public Order getTemp() {
+        return temp;
+    }
+
+    public void setTemp(Order temp) {
+        this.temp = temp;
+    }
+
+    private Order temp = new Order();
     private List<cartItem> cartItemsList;
     private List<Order> orderList;
     private int id;
@@ -34,18 +44,17 @@ public class OrderData implements Serializable {
     Cart cart;
 
     public OrderData() {
-        ord = new Order();
-        ord.setStatus("NEW");
+        order = new Order();
         id = 0;
-
+        getOrderList();
     }
 
-    public Order getOrd() {
-        return ord;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrd(Order ord) {
-        this.ord = ord;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public int getId() {
@@ -73,13 +82,13 @@ public class OrderData implements Serializable {
             String quary = "INSERT INTO webshop.orderid (OrderName, OrderAddress, OrderPhone," +
                     " OrderEmail, OrderTotalPrice, OrderNumberOfProducts, OrderStatus)" + " VALUES (?,?,?,?,?,?,?)";
             PreparedStatement statement = conn.prepareStatement(quary, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, ord.getOrderName());
-            statement.setString(2, ord.getOrderAddress());
-            statement.setInt(3, ord.getOrderPhone());
-            statement.setString(4, ord.getOrderEmail());
+            statement.setString(1, order.getOrderName());
+            statement.setString(2, order.getOrderAddress());
+            statement.setInt(3, order.getOrderPhone());
+            statement.setString(4, order.getOrderEmail());
             statement.setInt(5, cart.getTotalPrice());
             statement.setInt(6, cart.getNumberOfProducts());
-            statement.setString(7, ord.getStatus());
+            statement.setString(7, "NEW");
             statement.execute();
 
             ResultSet rs = statement.getGeneratedKeys();
@@ -108,7 +117,6 @@ public class OrderData implements Serializable {
     public String checkOrder() {
         try {
             cartItemsList = new ArrayList<>();
-            System.out.println("kalle");
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
@@ -229,14 +237,15 @@ public class OrderData implements Serializable {
         this.orderList = orderList;
     }
 
-    public void editOrder(Order ord){
+    public void editOrder(){
         try {
+
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
             String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
             PreparedStatement statement = conn.prepareStatement(query);
-            statement.setString(1, ord.getStatus());
-            statement.setInt(2, ord.getOrderID());
+            statement.setString(1, temp.getStatus());
+            statement.setInt(2, temp.getOrderID());
             statement.executeUpdate();
             conn.close();
         } catch (SQLException e) {
@@ -244,5 +253,12 @@ public class OrderData implements Serializable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    public void setOrderEdit(Order ord){
+        ord.setEditable(true);
+    }
+    public String Edit(Order ord){
+        this.temp = ord;
+        return "EditOrderTest";
     }
 }
