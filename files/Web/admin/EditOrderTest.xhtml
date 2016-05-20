@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+
+        <h:outputLabel value="#{orderBean.temp.orderID}"/>
+        <h:outputLabel value="#{orderBean.temp.orderName}"/>
+        <h:outputLabel value="#{orderBean.temp.orderAddress}"/>
+        <h:outputLabel value="#{orderBean.temp.orderPhone}"/>
+        <h:outputLabel value="#{orderBean.temp.orderEmail}"/>
+        <h:selectOneMenu value="#">
+                <f:selectItems value="#{orderBean.getOrderProducts(orderBean.temp)}"/>
+        </h:selectOneMenu>
+
+        <h:selectOneMenu value="#{orderBean.temp.status}">
+            <f:selectItem itemLabel="NEW" itemValue="NEW"/>
+            <f:selectItem itemLabel="SHIPPED" itemValue="SHIPPED"/>
+            <f:selectItem itemLabel="DELAYED" itemValue="DELAYED"/>
+            <f:selectItem itemLabel="DELIVERYED" itemValue="DELIVERYED"/>
+        </h:selectOneMenu>
+
+        <h:commandButton value="edit" action="#{orderBean.editOrder}"/>
+    </h:form>
+</f:view>
+</html>
