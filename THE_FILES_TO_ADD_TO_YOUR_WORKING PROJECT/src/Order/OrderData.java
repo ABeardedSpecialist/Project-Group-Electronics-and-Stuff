@@ -2,11 +2,11 @@ package Order;
 
 import Cart.Cart;
 import Cart.cartItem;
+import Products.DatabaseConnection;
 import Products.product;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -20,21 +20,12 @@ import java.util.List;
  */
 @ManagedBean(name = "orderBean")
 @Named
-@SessionScoped
+@RequestScoped
 public class OrderData implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
+    private DatabaseConnection databaseConnection = new DatabaseConnection();
     private Order order;
-
-    public Order getTemp() {
-        return temp;
-    }
-
-    public void setTemp(Order temp) {
-        this.temp = temp;
-    }
-
     private Order temp = new Order();
     private List<cartItem> cartItemsList;
     private List<Order> orderList;
@@ -57,6 +48,13 @@ public class OrderData implements Serializable {
         this.order = order;
     }
 
+    public Order getTemp() {
+        return temp;
+    }
+
+    public void setTemp(Order temp) {
+        this.temp = temp;
+    }
     public int getId() {
         return id;
     }
@@ -74,14 +72,11 @@ public class OrderData implements Serializable {
     }
 
     public String createOrder() {
+        String createOrderFormQuery = "INSERT INTO webshop.orderid (OrderName, OrderAddress, OrderPhone," +
+                " OrderEmail, OrderTotalPrice, OrderNumberOfProducts, OrderStatus)" + " VALUES (?,?,?,?,?,?,?)";
         try {
             cartItemsList = cart.getID();
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "INSERT INTO webshop.orderid (OrderName, OrderAddress, OrderPhone," +
-                    " OrderEmail, OrderTotalPrice, OrderNumberOfProducts, OrderStatus)" + " VALUES (?,?,?,?,?,?,?)";
-            PreparedStatement statement = conn.prepareStatement(quary, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(createOrderFormQuery, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, order.getOrderName());
             statement.setString(2, order.getOrderAddress());
             statement.setInt(3, order.getOrderPhone());
@@ -95,36 +90,30 @@ public class OrderData implements Serializable {
             if (rs.next()) {
                 id = rs.getInt(1);
             }
-
             for (cartItem item : cartItemsList) {
                 String query = "INSERT INTO webshop.orders (OrderID, OrderProduct, OrderQuantity, OrderProductPrice)" + " VALUES(?,?,?,?)";
-                PreparedStatement itemQuery = conn.prepareStatement(query);
+                PreparedStatement itemQuery = databaseConnection.connect().prepareStatement(query);
                 itemQuery.setInt(1, id);
                 itemQuery.setString(2, item.getItem().getProductName());
                 itemQuery.setInt(3, item.getQuantity());
                 itemQuery.setInt(4, item.getItem().getProductPrice());
                 itemQuery.execute();
             }
-            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
         return "OrderStatusPage";
     }
 
     public String checkOrder() {
+        String query = "SELECT OrderProduct, OrderProductPrice, OrderQuantity FROM webshop.orders WHERE OrderID = " + id;
         try {
             cartItemsList = new ArrayList<>();
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "SELECT OrderProduct, OrderProductPrice, OrderQuantity FROM webshop.orders WHERE OrderID = " + id;
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
-
             if (!rs.next()) {
                 return "InvalidOrderNumber";
             }
@@ -137,30 +126,18 @@ public class OrderData implements Serializable {
                 ci.setQuantity(rs.getInt(3));
                 cartItemsList.add(ci);
             }
-            conn.close();
-        } catch (
-                SQLException e
-                )
-
-        {
+        } catch (SQLException e){
             e.printStackTrace();
-        } catch (
-                ClassNotFoundException e
-                )
-
-        {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
-
         return "OrderStatusPage";
     }
 
     public int getNumberOfProducts() {
         int quantity = 0;
         for (cartItem cartitem : cartItemsList) {
-
             quantity += cartitem.getQuantity();
-
         }
         return quantity;
     }
@@ -168,21 +145,16 @@ public class OrderData implements Serializable {
     public int getTotalPrice() {
         int total = 0;
         for (cartItem cartitem : cartItemsList) {
-
             total += cartitem.getItem().getProductPrice();
-
         }
         return total;
     }
 
     public List<Order> getOrderList() {
         orderList = new ArrayList<>();
+        String query = "SELECT * FROM webshop.orderid";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "SELECT * FROM webshop.orderid";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
 
@@ -197,38 +169,29 @@ public class OrderData implements Serializable {
                 orderList.add(o);
             }
 
-            conn.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
 
         }
         return orderList;
     }
     public List<String> getOrderProducts(Order ord){
         List<String> products = new ArrayList<>();
+        String query = "SELECT OrderProduct FROM webshop.orders WHERE OrderID ='"+ord.getOrderID()+"'";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "SELECT OrderProduct FROM webshop.orders WHERE OrderID ='"+ord.getOrderID()+"'";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
-
             while (rs.next()) {
                 products.add(rs.getString(1));
             }
 
-            conn.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-
+        } finally {
+            databaseConnection.disconnect();
         }
         return products;
     }
@@ -238,24 +201,18 @@ public class OrderData implements Serializable {
     }
 
     public void editOrder(){
+        String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
         try {
 
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
-            PreparedStatement statement = conn.prepareStatement(query);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.setString(1, temp.getStatus());
             statement.setInt(2, temp.getOrderID());
             statement.executeUpdate();
-            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
-    }
-    public void setOrderEdit(Order ord){
-        ord.setEditable(true);
     }
     public String Edit(Order ord){
         this.temp = ord;

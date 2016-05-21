@@ -1,11 +1,13 @@
 package Cart;
 
+import Products.DatabaseConnection;
 import Products.product;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,6 @@ import java.util.List;
 @ManagedBean (name = "Cart")
 public class Cart implements Serializable {
 
-
     /**
 	 * 
 	 */
@@ -25,6 +26,7 @@ public class Cart implements Serializable {
 	private List<cartItem> ID = new ArrayList<>();
     private int totalPrice;
     private int numberOfProducts;
+    private DatabaseConnection databaseConnection = new DatabaseConnection();
 
     public int getTotalPrice() {
         totalPrice = 0;
@@ -54,7 +56,21 @@ public class Cart implements Serializable {
     }
 
 
-    public List<Integer> getQuantity(int quantity){
+    public List<Integer> getQuantity(product product){
+        int quantity = 0;
+        String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = '"+product.getProductID()+"'";
+        try {
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            ResultSet rs = statement.getResultSet();
+            if(rs.next()){
+                quantity = rs.getInt(1);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
+        }
         List<Integer> Quantity = new ArrayList<>();
         for (int i = 1; i <= quantity; i++){
             Quantity.add(i);
@@ -64,11 +80,12 @@ public class Cart implements Serializable {
     public void addProductToCart(product prod){
         for (cartItem ci: ID) {
             if(ci.getItem().getProductID() == prod.getProductID()){
-                if (ci.getQuantity()+1 > ci.getItem().getProductQuantity()){
+                if (prod.getProductQuantity() == 0){
                     return;
                 }
                 else{
                     ci.setQuantity(ci.getQuantity()+1);
+                    prod.setProductQuantity(prod.getProductQuantity()-1);
                     return;
                 }
             }
@@ -77,6 +94,7 @@ public class Cart implements Serializable {
         ci.setQuantity(1);
         ci.setItem(prod);
         ID.add(ci);
+        prod.setProductQuantity(prod.getProductQuantity()-1);
     }
     public List<cartItem> getID() {
         return ID;

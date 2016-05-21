@@ -38,7 +38,7 @@
 			</h:column>
 			<h:column>
 				<f:facet name="header">Name</f:facet>
-            #{ci.item.productName}
+				<h:commandLink value="#{ci.item.productName}" action="#{productData.getProductPage(ci.item)}" size="20"/>
         </h:column>
 			<h:column>
 				<f:facet name="header">Price</f:facet>
