@@ -94,10 +94,22 @@ public class OrderData implements Serializable {
                 String query = "INSERT INTO webshop.orders (OrderID, OrderProduct, OrderQuantity, OrderProductPrice)" + " VALUES(?,?,?,?)";
                 PreparedStatement itemQuery = databaseConnection.connect().prepareStatement(query);
                 itemQuery.setInt(1, id);
+                System.out.println(item.getItem().getProductName());
                 itemQuery.setString(2, item.getItem().getProductName());
                 itemQuery.setInt(3, item.getQuantity());
                 itemQuery.setInt(4, item.getItem().getProductPrice());
                 itemQuery.execute();
+            }
+            for (cartItem ci : cartItemsList) {
+                int quantity = getQuantityFromDatabase(ci.getItem());
+
+                String changeQuantity = "UPDATE webshop.products SET ProductQuantity = ? WHERE ProductID = ?";
+                PreparedStatement updateQuantity = databaseConnection.connect().prepareStatement(changeQuantity);
+                System.out.println(quantity);
+                System.out.println(ci.getQuantity());
+                updateQuantity.setInt(1, quantity - ci.getQuantity());
+                updateQuantity.setInt(2, ci.getItem().getProductID());
+                updateQuantity.executeUpdate();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -114,17 +126,18 @@ public class OrderData implements Serializable {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
-            if (!rs.next()) {
-                return "InvalidOrderNumber";
-            }
             while (rs.next()) {
                 cartItem ci = new cartItem();
                 product pr = new product();
                 pr.setProductName(rs.getString(1));
                 pr.setProductPrice(rs.getInt(2));
+                System.out.println(pr.getProductName());
                 ci.setItem(pr);
                 ci.setQuantity(rs.getInt(3));
                 cartItemsList.add(ci);
+            }
+            if(cartItemsList.isEmpty()){
+                return "InvalidOrderNumber";
             }
         } catch (SQLException e){
             e.printStackTrace();
@@ -145,7 +158,7 @@ public class OrderData implements Serializable {
     public int getTotalPrice() {
         int total = 0;
         for (cartItem cartitem : cartItemsList) {
-            total += cartitem.getItem().getProductPrice();
+            total += (cartitem.getItem().getProductPrice() * cartitem.getQuantity());
         }
         return total;
     }
@@ -218,4 +231,26 @@ public class OrderData implements Serializable {
         this.temp = ord;
         return "EditOrderTest";
     }
+    public int getQuantityFromDatabase(product product){
+        String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = ?";
+        int output = 0;
+        try {
+
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            statement.setInt(1, product.getProductID());
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            if(rs.next()) {
+                output = rs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
+        }
+        return output;
+    }
+
+
 }
