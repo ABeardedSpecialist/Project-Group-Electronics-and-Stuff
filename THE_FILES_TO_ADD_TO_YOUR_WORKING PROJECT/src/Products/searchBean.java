@@ -1,6 +1,8 @@
 package Products;
 
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,14 +12,17 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+
 @ManagedBean
 @SessionScoped
 public class searchBean implements Serializable {
-
+    /**
+     *
+     */
     private static final long serialVersionUID = 1L;
-    private DatabaseConnection databaseConnection = new DatabaseConnection();
     private String searchVal;
     private List<product> searchRes = new ArrayList<product>();
+    private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 
     public String getSearchVal() {
         return searchVal;
@@ -36,12 +41,17 @@ public class searchBean implements Serializable {
     }
 
     public String searchResults() {
-        String query = "SELECT * FROM webshop.editview WHERE ProductName LIKE '%" + this.searchVal + "%' OR CategoryName LIKE '%"+this.searchVal+"%'";
+
         try {
             searchRes.removeAll(searchRes);
-            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+            String quary = "SELECT * FROM webshop.editview WHERE ProductName LIKE '%" + this.searchVal + "%' OR CategoryName LIKE '%"+this.searchVal+"%'";
+            PreparedStatement statement = conn.prepareStatement(quary);
             statement.executeQuery();
             ResultSet rs = statement.getResultSet();
+
             while (rs.next()) {
                 product pr = new product();
                 pr.setProductID(rs.getInt(1));
@@ -53,10 +63,12 @@ public class searchBean implements Serializable {
                 pr.setProductCategory(rs.getString(7));
                 searchRes.add(pr);
             }
+
+            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            databaseConnection.disconnect();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
         return "SearchResults";
     }

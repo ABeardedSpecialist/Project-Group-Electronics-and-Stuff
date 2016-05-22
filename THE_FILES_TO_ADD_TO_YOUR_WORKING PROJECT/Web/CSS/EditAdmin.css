@@ -85,7 +85,66 @@ tr:nth-child(even) {
 	background-color: blue;
 }
 
+/* #button { */
+/*     border: 3px solid #ffffff; */
+/*     border-radius: 36px; */
+/*     box-shadow: 2px 12px 19px -3px #15110b; */
+/*     color: #ffffff; */
+/*     cursor: pointer; */
+/*     display: inline-block; */
+/*     font-family: Arial; */
+/*     font-size: 14px; */
+/*     font-weight: bold; */
+/*     padding: 8px 17px; */
+/*     text-decoration: none; */
+/*     text-shadow: -1px 2px 0 #180606; */
+/*     margin-left: 484px; */
 
+
+/* } */
+
+
+/* #button:hover { */
+/* 	background-color:#000000; */
+	
+/* } */
+/* #button:active { */
+/* 	position:relative; */
+/* 	top:1px; */
+/* } */
+/* .button1{ */
+	
+/* 	 border: 3px solid #ffffff; */
+/* 	width: 100px; */
+	
+	
+/* } */
+
+/* .test { */
+/*     background-color: #4CAF50; Green */
+/*     border: none; */
+/*     color: white; */
+/*     padding: 5px 10px; */
+/*     text-align: center; */
+/*     text-decoration: none; */
+/*     display: inline-block; */
+/*     font-size: 14px; */
+/*     margin: 4px 2px; */
+/*     -webkit-transition-duration: 0.4s; Safari */
+/*     transition-duration: 0.4s; */
+/*     cursor: pointer; */
+/* } */
+
+/* .test2 { */
+/*     background-color: white;  */
+/*     color: black;  */
+/*     border: 2px solid #008CBA; */
+/* } */
+
+/* .test2:hover { */
+/*     background-color: #008CBA; */
+/*     color: white; */
+/* } */
 
 .Button {
   background: #24282e;

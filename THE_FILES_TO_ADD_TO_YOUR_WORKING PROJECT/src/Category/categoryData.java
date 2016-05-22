@@ -1,6 +1,8 @@
 package Category;
 
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,20 +10,25 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.*;
 import javax.inject.Named;
-
-import Products.DatabaseConnection;
 import Products.product;
+
+
 
 @ManagedBean (name = "category")
 @Named
-@SessionScoped
+@RequestScoped
 public class categoryData implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-	private DatabaseConnection databaseConnection = new DatabaseConnection();
+	/**
+	 * 
+	 */
+	private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
 	private List<category> theList=new ArrayList<category>();
 	private List<product> catList=new ArrayList<product>();
 	private category cate;
+
+	public static String getSql_connection() {
+		return sql_connection;
+	}
 
 	public categoryData(){
 		cate = new category();
@@ -34,6 +41,7 @@ public class categoryData implements Serializable {
 	public void setCate(category cate) {
 		this.cate = cate;
 	}
+
 
 	public List<category> getTheList() {
 		return theList;
@@ -51,72 +59,95 @@ public class categoryData implements Serializable {
 		this.catList = catList;
 	}
 
+
+
 	private List<category> ListPlease(){
-		String query = "SELECT * FROM webshop.category";
 		try {
 			theList.removeAll(theList);
-			PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+			String quary = "SELECT * FROM webshop.category";
+			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
+
+
 			while (rs.next()) {
 				category c=new category();
 				c.setCatID(rs.getInt(1));
 				c.setCategoryName(rs.getString(2));
+
 				theList.add(c);
 			}
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			databaseConnection.disconnect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 
 		return theList;
 	}
 	public void addNewCategory(){
-		String query = "INSERT INTO webshop.category (CategoryName)"+" VALUES (?)";
 		try {
-			PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+			String quary = "INSERT INTO webshop.category (CategoryName)"+" VALUES (?)";
+			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.setString(1, cate.getCategoryName());
 			statement.execute();
 
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			databaseConnection.disconnect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 		ListPlease();
 	}
 	public void editCategory(category cat){
-		String query = "UPDATE webshop.category SET CategoryName=? WHERE CategoryID = ?";
 		try {
-			PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+			String query = "UPDATE webshop.category SET CategoryName=? WHERE productID = ?";
+			PreparedStatement statement = conn.prepareStatement(query);
 			statement.setString(1, cat.getCategoryName());
 			statement.setInt(2, cat.getCatID());
 			statement.executeUpdate();
-			cat.setEditable(false);
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			databaseConnection.disconnect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 	}
 	public void removeCategory(category cat){
-		String query = "DELETE FROM webshop.category WHERE categoryID = '" + cat.getCatID() + "'";
 		try {
-			PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+
+			String quary = "DELETE FROM webshop.category WHERE categoryID = " + cat.getCatID();
+			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.executeUpdate();
+
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			databaseConnection.disconnect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 	}
 
 	public String getProductwithCat(category in){
-		String query = "SELECT * FROM webshop.productview WHERE CategoryName ='"+in.getCategoryName()+"'";
 		try {
 			catList.removeAll(catList);
-			PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+			String quary = "SELECT * FROM webshop.productview WHERE CategoryName ='"+in.getCategoryName()+"'";
+			PreparedStatement statement = conn.prepareStatement(quary);
 			statement.execute();
 			ResultSet rs = statement.getResultSet();
 			while(rs.next()){
@@ -131,10 +162,12 @@ public class categoryData implements Serializable {
 				catList.add(pr);
 			}
 
+			conn.close();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			databaseConnection.disconnect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
 		return "catPage";
 	}
