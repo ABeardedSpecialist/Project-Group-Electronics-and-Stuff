@@ -23,6 +23,10 @@
             <br/>
             <h:dataTable value="#{orderBean.cartItemsList}" var="ci">
                 <h:column>
+                    <f:facet name="header">Image</f:facet>
+                    <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
+                </h:column>
+                <h:column>
                     <f:facet name="header">Name</f:facet>
                     #{ci.item.productName}
                 </h:column>
@@ -42,9 +46,9 @@
         </h:form>
 
         <h:form>
-            <h:outputLabel value="Number of products: #{orderBean.numberOfProducts}"/>
+            <h:outputLabel value="Number of products: #{cart.numberOfProducts}"/>
             <br/>
-            <h:outputLabel value="Total price: #{orderBean.totalPrice}"/>
+            <h:outputLabel value="Total price: #{cart.totalPrice}"/>
             <br/>
             <h:outputLabel value="#{orderBean.order.status}"/>
             <br/>
