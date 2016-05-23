@@ -8,7 +8,7 @@
 \usepackage{dtklogos}
 \usepackage{wallpaper}
 \usepackage[absolute]{textpos}
-\usepackage[top=2cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+\usepackage[top=2cm, bottom=2.5cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{appendix}
 \usepackage[nottoc]{tocbibind}
 
@@ -125,106 +125,97 @@
 		\textbf{Change} & \textbf{Description} & \textbf{Name and Date} \\ \hline
 	Created the test case document  & Created the document and wrote down all the tests & Robin Reijo 22/4 - 2016\\ \hline
 		Created Revision history table	&       included a revision history table to the document           &     Michael Johansson, 22/4 - 2016               \\ \hline
-			&              &                      \\ \hline
-		&		&	  \\ \hline
+		Updated document 	& updated the document with the stuff we got on the seminar              &   Michael Johansson 8/5 - 2016                   \\ \hline
+	Updated the tabular	&	Updated the tabular with more tabs and post/pre condition	&	Michael Johansson 16/5 - 2016  \\ \hline
+	Updated Test case & Updated some cases and included post/pre conditions on all test cases	& Michael Johansson 17/5 - 2016 \\ \hline
+	Updated the document&Edited post conditions on test 1,3,4,5 and changed texts in tests 10,11,12 and 13	& Robin Reijo 23/5 - 2016\\ \hline
 	\end{tabular}
 \end{table}
 \newpage
 
 
 \section{Introduction}
-The purpose of this test case document is to showcase what they system shall be tested upon. For this purpose we use tables organize the work. Where you can look up what tests there is and requirements we put up for the intended test, and also how to test it and what we should come to expect of each of the tests.
+The purpose of this test case document is to showcase what they system shall be tested upon. For this purpose we use tables organize the work. Where you can look up what tests there is and requirements we put up for the intended test, and also how to test it and what we should come to expect of each of the tests. In addition to this post and pre conditions are also added.
 
 \section{Test Cases - general}
-\begin{tabular}{ |p{1cm}||p{4cm}|p{4cm}|p{4cm}|  }
-	\hline
-	\multicolumn{4}{|c|}{Test Cases} \\
-	\hline
-	Test& Requirements &How to test&Expected result\\
-	\hline
-	1.  & There should atleast be one product in the webshop.    & Click on a product at sidebar or search for it& Should show the specified product page.\\
-	\hline
-	1.1  & All information regarding the product is stored in a database.   & Add a product on the site and see if it is added in database.& The added product should be shown in the database.\\
-	\hline
-	1.2  & A product shall contain product name, category, quantity, price, description and an image.    &Go to the desired product page.& The product should contain all of the requirements.\\
-	\hline
-	1.3&  A placed order will be placed in the database  & place an order   &Should be stored in the database\\
-	\hline
-	1.3.1 & Quantity changes made will be updated in database&Change quantity of the order & New quantity should be updated in database.\\
-	\hline
 
-	
-	
-	
-\end{tabular}
-	\newpage
-	\section{Test Cases - Customer}
-\begin{tabular}{ |p{1cm}||p{4cm}|p{4cm}|p{4cm}|  }
-	\hline
-	\multicolumn{4}{|c|}{Test Cases} \\
-	\hline
-	Test& Requirements &How to test&Expected result\\
-	\hline
+\begin{tabular}{ |p{0.8cm}|p{0.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
 
-	2.    &A customer shall be able to browse product  & Click links on side bar & Should be possible to browse\\
 	\hline
-	2.1&  A customer shall be able to search for a product  & Search for the desired product&Should show the searched product\\
+	\multicolumn{7}{|c|}{Test Cases} \\
 	\hline
-	2.1.1& A customer shall be able to add show products by category  & Click on it from sidebar.   & Should show product by category \\
+	Test& R.ID & Requirements &Pre condition &How to test& Post condition &Expected result\\
 	\hline
-	2.1 & Customer shall be able to view a products details  &Click or search for a product on search bar or click on sidebar links &Should give a new page where product details: product name, category, quantity,price, description and an image are shown. \\
+	1 & 1. &The webshop must contain any number of products &  & Search for an empty string in the search bar to get all products in the database & &Should show all products on the result page.\\
 	\hline
-	2.2 & A customer shall be able to put a product in the shoping cart & Add a product and go to shoping cart page & Should show newly added product. \\
+	2  & 1.1 & All information regarding the product is stored in the database. & Be logged in as admin & Go to add new product, add information in the field and press add button & The added product should be shown in the database. & See a success text appear\\
 	\hline
-	2.2.1 & A customer shall be able to change quantity while in the shoping cart. & Change quantity on a product by pressing on the quantity button and change to desired number. & Should be possible. \\
+	3 & 1.2  &A product shall contain product name, category, quantity, price, description and an image.&    &Search for an empty string in the search bar to get all products in the database and check so no fields are missing & &The product should contain all of the requirements.\\
 	\hline
-	2.2.2 & A customer shall be able to remove a product with one click& Press the remove button at the desired product. & Product should be removed from the shoping cart. \\
+	4 & 1.3 &A placed order will be placed in the database&  & Add products to your cart, from there click the checkout button and from that page click purchase& Order should be placed in the database & Should se a conformation of the placed order.  \\
 	\hline
-	2.3 & A customer shall be able to make an order & Go to shoping cart page, fill in the form with personal information and press send. & Customer should be able to see the placed order when going to customers individual page.\\
+	5 & 1.3.1 &Quantity changes made will be updated in database&  Look in the database for the quantity of the product tested & Do as in test 4 to place an order with one quantity of the product & Quantity should update with minus 1 in the database & Should se a conformation of the placed order.\\
 	\hline
-	2.3.1 & A customer shall be given an auto generated order number & Press send on the form. & Should give the customer the number. \\
-	
-	\hline
-	2.3.2 & A customer shall be able to view the status on his or her order. & Use the auto generated number to get to the page. & Should show the status of the order. \\
-	\hline
-
-	
-	
-	
 \end{tabular}
 
-
+\section{Test Cases - Customer}
+\resizebox{!}{12cm}{
+\begin{tabular}{ |p{0.8cm}|p{0.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+	\hline
+	\multicolumn{7}{|c|}{Test Cases} \\
+	\hline
+	Test& R.ID & Requirements &Pre condition &How to test& Post condition &Expected result\\
+	\hline
+	6    & 2. &A customer shall be able to browse product& The product must be in the database & Search for a product and then click the product to come to its page & &Should come to the specific products page\\
+	\hline
+	7    & 2. &A customer shall be able to browse product& The product should be connected to the category & Go into a category and press a product && Should come to the specific products page\\ \hline
+	8    & 2. &A customer shall be able to browse product& The product must be in the new section & Press a product in the new section of the frontpage  && Should come to the specific products page\\
+	\hline
+	9 &2.1.1& A customer shall be able to show products by category& The category must have products connected to it & Click a category to show category specific products   && Should show product by category \\
+	\hline
+	10 & 2.2 &A customer shall be able to put a product in the shopping cart & Have an empty cart or a cart with items in it & Search for a product, add it to the cart and press go to cart & have just this product in the cart with 1 as quantity & Should show newly added product. \\
+	\hline
+	11 &2.2.1& A customer shall be able to change quantity while in the shoping cart.& Have atleast one product in the cart & go to cart then change quantity on the product in the drop down menu. & should have the new quantity in the drop down box &Should update the quantity of the product and add the new total price and number of products\\
+	\hline
+	12 &	2.2.2 &A customer shall be able to remove a product with one click& Have atleast one product in the cart &Press the remove button. & Product should be removed from the shopping cart. & Cart should be empty \\
+	\hline
+	13 &2.3 &A customer shall be able to make an order& Have atleast one product in a cart & Go to shoping cart page, press go to checkout, fill in the form with personal information and press purchase. & Order should be in the database &  Should se a order confirmation with the order number \\
+	\hline
+	14 &2.3.1 &A customer shall be given an auto generated order number& Check the last order number in the database, add product to cart and insert information in the order form & Press purchase on the order form. & order number should be a old order number plus one  & Should se a order confirmation with the order number \\	\hline
+	15 &2.3.2 &A customer shall be able to view the status on his or her order.& Take a order number from the database & Write in a order number in the check order box & & Should show the status of the order confirmation page. \\ \hline	
+\end{tabular}
+}
 	\newpage
 	\section{Test Cases - Administrator}
-	
-		\begin{tabular}{ |p{1cm}||p{4cm}|p{4cm}|p{4cm}|  }
+	\resizebox{!}{12cm}{
+	\begin{tabular}{ |p{0.8cm}|p{0.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
 			\hline
-			\multicolumn{4}{|c|}{Test Cases} \\
+			\multicolumn{7}{|c|}{Test Cases} \\
 			\hline
-			Test& Requirements &How to test&Expected result\\
+			Test& R.ID & Requirements &Pre condition &How to test& Post condition &Expected result\\
 			\hline
-			
-			3.2.2 & Admin shall be able to change information about a product & Go to admin page and press change information on a product & should show newly added information of the product when it is viewed. \\
+			 16 & 3.2.2 &Admin shall be able to change information about a product & Log in as admin& Press edit product, change a field and press edit & Product information should be changed in the database & Should show newly added information of the product when it is viewed. \\
 			\hline
-			3.2.3 & Admin shall be able to add a category & in admin add category page, add a category & new category should be visible when adding a new product \\
+			 17 &3.2.3 & Admin shall be able to add a category& Log in as admin & Press add category, then add a category & Category should be added in the database & New category should be visible in the drop down menu \\
 			\hline
-			3.2.3 & Admin shall be able to remove a category & in admin remove category page, remove a category & new category should be visible when adding a new product \\
+			18 & 3.2.3 &Admin shall be able to remove a category& Log in as admin & Press edit category, remove a category & Category should be removed from the datebase & Removed category must be removed from the drop down menu\\
 			\hline
-			3.2.3 & Admin shall be able to change information about a category & in admin category page, change a category's information & new category information should be visible when adding a new product \\
+			19 &3.2.3 & Admin shall be able to edit a category& Log in as admin & Press edit category, change a category & Category name should be changed and all category fields in products should be changed & New category information should be visible in the drop down menu \\
 			\hline
-			3.3 & Admin shall be able to add new admin accounts & Add a new admin account on the add new admin page & The new admin account should be visible in the database and an admin should be able to login using the new details.\\
+			 20 & 3.3 & Admin shall be able to add new admin accounts& Log in as admin & Add a new admin account on the add new admin page & The new admin account should be visible in the database and an admin should be able to login using the new details. & Should se a success text \\
 			\hline
-			3.4 & Admin shall be able to remove an admin account & remove a admin account on the remove admin page & The admin account should not be visible in the database and admin cant login. \\
+			 21& 3.4 &Admin shall be able to remove an admin account& Log in as admin & remove a admin account on the edit admin page & The admin account should not be visible in the database and admin cant login. & Should se a success text \\
 			\hline
-			3.5 & Admin shall be able to view all order of all customers. & Login into admin system, all order appear on admin logged in page. & Should display all the orders made by customers \\
-			\hline
-			3.5.1
-			& Admin shall be able to update status on every order & Login as admin, go to the targeted customers random generated number ordered page and change status to new shipped, delayed and delivered and returned & Should show newly updated status on show all order page and individual order page. \\ 
+			 22& 3.4 & Admin shall be able to edit an admin accounts password& Log in as admin & edit a admin account password on the edit admin page & The admin should only be able to log in with the new password & The password should change on the page \\
+			 \hline
+			 23 &3.5 & Admin shall be able to view all order. & Log in as admin & Press Edit Orders & & Should display all the orders made by customers \\
 			\hline
 			
+			24 & 3.5.1 & Admin shall be able to update status on every order & Log in as admin & Press edit Orders, press edit on a order and change the status & Status on order in the database should change & Should show newly updated status on edit order page \\ 
+			\hline
 			
 		\end{tabular}
-		
+	}
 			
 		
 
