@@ -6,6 +6,7 @@ import Products.DatabaseConnection;
 import Products.product;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @ManagedBean(name = "orderBean")
 @Named
-@RequestScoped
+@SessionScoped
 public class OrderData implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -32,12 +33,17 @@ public class OrderData implements Serializable {
     @Inject
     Cart cart;
 
+    
+    
     public OrderData() {
         order = new Order();
         id = 0;
         LoadTheList();
     }
 
+ 
+    
+    
     public Order getOrder() {
         return order;
     }
@@ -204,9 +210,8 @@ public class OrderData implements Serializable {
     }
 
     public void editOrder(Order ord){
-        System.out.println("bajs");
+  
         String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
-        System.out.println("kalle");
         try {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             System.out.println(ord.getStatus());
