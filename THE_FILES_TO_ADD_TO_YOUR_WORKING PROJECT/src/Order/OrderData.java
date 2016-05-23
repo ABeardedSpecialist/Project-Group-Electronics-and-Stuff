@@ -89,12 +89,19 @@ public class OrderData implements Serializable {
                 String query = "INSERT INTO webshop.orders (OrderID, OrderProduct, OrderQuantity, OrderProductPrice)" + " VALUES(?,?,?,?)";
                 PreparedStatement itemQuery = conn.prepareStatement(query);
                 itemQuery.setInt(1, id);
+<<<<<<< HEAD
                 itemQuery.setInt(2, item.getItem().getProductID());
+=======
+                itemQuery.setString(2, item.getItem().getProductName());
+>>>>>>> parent of 2e0a641... WORKING BETA
                 itemQuery.setInt(3, item.getQuantity());
                 itemQuery.setInt(4, item.getItem().getProductPrice());
                 itemQuery.execute();
             }
+<<<<<<< HEAD
             conn.close();
+=======
+>>>>>>> parent of 2e0a641... WORKING BETA
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -106,9 +113,51 @@ public class OrderData implements Serializable {
     public String checkOrder() {
         cartItemsList = new ArrayList<>();
         try {
+<<<<<<< HEAD
             cartItemsList = cart.getID();
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+=======
+            cartItemsList = new ArrayList<>();
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            if (!rs.next()) {
+                return "InvalidOrderNumber";
+            }
+            while (rs.next()) {
+                cartItem ci = new cartItem();
+                product pr = new product();
+                pr.setProductName(rs.getString(1));
+                pr.setProductPrice(rs.getInt(2));
+                ci.setItem(pr);
+                ci.setQuantity(rs.getInt(3));
+                cartItemsList.add(ci);
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
+        }
+        return "OrderStatusPage";
+    }
+
+    public int getNumberOfProducts() {
+        int quantity = 0;
+        for (cartItem cartitem : cartItemsList) {
+            quantity += cartitem.getQuantity();
+        }
+        return quantity;
+    }
+
+    public int getTotalPrice() {
+        int total = 0;
+        for (cartItem cartitem : cartItemsList) {
+            total += cartitem.getItem().getProductPrice();
+        }
+        return total;
+    }
+>>>>>>> parent of 2e0a641... WORKING BETA
 
             String quary = "SELECT OrderProduct FROM webshop.orders WHERE OrderID = " + id;
             PreparedStatement statement = conn.prepareStatement(quary);
@@ -160,6 +209,7 @@ public class OrderData implements Serializable {
     {
         e.printStackTrace();
     }
+<<<<<<< HEAD
 
     catch(
     ClassNotFoundException e
@@ -172,4 +222,10 @@ public class OrderData implements Serializable {
     return"OrderStatusPage";
 }
 
+=======
+    public String Edit(Order ord){
+        this.temp = ord;
+        return "EditOrderTest";
+    }
+>>>>>>> parent of 2e0a641... WORKING BETA
 }

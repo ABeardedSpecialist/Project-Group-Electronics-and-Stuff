@@ -60,11 +60,19 @@ public class Cart implements Serializable {
     public void addProductToCart(product prod){
         for (cartItem ci: ID) {
             if(ci.getItem().getProductID() == prod.getProductID()){
+<<<<<<< HEAD
                 if (ci.getQuantity()+1 > ci.getItem().getProductQuantity()){
+=======
+                if (prod.getProductQuantity() == 0){
+>>>>>>> parent of 2e0a641... WORKING BETA
                     return;
                 }
                 else{
                     ci.setQuantity(ci.getQuantity()+1);
+<<<<<<< HEAD
+=======
+                    prod.setProductQuantity(prod.getProductQuantity()-1);
+>>>>>>> parent of 2e0a641... WORKING BETA
                     return;
                 }
             }
@@ -73,6 +81,10 @@ public class Cart implements Serializable {
         ci.setQuantity(1);
         ci.setItem(prod);
         ID.add(ci);
+<<<<<<< HEAD
+=======
+        prod.setProductQuantity(prod.getProductQuantity()-1);
+>>>>>>> parent of 2e0a641... WORKING BETA
     }
     public List<cartItem> getID() {
         return ID;
