@@ -77,24 +77,27 @@ public class Cart implements Serializable {
         }
         return Quantity;
     }
-    public void addProductToCart(product prod){
-        for (cartItem ci: ID) {
-            if(ci.getItem().getProductID() == prod.getProductID()){
-                if (prod.getProductQuantity() == 0){
-                    return;
-                }
-                else{
-                    ci.setQuantity(ci.getQuantity()+1);
-                    prod.setProductQuantity(prod.getProductQuantity()-1);
-                    return;
+    public void addProductToCart(product prod) {
+        if (prod.getProductQuantity() == 0) {
+            return;
+        } else {
+            for (cartItem ci : ID) {
+                if (ci.getItem().getProductID() == prod.getProductID()) {
+                    if (prod.getProductQuantity() == 0) {
+                        return;
+                    } else {
+                        ci.setQuantity(ci.getQuantity() + 1);
+                        prod.setProductQuantity(prod.getProductQuantity() - 1);
+                        return;
+                    }
                 }
             }
+            cartItem ci = new cartItem();
+            ci.setQuantity(1);
+            ci.setItem(prod);
+            ID.add(ci);
+            prod.setProductQuantity(prod.getProductQuantity() - 1);
         }
-        cartItem ci = new cartItem();
-        ci.setQuantity(1);
-        ci.setItem(prod);
-        ID.add(ci);
-        prod.setProductQuantity(prod.getProductQuantity()-1);
     }
     public List<cartItem> getID() {
         return ID;

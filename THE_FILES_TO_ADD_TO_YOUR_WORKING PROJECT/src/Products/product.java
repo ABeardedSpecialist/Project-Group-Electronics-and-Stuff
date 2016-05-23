@@ -15,10 +15,10 @@ public class product  {
 	private String productName;
 	private int productPrice;
 	private int productQuantity;
-	private String productImage;
+	private String productImage = "imageNotFound.jpg";
 	private String productDescription;
 	private String productCategory;
-	private int categoryID;
+	private int categoryID = 1;
 	private boolean editable;
 
 
