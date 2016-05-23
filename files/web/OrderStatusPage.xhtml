@@ -31,6 +31,10 @@
                     #{ci.item.productPrice}
                 </h:column>
                 <h:column>
+                    <f:facet name="header">Category</f:facet>
+                    #{ci.item.productCategory}
+                </h:column>
+                <h:column>
                     <f:facet name="header">Quantity</f:facet>
                     #{ci.quantity}
                 </h:column>
@@ -38,9 +42,9 @@
         </h:form>
 
         <h:form>
-            <h:outputLabel value="Number of products: #{orderBean.getNumberOfProducts()}"/>
+            <h:outputLabel value="Number of products: #{orderBean.numberOfProducts}"/>
             <br/>
-            <h:outputLabel value="Total price: #{orderBean.getTotalPrice()}"/>
+            <h:outputLabel value="Total price: #{orderBean.totalPrice}"/>
             <br/>
             <h:outputLabel value="#{orderBean.order.status}"/>
             <br/>

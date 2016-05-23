@@ -15,7 +15,7 @@
 
 
 <f:view>
-    <ui:composition template="../theTemplate.xhtml">
+    <ui:composition template="theTemplateADM.xhtml">
 
         <ui:define name="content">
             <div class="border">
@@ -26,40 +26,25 @@
                             #{orderVar.orderID}
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Name</f:facet>
-                            <h:inputText value="#{orderVar.orderName}" size="20"
-                                         rendered="#{orderVar.editable}" />
-
-                            <h:outputText value="#{orderVar.orderName}"
-                                          rendered="#{not orderVar.editable}" />
-
+                            <f:facet name="header">Customer Name</f:facet>
+                            <h:outputText value="#{orderVar.orderName}"/>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Price</f:facet>
-                            <h:inputText value="#{orderVar.orderAddress}" size="20"
-                                         rendered="#{orderVar.editable}" />
-                            <h:outputText value="#{orderVar.orderAddress}"
-                                          rendered="#{not orderVar.editable}" />
+                            <f:facet name="header">Customer Address</f:facet>
+                            <h:outputText value="#{orderVar.orderAddress}"/>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Quantity</f:facet>
-                            <h:inputText value="#{orderVar.orderPhone}" size="20"
-                                         rendered="#{orderVar.editable}" />
-                            <h:outputText value="#{orderVar.orderPhone}"
-                                          rendered="#{not orderVar.editable}" />
+                            <f:facet name="header">Order Phone</f:facet>
+                            <h:outputText value="#{orderVar.orderPhone}"/>
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Image</f:facet>
-                            <h:inputText value="#{orderVar.orderEmail}" size="20"
-                                         rendered="#{orderVar.editable}" />
-                            <h:outputText value="#{orderVar.orderEmail}"
-                                          rendered="#{not orderVar.editable}" />
+                            <f:facet name="header">Order E-mail</f:facet>
+                            <h:outputText value="#{orderVar.orderEmail}"/>
                         </h:column>
                         <div class="form-input">
                             <h:column>
                                 <h:commandButton class ="Buttons Buttonss"  value="Edit"
-                                                 action="#{orderBean.Edit(orderVar)}"
-                                                 rendered="#{not orderVar.editable}" update="@form" ajax="true" />
+                                                 action="#{orderBean.Edit(orderVar)}" update="@form" ajax="true" />
                             </h:column>
                         </div>
                     </h:dataTable>

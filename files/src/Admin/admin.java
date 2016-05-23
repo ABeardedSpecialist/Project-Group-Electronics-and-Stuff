@@ -23,9 +23,6 @@ public class admin {
         edit = edt;
     }
 
-
-   
-
     public void setUsername(String input) {
         this.Username = input;
     }

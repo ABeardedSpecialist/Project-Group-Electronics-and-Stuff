@@ -13,7 +13,12 @@ import javax.servlet.http.HttpSession;
  */
 public class AuthorizationListener implements PhaseListener {
 
-    public void afterPhase(PhaseEvent event) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public void afterPhase(PhaseEvent event) {
 
         FacesContext facesContext = event.getFacesContext();
         String currentPage = facesContext.getViewRoot().getViewId();

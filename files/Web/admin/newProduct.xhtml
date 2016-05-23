@@ -17,13 +17,13 @@
 </h:head>
 <f:view>
 
-			<ui:composition template="../theTemplate.xhtml">
+			<ui:composition template="theTemplateADM.xhtml">
 
 	<ui:define name="content">
        <div class = "border">
 
 		<h:body>
-			<h:form>
+			<h:form enctype="multipart/form-data">
 				<div id="Title1">
 					<h1>Add a new product</h1>
 				</div>
@@ -47,28 +47,27 @@
 					<br />
 					<h:outputLabel  class="text" value="Product image source: " />
 					<br />
-					<h:inputText id="Image" value="#{productData.pr.productImage}" />
+					<h:form enctype="multipart/form-data">
+						<h:inputFile value="#{productData.imageFile}" />
+						<h:commandButton value="Upload" action="#{productData.fileUpload(productData.pr)}"/>
+					</h:form>
 					<br />
 					<h:outputLabel class="text" value="Product description: " />
 					<br />
-					<h:inputText id="Description"
+					<h:inputTextarea id="Description" cols="35" rows="5"
 						value="#{productData.pr.productDescription}" />
 					<br />
 					<h:outputLabel class="text"  value="Product Category: " />
 					<br />
-					<h:inputText id="Category"
-						value="#{productData.pr.productCategory}" />
-					<br />
-					<h:outputLabel  class="text" value="Product subcategory :" />
-					<br />
+					<h:selectOneMenu id="Category" value="#{productData.pr.categoryID}" onchange="save" >
+						<f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}" itemLabel="#{cd.categoryName}"/>
+					</h:selectOneMenu>
 					<br />
 					<br/>
 					<h:commandButton class ="Buttons Buttonss" value="Add product"
 						action="#{productData.addProduct}" />
 					<br />
 				</div>
-				
-				<h:commandButton class="Button1" value="Go back" action="adminPage" />
 			</h:form>
 		</h:body>
 </div></ui:define></ui:composition>

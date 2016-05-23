@@ -18,35 +18,35 @@
 			
 
 
-			<ul>
-				<li><a class="form-Home" href="index.xhtml">Home</a></li>
+			<ul class="menu" >
+				<li><a class="menuB" href="index.xhtml">Home</a></li>
 					
 
 
-				<li><a class="form-List" href="#">Categories</a>
-					<ul>
+				<li><a class="menuB" href="#">Categories</a>
+					<ul class="sub">
 				
 							<h:dataTable value="#{categoryData.theList}" var="c">
 							
-									<li><h:column><h:commandLink action="#{category.getProductwithCat(c)}" value="#{c.categoryName}"/></h:column></li>
+									<li><h:column><h:commandLink action="#{category.getProductwithCat(c)}" value="#{c.categoryName}" class="subB"/></h:column></li>
 							
 							</h:dataTable>
 
 					
 					</ul></li>
-		<li><a class="form-Info" href="#">Placeholder</a></li>	
+		<li><a class="menuB" href="#">Placeholder</a></li>	
 					
-				<li><a class="form-Phone" href="check.xhtml">Order Status</a></li>
+				<li><a class="menuB" href="check.xhtml">Order Status</a></li>
 					
-				<li><a class="form-Cart" href="CartPage.xhtml">Cart</a>
+				<li><a class="menuB" href="CartPage.xhtml">Cart</a>
 					
 				</li>
 		</ul>
-		
+		<div class="searchC">
 			<h:inputText id="searchVal" class="searchBar"
 						value="#{searchBean.searchVal}" /> 
 						<h:commandButton class="searchBtn"
-						action="#{searchBean.searchResults}" value="Search" />
+						action="#{searchBean.searchResults}" value="Search" /></div>
 				</h:form>	</div>
 		
 				</ui:composition>

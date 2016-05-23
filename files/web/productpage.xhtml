@@ -75,19 +75,18 @@ background-color: rgba(102, 204, 204, 0.2);
 <div id="hero">
 
    <div class="items">
-     <h:form>
-       <h:graphicImage value="#{productData.pr.productImage}" height="520" width="900"/>
-       <div class="info">
-         <h2><h:outputLabel value="#{productData.pr.productName}"/></h2>
-         <h3><h:outputLabel value="#{productData.pr.productPrice} kr"/></h3>
-         <p><h:outputLabel value="#{productData.pr.productDescription}"/> </p>
-         <div id="button">
-           <h:commandButton value="Add to cart" action="#{cart.addProductToCart(productData.pr)}"/>
-         </div>
-       </div><!--info-->
-     </h:form>
-   </div><!--item-->
-
+      <h:form>
+     <h:graphicImage library="images" name="#{productData.pr.productImage}" height="520" width="900"/>
+     <div class="info">
+       <h2><h:outputLabel value="#{productData.pr.productName}"/></h2>
+       <h3><h:outputLabel value="#{productData.pr.productPrice} kr"/></h3>
+       <p><h:outputLabel value="#{productData.pr.productDescription}"/> </p>
+       <div id="button">
+         <h:commandButton value="Add to cart" action="#{cart.addProductToCart(productData.pr)}"/>
+       </div>
+     </div><!--info-->
+   </h:form>
+    </div><!--item-->
 
 </div><!--hero-->
 

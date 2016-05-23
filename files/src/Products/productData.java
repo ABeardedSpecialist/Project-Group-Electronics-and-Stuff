@@ -2,6 +2,7 @@ package Products;
 
 
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.*;
 
 import javax.enterprise.context.SessionScoped;
@@ -17,28 +18,56 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean (name = "productData")
+@ManagedBean (name = "productBean")
 @Named
 @SessionScoped
 
 public class productData implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
     private List<product> theData = new ArrayList<product>();
-    private product pr;
+    private DatabaseConnection databaseConnection = new DatabaseConnection();
+    private List<String> imgs = new ArrayList<>();
+    private product pr = new product();
     private Part ImageFile;
 
+    @PostConstruct
+    public void imageFromDatabase(){
+        String query = "SELECT * FROM webshop.products ORDER BY ProductID DESC LIMIT 5";
+        try {
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            while(rs.next()) {
+                String img = rs.getString(5);
+                imgs.add(img);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
+        }
+    }
+
     public productData() {
-        pr = new product();
         loadData();
     }
-
     public List<product> getTheData() {
-
         return theData;
     }
+    public product getPr() {
+        return pr;
+    }
 
+    public void setPr(product pr) {
+        this.pr = pr;
+    }
+
+    public String edit() {
+        loadData();
+        return "editProduct";
+    }
     public void setTheData(List<product> theData) {
         this.theData = theData;
     }
@@ -51,14 +80,15 @@ public class productData implements Serializable {
         ImageFile = input;
     }
 
+    public List<String> getImgs() {
+        return imgs;
+    }
+
     private List<product> loadData() {
+        String query = "SELECT * FROM webshop.editview";
         try {
             theData.removeAll(theData);
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "SELECT * FROM webshop.editview";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
 
@@ -75,67 +105,56 @@ public class productData implements Serializable {
                 theData.add(pr);
             }
 
-            conn.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
 
         }
         return theData;
     }
 
     public void addProduct() {
+        String query = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
+                "ProductImage, ProductDescription, ProductCategory)" + " VALUES (?,?,?,?,?,?)";
         try {
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
-                    "ProductImage, ProductDescription, ProductCategory)" + " VALUES (?,?,?,?,?,?)";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.setString(1, pr.getProductName());
             statement.setInt(2, pr.getProductPrice());
             statement.setInt(3, pr.getProductQuantity());
             statement.setString(4, pr.getProductImage());
             statement.setString(5, pr.getProductDescription());
-            statement.setString(6, pr.getProductCategory());
+            statement.setInt(6, pr.getCategoryID());
             statement.execute();
 
-            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
+        pr = new product();
     }
 
     public void removeProduct(int in) {
+        String query = "DELETE FROM webshop.products WHERE productID = '" + in + "'";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "DELETE FROM webshop.products WHERE productID = " + in;
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.executeUpdate();
-            conn.close();
             loadData();
+
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
 
     }
 
     public String editProducts(product prod) {
+        String query = "UPDATE webshop.products SET ProductName=?, ProductPrice=?,ProductQuantity=?," +
+                "ProductImage=?,ProductDescription=?,ProductCategory=? WHERE productID = ?";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String query = "UPDATE webshop.products SET ProductName=?, ProductPrice=?,ProductQuantity=?," +
-                    "ProductImage=?,ProductDescription=?,ProductCategory=? WHERE productID = ?";
-            PreparedStatement statement = conn.prepareStatement(query);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.setString(1, prod.getProductName());
             statement.setInt(2, prod.getProductPrice());
             statement.setInt(3, prod.getProductQuantity());
@@ -144,23 +163,19 @@ public class productData implements Serializable {
             statement.setInt(6, prod.getCategoryID());
             statement.setInt(7, prod.getProductID());
             statement.executeUpdate();
-            conn.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
-        prod.setEditable(false);
         loadData();
         return "ldaw";
     }
     public String getProductPage(product prod){
+        String query = "SELECT * FROM webshop.products WHERE ProductID = '"+prod.getProductID()+"'";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String query = "SELECT * FROM webshop.products WHERE ProductID = '"+prod.getProductID()+"'";
-            PreparedStatement statement = conn.prepareStatement(query);
-
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
             if(rs.next()) {
@@ -172,32 +187,16 @@ public class productData implements Serializable {
                 pr.setProductDescription(rs.getString(6));
                 pr.setProductCategory(rs.getString(7));
             }
-            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
-        return "productpage.xhtml";
+        return "productpage";
     }
 
     public void editAction(product pr) {
-
         pr.setEditable(true);
-
-    }
-
-    public product getPr() {
-        return pr;
-    }
-
-    public void setPr(product pr) {
-        this.pr = pr;
-    }
-
-    public String edit() {
-        loadData();
-        return "editProduct";
     }
 
     /**
@@ -207,9 +206,20 @@ public class productData implements Serializable {
      */
     public void fileUpload(product pr) throws IOException {
         InputStream input = ImageFile.getInputStream();
-        Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
-        pr.setProductImage("C:\\Users\\Michaels\\Desktop\\webshop\\WebShop\\Web\\images\\" + ImageFile.getSubmittedFileName());
+        Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\1DV508\\project\\WebShop\\Web\\resources\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        pr.setProductImage(ImageFile.getSubmittedFileName());
     }
+    public String getShortDescription(product pr){
+        String shortDe;
+        if(pr.getProductDescription().length() > 25) {
+            shortDe = pr.getProductDescription().substring(0, 25);
+        }
+        else{
+            shortDe = pr.getProductDescription();
+        }
+        return shortDe;
+    }
+
 
 }
 

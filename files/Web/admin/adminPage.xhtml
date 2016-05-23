@@ -15,14 +15,14 @@
      	<meta name="name" content="content" />
 		<link href="../CSS/styles.css" rel="stylesheet" type="text/css" />
 <!-- 		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" /> -->
-		<link href="../CSS/AdminPage.css" rel="stylesheet" type="text/css" />
+		<link href="../CSS/thePage.css" rel="stylesheet" type="text/css" />
 		
      </h:head>
      
  
 <h:body>
 
-	<ui:composition template="../theTemplate.xhtml">
+	<ui:composition template="theTemplateADM.xhtml">
 
 	<ui:define name="content">
        <div class = "border">
@@ -48,7 +48,6 @@
             <h2 class="h1"> Handle Orders:</h2>
             <h:commandButton class="Buttons Buttonss" value="Edit orders" action="editOrder"/>
          <br/>
-         <h:commandButton value="Log ut" action="#{adminData.logOut}"/>
             
     </h:form>
    	
