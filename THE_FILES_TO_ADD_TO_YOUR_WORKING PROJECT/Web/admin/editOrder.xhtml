@@ -20,48 +20,49 @@
         <ui:define name="content">
             <div class="border">
                 <h:form>
-                    <h:dataTable value="#{orderBean.orderList}" var="orderVar">
+                    <h:dataTable value="#{orderBean.orderList}" var="ord">
                         <h:column>
-                            <f:facet name="header">ID</f:facet>
-                            #{orderVar.orderID}
+                            <f:facet name="header">Order ID</f:facet>
+                            #{ord.orderID}
                         </h:column>
                         <h:column>
-                            <f:facet name="header">Name</f:facet>
-                            <h:inputText value="#{orderVar.orderName}" size="20"
-                                         rendered="#{orderVar.editable}" />
+                            <f:facet name="header">Costumer Name</f:facet>
+                            <h:outputText value="#{ord.orderName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Costumer Address</f:facet>
+                            <h:outputText value="#{ord.orderAddress}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Costumer Phone</f:facet>
+                            <h:outputText value="#{ord.orderPhone}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Costumer E-Mail</f:facet>
+                            <h:outputText value="#{ord.orderEmail}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Products in Order</f:facet>
+                            <h:selectOneMenu value="#">
+                                <f:selectItems value="#{orderBean.LoadOrderList(ord)}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Order Status</f:facet>
+                            <h:outputText value="#{ord.status}" rendered="#{not ord.editable}"/>
+                            <h:selectOneMenu value="#{ord.status}" rendered="#{ord.editable}" onchange="save">
+                                <f:selectItems value="#{orderBean.statusList()}" var="status" itemValue="#{status}" itemLabel="#{status}"/>
+                            </h:selectOneMenu>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton class="Buttons Buttonss" value="Edit"
+                                             action="#{ord.setEditable(true)}"
+                                             rendered="#{not ord.editable}"/>
 
-                            <h:outputText value="#{orderVar.orderName}"
-                                          rendered="#{not orderVar.editable}" />
-
+                            <h:commandButton class="Buttons Buttonss"
+                                             action="#{orderData.editOrder(ord)}"
+                                             value="Save Changes" rendered="#{ord.editable}"/>
                         </h:column>
-                        <h:column>
-                            <f:facet name="header">Price</f:facet>
-                            <h:inputText value="#{orderVar.orderAddress}" size="20"
-                                         rendered="#{orderVar.editable}" />
-                            <h:outputText value="#{orderVar.orderAddress}"
-                                          rendered="#{not orderVar.editable}" />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Quantity</f:facet>
-                            <h:inputText value="#{orderVar.orderPhone}" size="20"
-                                         rendered="#{orderVar.editable}" />
-                            <h:outputText value="#{orderVar.orderPhone}"
-                                          rendered="#{not orderVar.editable}" />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Image</f:facet>
-                            <h:inputText value="#{orderVar.orderEmail}" size="20"
-                                         rendered="#{orderVar.editable}" />
-                            <h:outputText value="#{orderVar.orderEmail}"
-                                          rendered="#{not orderVar.editable}" />
-                        </h:column>
-                        <div class="form-input">
-                            <h:column>
-                                <h:commandButton class ="Buttons Buttonss"  value="Edit"
-                                                 action="#{orderBean.Edit(orderVar)}"
-                                                 rendered="#{not orderVar.editable}" update="@form" ajax="true" />
-                            </h:column>
-                        </div>
                     </h:dataTable>
                 </h:form>
             </div>

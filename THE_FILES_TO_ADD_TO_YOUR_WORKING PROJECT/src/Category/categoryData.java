@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.faces.bean.*;
 import javax.inject.Named;
 
@@ -106,6 +105,7 @@ public class categoryData implements Serializable {
 		try {
 			PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
 			statement.executeUpdate();
+			ListPlease();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

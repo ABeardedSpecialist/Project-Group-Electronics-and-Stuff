@@ -42,15 +42,14 @@
      	<br/>
      	<br/>
         <h:outputLabel class="UserName" value="Username: "/>
-        <h:inputText id="Username" value="#{adminData.user}"/>
+        <h:inputText id="Username" value="#{adminData.ad.username}"/>
         <br/>
         <h:outputLabel class= "Password" value="Password:  "/>
-        <h:inputSecret id="Password" value="#{adminData.pass}"/>
+        <h:inputSecret id="Password" value="#{adminData.ad.password}"/>
         <br/>
         <br/>
         <h:commandButton  class = "Buttons Buttonss movingLogin" value="Add" action="#{adminData.createNewAdmin()}"/>
          <br/>
-         <h:commandButton class ="Button1" value="Go back" action="adminPage"/>
     </h:form>
   
 		</div>	

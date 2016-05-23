@@ -7,9 +7,6 @@ package Products;
  */
 
 public class product  {
-	/**
-	 * 
-	 */
 
 	private int productID;
 	private String productName;
@@ -95,5 +92,5 @@ public class product  {
 		return null;
 	}
 
-	
+
 }

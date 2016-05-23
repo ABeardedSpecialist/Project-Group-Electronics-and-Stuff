@@ -18,7 +18,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean (name = "productData")
+@ManagedBean (name = "productBean")
 @Named
 @SessionScoped
 
@@ -28,7 +28,7 @@ public class productData implements Serializable {
     private List<product> theData = new ArrayList<product>();
     private DatabaseConnection databaseConnection = new DatabaseConnection();
     private List<String> imgs = new ArrayList<>();
-    private product pr;
+    private product pr = new product();
     private Part ImageFile;
 
     @PostConstruct
@@ -51,11 +51,9 @@ public class productData implements Serializable {
     }
 
     public productData() {
-        pr = new product();
         loadData();
     }
     public List<product> getTheData() {
-        loadData();
         return theData;
     }
     public product getPr() {
@@ -85,6 +83,7 @@ public class productData implements Serializable {
     public List<String> getImgs() {
         return imgs;
     }
+
     private List<product> loadData() {
         String query = "SELECT * FROM webshop.editview";
         try {
@@ -170,7 +169,6 @@ public class productData implements Serializable {
         } finally {
             databaseConnection.disconnect();
         }
-        prod.setEditable(false);
         loadData();
         return "ldaw";
     }
@@ -194,7 +192,7 @@ public class productData implements Serializable {
         } finally {
             databaseConnection.disconnect();
         }
-        return "productpage.xhtml";
+        return "productpage";
     }
 
     public void editAction(product pr) {
@@ -211,7 +209,16 @@ public class productData implements Serializable {
         Files.copy(input, new File("C:\\Users\\Michaels\\Desktop\\1DV508\\project\\WebShop\\Web\\resources\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
         pr.setProductImage(ImageFile.getSubmittedFileName());
     }
-
+    public String getShortDescription(product pr){
+        String shortDe;
+        if(pr.getProductDescription().length() > 25) {
+            shortDe = pr.getProductDescription().substring(0, 25);
+        }
+        else{
+            shortDe = pr.getProductDescription();
+        }
+        return shortDe;
+    }
 
 
 }

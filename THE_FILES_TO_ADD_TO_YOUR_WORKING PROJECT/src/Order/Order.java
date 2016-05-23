@@ -13,6 +13,7 @@ public class Order {
     private int OrderPhone;
     private String OrderAddress;
     private String status;
+    private boolean editable;
 
     public int getOrderID() {
         return OrderID;
@@ -62,4 +63,11 @@ public class Order {
         this.status = st;
     }
 
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
 }

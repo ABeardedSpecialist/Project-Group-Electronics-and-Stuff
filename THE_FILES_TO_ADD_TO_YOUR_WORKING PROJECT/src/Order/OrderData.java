@@ -4,7 +4,6 @@ import Cart.Cart;
 import Cart.cartItem;
 import Products.DatabaseConnection;
 import Products.product;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
@@ -26,7 +25,6 @@ public class OrderData implements Serializable {
     private static final long serialVersionUID = 1L;
     private DatabaseConnection databaseConnection = new DatabaseConnection();
     private Order order;
-    private Order temp = new Order();
     private List<cartItem> cartItemsList;
     private List<Order> orderList;
     private int id;
@@ -37,7 +35,7 @@ public class OrderData implements Serializable {
     public OrderData() {
         order = new Order();
         id = 0;
-        getOrderList();
+        LoadTheList();
     }
 
     public Order getOrder() {
@@ -48,13 +46,6 @@ public class OrderData implements Serializable {
         this.order = order;
     }
 
-    public Order getTemp() {
-        return temp;
-    }
-
-    public void setTemp(Order temp) {
-        this.temp = temp;
-    }
     public int getId() {
         return id;
     }
@@ -94,7 +85,6 @@ public class OrderData implements Serializable {
                 String query = "INSERT INTO webshop.orders (OrderID, OrderProduct, OrderQuantity, OrderProductPrice)" + " VALUES(?,?,?,?)";
                 PreparedStatement itemQuery = databaseConnection.connect().prepareStatement(query);
                 itemQuery.setInt(1, id);
-                System.out.println(item.getItem().getProductName());
                 itemQuery.setString(2, item.getItem().getProductName());
                 itemQuery.setInt(3, item.getQuantity());
                 itemQuery.setInt(4, item.getItem().getProductPrice());
@@ -105,8 +95,6 @@ public class OrderData implements Serializable {
 
                 String changeQuantity = "UPDATE webshop.products SET ProductQuantity = ? WHERE ProductID = ?";
                 PreparedStatement updateQuantity = databaseConnection.connect().prepareStatement(changeQuantity);
-                System.out.println(quantity);
-                System.out.println(ci.getQuantity());
                 updateQuantity.setInt(1, quantity - ci.getQuantity());
                 updateQuantity.setInt(2, ci.getItem().getProductID());
                 updateQuantity.executeUpdate();
@@ -131,7 +119,6 @@ public class OrderData implements Serializable {
                 product pr = new product();
                 pr.setProductName(rs.getString(1));
                 pr.setProductPrice(rs.getInt(2));
-                System.out.println(pr.getProductName());
                 ci.setItem(pr);
                 ci.setQuantity(rs.getInt(3));
                 cartItemsList.add(ci);
@@ -163,7 +150,7 @@ public class OrderData implements Serializable {
         return total;
     }
 
-    public List<Order> getOrderList() {
+    public List<Order> LoadTheList() {
         orderList = new ArrayList<>();
         String query = "SELECT * FROM webshop.orderid";
         try {
@@ -186,11 +173,10 @@ public class OrderData implements Serializable {
             e.printStackTrace();
         } finally {
             databaseConnection.disconnect();
-
         }
         return orderList;
     }
-    public List<String> getOrderProducts(Order ord){
+    public List<String> LoadOrderList(Order ord){
         List<String> products = new ArrayList<>();
         String query = "SELECT OrderProduct FROM webshop.orders WHERE OrderID ='"+ord.getOrderID()+"'";
         try {
@@ -209,28 +195,32 @@ public class OrderData implements Serializable {
         return products;
     }
 
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
     public void setOrderList(List<Order> orderList) {
         this.orderList = orderList;
     }
 
-    public void editOrder(){
+    public void editOrder(Order ord){
+        System.out.println("bajs");
         String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
+        System.out.println("kalle");
         try {
-
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
-            statement.setString(1, temp.getStatus());
-            statement.setInt(2, temp.getOrderID());
+            System.out.println(ord.getStatus());
+            statement.setString(1, ord.getStatus());
+            statement.setInt(2, ord.getOrderID());
             statement.executeUpdate();
+            ord.setEditable(false);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             databaseConnection.disconnect();
         }
     }
-    public String Edit(Order ord){
-        this.temp = ord;
-        return "EditOrderTest";
-    }
+
     public int getQuantityFromDatabase(product product){
         String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = ?";
         int output = 0;
@@ -251,6 +241,14 @@ public class OrderData implements Serializable {
         }
         return output;
     }
+    public List<String> statusList(){
+        List<String> status = new ArrayList<>();
+        status.add("NEW");
+        status.add("SHIPPED");
+        status.add("DELAYED");
+        status.add("DELIVERED");
 
+        return status;
+    }
 
 }
