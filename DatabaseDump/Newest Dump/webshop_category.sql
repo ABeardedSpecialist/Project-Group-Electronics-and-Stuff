@@ -37,7 +37,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (6,'Desktops'),(3,'Graphics cards'),(7,'Hard Drives'),(2,'Laptops'),(1,'Monitors'),(4,'Motherboards'),(5,'Processors');
+INSERT INTO `category` VALUES (1,'Choose Category'),(6,'Desktops'),(3,'Graphics cards'),(7,'Hard Drives'),(2,'Laptops'),(8,'Monitors'),(4,'Motherboards'),(5,'Processors');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-21 16:33:59
+-- Dump completed on 2016-05-22 23:10:43

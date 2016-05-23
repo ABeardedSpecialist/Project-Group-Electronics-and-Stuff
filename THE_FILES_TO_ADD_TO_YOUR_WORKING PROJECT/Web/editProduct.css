@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+
+#Title {
+	color: black;
+	font-size: xx-large;
+	font-family: cursive;
+	font-style: oblique;
+	text-align: center;
+}
+
+#Qustion {
+	color: black;
+	font-size: large;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 200px;
+	background-image: url("img/backGroundNew.jpg");
+}
+
+/* table { */
+/* 	border-collapse: collapse; */
+/* 	width: 100%; */
+/* } */
+#DataBaseTable, th, td {
+	border: 0px medium black;
+		background-image: url("img/backGroundNew.jpg");
+	width: 95%;
+}
+
+th {
+	height: 50px;
+	background-color: #0d280b;
+	color: white;
+	border-collapse: separate;
+}
+
+td {
+	height: 25px;
+	
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: #f2f0f3
+	
+}
+
+tr:nth-child(even) {
+	background-color: #b9b6bc
+}
+
+body {
+	color: #000000;
+	margin: 36px;
+}
+
+#form-input {
+	width: 12px;
+	background-color: blue;
+}
