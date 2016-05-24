@@ -1,7 +1,5 @@
 package Admin;
 
-
-
 /**
  * Created by Michael Johansson(mj223gn) on 2016-04-11.
  */
@@ -22,7 +20,6 @@ public class admin {
     public void setEdit(boolean edt) {
         edit = edt;
     }
-
     public void setUsername(String input) {
         this.Username = input;
     }

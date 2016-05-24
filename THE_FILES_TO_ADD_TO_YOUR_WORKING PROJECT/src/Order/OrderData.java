@@ -40,9 +40,6 @@ public class OrderData implements Serializable {
         id = 0;
         LoadTheList();
     }
-
- 
-    
     
     public Order getOrder() {
         return order;

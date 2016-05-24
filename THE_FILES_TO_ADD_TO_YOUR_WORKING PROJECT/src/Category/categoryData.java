@@ -12,6 +12,7 @@ import javax.inject.Named;
 import Products.DatabaseConnection;
 import Products.product;
 
+
 @ManagedBean (name = "category")
 @Named
 @SessionScoped

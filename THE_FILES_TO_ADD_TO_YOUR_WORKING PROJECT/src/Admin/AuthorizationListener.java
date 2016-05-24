@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
  * Created by Michael Johansson(mj223gn) on 2016-05-18.
  */
 public class AuthorizationListener implements PhaseListener {
-
     /**
 	 * 
 	 */
