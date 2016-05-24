@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head> <h:outputStylesheet library="css" name="styles.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
+    <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+
+
+</h:head>
+
+<f:view>
+    <h:body>
+        <ui:composition template="theTemplate.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <h:dataTable id="table" styleClass="products" value="#{category.catList}" var="rs">
+                        <h:column>
+                            <f:facet name="header">Image</f:facet>
+                            <h:graphicImage styleClass="col" library="images" name="#{rs.productImage}" width="150"
+                                            height="100"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Name</f:facet>
+                            <h:commandLink value="#{rs.productName}" action="#{productData.getProductPage(rs)}"
+                                           size="20"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Price</f:facet>
+                            <h:outputText value="#{rs.productPrice}" size="20"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Quantity</f:facet>
+                            <h:outputText id="q" value="#{rs.productQuantity}" size="20"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Category</f:facet>
+                            <h:outputText value="#{rs.productCategory}" size="20"/>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define></ui:composition>
+    </h:body>
+</f:view>
+
+</html>

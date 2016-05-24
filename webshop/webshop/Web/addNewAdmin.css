@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+.Button1 {
+    background: #24282e none repeat scroll 0 0;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 150%;
+    font-style: italic;
+    height: 48px;
+    line-height: 20px;
+    margin: 42% 0 0 80%;
+    text-align: center;
+    transition-duration: 1s;
+    transition-property: background, border-radius;
+    transition-timing-function: linear;
+    width: 122px;
+}
+.Button1:hover {
+    background: #d5d5d5 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: black;
+    font-size: x-large;
+}

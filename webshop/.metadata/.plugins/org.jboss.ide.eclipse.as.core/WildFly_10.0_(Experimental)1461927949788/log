@@ -1,0 +1,758 @@
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-04-29 13:10:55.882
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-04-29 13:10:57.128
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-04-29 13:11:01.156
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-04-29 13:11:01.182
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-04-30 13:53:30.494
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-04-30 13:53:31.634
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-04-30 13:53:35.173
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-04-30 13:53:35.177
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-04-30 18:07:12.351
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-04-30 18:07:13.492
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-04-30 18:07:17.187
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-04-30 18:07:17.203
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-01 20:26:53.841
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-01 20:26:55.060
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-01 20:26:59.210
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-01 20:26:59.217
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-02 12:31:56.617
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-02 12:31:57.846
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-02 12:32:02.114
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-02 12:32:02.126
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-02 13:02:57.373
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-02 13:02:58.549
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-02 13:03:02.194
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-02 13:03:02.269
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2016-05-02 14:29:50.933
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-02 14:30:09.989
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-02 14:30:11.020
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-02 14:30:14.431
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-02 14:30:14.437
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-02 15:51:40.562
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-02 15:51:41.761
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-02 15:51:45.595
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-02 15:51:45.641
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-03 22:28:28.938
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-03 22:28:30.164
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-03 22:28:34.399
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-03 22:28:34.450
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-04 10:17:55.639
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-04 10:17:57.029
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-04 10:18:06.750
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-04 10:18:06.760
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-04 13:49:01.325
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-04 13:49:02.511
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-04 13:49:06.742
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-04 13:49:06.757
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-04 18:51:28.582
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-04 18:51:29.740
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-04 18:51:33.134
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-04 18:51:33.163
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-06 10:59:39.713
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-06 10:59:40.945
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-06 10:59:44.624
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-06 10:59:44.633
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-06 11:30:44.890
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-06 11:30:46.128
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-06 11:30:49.845
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-06 11:30:49.853
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-09 11:17:39.427
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-09 11:17:41.031
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-09 11:17:47.121
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-09 11:17:47.125
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-09 11:17:47.129
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-09 12:36:15.383
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-09 12:36:16.543
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-09 12:36:20.160
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-09 12:36:20.200
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-09 13:19:10.870
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-09 13:19:14.212
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-09 13:19:21.643
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-09 13:19:21.656
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-09 13:19:24.367
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 16:27:38.973
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 16:27:40.226
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 16:27:43.754
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 16:27:43.828
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 17:18:18.830
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 17:18:20.030
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 17:18:23.606
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 17:18:23.615
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 17:21:40.718
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 17:21:41.925
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 17:21:45.569
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 17:21:45.610
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 17:48:17.340
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 17:48:18.540
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 17:48:22.464
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 17:48:22.514
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 17:50:29.195
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 17:50:30.403
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 17:50:33.886
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 17:50:33.916
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 17:59:08.021
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 17:59:09.221
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 17:59:12.805
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 17:59:12.897
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-15 18:29:16.541
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-15 18:29:17.720
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-15 18:29:21.886
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-15 18:29:21.948
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-16 11:07:52.484
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-16 11:07:53.753
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-16 11:07:58.101
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-16 11:07:58.146
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-16 11:42:05.758
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-16 11:42:06.954
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-16 11:42:10.521
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-16 11:42:10.554
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-16 12:12:01.079
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-16 12:12:02.262
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-16 12:12:06.290
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-16 12:12:06.335
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-17 11:45:35.413
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-17 11:45:36.654
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-17 11:45:40.310
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-17 11:45:40.329
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-17 17:53:02.158
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-17 17:53:03.790
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-17 17:53:08.762
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-17 17:53:08.769
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-17 17:55:10.677
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-17 17:55:11.884
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-17 17:55:16.450
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-17 17:55:16.484
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-17 20:14:11.016
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-17 20:14:12.217
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-17 20:14:18.795
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-17 20:14:18.802
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-18 13:05:16.628
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-18 13:05:17.900
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-18 13:05:22.543
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-18 13:05:22.567
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 13:20:58.486
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 13:20:59.726
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 13:21:04.368
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 13:21:04.371
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 13:26:30.019
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 13:26:31.242
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 13:26:35.423
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 13:26:35.559
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 13:31:27.679
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 13:31:28.872
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 13:31:32.308
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 13:31:32.312
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 13:47:46.454
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 13:47:47.632
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 13:47:51.226
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 13:47:51.261
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 13:51:54.401
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 13:51:55.595
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 13:51:59.808
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 13:51:59.850
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 14:27:56.086
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 14:27:57.272
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 14:28:00.740
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 14:28:00.746
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-20 14:37:09.321
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-20 14:37:09.321
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-20 14:37:09.428
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-20 14:37:10.592
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-20 14:37:14.823
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-20 14:37:16.950
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-20 14:37:16.950
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-20 14:37:16.965
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:24:52.763
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:24:52.763
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 12:24:52.897
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 12:24:54.158
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 12:24:58.300
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:24:59.963
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:24:59.963
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 12:24:59.981
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:31:53.752
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:31:53.753
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 12:31:53.845
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 12:31:55.013
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 12:31:58.494
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:32:00.362
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:32:00.362
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 12:32:00.370
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-05-23 12:32:20.377
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) still not ready to be shown in browser. Aborting delay.
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:35:12.572
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:35:12.572
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 12:35:12.677
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 12:35:13.879
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 12:35:18.728
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:35:21.503
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:35:21.504
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 12:35:21.521
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-05-23 12:35:41.532
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) still not ready to be shown in browser. Aborting delay.
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:38:54.719
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:38:54.720
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 12:38:54.812
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 12:38:55.994
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 12:39:00.148
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 12:39:02.405
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 12:39:02.406
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 12:39:02.415
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-05-23 12:39:22.422
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 12:42:47.618
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 12:43:01.627
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-05-23 12:43:07.632
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-05-23 12:43:21.635
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) still not ready to be shown in browser. Aborting delay.
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 13:39:27.112
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 13:39:27.112
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 13:39:27.335
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 13:39:28.548
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 13:39:32.706
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 13:39:35.144
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 13:39:35.144
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 13:39:35.179
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 18:39:12.011
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 18:39:12.011
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 18:39:12.119
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 18:39:13.329
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 18:39:17.400
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 18:39:20.167
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 18:39:20.168
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 18:39:20.179
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2016-05-23 18:39:40.191
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 18:41:47.356
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 18:41:47.356
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-23 18:41:48.039
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-23 18:41:48.039
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-23 18:41:48.045
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 16973826 2016-05-23 19:12:42.952
+!MESSAGE The server was shutdown forcefully. All processes were terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-23 19:12:47.374
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-23 19:12:48.399
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-23 19:12:52.534
+!MESSAGE Server Startup Succeeded
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-24 13:06:49.901
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-24 13:06:49.901
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-24 13:06:50.016
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-24 13:06:51.248
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-24 13:06:55.398
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-24 13:06:57.981
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-24 13:06:57.981
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-24 13:06:57.993
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-24 21:41:51.803
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-24 21:41:51.804
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2016-05-24 21:41:51.887
+!MESSAGE The server "WildFly 10.0 (Experimental)" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_71 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2016-05-24 21:41:53.102
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2016-05-24 21:41:56.571
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 1644298244 2016-05-24 21:41:59.427
+!MESSAGE Full publish failed for module webshop
+!SUBENTRY 1 org.jboss.ide.eclipse.as.wtp.core 4 1644298251 2016-05-24 21:41:59.427
+!MESSAGE Error reading file C:\Users\Robin\Desktop\webshop\webshop\Web\images\slide.jpg
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2016-05-24 21:41:59.436
+!MESSAGE Module webshop on WildFly 10.0 (Experimental) not yet fully deployed. Waiting...

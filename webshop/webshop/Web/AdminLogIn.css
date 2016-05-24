@@ -1,0 +1,54 @@
+.border {
+    background: silver linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0;
+    border: 2px solid;
+    border-radius: 30px;
+    height: 450px;
+    margin: 4% 7px 4px 36%;
+    text-align: center;
+    width: 500px;
+}
+
+
+.test2 {
+    background-color: white;
+    border: 2px solid #008cba;
+    color: black;
+}
+.test {
+    background-color: #4caf50;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 2% 0 5%;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    width: 19%;
+}
+
+.test2:hover {
+    background-color: #008cba;
+    color: white;
+}
+.h1 {
+    font-family: "Indie Flower",cursive;
+    padding: 9%;
+}
+#footera {
+    background-color: #575c7a;
+    color: #fff;
+    font-size: 0.85em;
+    margin: 779px 42px 0 1px;
+    padding: 11px 845px 8px 4px;
+    width: 1001px;
+}
+.ForTheSearchBar1 {
+	
+	float: left;
+	top-margin: 300px;
+	padding: 52px 0 0 82%;
+	
+}

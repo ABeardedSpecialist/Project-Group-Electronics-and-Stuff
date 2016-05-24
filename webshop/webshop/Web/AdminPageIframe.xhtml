@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+ <h:head>
+     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+     	<meta name="name" content="content" />
+		<link href="AdminPageStyle.css" rel="stylesheet" type="text/css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+</h:head>
+     
+ 
+<h:body>
+
+
+	
+			
+       <div class = "border">
+		
+    
+    <h:form>
+       <h1 class = "h1">Admin page!</h1><br/>
+        <br/>
+        <br/>
+        <h:commandButton class = "test test2" value="Add Admin" action="addNewAdmin"/>
+        <h:commandButton class = "test test2" value="Edit Admin" action="editAdmin"/>
+    <br/>
+    <br/>
+    <h2 class = "h1">Handle products:</h2>
+    <h:commandButton class = "test test2"  value="Add new product" action="newProduct"/>
+        <h:commandButton class = "test test2" value="Remove Product" action="removeProduct"/>
+         <h:commandButton class = "test test2"  value="Edit Product" action="editProduct"/>
+        
+    </h:form>
+   	
+  
+
+        
+      
+			
+	</div>
+
+
+
+	
+	
+    
+    
+</h:body>
+
+</html>
