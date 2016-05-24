@@ -1,28 +1,17 @@
-@import url("AdminPageStyle.css");
-
-
 *{
   padding: 0px;
   margin: 0px;
 }
 
 body{
-  
-background: rgb(226,226,226); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
-
-Copy text
-  color: black;
+  background-color:  white;
+  color: white;
   margin: 0px;
   border: 0px;
-  height: 1200px;
 }
 p{
-  /*background-color: black;*/
-  color: black;
+  background-color: black;
+  color: white;
   padding: 10px;
 }
 .secondary{
@@ -58,15 +47,11 @@ box-shadow: 5px 5px 5px 2px gray;
 #news{
   margin-top: 150px;
   padding: 0px 150px 0px 150px;
-  margin: 0 auto;
 }
 #horzNav{
-  /*display: block;*/
+  display: block;
   padding: 5px 20px 5px 0px;
-  /*background-color: black;*/
-  width: 100px;
-  float: left;
-  color: black;
+  background-color: black;
 }
 
 .button{
@@ -78,28 +63,17 @@ box-shadow: 5px 5px 5px 2px gray;
 #header{
   width: 100%;
   height: 150px;
-  
+  background-color: black;
   color:white;
-  	background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(red, yellow); /* Standard syntax */
-  
-  
-  
-  
-  
-  
 }
 #sidebar{
   width: 280px;
-  height: 500px;
+  height: 100%;
   position: absolute;
   top: 150px;
   left: 0;
   bottom: 0;
-  
+  background: black;
   float: left;
 }
 #item{
@@ -135,70 +109,3 @@ form{
 #fields{
   height: 30px;
 }
-
-
-}
-.formLogin {
-	
-	Bottom: 0px;
-	
-	
-}
-.header1 {
-	
-	text-align: center;
-	
-	width: 100%;
-	font-size: 28px;
-	background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(red, yellow); /* Standard syntax */
-	border: 2px solid;
-	height: 90px;
-}
-.SearchBars {
-	
-	float: left;
-	margin-top: 20px;
-	width: 25px;
-	
-}
-.inputText {
-	
-	width: 100px;
-	
-	
-}
-.AdminLoginBar {
-	
-	float: bottom;
-	margin-top: 700px;
-	border: solid 2px;
-	width: 90px;
-	
-}
-.Footer {
-	
-	margin: 0 auto;
-	border: 2px solid;
-	width: 100%;
-	
-	
-}
-
-#test2:hover {
-	
-	background-color: green;
-	
-}
-.ForTheSearchBar {
-	
-	float: left;
-	top-margin: 300px;
-	
-}
-
-
- 
