@@ -3,47 +3,113 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<title>Admin</title>
-	<link href="main.css" rel="stylesheet" type="text/css" />
-</h:head>
+  <h:head>
+     	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" />
+     	<meta name="name" content="content" />
+		<link href="CSS/AdminPage.css" rel="stylesheet" type="text/css" />
+     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+    
+     </h:head>
+     
+ 
+<h:body>
+	
+	
 
-<body>
+	
+	
 
-	<div id="header">
-		<a href="newProduct.xhtml"></a>
-		<center>
-			<img src="images.jpg" alt="picture" height="80px" id="bild" /><br />Admin
-		</center>
-	</div>
+		<div id="nav">
 
-	<div id="sidebar">
-		<ul>
-			<h:form>
-				<li><h:commandLink action="newProduct" value="Add item"></h:commandLink>
+			<div class="ForTheSearchBar">
+				<p>Search bar</p>
+				<div>
+					<h:form>
+						<div class="form-Search">
+							<h:inputText class="searchBar" value="#{searchBean.searchVal}" />
+							<h:commandButton class="searchBtn "
+								action="#{searchBean.searchResults}" value="Go!" />
+						</div>
+
+
+					</h:form>
+				</div>
+			</div>
+
+
+			<ul>
+				<li><a class="form-Home" href="#index.xhtml">Home</a></li>
+					
+
+
+				<li><a class="form-List" href="#">Categories</a>
+					<ul>
+						<h:form>
+							<h:dataTable value="#{categoryData.theList}" var="c">
+								<h:column>
+									<li><h:commandLink
+											action="#{categoryData.getProductwithCat()}"
+											value="#{c.categoryName}">
+											<f:param name="test" value="#{c.categoryName}" />
+										</h:commandLink></li>
+								</h:column>
+							</h:dataTable>
+
+						</h:form>
+					</ul></li>
+		<li><a class="form-Info" href="#">About</a></li>	
+					
+				<li><a class="form-Phone" href="#">Contact</a></li>
+					
+				<li><a class="form-Cart" href="CartPage.xhtml">Cart</a>
+					
 				</li>
-
-				<li><h:commandLink action="#{productData.edit()}"
-						value="Edit/Delete items"></h:commandLink></li>
-						
-				<li><h:inputText id="searchVal"
+			</ul>
+			<div class="border">
+		
+    
+    <h:form>
+    			<h1 class = "h1">Admin Panel</h1>
+				<h:commandLink action="newProduct" value="Add item"></h:commandLink>
+				
+				
+				<h:commandLink action="#{productData.edit()}"
+						value="Edit/Delete items"></h:commandLink>
+				<br />
+				<h:inputText id="searchVal"
 						value="#{searchBean.searchVal}" /> 
-						<h:commandButton
-						action="#{searchBean.searchResults}" value="Search" /></li>
+						<h:commandButton class = "test test2"
+						action="#{searchBean.searchResults}" value="Search" />
 
 
-
-				<li><a>View sold</a></li>
-
-				<li><a>Log off</a></li>
+				<br />
+				<a>View sold</a>
+				<br />
+				<a>Log off</a>
 			</h:form>
-		</ul>
-	</div>
 
-	<div id="item">
-		<center>
-			<img class="smallPicture" src="laptop.jpg" alt="picture" />
-		</center>
-	</div>
-</body>
+
+
+          </div>
+</div>
+
+
+          <div id="footera">
+            &amp;   copy; Project electronics
+          </div>
+</h:body>
+     
+			
+
+
+
+
+	
+	
+    
+    
+
 </html>

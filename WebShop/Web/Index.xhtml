@@ -1,30 +1,54 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Admin</title>
-  <link href="main.css" rel="stylesheet" type="text/css" />
-</head>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
+   <h:head>
+<!--      	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" /> -->
+<!--      	<meta name="name" content="content" /> -->
+<!-- 		<link href="CSS/AdminLogIn.css" rel="stylesheet" type="text/css" /> -->
+     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<!-- 		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" /> -->
+		<link href="CSS/thePage.css" rel="stylesheet" type="text/css" />
+		
+     </h:head>
+     
+ 
+<h:body>
 
-<body>
+	<ui:composition template="theTemplate.xhtml">
 
-<div id="header"><center><img src="images.jpg" alt="picture" height="100px" id="bild" /><br />Admin</center></div>
+	<ui:define name="content">
+	
+       <div class = "border">
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <br/>
+		   <p:imageSwitch effect="fade" id="fadeEffect">
+			   <ui:repeat value="#{productData.imgs}" var="image" id="fadeEffectImages">
+				   <h:graphicImage library="images" name="#{image}" id="image" width="400" height="250"/>
+			   </ui:repeat>
+		   </p:imageSwitch>
 
-<div id="sidebar">
-<ul>
 
-<li>Add item</li>
+</div></ui:define></ui:composition>
 
-<li>Delete item</li>
+</h:body>
 
-<li>Update</li>
 
-<li>Search</li>
-
-<li>View sold</li>
-
-<li>Log in</li>
-</ul></div>
-
-<div id="item"><center> <img class="smallPicture" src="laptop.jpg" alt="picture" /></center></div>
-</body></html>
+</html>

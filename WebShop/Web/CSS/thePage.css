@@ -2,14 +2,14 @@
     background: black;
     border: 2px solid;
     border-radius: 30px;
-    padding-top:1%;
-    height: 60%;
-  	left:50%;
+    margin-top: 5%;
+    height: 70%;
+	padding-top: 2%;
     text-align: center;
     width: 40%;
     position:relative;
-    margin-top: 5%;
-    
+    left: 50%;
+    padding-right: 5%;
 }
 .h1 {
     font-family: "Indie Flower",cursive;
@@ -78,22 +78,3 @@ input {
 .movingLogin{
 	margin:4% 2% 5% 9%;
 }
-.border1 {
-	margin-top: 5%;
-    background: black;
-    border: 2px solid;
-    border-radius: 30px;
-    padding-top:1%;
-    height: 60%;
-  	left: 30%;
-    text-align: center;
-    width: 70%;
-    position:relative;
-    padding-right: 10%;
-    
-    
-}
-
-
-
-

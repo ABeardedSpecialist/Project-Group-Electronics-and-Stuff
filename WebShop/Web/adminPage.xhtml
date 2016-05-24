@@ -5,23 +5,58 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+     <h:head>
+<!--      	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" /> -->
+<!--      	<meta name="name" content="content" /> -->
+<!-- 		<link href="CSS/AdminLogIn.css" rel="stylesheet" type="text/css" /> -->
+     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+     	<h:outputStylesheet library = "css" name = "styles.css" />
+     	<meta name="name" content="content" />
+		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
+<!-- 		<link href="CSS/SearchingForProducts.css" rel="stylesheet" type="text/css" /> -->
+		<link href="CSS/thePage.css" rel="stylesheet" type="text/css" />
+		
+     </h:head>
+     
+ 
 <h:body>
-    <h1>Admin page!</h1><br/>
-    <h2>Create new Admin:</h2><br/>
-    <h:form>
-        <h:outputLabel value="Username: "/>
-        <h:inputText id="Username" value="#{admin.username}"/>
+
+	<ui:composition template="theTemplate.xhtml">
+
+	<ui:define name="content">
+       <div class = "border">
+		
+    
+     <h:form>
+        <h1 class = "h1">Admin page!</h1><br/>
         <br/>
-        <h:outputLabel value="Password:  "/>
-        <h:inputSecret id="Password" value="#{admin.password}"/>
+        <h2 class = "h1">Handle Admins:</h2>
+            <h:commandButton class = "Buttons Buttonss" value="Add Admin" action="addNewAdmin"/>
+            <h:commandButton class = "Buttons Buttonss" value="Edit Admin" action="editAdmin"/>
         <br/>
         <br/>
-        <h:commandButton value="Add" action="#{admin.createNewAdmin()}"/>
-    <br/>
-    <h2>Handle products:</h2>
-    <h:commandButton value="Add new product" action="newProduct"/>
-        <h:commandButton value="Remove Product" action="removeProduct"/>
-         <h:commandButton value="Edit Product" action="editProduct"/>
+        <h2 class = "h1">Handle Products:</h2>
+            <h:commandButton class = "Buttons Buttonss"  value="Add new product" action="newProduct"/>
+            <h:commandButton class = "Buttons Buttonss"  value="Edit Product" action="editProduct"/>
+        <br/>
+        <br/>
+        <h2 class="h1">Handle Categories:</h2>
+            <h:commandButton class = "Buttons Buttonss" value="Add new category" action="addNewCategory"/>
+            <h:commandButton class = "Buttons Buttonss" value="Edit category" action="editCategory"/>
+            
+            <h2 class="h1"> Handle Orders:</h2>
+            <h:commandButton class="Buttons Buttonss" value="Update Orders(Does not work yet)" action="editOrder"></h:commandButton>
+            
     </h:form>
+   	
+    </div>
+</ui:define>
+      </ui:composition>
+
+   
+
+    
 </h:body>
+
 </html>
