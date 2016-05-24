@@ -34,7 +34,7 @@ CREATE TABLE `orderid` (
   `OrderDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`OrderID`),
   UNIQUE KEY `OrderID_UNIQUE` (`OrderID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10019 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10021 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `orderid` (
 
 LOCK TABLES `orderid` WRITE;
 /*!40000 ALTER TABLE `orderid` DISABLE KEYS */;
-INSERT INTO `orderid` VALUES (10016,'dawdawd','',0,'',43000,5,'NEW','2016-05-22 10:22:30'),(10017,'dawdawda','',0,'',12600,3,'NEW','2016-05-22 10:22:46'),(10018,'kalle','awdawd',0,'wdawd',13500,3,'NEW','2016-05-22 11:27:59');
+INSERT INTO `orderid` VALUES (10016,'dawdawd','',0,'',43000,5,'SHIPPED','2016-05-22 10:22:30'),(10017,'dawdawda','',0,'',12600,3,'NEW','2016-05-22 10:22:46'),(10018,'kalle','awdawd',0,'wdawd',13500,3,'NEW','2016-05-22 11:27:59'),(10019,'kalle','awdawd',12313,'adawwd',3247,4,'NEW','2016-05-23 14:30:56'),(10020,'Michael','Kallevägen 92',1231244,'kalle@kalle.com',23700,3,'NEW','2016-05-23 16:13:18');
 /*!40000 ALTER TABLE `orderid` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-23 13:19:42
+-- Dump completed on 2016-05-24 15:52:24

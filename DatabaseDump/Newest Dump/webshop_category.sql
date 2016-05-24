@@ -28,7 +28,7 @@ CREATE TABLE `category` (
   PRIMARY KEY (`CategoryID`),
   UNIQUE KEY `CategoryID_UNIQUE` (`CategoryID`),
   UNIQUE KEY `CategoryName_UNIQUE` (`CategoryName`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Choose Category'),(6,'Desktops'),(3,'Graphics cards'),(7,'Hard Drives'),(2,'Laptops'),(8,'Monitors'),(4,'Motherboards'),(5,'Processors');
+INSERT INTO `category` VALUES (6,'Desktops'),(3,'Graphics cards'),(7,'Hard Drives'),(2,'Laptops'),(8,'Monitors'),(4,'Motherboards'),(5,'Processors');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-23 13:19:42
+-- Dump completed on 2016-05-24 15:52:24
