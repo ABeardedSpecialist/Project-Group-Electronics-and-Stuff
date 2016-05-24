@@ -27,7 +27,7 @@ public class productData implements Serializable {
     private static final long serialVersionUID = 1L;
     private List<product> theData = new ArrayList<product>();
     private DatabaseConnection databaseConnection = new DatabaseConnection();
-    private List<String> imgs = new ArrayList<>();
+    private List<product> latestProducts = new ArrayList<>();
     private product pr = new product();
     private Part ImageFile;
 
@@ -39,8 +39,15 @@ public class productData implements Serializable {
             statement.execute();
             ResultSet rs = statement.getResultSet();
             while(rs.next()) {
-                String img = rs.getString(5);
-                imgs.add(img);
+                product latest = new product();
+                latest.setProductID(rs.getInt(1));
+                latest.setProductName(rs.getString(2));
+                latest.setProductPrice(rs.getInt(3));
+                latest.setProductQuantity(rs.getInt(4));
+                latest.setProductImage(rs.getString(5));
+                latest.setProductDescription(rs.getString(6));
+                latest.setCategoryID(rs.getInt(7));
+                latestProducts.add(latest);
             }
 
         } catch (SQLException e) {
@@ -80,8 +87,8 @@ public class productData implements Serializable {
         ImageFile = input;
     }
 
-    public List<String> getImgs() {
-        return imgs;
+    public List<product> getLatestProducts() {
+        return latestProducts;
     }
 
     private List<product> loadData() {
