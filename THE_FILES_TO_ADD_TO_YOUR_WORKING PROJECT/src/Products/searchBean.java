@@ -1,14 +1,13 @@
 package Products;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
