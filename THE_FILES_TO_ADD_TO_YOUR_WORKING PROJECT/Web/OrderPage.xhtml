@@ -17,28 +17,7 @@
 			
     <h:body>
         <h:form>
-            <h:dataTable value="#{cart.ID}" var="ci">
-                <h:column>
-                    <f:facet name="header">Image</f:facet>
-                    <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Name</f:facet>
-                    #{ci.item.productName}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Price</f:facet>
-                    #{ci.item.productPrice}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Category</f:facet>
-                    #{ci.item.productCategory}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Quantity</f:facet>
-                    #{ci.quantity}
-                </h:column>
-            </h:dataTable>
+           
             <h:outputLabel value="Number of products: #{cart.numberOfProducts}"/>
             <br/>
             <h:outputLabel value="Total price: #{cart.totalPrice}"/>

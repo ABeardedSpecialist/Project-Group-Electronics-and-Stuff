@@ -2,11 +2,9 @@
     background: black;
     border: 2px solid;
     border-radius: 30px;
-    padding-top:1%;
-    height: 60%;
+height:100%;
 
     text-align: center;
-    width: 40%;
     position:relative;
 }
 .h1 {

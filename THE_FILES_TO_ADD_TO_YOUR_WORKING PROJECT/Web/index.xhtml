@@ -26,21 +26,9 @@
         <ui:define name="content">
 
             <div class="border">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+          
                 <h:form>
-                <p:imageSwitch effect="fade" id="fadeEffect">
+                <p:imageSwitch effect="fade" id="fadeEffect" class="center">
                     <ui:repeat value="#{productData.latestProducts}" var="image" id="fadeEffectImages">
                         <h:commandLink action="#{productData.getProductPage(image)}">
                             <h:graphicImage library="images" name="#{image.productImage}" id="image" width="400"

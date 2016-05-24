@@ -31,41 +31,46 @@
 	<br />
 	<br />
 	<h:form>
-		<h:dataTable value="#{cart.ID}" var="ci">
-			<h:column>
-				<f:facet name="header">Image</f:facet>
-				<h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
-			</h:column>
-			<h:column>
-				<f:facet name="header">Name</f:facet>
-				<h:commandLink value="#{ci.item.productName}" action="#{productData.getProductPage(ci.item)}" size="20"/>
-        </h:column>
-			<h:column>
-				<f:facet name="header">Price</f:facet>
-            #{ci.item.productPrice}
-        </h:column>
-			<h:column>
-				<f:facet name="header">Category</f:facet>
-            #{ci.item.productCategory}
-        </h:column>
+	 <h:dataTable value="#{Cart.ID}" var="ci">
+                <h:column>
+                    <f:facet name="header">Image</f:facet>
+                    <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{ci.item.productName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{ci.item.productPrice}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Category</f:facet>
+                    #{ci.item.productCategory}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Quantity</f:facet>
+                    #{ci.quantity}
+                </h:column>
+          
 		
 			<h:column>
 				<h:selectOneMenu class="Multibul Multibuls Multibulss" value="#{ci.quantity}" onchange="submit()"
 					update="@form" ajax="true">
-					<f:selectItems value="#{cart.getQuantity(ci.item.productQuantity)}" />
+					<f:selectItems value="#{Cart.getQuantity(ci.item.productQuantity)}" />
 				</h:selectOneMenu>
 			</h:column>
 			<h:column>
 				<h:commandButton class="Buttons Buttonss" value="Remove from cart"
-					action="#{cart.removeProductFromCart(ci)}" update="@form"
+					action="#{Cart.removeProductFromCart(ci)}" update="@form"
 					ajax="true" />
 			</h:column>
 		</h:dataTable>
 		<br />
 		<div id="Order">
-		<h:outputLabel value="Number of products: #{cart.numberOfProducts}" />
+		<h:outputLabel value="Number of products: #{Cart.numberOfProducts}" />
 		<br />
-		<h:outputLabel value="Total price: #{cart.totalPrice}" />
+		<h:outputLabel value="Total price: #{Cart.totalPrice}" />
 		</div>
 		<br/>
 		
