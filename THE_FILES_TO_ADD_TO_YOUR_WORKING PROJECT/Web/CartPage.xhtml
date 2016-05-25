@@ -25,11 +25,10 @@
     	
     	<ui:define name="content">
 
-	<div id="Title">
-		<h:outputLabel value="Your Cart" />
-	</div>
-	<br />
-	<br />
+
+	
+<div class="border">
+	<h:outputLabel value="Your Cart" />
 	<h:form>
 	 <h:dataTable value="#{cart.ID}" var="ci">
                 <h:column>
@@ -57,7 +56,7 @@
 			<h:column>
 				<h:selectOneMenu class="Multibul Multibuls Multibulss" value="#{ci.quantity}" onchange="submit()"
 					update="@form" ajax="true">
-					<f:selectItems value="#{cart.getQuantity(ci.item.productQuantity)}" />
+					<f:selectItems value="#{cart.getQuantity(ci.item)}" />
 				</h:selectOneMenu>
 			</h:column>
 			<h:column>
@@ -76,7 +75,7 @@
 		
 	
 		
-	</h:form>
+	</h:form></div>
 </ui:define>
 </ui:composition>
 </f:view>

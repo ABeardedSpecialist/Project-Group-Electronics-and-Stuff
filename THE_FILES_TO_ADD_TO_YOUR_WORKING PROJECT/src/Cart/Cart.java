@@ -63,6 +63,7 @@ public class Cart implements Serializable {
         String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = '"+product.getProductID()+"'";
         try {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            statement.execute();
             ResultSet rs = statement.getResultSet();
             if(rs.next()){
                 quantity = rs.getInt(1);

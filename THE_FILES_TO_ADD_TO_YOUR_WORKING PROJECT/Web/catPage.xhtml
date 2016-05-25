@@ -6,9 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<h:head> <h:outputStylesheet library="css" name="styles.css"/>
+<h:head> <h:outputStylesheet library="css" name="CSS/styles.css"/>
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
-    <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+  
 
 
 </h:head>
@@ -21,8 +21,8 @@
             <ui:define name="content">
                  <div class="border">
                 <h:form>
-                    <h:dataTable id="table" styleClass="products" value="#{category.catList}" var="rs">
-                        <h:column>
+                    <h:dataTable id="table" styleClass="products" value="#{category.catList}" var="rs" columnClasses="column1,column2,column3">
+                        <h:column class="sImg">
                             <f:facet name="header">Image</f:facet>
                             <h:graphicImage styleClass="col" library="images" name="#{rs.productImage}" width="150"
                                             height="100"/>
