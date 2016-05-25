@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Named
 @SessionScoped
-@ManagedBean (name = "Cart")
+@ManagedBean (name = "cart")
 public class Cart implements Serializable {
 
     /**

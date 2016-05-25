@@ -31,7 +31,7 @@
 	<br />
 	<br />
 	<h:form>
-	 <h:dataTable value="#{Cart.ID}" var="ci">
+	 <h:dataTable value="#{cart.ID}" var="ci">
                 <h:column>
                     <f:facet name="header">Image</f:facet>
                     <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
@@ -57,20 +57,20 @@
 			<h:column>
 				<h:selectOneMenu class="Multibul Multibuls Multibulss" value="#{ci.quantity}" onchange="submit()"
 					update="@form" ajax="true">
-					<f:selectItems value="#{Cart.getQuantity(ci.item.productQuantity)}" />
+					<f:selectItems value="#{cart.getQuantity(ci.item.productQuantity)}" />
 				</h:selectOneMenu>
 			</h:column>
 			<h:column>
 				<h:commandButton class="Buttons Buttonss" value="Remove from cart"
-					action="#{Cart.removeProductFromCart(ci)}" update="@form"
+					action="#{cart.removeProductFromCart(ci)}" update="@form"
 					ajax="true" />
 			</h:column>
 		</h:dataTable>
 		<br />
 		<div id="Order">
-		<h:outputLabel value="Number of products: #{Cart.numberOfProducts}" />
+		<h:outputLabel value="Number of products: #{cart.numberOfProducts}" />
 		<br />
-		<h:outputLabel value="Total price: #{Cart.totalPrice}" />
+		<h:outputLabel value="Total price: #{cart.totalPrice}" />
 		</div>
 		<br/>
 		
