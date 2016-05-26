@@ -226,6 +226,12 @@ public class productData implements Serializable {
         }
         return shortDe;
     }
+    public boolean checkQuantityZero(product product){
+        if(product.getProductQuantity() == 0){
+            return true;
+        }
+        return false;
+    }
 
 
 }

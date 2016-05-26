@@ -29,6 +29,7 @@ public class adminData implements Serializable {
 
     public void trueEdit(admin ad) {
         ad.setEdit(true);
+        ad.setPassword("");
     }
 
     public List<admin> getaList() {

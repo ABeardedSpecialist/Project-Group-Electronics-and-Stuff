@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
 	
 	<h:head>
 	<title>Search Results Page</title>
@@ -28,41 +28,49 @@
 		<h:form>
 			<br />
 			<div id="Qustion">
-			<h:outputLabel value="Your search results:" />
+			<h:outputLabel value="Your search results on search value: #{searchBean.searchVal}" />
 			</div>
 			<br />
-			<h:dataTable   value="#{searchBean.searchRes}" var="rs">
-				<h:column >
-					<f:facet name="header">Name</f:facet>
-					<h:commandLink value="#{rs.productName}" action="#{productData.getProductPage(rs)}" size="20"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header">Price</f:facet>
-					<h:outputText value="#{rs.productPrice}" size="20"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header">Quantity</f:facet>
-					<h:outputText value="#{rs.productQuantity}" size="20"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header">Image</f:facet>
-					<h:graphicImage library="images" name="#{rs.productImage}" width="200" height="120"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header">Description</f:facet>
-					<h:outputText value="#{rs.productDescription}" size="20"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header">Category</f:facet>
-					<h:outputText value="#{rs.productCategory}" size="20"/>
-				</h:column>
-				<h:column>
-					<h:commandButton class="Buttons Buttonss" value="Add to Cart" action="#{cart.addProductToCart(rs)}"/>
-				</h:column>
-			</h:dataTable>
-			<br/>
-			 <br/>
-			
+			<p:dataTable   value="#{searchBean.searchRes}" var="rs"
+						   rows="5"
+						   paginator="true"
+						   paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
+						   paginatorPosition="top">
+
+				<p:column headerText="Product Image">
+					<h:commandLink action="#{productData.getProductPage(rs)}">
+						<h:graphicImage library="images" name="#{rs.productImage}" width="120" height="85"/>
+					</h:commandLink>
+				</p:column>
+
+				<p:column headerText="Product Name" sortBy="#{rs.productName}">
+					<h:commandLink action="#{productData.getProductPage(rs)}" value="#{rs.productName}" />
+				</p:column>
+
+				<p:column headerText="Product Price" sortBy="#{rs.productPrice}">
+					<h:outputText value="#{rs.productPrice}" />
+				</p:column>
+
+				<p:column headerText="Product Stock Quantity">
+					<h:outputText value="#{rs.productQuantity}"/>
+				</p:column>
+
+				<p:column headerText="Product Description">
+					<h:outputText value="#{productData.getShortDescription(rs)}"/>
+				</p:column>
+
+				<p:column headerText="Product Category" sortBy="#{rs.productCategory}">
+					<h:outputText value="#{rs.productCategory}" />
+				</p:column>
+
+				<p:column>
+					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"
+									 disabled="#{productData.checkQuantityZero(rs)}"/>
+					<br/>
+					<h:outputText value="Cant add anymore to the cart, no more in stock"
+								  rendered="#{productData.checkQuantityZero(rs)}"/>
+				</p:column>
+			</p:dataTable>
 		</h:form>
 
 	</h:body>

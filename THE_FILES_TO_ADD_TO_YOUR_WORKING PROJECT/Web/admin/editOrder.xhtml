@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
 <h:head>
     <link href="../CSS/AdminPage.css" rel="stylesheet" type="text/css"/>
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
@@ -20,50 +20,53 @@
         <ui:define name="content">
             <div class="border">
                 <h:form>
-                    <h:dataTable value="#{orderBean.orderList}" var="ord">
-                        <h:column>
-                            <f:facet name="header">Order ID</f:facet>
-                            #{ord.orderID}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Costumer Name</f:facet>
-                            <h:outputText value="#{ord.orderName}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Costumer Address</f:facet>
-                            <h:outputText value="#{ord.orderAddress}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Costumer Phone</f:facet>
-                            <h:outputText value="#{ord.orderPhone}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Costumer E-Mail</f:facet>
-                            <h:outputText value="#{ord.orderEmail}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Products in Order</f:facet>
+                    <p:dataTable var="order" value="#{orderBean.orderList}" rows="10"  widgetVar="orderTable"
+                                 paginator="true"
+                                 paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}" >
+                        <p:column headerText="Order ID" >
+                            <h:outputText value="#{order.orderID}" />
+                        </p:column>
+                        <p:column headerText="Customer Name">
+                            <h:outputText value="#{order.orderName}"/>
+                        </p:column>
+                        <p:column headerText="Customer Address">
+                            <h:outputText value="#{order.orderAddress}" />
+                        </p:column>
+
+                        <p:column headerText="Customer Phone">
+                            <h:outputText value="#{order.orderPhone}" />
+                        </p:column>
+
+                        <p:column headerText="Customer E-Mail">
+                            <h:outputText value="#{order.orderEmail}" />
+                        </p:column>
+                        <p:column headerText="Products in Order">
                             <h:selectOneMenu value="#">
-                                <f:selectItems value="#{orderBean.LoadOrderList(ord)}"/>
+                                <f:selectItems value="#{orderBean.LoadOrderList(order)}"/>
                             </h:selectOneMenu>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Order Status</f:facet>
-                            <h:outputText value="#{ord.status}" rendered="#{not ord.editable}"/>
-                            <h:selectOneMenu value="#{ord.status}" rendered="#{ord.editable}" onchange="save">
+                        </p:column>
+                        <p:column headerText="Order Status" sortBy="#{order.status}">
+                            <f:facet name="filter">
+                            <p:selectOneMenu >
+                                <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
+                                <f:selectItems value="#{orderBean.statusList()}" />
+                            </p:selectOneMenu>
+                            </f:facet>
+                            <h:outputText value="#{order.status}" rendered="#{not order.editable}"/>
+                            <h:selectOneMenu value="#{order.status}" rendered="#{order.editable}" onchange="save">
                                 <f:selectItems value="#{orderBean.statusList()}" var="status" itemValue="#{status}" itemLabel="#{status}"/>
                             </h:selectOneMenu>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column headerText="Edit" >
                             <h:commandButton class="Buttons Buttonss" value="Edit"
-                                             action="#{ord.setEditable(true)}"
-                                             rendered="#{not ord.editable}"/>
+                                             action="#{order.setEditable(true)}"
+                                             rendered="#{not order.editable}"/>
 
                             <h:commandButton class="Buttons Buttonss"
-                                             action="#{orderData.editOrder(ord)}"
-                                             value="Save Changes" rendered="#{ord.editable}"/>
-                        </h:column>
-                    </h:dataTable>
+                                             action="#{orderData.editOrder(order)}"
+                                             value="Save Changes" rendered="#{order.editable}"/>
+                        </p:column>
+                    </p:dataTable>
                 </h:form>
             </div>
         </ui:define></ui:composition></f:view>
