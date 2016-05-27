@@ -1,8 +1,9 @@
 package Admin;
 
 
+import Products.DatabaseConnection;
+
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -10,22 +11,17 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//@ManagedBean (name = "admin")
 @Named
 @SessionScoped
 public class adminData implements Serializable {
     private static final long serialVersionUID = 1L;
-    private static final String sql_connection = "jdbc:mysql://localhost:3306/webshop";
+    private DatabaseConnection databaseConnection = new DatabaseConnection();
     private List<admin> aList = new ArrayList<>();
-    private admin ad;
-    private String user;
-    private String pass;
+    private admin ad = new admin();
 
-    /*public adminData() {
-        ad = new admin();
+    public adminData() {
         adminList();
-
-    }*/
+    }
 
     public void trueEdit(admin ad) {
         ad.setEdit(true);
@@ -40,87 +36,71 @@ public class adminData implements Serializable {
     }
 
     public void createNewAdmin() {
+        String check = "SELECT * FROM webshop.admins WHERE AdminUsername ='" + ad.getUsername() + "'";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String check = "SELECT * FROM webshop.admins WHERE AdminUsername ='" + user + "'";
-            Statement bla = conn.createStatement();
-            ResultSet rs = bla.executeQuery(check);
-
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(check);
+            ResultSet rs = statement.executeQuery(check);
             if (!rs.next()) {
                 try {
-                    String quary = "INSERT INTO webshop.admins (AdminUsername, AdminPassword)" + " VALUES (?,?)";
-                    PreparedStatement statement = conn.prepareStatement(quary);
-                    statement.setString(1, this.user);
-                    statement.setString(2, this.pass);
+                    String query = "INSERT INTO webshop.admins (AdminUsername, AdminPassword)" + " VALUES (?,?)";
+                    PreparedStatement checkPassword = databaseConnection.connect().prepareStatement(query);
+                    checkPassword.setString(1, ad.getUsername());
+                    checkPassword.setString(2, ad.getPassword());
+                    checkPassword.execute();
 
-                    statement.execute();
-
-                } finally {
-                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
-
-            } else {
-                System.out.println("error");
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            adminList();
+            ad = new admin();
+            databaseConnection.disconnect();
         }
-        this.user = "";
-        this.pass = "";
+
     }
     public String checkIfAdminExist() {
-        System.out.println("start");
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
+            String query = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
             try {
-                System.out.println("neh");
-                String quary = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
-                PreparedStatement statement = conn.prepareStatement(quary);
-                statement.setString(1, this.user);
+                PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+                statement.setString(1, ad.getUsername());
                 ResultSet Username = statement.executeQuery();
-                System.out.println("bajs");
                 if (Username.next()) {
                     String passwordCheck = "SELECT * FROM webshop.admins WHERE AdminPassword = ?";
-                    PreparedStatement statement1 = conn.prepareStatement(passwordCheck);
-                    statement1.setString(1, this.pass);
+                    PreparedStatement statement1 = databaseConnection.connect().prepareStatement(passwordCheck);
+                    statement1.setString(1, ad.getPassword());
                     ResultSet Password = statement1.executeQuery();
-                    System.out.println("kalle");
                     if (Password.next()) {
-                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", this.user);
+                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", ad.getUsername());
                         return "adminPage";
                     } else {
-                        System.out.println("kuken");
                         return "invalid";
                     }
                 } else {
                     return "invalid";
                 }
-            } finally {
-                conn.close();
-            }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return "invalid";
+        } finally {
+            databaseConnection.disconnect();
+            ad = new admin();
         }
-        return "invalid";
     }
-    private List<admin> adminList() {
+
+    private List<admin> adminList(){
+        String query = "SELECT * FROM webshop.admins";
         try {
             aList.removeAll(aList);
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
 
-            String quary = "SELECT * FROM webshop.admins";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
-
             while (rs.next()) {
                 admin ad = new admin();
                 ad.setUsername(rs.getString(1));
@@ -129,12 +109,10 @@ public class adminData implements Serializable {
                 aList.add(ad);
             }
 
-            conn.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
 
         }
         return aList;
@@ -148,60 +126,40 @@ public class adminData implements Serializable {
         this.ad = ad;
     }
 
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
     public void removeAdmin(admin ad) {
+        String query = "DELETE FROM webshop.admins WHERE AdminUsername = '" + ad.getUsername() + "'";
         try {
 
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-
-            String quary = "DELETE FROM webshop.admins WHERE AdminUsername = '" + ad.getUsername() + "'";
-            PreparedStatement statement = conn.prepareStatement(quary);
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.executeUpdate();
-            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
         adminList();
     }
-    public void editAdmin(admin ad) {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(sql_connection, "DBTest", "A.1337,Black.");
-            String query = "UPDATE webshop.admins SET AdminPassword=? WHERE AdminUsername ='" + ad.getUsername() + "'";
-            PreparedStatement statement = conn.prepareStatement(query);
-            statement.setString(1, ad.getPassword());
 
+    public void editAdmin(admin ad) {
+        String query = "UPDATE webshop.admins SET AdminPassword=? WHERE AdminUsername ='" + ad.getUsername() + "'";
+        try {
+
+            PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
+            statement.setString(1, ad.getPassword());
             statement.execute();
-            conn.close();
+
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        } finally {
+            databaseConnection.disconnect();
         }
         ad.setEdit(false);
         adminList();
 
     }
-    public String logOut(){
+
+    public String logOut() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "AdminLogIn.xhtml";
+        return "AdminLogIn";
     }
 }
