@@ -29,44 +29,41 @@
                         </div>
                         <br/>
                         <br/>
-                            <div class="form-input">
-                                <h:outputLabel class="text" value="Product name: "/>
-                                <br/>
-                                <h:inputText id="Name" value="#{productData.pr.productName}"/>
-                                <br/>
-                            </div>
-                            <h:outputLabel class="text" value="Product price: "/>
+                        <div class="form-input">
+                            <h:outputLabel class="text" value="Product name: "/>
                             <br/>
-                            <h:inputText id="Price" value="#{productData.pr.productPrice}"/>
+                            <h:inputText id="Name" value="#{productData.pr.productName}"/>
                             <br/>
-                            <h:outputLabel class="text" value="Product quantity: "/>
-                            <br/>
-                            <h:inputText id="Quantity"
-                                         value="#{productData.pr.productQuantity}"/>
-                            <br/>
-                            <h:outputLabel class="text" value="Product image source: "/>
-                            <br/>
-                            <h:form enctype="multipart/form-data">
-                                <h:inputFile value="#{productData.imageFile}"/>
-                                <h:commandButton value="Upload" action="#{productData.fileUpload(productData.pr)}"/>
-                            </h:form>
-                            <br/>
-                            <h:outputLabel class="text" value="Product description: "/>
-                            <br/>
-                            <h:inputTextarea id="Description" cols="35" rows="5"
-                                             value="#{productData.pr.productDescription}"/>
-                            <br/>
-                            <h:outputLabel class="text" value="Product Category: "/>
-                            <br/>
-                            <h:selectOneMenu id="Category" value="#{productData.pr.categoryID}" onchange="save">
-                                <f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}"
-                                               itemLabel="#{cd.categoryName}"/>
-                            </h:selectOneMenu>
-                            <br/>
-                            <br/>
-                            <h:commandButton class="Buttons Buttonss" value="Add product"
-                                             action="#{productData.addProduct}"/>
-                            <br/>
+                        </div>
+                        <h:outputLabel class="text" value="Product price: "/>
+                        <br/>
+                        <h:inputText id="Price" value="#{productData.pr.productPrice}"/>
+                        <br/>
+                        <h:outputLabel class="text" value="Product quantity: "/>
+                        <br/>
+                        <h:inputText id="Quantity"
+                                     value="#{productData.pr.productQuantity}"/>
+                        <br/>
+                        <h:outputLabel class="text" value="Product image source: "/>
+                        <br/>
+                        <h:inputFile value="#{productData.imageFile}"/>
+                        <h:commandButton value="Upload" action="#{productData.fileUpload(productData.pr)}"/>
+                        <br/>
+                        <h:outputLabel class="text" value="Product description: "/>
+                        <br/>
+                        <h:inputTextarea id="Description" cols="35" rows="5"
+                                         value="#{productData.pr.productDescription}"/>
+                        <br/>
+                        <h:outputLabel class="text" value="Product Category: "/>
+                        <br/>
+                        <h:selectOneMenu id="Category" value="#{productData.pr.categoryID}" onchange="save">
+                            <f:selectItems value="#{categoryData.theList}" var="cd" itemValue="#{cd.catID}"
+                                           itemLabel="#{cd.categoryName}"/>
+                        </h:selectOneMenu>
+                        <br/>
+                        <br/>
+                        <h:commandButton class="Buttons Buttonss" value="Add product"
+                                         action="#{productData.addProduct}"/>
                     </h:form>
                 </h:body>
             </div>

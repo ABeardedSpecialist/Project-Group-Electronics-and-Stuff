@@ -63,6 +63,7 @@ public class productData implements Serializable {
     public List<product> getTheData() {
         return theData;
     }
+
     public product getPr() {
         return pr;
     }
@@ -71,10 +72,6 @@ public class productData implements Serializable {
         this.pr = pr;
     }
 
-    public String edit() {
-        loadData();
-        return "editProduct";
-    }
     public void setTheData(List<product> theData) {
         this.theData = theData;
     }
@@ -122,6 +119,7 @@ public class productData implements Serializable {
     }
 
     public void addProduct() {
+        
         String query = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                 "ProductImage, ProductDescription, ProductCategory)" + " VALUES (?,?,?,?,?,?)";
         try {
@@ -213,7 +211,7 @@ public class productData implements Serializable {
      */
     public void fileUpload(product pr) throws IOException {
         InputStream input = ImageFile.getInputStream();
-        Files.copy(input, new File("C:\\Users\\lisau\\Desktop\\Java\\WebShop\\Web\\resources\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(input, new File("C:\\Users\\Michael\\Desktop\\Webshop2\\Web\\resources\\images", ImageFile.getSubmittedFileName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
         pr.setProductImage(ImageFile.getSubmittedFileName());
     }
     public String getShortDescription(product pr){
@@ -231,6 +229,10 @@ public class productData implements Serializable {
             return true;
         }
         return false;
+    }
+    public String goToNewProduct(){
+        pr = new product();
+        return "newProduct.xhtml";
     }
 
 

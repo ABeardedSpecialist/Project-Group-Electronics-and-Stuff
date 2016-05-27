@@ -4,7 +4,6 @@ import Cart.Cart;
 import Cart.cartItem;
 import Products.DatabaseConnection;
 import Products.product;
-import com.sun.tools.corba.se.idl.constExpr.Or;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
