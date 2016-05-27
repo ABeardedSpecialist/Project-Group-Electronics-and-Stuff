@@ -42,6 +42,7 @@
 
 				<h:commandButton action="#{adminData.editAdmin(ad)}"
 				 class ="Buttons Buttonss" 	value="Save Changes" rendered="#{ad.edit}" />
+				<h:commandButton action="#{ad.setEdit(false)}" value="Cancel" rendered="#{ad.edit}"/>
 			</p:column>
 			
 			<p:column headerText="Remove Admin">

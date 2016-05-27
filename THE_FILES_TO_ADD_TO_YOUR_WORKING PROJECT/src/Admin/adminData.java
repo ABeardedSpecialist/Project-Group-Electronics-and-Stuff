@@ -167,4 +167,8 @@ public class adminData implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "AdminLogIn";
     }
+    public String goToNewAdmin(){
+        ad = new admin();
+        return "addNewAdmin.xhtml";
+    }
 }

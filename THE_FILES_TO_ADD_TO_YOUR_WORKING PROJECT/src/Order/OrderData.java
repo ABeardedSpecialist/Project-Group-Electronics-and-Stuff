@@ -4,6 +4,7 @@ import Cart.Cart;
 import Cart.cartItem;
 import Products.DatabaseConnection;
 import Products.product;
+import com.sun.tools.corba.se.idl.constExpr.Or;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -81,16 +82,17 @@ public class OrderData implements Serializable {
             statement.setInt(5, cart.getTotalPrice());
             statement.setInt(6, cart.getNumberOfProducts());
             statement.setString(7, "NEW");
+            order.setStatus("NEW");
             statement.execute();
 
             ResultSet rs = statement.getGeneratedKeys();
             if (rs.next()) {
-                id = rs.getInt(1);
+                order.setOrderID(rs.getInt(1));
             }
             for (cartItem item : cartItemsList) {
                 String query = "INSERT INTO webshop.orders (OrderID, OrderProduct, OrderQuantity, OrderProductPrice)" + " VALUES(?,?,?,?)";
                 PreparedStatement itemQuery = databaseConnection.connect().prepareStatement(query);
-                itemQuery.setInt(1, id);
+                itemQuery.setInt(1, order.getOrderID());
                 itemQuery.setString(2, item.getItem().getProductName());
                 itemQuery.setInt(3, item.getQuantity());
                 itemQuery.setInt(4, item.getItem().getProductPrice());
@@ -131,6 +133,20 @@ public class OrderData implements Serializable {
             }
             if(cartItemsList.isEmpty()){
                 return "InvalidOrderNumber";
+            }
+            else{
+                String getOrderStatus = "SELECT OrderID, OrderStatus FROM webshop.orderid WHERE OrderID = " + id;
+                try{
+                    PreparedStatement OrderStatus = databaseConnection.connect().prepareStatement(getOrderStatus);
+                    OrderStatus.execute();
+                    ResultSet resultSet = OrderStatus.getResultSet();
+                    if(resultSet.next()){
+                        order.setOrderID(resultSet.getInt(1));
+                        order.setStatus(resultSet.getString(2));
+                    }
+                } catch (SQLException e){
+                    e.printStackTrace();
+                }
             }
         } catch (SQLException e){
             e.printStackTrace();
@@ -254,6 +270,10 @@ public class OrderData implements Serializable {
         status.add("DELIVERED");
 
         return status;
+    }
+    public String goToCheckOrderStatus(){
+        id = 0;
+        return "check.xhtml";
     }
 
 }

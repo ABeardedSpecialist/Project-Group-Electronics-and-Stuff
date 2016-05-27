@@ -35,17 +35,19 @@
     	<ui:define name="content">
 
 	       <div class = "border">
-     <h:form>
+     <h:form autocomplete="off" >
      	<h1 class ="h1">Add an administrator</h1>
      	<br/>
      	<br/>
+		 <h:inputText style="display:none" value="#" />
+		 <h:inputText style="display:none" value="#" />
      	<br/>
      	<br/>
         <h:outputLabel class="UserName" value="Username: "/>
-        <h:inputText id="Username" value="#{adminData.ad.username}"/>
+        <h:inputText id="Username" value="#{adminData.ad.username}" autocomplete="off"/>
         <br/>
         <h:outputLabel class= "Password" value="Password:  "/>
-        <h:inputSecret id="Password" value="#{adminData.ad.password}"/>
+        <h:inputSecret id="Password" value="#{adminData.ad.password}" autocomplete="off"/>
         <br/>
         <br/>
         <h:commandButton  class = "Buttons Buttonss movingLogin" value="Add" action="#{adminData.createNewAdmin()}"/>
