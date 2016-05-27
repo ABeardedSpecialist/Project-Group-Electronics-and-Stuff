@@ -4,6 +4,7 @@ package Admin;
 import Products.DatabaseConnection;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -67,6 +68,7 @@ public class adminData implements Serializable {
 
     }
     public String checkIfAdminExist() {
+        FacesContext fc = FacesContext.getCurrentInstance();
         try {
             String query = "SELECT * FROM webshop.admins WHERE AdminUsername = ?";
             try {
@@ -82,16 +84,19 @@ public class adminData implements Serializable {
                         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", ad.getUsername());
                         return "adminPage";
                     } else {
-                        return "invalid";
+                        fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Username or Password is invalid", null));
+                        return null;
                     }
                 } else {
-                    return "invalid";
+                    fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Username or Password is invalid", null));
+                    return null;
                 }
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            return "invalid";
+            fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Username or Password is invalid", null));
+            return null;
         } finally {
             databaseConnection.disconnect();
             ad = new admin();

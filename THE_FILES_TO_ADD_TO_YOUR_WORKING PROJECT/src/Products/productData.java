@@ -119,7 +119,6 @@ public class productData implements Serializable {
     }
 
     public void addProduct() {
-        
         String query = "INSERT INTO webshop.products (ProductName, ProductPrice, ProductQuantity, " +
                 "ProductImage, ProductDescription, ProductCategory)" + " VALUES (?,?,?,?,?,?)";
         try {

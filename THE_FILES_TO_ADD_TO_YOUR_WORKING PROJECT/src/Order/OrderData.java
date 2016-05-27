@@ -5,8 +5,11 @@ import Cart.cartItem;
 import Products.DatabaseConnection;
 import Products.product;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.FacesValidator;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -29,15 +32,13 @@ public class OrderData implements Serializable {
     private static final long serialVersionUID = 1L;
     private DatabaseConnection databaseConnection = new DatabaseConnection();
     private Order order;
-    private List<cartItem> cartItemsList;
-    private List<Order> orderList;
+    private List<cartItem> cartItemsList = new ArrayList<>();
+    private List<Order> orderList = new ArrayList<>();
     private int id;
 
     @Inject
     Cart cart;
 
-    
-    
     public OrderData() {
         order = new Order();
         id = 0;
@@ -115,6 +116,7 @@ public class OrderData implements Serializable {
     }
 
     public String checkOrder() {
+        FacesContext fc = FacesContext.getCurrentInstance();
         String query = "SELECT OrderProduct, OrderProductPrice, OrderQuantity FROM webshop.orders WHERE OrderID = " + id;
         try {
             cartItemsList = new ArrayList<>();
@@ -131,7 +133,8 @@ public class OrderData implements Serializable {
                 cartItemsList.add(ci);
             }
             if(cartItemsList.isEmpty()){
-                return "InvalidOrderNumber";
+                fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Invalid Order Number", null));
+                return null;
             }
             else{
                 String getOrderStatus = "SELECT OrderID, OrderStatus FROM webshop.orderid WHERE OrderID = " + id;
@@ -273,6 +276,16 @@ public class OrderData implements Serializable {
     public String goToCheckOrderStatus(){
         id = 0;
         return "check.xhtml";
+    }
+    public String goToCheckOut(){
+        FacesContext fc = FacesContext.getCurrentInstance();
+        if(cartItemsList.isEmpty()){
+            fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Cart is empty", null));
+            return null;
+        }
+        else
+            return "OrderPage";
+
     }
 
 }
