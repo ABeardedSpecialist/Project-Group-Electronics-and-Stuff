@@ -26,24 +26,20 @@
 			
 				<h:form>
 				 <h1 class = "h1">Admin Login page!</h1><br/>
-        <br/>
-        <br/>
-        <br/>
-					<h:outputLabel class="UserName" value="Username: " />
+       
+					<h:outputLabel class="theLabel" value="Username: " />
 					<h:inputText  value="#{adminData.ad.username}" />
 
-					<br />
+			
 
-					<h:outputLabel class="Password" value="Password:  " />
+					<h:outputLabel class="theLabel" value="Password:  " />
 					<h:inputSecret value="#{adminData.ad.password}" />
 
-					<br />
-					<br />
 					<div>
-						<h:commandButton class="Buttons Buttonss movingLogin" value="Log in" action="#{adminData.checkIfAdminExist}" />
-						<h:commandButton action="/index" value="Go back to UserSide"/>
+						<h:commandButton class="button" value="Log in" action="#{adminData.checkIfAdminExist}" />
+						<h:commandButton class="button" action="/index" value="Customer page"/>
 					</div>
-					<br />
+				
 				</h:form>
 			</div>
 	

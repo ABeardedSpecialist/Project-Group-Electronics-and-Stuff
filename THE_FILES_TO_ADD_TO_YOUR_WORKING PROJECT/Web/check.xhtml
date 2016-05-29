@@ -10,7 +10,7 @@
 <!--      	<h:outputStylesheet library = "css" name = "AdminPageStyle.css" /> -->
 <!--      	<meta name="name" content="content" /> -->
 <!-- 		<link href="CSS/AdminLogIn.css" rel="stylesheet" type="text/css" /> -->
-     	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css' />
+ 
      	<h:outputStylesheet library = "css" name = "styles.css" />
      	<meta name="name" content="content" />
 		<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
@@ -23,12 +23,15 @@
 	<ui:composition template="theTemplate.xhtml">
 
 	<ui:define name="content">
-       <div class = "border">Crude Placeholder which works
+       <div class = "border">
+       <h1 class="ordH">Write your order number into the field:</h1>
   <h:form>
+  <div class="orderCenter">
      	<h:inputText id="searchVal" class="searchBar"
 						value="#{orderBean.id}" />
 						<h:commandButton class="searchBtn"
 						action="#{orderBean.checkOrder()}" value="Check status" />
+						</div>
 				</h:form>	
        
        </div>

@@ -11,7 +11,7 @@
 	<ui:define name="content">
 	       <div class = "border">
     <h:form>
-        <p:dataTable value="#{category.theList}" var="cat">
+        <p:dataTable class="noBorder" value="#{category.theList}" var="cat">
             <p:column headerText="Category ID">
                    <h:outputText value="#{cat.catID}"/>
             </p:column>

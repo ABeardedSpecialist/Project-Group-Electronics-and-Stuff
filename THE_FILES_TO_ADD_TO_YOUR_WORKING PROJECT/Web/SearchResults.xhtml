@@ -28,7 +28,7 @@
 			<h:outputLabel value="Your search results on search value: #{searchBean.searchVal}" />
 			</div>
 			<br />
-			<p:dataTable   value="#{searchBean.searchRes}" var="rs"
+			<p:dataTable class="noBorder"   value="#{searchBean.searchRes}" var="rs"
 						   rows="5"
 						   paginator="true"
 						   paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
@@ -61,10 +61,10 @@
 				</p:column>
 
 				<p:column>
-					<h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"
+					<h:commandButton class="button" value="Add to Cart" action="#{cart.addProductToCart(rs)}"
 									 disabled="#{productData.checkQuantityZero(rs)}"/>
 					<br/>
-					<h:outputText value="Cant add anymore to the cart, no more in stock"
+					<h:outputText class="warning" value="Cant add anymore to the cart, no more in stock"
 								  rendered="#{productData.checkQuantityZero(rs)}"/>
 				</p:column>
 			</p:dataTable>
