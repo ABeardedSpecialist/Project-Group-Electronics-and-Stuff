@@ -30,13 +30,13 @@
         <br/>
         <br/>
 					<h:outputLabel class="UserName" value="Username: " />
-					<h:inputText  id="user" value="#{adminData.ad.username}" required="true"/>
+					<h:inputText  id="user" value="#{adminData.ad.username}" required="true" requiredMessage="Username required"/>
 					<h:messages for="user" style="color: darkred"/>
 					<br />
 
 					<h:outputLabel class="Password" value="Password:  " />
-					<h:inputSecret id="pass" value="#{adminData.ad.password}" required="true"/>
-					<h:messages
+					<h:inputSecret id="pass" value="#{adminData.ad.password}" required="true" requiredMessage="Password required"/>
+					<h:messages for="pass" style="color: darkred"/>
 					<br />
 					<h:messages globalOnly="true" style="color: darkred"/>
 					<br />
