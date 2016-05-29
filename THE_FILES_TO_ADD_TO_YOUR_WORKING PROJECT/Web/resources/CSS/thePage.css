@@ -1,15 +1,26 @@
 .border {
-    background: black;
+background:#305760;
     border: 2px solid;
     border-radius: 30px;
+    margin-top:10px;
 height:100%;
 
     text-align: center;
     position:relative;
 }
+.menu {
+    float: left;
+    list-style-type: none;
+    position: relative;
+    z-index: 5;
+}
 .h1 {
+	margin-top:30px;
+	margin-bottom:30px;
 font-family: 'Maven Pro', sans-serif;
+font-weight:normal;
     font-size: 308%;
+    display:block;
 }
 #footera {
   background-color: #575c7a;
@@ -38,28 +49,17 @@ font-family: 'Maven Pro', sans-serif;
    width:  150px;;
 }
 
-.Buttons {
-    background-color: white; 
-    color: black; 
-    border: 2px dotted black;
+
 }
 
-.Buttonss:hover {
-    background-color: black;
-    color: white;
-    
-}
-
-.UserName{
+.logInT{
 	font-size : 25px;
-	font-family:Tahoma;
+	display:block;
+	font-family:"Maven pro";
+	margin-bottom:15px;
 }
 
-.Password{
-	font-size : 25px;
-	font-family: Tahoma;
-	padding-left: 1%;
-}
+
 
 input {
 	height: 30px;

@@ -2,64 +2,80 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head> <h:outputStylesheet library="css" name="CSS/styles.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'/>
+<h:head>
+
+
+
+
+	<h:outputStylesheet library="css" name="CSS/styles.css" />
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower'
+		rel='stylesheet' type='text/css' />
 
 
 </h:head>
 
 <f:view>
-    <h:body>
-        <ui:composition template="theTemplate.xhtml">
+	<h:body>
+		<ui:composition template="theTemplate.xhtml">
 
 
-            <ui:define name="content">
-                <div class="border">
-                    <h:form>
-                        <p:dataTable value="#{category.catList}" var="rs" rows="5"
-                                     paginator="true"
-                                     paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
-                                     paginatorPosition="top">
+			<ui:define name="content">
+				<div class="border">
+					<h:form>
 
-                            <p:column headerText="Product Image">
-                                <h:commandLink action="#{productData.getProductPage(rs)}">
-                                    <h:graphicImage library="images" name="#{rs.productImage}" width="150"
-                                                    height="100"/>
-                                </h:commandLink>
-                            </p:column>
+						<p:dataTable class="noBorder"   value="#{category.catList}" var="rs"
+							rows="5" paginator="true"
+							paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
+							paginatorPosition="top">
 
-                            <p:column headerText="Product Name" sortBy="#{rs.productName}">
-                                <h:commandLink value="#{rs.productName}" action="#{productData.getProductPage(rs)}"/>
-                            </p:column>
+							<p:column class="noB"    headerText="Product Image">
+								<h:commandLink action="#{productData.getProductPage(rs)}">
+									<h:graphicImage library="images" name="#{rs.productImage}"
+										width="60" height="60" />
+								</h:commandLink>
+							</p:column>
 
-                            <p:column headerText="Product Price" sortBy="#{rs.productPrice}">
-                                <h:outputText value="#{rs.productPrice}"/>
-                            </p:column>
+							<p:column class="noB"  headerText="Product Name" sortBy="#{rs.productName}">
+								<h:commandLink class="prodLink" value="#{rs.productName}"
+									action="#{productData.getProductPage(rs)}" />
+							</p:column>
+						
+							<p:column headerText="Product Price"
+								sortBy="#{rs.productPrice}">
+								<h:outputText value="#{rs.productPrice}" />
+							</p:column>
 
-                            <p:column headerText="Product Stock Quantity" sortBy="#{rs.productQuantity}">
-                                <h:outputText value="#{rs.productQuantity}"/>
-                            </p:column>
+							<p:column  
+								headerText="Product Stock Quantity"
+								sortBy="#{rs.productQuantity}">
+								<h:outputText value="#{rs.productQuantity}" />
+							</p:column>
 
-                            <p:column headerText="Product Category">
-                                <h:outputText value="#{rs.productCategory}" size="20"/>
-                            </p:column>
+							<p:column 
+								headerText="Product Category">
+								<h:outputText value="#{rs.productCategory}" size="20" />
+							</p:column>
 
-                            <p:column>
-                                <h:commandButton value="Add to Cart" action="#{cart.addProductToCart(rs)}"
-                                                 disabled="#{productData.checkQuantityZero(rs)}"/>
-                                <br/>
-                                <h:outputText value="Cant add anymore to the cart, no more in stock"
-                                              rendered="#{productData.checkQuantityZero(rs)}"/>
-                            </p:column>
-                        </p:dataTable>
-                    </h:form>
-                </div>
-            </ui:define></ui:composition>
-    </h:body>
+							<p:column  >
+								<h:commandButton value="Add to Cart"
+									action="#{cart.addProductToCart(rs)}"
+									disabled="#{productData.checkQuantityZero(rs)}" />
+								<br />
+								<h:outputText
+									value="Cant add anymore to the cart, no more in stock"
+									rendered="#{productData.checkQuantityZero(rs)}" />
+							</p:column>
+						</p:dataTable>
+					</h:form>
+				</div>
+			</ui:define>
+		</ui:composition>
+	</h:body>
 </f:view>
 
 </html>
