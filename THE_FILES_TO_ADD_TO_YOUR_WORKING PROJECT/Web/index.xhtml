@@ -30,11 +30,13 @@
                 <h:form>
                 <p:imageSwitch effect="fade" id="fadeEffect" class="center">
                     <ui:repeat value="#{productData.latestProducts}" var="image" id="fadeEffectImages">
-          
+
                         <h:commandLink action="#{productData.getProductPage(image)}">
                             <h:graphicImage library="images" name="#{image.productImage}" id="image" width="400"
                                             height="250"/>
+                            <div class="caption" style="color: #24282e">#{image.productName}</div>
                         </h:commandLink>
+
                     </ui:repeat>
                 </p:imageSwitch>
             </h:form>
