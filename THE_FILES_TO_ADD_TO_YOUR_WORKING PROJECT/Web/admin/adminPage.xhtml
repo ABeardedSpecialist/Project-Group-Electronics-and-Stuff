@@ -29,25 +29,23 @@
 		
     
      <h:form>
-        <h1 class = "h1">Admin page!</h1><br/>
-        <br/>
+        <h1 class = "h1">Welcome <h:outputText value="#{adminData.ad.username}"></h:outputText></h1><br/>
+  
         <h2 class = "h1">Handle Admins:</h2>
-            <h:commandButton class = "Buttons Buttonss" value="Add Admin" action="#{adminData.goToNewAdmin()}"/>
-            <h:commandButton class = "Buttons Buttonss" value="Edit Admin" action="editAdmin"/>
-        <br/>
-        <br/>
+            <h:commandButton class = "button" value="Add Admin" action="#{adminData.goToNewAdmin()}"/>
+            <h:commandButton class = "button" value="Edit Admin" action="editAdmin"/>
+       
         <h2 class = "h1">Handle Products:</h2>
-            <h:commandButton class = "Buttons Buttonss"  value="Add new product" action="#{productData.goToNewProduct()}"/>
-            <h:commandButton class = "Buttons Buttonss"  value="Edit Product" action="editProduct"/>
-        <br/>
-        <br/>
+            <h:commandButton class = "button"  value="Add product" action="#{productData.goToNewProduct()}"/>
+            <h:commandButton class = "button"  value="Edit Product" action="editProduct"/>
+       
         <h2 class="h1">Handle Categories:</h2>
-            <h:commandButton class = "Buttons Buttonss" value="Add new category" action="addNewCategory"/>
-            <h:commandButton class = "Buttons Buttonss" value="Edit category" action="editCategory"/>
+            <h:commandButton class = "button" value="Add category" action="addNewCategory"/>
+            <h:commandButton class = "button" value="Edit category" action="editCategory"/>
             
             <h2 class="h1"> Handle Orders:</h2>
-            <h:commandButton class="Buttons Buttonss" value="Edit orders" action="editOrder"/>
-         <br/>
+            <h:commandButton class="button" value="Edit orders" action="editOrder"/>
+       
             
     </h:form>
    	

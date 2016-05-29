@@ -30,15 +30,14 @@
         <br/>
         <br/>
 					<h:outputLabel class="UserName" value="Username: " />
-					<h:inputText  id="user" value="#{adminData.ad.username}" required="true" requiredMessage="Username required"/>
-					<h:messages for="user" style="color: darkred"/>
+					<h:inputText  value="#{adminData.ad.username}" />
+
 					<br />
 
 					<h:outputLabel class="Password" value="Password:  " />
-					<h:inputSecret id="pass" value="#{adminData.ad.password}" required="true" requiredMessage="Password required"/>
-					<h:messages for="pass" style="color: darkred"/>
+					<h:inputSecret value="#{adminData.ad.password}" />
+
 					<br />
-					<h:messages globalOnly="true" style="color: darkred"/>
 					<br />
 					<div>
 						<h:commandButton class="Buttons Buttonss movingLogin" value="Log in" action="#{adminData.checkIfAdminExist}" />

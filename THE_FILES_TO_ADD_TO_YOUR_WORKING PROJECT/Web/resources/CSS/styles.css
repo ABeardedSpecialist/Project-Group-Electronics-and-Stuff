@@ -10,16 +10,16 @@ html, body {
    padding:0;
    height:100%;
    background:black;
+font-family: 'Roboto', sans-serif;
 
 }
 #navBar{
 	height:50px;
 }
-mn
 body {
     background: #515673 none repeat scroll 0 0;
     color:white;
-    font-family: arial;
+
     font-size: 14px;
     line-height: 1.5em;
  
@@ -65,18 +65,13 @@ font-weight:bold;
 margin-left:5px;
 margin-right:5px;
 }
-.column1{
-	width:150px;
-}
+
 .link{
 	color:white;
 	text-decoration:none;
 }
 .link:hover{
 	color:red;
-}
-.col{
-	min-height:200px;
 }
 .imagePr{
 	height:100%;
@@ -108,26 +103,19 @@ margin-right:5px;
     border: 7px groove #575c7a;
     border-radius: 41px 0;
     display: none;
-    left: 20px;
     position: absolute;
     z-index: 100;
+    text-align:center;
 }
 
-#nav ul ul:hover {
-    display: block;
-}
-#nav ul ul li {
-    background-color: white;
-    border:none;
-    display: block;
-        width:100%;
-        text-align:center;
-        z-index:999999;
-  
-}
+
+
 
 #nav ul ul li:hover {
     color: #099;
+}
+#nav ul ul li{
+	border:none;
 }
 .menuB {
     color: black;
@@ -145,6 +133,7 @@ margin-right:5px;
     text-decoration: none;
     text-transform: uppercase;
     text-align:center;
+    border:none;
 }
 
 
@@ -225,21 +214,23 @@ padding-bottom:40px;
 
   }
   .info h2{
-    font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  
     font-size: 20px;
     font-weight: bold;
     color: fff#;
     padding: 15px 0 0 20px;
   }
   .info h3{
-  font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: bold;
-    color: green;
+    color: white;
     padding: 2px 0 0 20px;
+    margin-bottom:5px;
   }
   .info p{
-    font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: lighter;
     color: fff#;
@@ -272,35 +263,7 @@ padding-bottom:40px;
   padding-top: 100px;
   }
 
-  .info{
-width:100%;
-  height: 100px;
-  display:block;
-background-color: rgba(102, 204, 204, 0.2);
 
-  }
-  .info h2{
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: fff#;
-    padding: 15px 0 0 20px;
-  }
-  .info h3{
-  font-family: sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: green;
-    padding: 2px 0 0 20px;
-  }
-  .info p{
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: lighter;
-    color: fff#;
-    padding: 0 0 0 20px;
-
-  }
   .button{
  margin:auto;
 position:relative;
@@ -315,6 +278,7 @@ position:relative;
   font-size: 20px;
   margin-top:20px;
 cursor:pointer;
+width:150px;
   }
   .button:hover{
   background:black}
@@ -354,17 +318,12 @@ background:#305760;
 letter-spacing:0.2px;
 
 }
-.noBorder tr:hover, .noBorder td:hover, .noBorder th:hover{
+ .noBorder th:hover{
 	color:white;
 }
 .ui-widget-content a{
 	color:black;
 	font-size:116%;
-	text-decoration:none;
-}
-.ui-widget-content a:hover{
-	color:white;
-	font-size:130%;
 	text-decoration:none;
 }
 
@@ -389,6 +348,9 @@ letter-spacing:0.2px;
 }
 .ui-widget-content{
 	border:none !important;
+}
+.ui-widget-content a:hover{
+	color:white;
 }
 .ui-paginator{
 	position:relative;

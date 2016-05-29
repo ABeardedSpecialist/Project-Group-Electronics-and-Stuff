@@ -2,81 +2,88 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
 <h:head>
-    <title>Cart Page</title>
-    <link href="CSS/CartPage.css" rel="stylesheet" type="text/css"/>
-    <h:outputStylesheet library="css" name="styles.css"/>
-    <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+	<title>Cart Page</title>
+	<link href="CSS/CartPage.css" rel="stylesheet" type="text/css" />
+		<h:outputStylesheet library = "css" name = "styles.css"  />
+			<link href="CSS/styles.css" rel="stylesheet" type="text/css" />
 </h:head>
 
 
+
+
+
 <f:view>
-    <ui:composition template="theTemplate.xhtml">
+<ui:composition template="theTemplate.xhtml">
+
+    	
+    	
+    	<ui:define name="content">
 
 
-        <ui:define name="content">
+	
+<div class="border">
+	<h:outputLabel value="Your Cart" />
+	<h:form>
+	 <h:dataTable value="#{cart.ID}" var="ci">
 
+                <h:column>
+                    <f:facet name="header">Image</f:facet>
+                    <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
+                </h:column>
 
-            <div class="border">
-                <h:outputLabel value="Your Cart"/>
-                <h:form>
-                    <p:dataTable value="#{cart.ID}" var="ci"
-                                 paginator="true"
-                                 paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                    #{ci.item.productName}
+                </h:column>
 
-                        <p:column headerText="Product Image">
-                            <h:graphicImage library="images" name="#{ci.item.productImage}" width="150" height="100"/>
-                        </p:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{ci.item.productPrice}
+                </h:column>
 
-                        <p:column headerText="Product Name">
-                            <h:outputText value="#{ci.item.productName}"/>
-                        </p:column>
+                <h:column>
+                    <f:facet name="header">Category</f:facet>
+                    #{ci.item.productCategory}
+                </h:column>
 
-                        <p:column headerText="Product Price">
-                            <h:outputText value="#{ci.item.productPrice}"/>
-                        </p:column>
+                <h:column>
+                    <f:facet name="header">Quantity</f:facet>
+                    #{ci.quantity}
+                </h:column>
+          
+		
+			<h:column>
+				<h:selectOneMenu class="Multibul Multibuls Multibulss" value="#{ci.quantity}" onchange="submit()"
+					update="@form" ajax="true">
+					<f:selectItems value="#{cart.getQuantity(ci.item)}" />
+				</h:selectOneMenu>
+			</h:column>
 
-                        <p:column headerText="Category">
-                            <h:outputText value="#{ci.item.productCategory}"/>
-                        </p:column>
+			<h:column>
+				<h:commandButton class="Buttons Buttonss" value="Remove from cart"
+					action="#{cart.removeProductFromCart(ci)}" update="@form"
+					ajax="true" />
+			</h:column>
 
-                        <p:column headerText="Quantity of Product">
-                            <h:outputText value="#{ci.quantity}"/>
-                        </p:column>
-                        <p:column headerText="Edit Quantity">
-                            <h:selectOneMenu class="Multibul Multibuls Multibulss" value="#{ci.quantity}"
-                                             onchange="submit()"
-                                             update="@form" ajax="true">
-                                <f:selectItems value="#{cart.getQuantity(ci.item)}"/>
-                            </h:selectOneMenu>
-                        </p:column>
-
-                        <p:column>
-                            <h:commandButton class="Buttons Buttonss" value="Remove from cart"
-                                             action="#{cart.removeProductFromCart(ci)}" update="@form"
-                                             ajax="true"/>
-                        </p:column>
-
-                    </p:dataTable>
-                    <br/>
-                    <div id="Order">
-                        <h:outputLabel value="Number of products: #{cart.numberOfProducts}"/>
-                        <br/>
-                        <h:outputLabel value="Total price: #{cart.totalPrice}"/>
-                    </div>
-                    <br/>
-                    <h:messages globalOnly="true" style="color: darkred"/>
-                    <br/>
-                    <h:commandButton value="Go to check out" action="#{orderData.goToCheckOut()}"/>
-
-
-                </h:form></div>
-        </ui:define>
-    </ui:composition>
+		</h:dataTable>
+		<br />
+		<div id="Order">
+		<h:outputLabel value="Number of products: #{cart.numberOfProducts}" />
+		<br />
+		<h:outputLabel value="Total price: #{cart.totalPrice}" />
+		</div>
+		<br/>
+		
+	
+		
+	</h:form></div>
+</ui:define>
+</ui:composition>
 </f:view>
 </html>

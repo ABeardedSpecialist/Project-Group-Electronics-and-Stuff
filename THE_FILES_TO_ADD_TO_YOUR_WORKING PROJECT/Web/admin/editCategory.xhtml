@@ -22,15 +22,15 @@
             </p:column>
 
             <p:column headerText="Edit Category">
-                <h:commandButton class ="Buttons Buttonss"  value="Edit Category"
+                <h:commandButton class ="button"  value="Edit Category"
                                  action="#{cat.setEditable(true)}"
                                  rendered="#{not cat.editable}" />
-                <h:commandButton class ="Buttons Buttonss" action="#{category.editCategory(cat)}"
+                <h:commandButton class ="button" action="#{category.editCategory(cat)}"
                                  value="Save Changes" rendered="#{cat.editable}" />
             </p:column>
 
             <p:column headerText="Remove Category">
-                <h:commandButton class="Buttons Buttonss" value="Remove Category"
+                <h:commandButton class="button" value="Remove Category"
                                  action="#{category.removeCategory(cat)}" update="@form"
                                  ajax="true"/>
             </p:column>

@@ -30,7 +30,7 @@
                 </div>
                 <h:body>
                 <h:form>
-                    <p:dataTable var="pro" value="#{productData.theData}" rows="5"
+                    <p:dataTable class="noBorder"  var="pro" value="#{productData.theData}" rows="5"
                                  paginator="true"
                                  paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
                                  paginatorPosition="top">
@@ -79,17 +79,17 @@
                         </p:column>
 
                         <p:column headerText="Edit Product">
-                            <h:commandButton class="Buttons Buttonss" value="Edit"
+                            <h:commandButton class="button" value="Edit"
                                              action="#{productData.editAction(pro)}"
                                              rendered="#{not pro.editable}" 	/>
 
-                            <h:commandButton class="Buttons Buttonss"
+                            <h:commandButton class="button"
                                              action="#{productData.editProducts(pro)}"
                                              value="Save Changes" rendered="#{pro.editable}"/>
                         </p:column>
 
                         <p:column headerText="Remove Product">
-                            <h:commandButton class ="Buttons Buttonss" value="Remove"
+                            <h:commandButton class ="button" value="Remove"
                                              action="#{productData.removeProduct(pro.productID)}"
                                              update="@form" ajax="true" />
                         </p:column>

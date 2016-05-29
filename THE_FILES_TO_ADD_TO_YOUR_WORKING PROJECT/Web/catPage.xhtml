@@ -33,15 +33,15 @@
 							paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
 							paginatorPosition="top">
 
-							<p:column class="noB"    headerText="Product Image">
+							<p:column    headerText="Product Image">
 								<h:commandLink action="#{productData.getProductPage(rs)}">
 									<h:graphicImage library="images" name="#{rs.productImage}"
 										width="60" height="60" />
 								</h:commandLink>
 							</p:column>
 
-							<p:column class="noB"  headerText="Product Name" sortBy="#{rs.productName}">
-								<h:commandLink class="prodLink" value="#{rs.productName}"
+							<p:column  headerText="Product Name" sortBy="#{rs.productName}">
+								<h:commandLink  value="#{rs.productName}"
 									action="#{productData.getProductPage(rs)}" />
 							</p:column>
 						
@@ -62,7 +62,7 @@
 							</p:column>
 
 							<p:column  >
-								<h:commandButton value="Add to Cart"
+								<h:commandButton class="button" value="Add to Cart"
 									action="#{cart.addProductToCart(rs)}"
 									disabled="#{productData.checkQuantityZero(rs)}" />
 								<br />

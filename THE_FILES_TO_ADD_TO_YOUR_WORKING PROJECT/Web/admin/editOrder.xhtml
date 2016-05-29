@@ -20,7 +20,7 @@
         <ui:define name="content">
             <div class="border">
                 <h:form>
-                    <p:dataTable var="order" value="#{orderBean.orderList}" rows="10"
+                    <p:dataTable class="noBorder"  var="order" value="#{orderBean.orderList}" rows="10"  widgetVar="orderTable"
                                  paginator="true"
                                  paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}" >
                         <p:column headerText="Order ID" >
@@ -58,11 +58,11 @@
                             </h:selectOneMenu>
                         </p:column>
                         <p:column headerText="Edit" >
-                            <h:commandButton class="Buttons Buttonss" value="Edit"
+                            <h:commandButton class="button" value="Edit"
                                              action="#{order.setEditable(true)}"
                                              rendered="#{not order.editable}"/>
 
-                            <h:commandButton class="Buttons Buttonss"
+                            <h:commandButton class="button"
                                              action="#{orderData.editOrder(order)}"
                                              value="Save Changes" rendered="#{order.editable}"/>
                         </p:column>
