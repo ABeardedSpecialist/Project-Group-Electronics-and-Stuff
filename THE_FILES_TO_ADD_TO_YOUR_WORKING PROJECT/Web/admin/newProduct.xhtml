@@ -45,7 +45,9 @@
                         <h:outputLabel class="text" value="Product image source: "/>
                         <br/>
                         <h:inputFile value="#{productData.imageFile}"/>
-                        <h:commandButton value="Upload" action="#{productData.fileUpload(productData.pr)}"/>
+                        <h:commandButton value="Upload" action="#{productData.fileUpload(productData.pr)}">
+                            <f:ajax execute="@form" render="@none"/>
+                        </h:commandButton>
                         <br/>
                         <h:outputLabel class="text" value="Product description: "/>
                         <br/>
@@ -61,7 +63,9 @@
                         <br/>
                         <br/>
                         <h:commandButton class="Buttons Buttonss" value="Add product"
-                                         action="#{productData.addProduct}"/>
+                                         action="#{productData.addProduct}">
+                            <f:ajax execute="@form" render="@all"/>
+                        </h:commandButton>
                     </h:form>
                 </h:body>
             </div>

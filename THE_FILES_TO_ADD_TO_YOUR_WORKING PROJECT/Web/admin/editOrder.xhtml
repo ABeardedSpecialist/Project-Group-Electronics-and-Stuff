@@ -24,7 +24,8 @@
                     <p:dataTable class="noBorder"  var="order" value="#{orderBean.orderList}" rows="8"  widgetVar="orderTable"
                                  paginator="true"
                                  paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
-                                paginatorPosition="top">
+                                 paginatorPosition="top"
+                                 >
                         <p:column headerText="Order ID" sortBy="#{order.orderID}">
                             <h:outputText value="#{order.orderID}" />
                         </p:column>

@@ -203,7 +203,7 @@ public class productData implements Serializable {
     }
 
     /**
-     * Uploads a Image to the server, replace file if it already exist
+     * Uploads a Image to the server, replace file if it already exist, hardcoded....
      * @param pr Product we want to change image on
      * @throws IOException
      */

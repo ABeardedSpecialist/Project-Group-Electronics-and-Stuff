@@ -43,7 +43,7 @@ public class OrderData implements Serializable {
         id = 0;
         LoadTheList();
     }
-    
+
     public Order getOrder() {
         return order;
     }
@@ -131,25 +131,24 @@ public class OrderData implements Serializable {
                 ci.setQuantity(rs.getInt(3));
                 cartItemsList.add(ci);
             }
-            if(cartItemsList.isEmpty()){
+            if (cartItemsList.isEmpty()) {
                 fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Invalid Order Number", null));
                 return null;
-            }
-            else{
+            } else {
                 String getOrderStatus = "SELECT OrderID, OrderStatus FROM webshop.orderid WHERE OrderID = " + id;
-                try{
+                try {
                     PreparedStatement OrderStatus = databaseConnection.connect().prepareStatement(getOrderStatus);
                     OrderStatus.execute();
                     ResultSet resultSet = OrderStatus.getResultSet();
-                    if(resultSet.next()){
+                    if (resultSet.next()) {
                         order.setOrderID(resultSet.getInt(1));
                         order.setStatus(resultSet.getString(2));
                     }
-                } catch (SQLException e){
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-        } catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             databaseConnection.disconnect();
@@ -199,15 +198,19 @@ public class OrderData implements Serializable {
         }
         return orderList;
     }
-    public List<String> LoadOrderList(Order ord){
+
+    public List<String> LoadOrderList(Order ord) {
         List<String> products = new ArrayList<>();
-        String query = "SELECT OrderProduct FROM webshop.orders WHERE OrderID ='"+ord.getOrderID()+"'";
+        String query = "SELECT OrderQuantity, OrderProduct FROM webshop.orders WHERE OrderID ='" + ord.getOrderID() + "'";
         try {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
             while (rs.next()) {
-                products.add(rs.getString(1));
+                int quantity = rs.getInt(1);
+                for (int i = 1; i<=quantity; i++){
+                    products.add(rs.getString(2));
+                }
             }
 
         } catch (SQLException e) {
@@ -226,8 +229,8 @@ public class OrderData implements Serializable {
         this.orderList = orderList;
     }
 
-    public void editOrder(Order ord){
-  
+    public void editOrder(Order ord) {
+
         String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
         try {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
@@ -242,7 +245,7 @@ public class OrderData implements Serializable {
         }
     }
 
-    public int getQuantityFromDatabase(product product){
+    public int getQuantityFromDatabase(product product) {
         String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = ?";
         int output = 0;
         try {
@@ -251,7 +254,7 @@ public class OrderData implements Serializable {
             statement.setInt(1, product.getProductID());
             statement.execute();
             ResultSet rs = statement.getResultSet();
-            if(rs.next()) {
+            if (rs.next()) {
                 output = rs.getInt(1);
             }
 
@@ -262,7 +265,8 @@ public class OrderData implements Serializable {
         }
         return output;
     }
-    public List<String> statusList(){
+
+    public List<String> statusList() {
         List<String> status = new ArrayList<>();
         status.add("NEW");
         status.add("SHIPPED");
@@ -271,18 +275,25 @@ public class OrderData implements Serializable {
 
         return status;
     }
-    public String goToCheckOrderStatus(){
+
+    public String goToCheckOrderStatus() {
         id = 0;
         return "check.xhtml";
     }
-    public String goToCheckOut(){
+
+    public String goToCheckOut() {
         FacesContext fc = FacesContext.getCurrentInstance();
-        if(cart.getID().isEmpty()){
+        if (cart.getID().isEmpty()) {
             fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Cart is empty", null));
             return null;
-        }
-        else
+        } else
             return "OrderPage";
+
+    }
+
+    public String goToEditOrder() {
+        LoadTheList();
+        return "editOrder.xhtml";
 
     }
 
