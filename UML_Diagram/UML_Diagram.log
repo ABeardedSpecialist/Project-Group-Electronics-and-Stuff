@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  24 MAY 2016 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  30 MAY 2016 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,18 +686,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 133.
 
-Overfull \hbox (66.0527pt too wide) in paragraph at lines 133--143
+Overfull \hbox (66.0527pt too wide) in paragraph at lines 133--144
  [][] 
  []
 
 [1]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 150.
- <img/UML.pdf, id=20, 1727.0021pt x 1051.93pt>
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 151.
+ <img/UML.pdf, id=20, 1726.94183pt x 1051.93pt>
 File: img/UML.pdf Graphic file (type pdf)
  <use img/UML.pdf>
-Package pdftex.def Info: img/UML.pdf used on input line 151.
-(pdftex.def)             Requested size: 426.79532pt x 259.96423pt.
+Package pdftex.def Info: img/UML.pdf used on input line 152.
+(pdftex.def)             Requested size: 426.78041pt x 259.96423pt.
  [2 <./img/UML.pdf>] (./UML_Diagram.aux) ) 
 Here is how much of TeX's memory you used:
  5988 strings out of 493054
@@ -711,7 +711,7 @@ Here is how much of TeX's memory you used:
 /dvips/base/8r.enc}<c:/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ><c:/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2015/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on UML_Diagram.pdf (4 pages, 2243899 bytes).
+Output written on UML_Diagram.pdf (4 pages, 2272317 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
