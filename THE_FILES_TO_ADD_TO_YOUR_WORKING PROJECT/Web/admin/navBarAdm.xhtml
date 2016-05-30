@@ -7,48 +7,54 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 
-
 <body>
 <ui:composition>
-<div id="nav" class="nav">
-
-		
-
-		<h:form>
-			
-<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'></link>
-
-			<ul class="menu" >
-				<li><a class="menuB" href="adminPage.xhtml">Home</a></li>
-					
+    <div id="nav" class="nav">
 
 
-				<li><a class="menuB" href="#">Categories</a>
-				<ul class="sub"><li><a class="menuB" href="addNewCategory.xhtml">Add Category</a></li>
-				<li><a class="menuB" href="editCategory.xhtml">Edit Categories</a></li>
+        <h:form>
 
-				
-				</ul>
-				</li>
-		<li><a class="menuB" href="#">Products</a>
-		<ul class="sub">
-		<li><a class="menuB" href="newProduct.xhtml">Add product</a></li>
-		
-		<li><a class="menuB" href="editProduct.xhtml">Edit products</a></li>
-		</ul>
-		
-		
-		</li>	
-					
-					
-				<li><a class="menuB" href="editOrder.xhtml">Orders</a>
-					
-				</li>
-		</ul>
-		
-				</h:form>	</div>
-		
-				</ui:composition>
-			</body>
-		
+            <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'></link>
+
+            <ul class="menu">
+                <li><a class="menuB" href="adminPage.xhtml">Home</a></li>
+
+                <li><a class="menuB" href="#">Admin</a>
+                    <ul class="sub">
+                        <li><a class="menuB" href="#{adminData.goToNewAdmin()}">Add Admin</a></li>
+                        <li><a class="menuB" href="editAdmin.xhtml">Edit Admin</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="menuB" href="#">Products</a>
+                    <ul class="sub">
+                        <li><a class="menuB" href="#{productData.goToNewProduct()}">Add Product</a></li>
+
+                        <li><a class="menuB" href="editProduct.xhtml">Edit Products</a></li>
+                    </ul>
+
+
+                </li>
+
+                <li><a class="menuB" href="#">Categories</a>
+                    <ul class="sub">
+                        <li><a class="menuB" href="addNewCategory.xhtml">Add Category</a></li>
+                        <li><a class="menuB" href="editCategory.xhtml">Edit Categories</a></li>
+
+
+                    </ul>
+                </li>
+
+                <li><a class="menuB" href="#">Orders</a>
+                <ul class="sub">
+                    <li><a class="menuB" href="editOrder.xhtml">Edit Orders</a> </li>
+                </ul>
+                </li>
+            </ul>
+
+        </h:form></div>
+
+</ui:composition>
+</body>
+
 </html>

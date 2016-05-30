@@ -20,10 +20,12 @@
         <ui:define name="content">
             <div class="border">
                 <h:form>
-                    <p:dataTable class="noBorder"  var="order" value="#{orderBean.orderList}" rows="10"  widgetVar="orderTable"
+                    <h1 class ="h1">Edit Orders</h1>
+                    <p:dataTable class="noBorder"  var="order" value="#{orderBean.orderList}" rows="8"  widgetVar="orderTable"
                                  paginator="true"
-                                 paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}" >
-                        <p:column headerText="Order ID" >
+                                 paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
+                                paginatorPosition="top">
+                        <p:column headerText="Order ID" sortBy="#{order.orderID}">
                             <h:outputText value="#{order.orderID}" />
                         </p:column>
                         <p:column headerText="Customer Name">

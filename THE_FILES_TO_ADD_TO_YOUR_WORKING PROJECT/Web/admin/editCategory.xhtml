@@ -10,8 +10,12 @@
 
 	<ui:define name="content">
 	       <div class = "border">
+               <h1 class ="h1">Edit Category</h1>
     <h:form>
-        <p:dataTable class="noBorder" value="#{category.theList}" var="cat">
+        <p:dataTable class="noBorder" value="#{category.theList}" var="cat" rows="8"
+                     paginator="true"
+                     paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
+                     paginatorPosition="top">
             <p:column headerText="Category ID">
                    <h:outputText value="#{cat.catID}"/>
             </p:column>

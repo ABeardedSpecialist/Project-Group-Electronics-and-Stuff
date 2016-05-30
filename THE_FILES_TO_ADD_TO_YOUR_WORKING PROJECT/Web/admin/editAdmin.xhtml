@@ -18,12 +18,10 @@
 
 	<ui:define name="content">
 			       <div class = "border">
-	<div id="Title">
-	<h:outputLabel value="Edit or remove Admin" />
-	</div>
+		<h1 class ="h1">Edit Admins</h1>
 	<br />
 	<h:form>
-		<p:dataTable value="#{adminData.aList}" var="ad" rows="10"
+		<p:dataTable value="#{adminData.aList}" var="ad" rows="8" class="noBorder"
 					 paginator="true"
 					 paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
 					 paginatorPosition="top">

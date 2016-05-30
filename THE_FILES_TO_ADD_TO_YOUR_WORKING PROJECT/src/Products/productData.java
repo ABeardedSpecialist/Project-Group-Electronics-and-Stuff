@@ -154,7 +154,7 @@ public class productData implements Serializable {
 
     }
 
-    public String editProducts(product prod) {
+    public void editProducts(product prod) {
         String query = "UPDATE webshop.products SET ProductName=?, ProductPrice=?,ProductQuantity=?," +
                 "ProductImage=?,ProductDescription=?,ProductCategory=? WHERE productID = ?";
         try {
@@ -174,7 +174,6 @@ public class productData implements Serializable {
             databaseConnection.disconnect();
         }
         loadData();
-        return "ldaw";
     }
     public String getProductPage(product prod){
         String query = "SELECT * FROM webshop.products WHERE ProductID = '"+prod.getProductID()+"'";
@@ -224,11 +223,9 @@ public class productData implements Serializable {
         return shortDe;
     }
     public boolean checkQuantityZero(product product){
-        if(product.getProductQuantity() == 0){
-            return true;
-        }
-        return false;
+        return (product.getProductQuantity() == 0);
     }
+
     public String goToNewProduct(){
         pr = new product();
         return "newProduct.xhtml";

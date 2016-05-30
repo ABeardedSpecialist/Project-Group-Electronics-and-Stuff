@@ -9,7 +9,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.validator.FacesValidator;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -232,7 +231,6 @@ public class OrderData implements Serializable {
         String query = "UPDATE webshop.orderid SET OrderStatus=? WHERE OrderID = ?";
         try {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
-            System.out.println(ord.getStatus());
             statement.setString(1, ord.getStatus());
             statement.setInt(2, ord.getOrderID());
             statement.executeUpdate();
@@ -279,7 +277,7 @@ public class OrderData implements Serializable {
     }
     public String goToCheckOut(){
         FacesContext fc = FacesContext.getCurrentInstance();
-        if(cartItemsList.isEmpty()){
+        if(cart.getID().isEmpty()){
             fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Cart is empty", null));
             return null;
         }

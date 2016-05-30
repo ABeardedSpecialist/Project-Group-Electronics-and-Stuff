@@ -26,20 +26,26 @@
         <ui:define name="content">
 
             <div class="border">
-          
+
                 <h:form>
-                <p:imageSwitch effect="fade" id="fadeEffect" class="center">
-                    <ui:repeat value="#{productData.latestProducts}" var="image" id="fadeEffectImages">
+                    <h1 class="h1"><h:outputText value="Welcome"></h:outputText></h1>
 
-                        <h:commandLink action="#{productData.getProductPage(image)}">
-                            <h:graphicImage library="images" name="#{image.productImage}" id="image" width="400"
-                                            height="250"/>
-                            <div class="caption" style="color: #24282e">#{image.productName}</div>
-                        </h:commandLink>
+                    <div class="center">
+                        <h1 class="h1"><h:outputText value="Latest Products"></h:outputText></h1>
+                        <br/>
+                        <p:imageSwitch effect="fade" id="fadeEffect">
+                            <ui:repeat value="#{productData.latestProducts}" var="image" id="fadeEffectImages">
+                                <h:commandLink action="#{productData.getProductPage(image)}">
+                                    <h:graphicImage library="images" name="#{image.productImage}" id="image" width="400"
+                                                    height="250"/>
+                                    <div class="caption" style="color: #24282e">#{image.productName}</div>
+                                </h:commandLink>
 
-                    </ui:repeat>
-                </p:imageSwitch>
-            </h:form>
+                            </ui:repeat>
+
+                        </p:imageSwitch>
+                    </div>
+                </h:form>
 
             </div>
         </ui:define></ui:composition>

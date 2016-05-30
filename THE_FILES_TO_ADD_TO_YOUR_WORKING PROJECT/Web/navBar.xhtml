@@ -7,48 +7,45 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 
-
 <body>
 <ui:composition>
-<div id="nav" class="nav">
-
-		
-
-		<h:form>
-			
+    <div id="nav" class="nav">
 
 
-			<ul class="menu" >
-				<li><h:outputLink class="menuB" value="#{request.contextPath}/index.xhtml">Home</h:outputLink></li>
-					
+        <h:form>
 
 
-				<li><a class="menuB" href="#">Categories</a>
-					<ul class="sub">
-				
-							<h:dataTable value="#{categoryData.theList}" var="c">
-							
-									<li><h:column><h:commandLink action="#{category.getProductwithCat(c)}" value="#{c.categoryName}" class="subB"/></h:column></li>
-							
-							</h:dataTable>
+            <ul class="menu">
+                <li><h:outputLink class="menuB" value="#{request.contextPath}/index.xhtml">Home</h:outputLink></li>
 
-					
-					</ul></li>
-	
-					
-				<li><a class="menuB" href="#{orderBean.goToCheckOrderStatus()}">Order Status</a></li>
-					
-					
-			
-		</ul>
-		<div class="searchC">
-			<h:inputText id="searchVal" class="searchBar"
-						value="#{searchBean.searchVal}" /> 
-						<h:commandButton class="searchBtn"
-						action="#{searchBean.searchResults}" value="Search" /></div>
-				</h:form>	</div>
-		
-				</ui:composition>
-			</body>
-		
+
+                <li><a class="menuB" href="#">Categories</a>
+                    <ul class="sub">
+
+                        <h:dataTable value="#{categoryData.theList}" var="c">
+
+                            <li><h:column><h:commandLink action="#{category.getProductwithCat(c)}"
+                                                         value="#{c.categoryName}" class="subB"/></h:column></li>
+
+                        </h:dataTable>
+
+
+                    </ul>
+                </li>
+
+
+                <li><a class="menuB" href="#{orderBean.goToCheckOrderStatus()}">Order Status</a></li>
+
+
+            </ul>
+            <div class="searchC">
+                <h:inputText id="searchVal" class="searchBar"
+                             value="#{searchBean.searchVal}"/>
+                <h:commandButton class="searchBtn"
+                                 action="#{searchBean.searchResults}" value="Search"/></div>
+        </h:form></div>
+
+</ui:composition>
+</body>
+
 </html>
