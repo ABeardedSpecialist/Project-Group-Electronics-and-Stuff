@@ -28,23 +28,24 @@
             <div class="border">
 
                 <h:form>
-                    <h1 class="h1"><h:outputText value="Welcome"></h:outputText></h1>
+                    <h1 class="h1"><h:outputText value="Welcome to Pretty Good Computers"
+                    ></h:outputText></h1>
 
-                    <div class="center">
-                        <h1 ><h:outputText value="Latest Products"></h:outputText></h1>
+             
+                      <span><h:outputText class="latest" value="Latest Products"></h:outputText></span>
 
-                        <p:imageSwitch effect="fade" id="fadeEffect">
+                        <p:imageSwitch class="center" effect="fade" id="fadeEffect">
                             <ui:repeat value="#{productData.latestProducts}" var="image" id="fadeEffectImages">
                                 <h:commandLink action="#{productData.getProductPage(image)}">
                                     <h:graphicImage library="images" name="#{image.productImage}" id="image" width="400"
                                                     height="250"/>
-                                    <div class="caption" style="color: #24282e">#{image.productName}</div>
+                                    <div class="caption" >#{image.productName}</div>
                                 </h:commandLink>
 
                             </ui:repeat>
 
                         </p:imageSwitch>
-                    </div>
+               
                 </h:form>
 
             </div>

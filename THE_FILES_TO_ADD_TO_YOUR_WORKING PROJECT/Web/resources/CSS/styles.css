@@ -147,8 +147,9 @@ margin-right:5px;
 }
 .center{
 	position:relative;
-	left:37%;
-	margin-top:15%;
+
+margin:auto;
+margin-top:10%;
 	
 }
 
@@ -304,6 +305,7 @@ width:150px;
 }
 .noBorder{
 	width:95%;
+	margin:auto;
 	margin-top:20px;
 height:90%;
 }
@@ -403,7 +405,15 @@ letter-spacing:0.2px;
 	font-size:140%;
 	margin-bottom:7px;
 }
-.welcomeProd{
-
-
- }
+.caption{
+	text-decoration:none;
+	font-size:130%;
+	color:white;
+	
+}
+.caption:hover{
+	color:red
+}
+.latest{
+	font-size:120%;
+}
