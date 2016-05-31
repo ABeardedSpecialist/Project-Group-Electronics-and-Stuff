@@ -2,6 +2,7 @@ package Cart;
 
 import Products.DatabaseConnection;
 import Products.product;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
@@ -17,22 +18,22 @@ import java.util.List;
  */
 @Named
 @SessionScoped
-@ManagedBean(name = "cart")
+@ManagedBean (name = "cart")
 public class Cart implements Serializable {
 
     /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-    private List<cartItem> ID = new ArrayList<>();
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private List<cartItem> ID = new ArrayList<>();
     private int totalPrice;
     private int numberOfProducts;
     private DatabaseConnection databaseConnection = new DatabaseConnection();
 
     public int getTotalPrice() {
         totalPrice = 0;
-        for (cartItem ci : ID) {
-            totalPrice += (ci.getQuantity() * ci.getItem().getProductPrice());
+        for (cartItem ci:ID) {
+            totalPrice += (ci.getQuantity()*ci.getItem().getProductPrice());
         }
         return totalPrice;
     }
@@ -43,7 +44,7 @@ public class Cart implements Serializable {
 
     public int getNumberOfProducts() {
         numberOfProducts = 0;
-        for (cartItem ci : ID) {
+        for (cartItem ci:ID) {
             numberOfProducts += ci.getQuantity();
         }
         return numberOfProducts;
@@ -52,34 +53,33 @@ public class Cart implements Serializable {
     public void setNumberOfProducts(int numberOfProducts) {
         this.numberOfProducts = numberOfProducts;
     }
-
     public void removeProductFromCart(cartItem ci) {
         ID.remove(ID.indexOf(ci));
     }
 
 
-    public List<Integer> getQuantity(product product) {
+    public List<Integer> getQuantity(product product){
         int quantity = 0;
-        String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = '" + product.getProductID() + "'";
+        String query = "SELECT ProductQuantity FROM webshop.products WHERE ProductID = '"+product.getProductID()+"'";
         try {
             PreparedStatement statement = databaseConnection.connect().prepareStatement(query);
             statement.execute();
             ResultSet rs = statement.getResultSet();
-            if (rs.next()) {
+            if(rs.next()){
                 quantity = rs.getInt(1);
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         } finally {
             databaseConnection.disconnect();
         }
         List<Integer> Quantity = new ArrayList<>();
-        for (int i = 1; i <= quantity; i++) {
+        for (int i = 1; i <= quantity; i++){
             Quantity.add(i);
         }
         return Quantity;
     }
-
     public void addProductToCart(product prod) {
         if (prod.getProductQuantity() == 0) {
             return;
@@ -102,16 +102,14 @@ public class Cart implements Serializable {
             prod.setProductQuantity(prod.getProductQuantity() - 1);
         }
     }
-
     public List<cartItem> getID() {
         return ID;
     }
-
     public void setID(List<cartItem> ID) {
         this.ID = ID;
     }
 
-    public String zeroCart() {
+    public String zeroCart(){
         ID.removeAll(ID);
         totalPrice = 0;
         numberOfProducts = 0;
